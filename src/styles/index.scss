@@ -1,0 +1,229 @@
+/**
+ * index.scss
+ * - Add any styles you want here! dd
+ */
+
+@import 'settings/settings.core';
+@import 'settings/settings.global';
+
+body {
+  background: #14232b;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  color: #ffb31d;
+}
+
+h3 {
+  font-size: 14px;
+}
+
+header.main {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
+.o-container {
+  padding: 24px;
+}
+
+.patch {
+  cursor: pointer;
+  max-height: 300px;
+  opacity: 0.4;
+  transition: opacity linear 0.3s;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &--active {
+    opacity: 1;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  &--sm {
+    max-height: 150px;
+    margin-bottom: 24px;
+  }
+  &--alchemy {
+    opacity: 1;
+  }
+}
+
+.o-section {
+  padding: 24px;
+  background: rgba(black, 0.5);
+  border-radius: 6px;
+  margin-bottom: 24px;
+
+  header {
+    margin-bottom: 48px;
+  }
+
+  body {
+    display: none;
+  }
+
+  h2 {
+    margin: 0;
+  }
+
+  p {
+    margin: 0 0 12px;
+  }
+}
+
+pre {
+  background: #1c2b34;
+  color: white;
+  border-radius: 6px;
+  padding: 24px;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.x-var {
+  color: #6699cc;
+}
+
+.x-keyword {
+  color: #ec5f67;
+}
+
+.x-atom {
+  color: #c594c5;
+}
+
+.x-control {
+  color: hotpink;
+}
+
+.x-class {
+  color: #f3a930;
+}
+
+.x-func {
+  color: #f99157;
+}
+
+.x-property {
+  color: #99c794;
+}
+
+.x-tag {
+  color: #ec5f67;
+}
+
+.x-attr {
+  color: #99c794;
+}
+
+.x-val {
+  color: #fac863;
+}
+.x-label {
+  color: #ffb31d;
+  position: absolute;
+  top: 12px;
+  left: 24px;
+}
+
+.o-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+
+  &--auto {
+    grid-template-columns: repeat(6, 150px);
+  }
+
+  &--code {
+    grid-template-columns: repeat(2, 1fr);
+
+    .o-grid__el {
+      align-items: initial;
+    }
+    pre {
+      width: 100%;
+    }
+  }
+
+  &__el {
+    border-radius: 6px;
+    min-height: 100px;
+    display: flex;
+  }
+
+  &--centre div {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.options {
+  margin-bottom: 24px;
+}
+
+.c-btn {
+  background: #009fee;
+  border: 0;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 12px;
+  transition: background-color linear 0.3s;
+  margin-right: 12px;
+
+  &--active,
+  &:hover {
+    background-color: darken(#009fee, 10%);
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &--negative {
+    background-color: rgb(199, 68, 65);
+    &:hover {
+      background-color: darken(rgb(199, 68, 65), 10%);
+    }
+  }
+}
+
+.u-block {
+  display: block;
+}
+
+.o-flex {
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: center;
+  justify-content: center;
+}
+
+.swatch-label {
+  font-size: 18px;
+}
+
+// Tools
+@import 'tools/tools.cosmetics';
+@import 'tools/tools.typesetting';
+
+@import 'utilities/utilities.baseline';
+@import 'utilities/utilities.colours';
+@import 'utilities/utilities.spacing';
+@import 'utilities/utilities.typography';
+
+// Bad code
+// @import 'utilities/utilities.typography.bad';

@@ -1,0 +1,43 @@
+// Utilities :: Typography
+
+@each $type, $values in $types {
+  #{$type},
+  .u-#{$type} {
+    @include inuit-font-size(nth($values, 1));
+
+    font-family: typeface(nth($values, 2));
+  }
+}
+
+// Variables
+$fs-emeric-thin: 'FS-Emeric-Thin', Helvetica, sans-serif;
+$fs-emeric-light: 'FS-Emeric-Light', Helvetica, sans-serif;
+$fs-emeric-medium: 'FS-Emeric-Medium', Helvetica, sans-serif;
+$fs-emeric-regular: 'FS-Emeric-Regular', Helvetica, sans-serif;
+$fs-emeric-bold: 'FS-Emeric-Bold', Helvetica, sans-serif;
+$fs-emeric-book: 'FS-Emeric-Book', Helvetica, sans-serif;
+$fs-emeric-core: 'FS-Emeric-Core', Helvetica, sans-serif;
+$bodoni: 'Bodoni', Helvetica, sans-serif;
+$museo-300: 'museo-300', Helvetica, sans-serif;
+$museo-500: 'museo-500', Helvetica, sans-serif;
+$museo-700: 'museo-700', Helvetica, sans-serif;
+
+$typeface: (
+  'bodoni': $bodoni,
+  'fs-emeric-light': $fs-emeric-light,
+  'fs-emeric-book': $fs-emeric-book,
+  'fs-emeric-medium': $fs-emeric-medium,
+  'fs-emeric-regular': $fs-emeric-regular,
+  'fs-emeric-core': $fs-emeric-core,
+  'fs-emeric-thin': $fs-emeric-thin,
+  'fs-emric-bold': $fs-emeric-bold,
+  'museo-300': $museo-300,
+  'museo-500': $museo-500,
+  'museo-700': $museo-700
+);
+
+@each $face, $value in $typeface {
+  .u-#{$face} {
+    font-family: $value;
+  }
+}

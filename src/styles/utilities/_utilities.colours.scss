@@ -1,0 +1,34 @@
+// Utilities :: Colours
+
+$light: #fff;
+$dark: #3f3f3f;
+
+$palettes: (
+  yellow: (#fff000, $dark),
+  pink: (#de007b, $light),
+  blue: (#009fee, $light),
+  red: (#9f090a, $light),
+  black: (#000, $light),
+  white: (#fff, $dark),
+  pale-grey: (#f7f7f7, $dark),
+  light-grey: (#e5e5e5, $dark),
+  grey: (#6d6d6d, $light),
+  medium-grey: (#3f3f3f, $light),
+  dark-grey: (#202020, $light),
+  positive: (rgb(89, 178, 90), $light),
+  caution: (rgb(255, 193, 7), $light),
+  negative: (rgb(199, 68, 65), $light),
+  info: (rgb(53, 122, 186), $light)
+);
+
+@each $palette, $colour in $palettes {
+  .u-sofology-#{$palette}-bg {
+    background-color: nth($colour, 1);
+    color: nth($colour, 2);
+    transition: background-color linear 0.3s;
+
+    a {
+      color: currentColor;
+    }
+  }
+}

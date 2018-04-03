@@ -1,0 +1,23 @@
+// Utilities :: Baseline
+
+@mixin baseline-guide() {
+  @include linear-gradient($guide-color 1px, transparent 1px);
+  background-size: 100% rem($rhythm-unit);
+  border-bottom: 1px solid $guide-color;
+}
+
+$rhythm-unit: $inuit-global-baseline;
+$guide-color: rgba(255, 179, 29, 0.5);
+
+.u-baseline {
+  @include baseline-guide;
+  [class^='u-h'],
+  [class^='u-p'] {
+    cursor: pointer;
+    transition: all linear 0.3s;
+    &:hover {
+      background: rgba(20, 35, 43, 0.5);
+      color: rgba(255, 179, 29, 1);
+    }
+  }
+}
