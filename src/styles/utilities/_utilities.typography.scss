@@ -1,14 +1,5 @@
 // Utilities :: Typography
 
-@each $type, $values in $types {
-  #{$type},
-  .u-#{$type} {
-    @include inuit-font-size(nth($values, 1));
-
-    font-family: typeface(nth($values, 2));
-  }
-}
-
 // Variables
 $fs-emeric-thin: 'FS-Emeric-Thin', Helvetica, sans-serif;
 $fs-emeric-light: 'FS-Emeric-Light', Helvetica, sans-serif;
@@ -21,6 +12,14 @@ $bodoni: 'Bodoni', Helvetica, sans-serif;
 $museo-300: 'museo-300', Helvetica, sans-serif;
 $museo-500: 'museo-500', Helvetica, sans-serif;
 $museo-700: 'museo-700', Helvetica, sans-serif;
+
+// Maps
+$types: (
+  h1: (36px, $fs-emeric-light),
+  h2: (28px, $fs-emeric-light),
+  h3: (24px, $fs-emeric-light),
+  p: (16px, $fs-emeric-regular)
+);
 
 $typeface: (
   'bodoni': $bodoni,
@@ -35,6 +34,14 @@ $typeface: (
   'museo-500': $museo-500,
   'museo-700': $museo-700
 );
+
+@each $type, $values in $types {
+  #{$type},
+  .u-#{$type} {
+    @include inuit-font-size(nth($values, 1));
+    font-family: nth($values, 2);
+  }
+}
 
 @each $face, $value in $typeface {
   .u-#{$face} {

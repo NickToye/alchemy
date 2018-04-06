@@ -1,0 +1,30 @@
+// Components :: Toolbar
+
+.c-toolbar {
+  width: 100%;
+  background: alchemy-scheme('black');
+}
+
+
+
+.c-toolbar__btn {
+  background: alchemy-scheme('pale-grey');
+  border: none;
+  color: alchemy-scheme('dark-grey');
+  cursor: pointer;
+  padding: 12px;
+
+  &:focus {
+    outline: none;
+  }
+
+  &.active {
+    background: alchemy-scheme('light-grey');
+    // color: currentColor;
+  }
+
+  svg {
+    pointer-events: none;
+  }
+
+}

@@ -1,0 +1,30 @@
+// Components :: Buttons
+
+.c-btn {
+  background: transparent;
+  border: 0;
+  border-radius: 3px;
+  color: $alchemy-light;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 12px;
+  padding: 12px;
+  transition: background-color linear 0.3s;
+
+&--active,
+&:hover {
+  // background: #009fee;
+}
+
+&:focus {
+  outline: 0;
+}
+
+&--negative {
+  background-color: rgb(199, 68, 65);
+}
+
+&--negative:hover {
+  background-color: darken(rgb(199, 68, 65), 10%);
+}
+}

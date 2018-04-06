@@ -1,34 +1,49 @@
 // Utilities :: Colours
 
-$light: #fff;
-$dark: #3f3f3f;
+@each $alchemy-key, $alchemy-variants in $alchemy-scheme {
+  $base-alchemy-value: map-get($alchemy-variants, 'base');
+  $contrast-alchemy-value: map-get($alchemy-variants, 'contraster');
 
-$palettes: (
-  yellow: (#fff000, $dark),
-  pink: (#de007b, $light),
-  blue: (#009fee, $light),
-  red: (#9f090a, $light),
-  black: (#000, $light),
-  white: (#fff, $dark),
-  pale-grey: (#f7f7f7, $dark),
-  light-grey: (#e5e5e5, $dark),
-  grey: (#6d6d6d, $light),
-  medium-grey: (#3f3f3f, $light),
-  dark-grey: (#202020, $light),
-  positive: (rgb(89, 178, 90), $light),
-  caution: (rgb(255, 193, 7), $light),
-  negative: (rgb(199, 68, 65), $light),
-  info: (rgb(53, 122, 186), $light)
-);
+  .u-alchemy-#{$alchemy-key}-colour {
+    color: $base-alchemy-value;
+  }
 
-@each $palette, $colour in $palettes {
-  .u-sofology-#{$palette}-bg {
-    background-color: nth($colour, 1);
-    color: nth($colour, 2);
-    transition: background-color linear 0.3s;
+  .u-alchemy-#{$alchemy-key}-bg {
+    background-color: $base-alchemy-value;
+    color: $contrast-alchemy-value;
 
-    a {
-      color: currentColor;
+    &.c-swatch {
+      &:before,
+      &:after {
+        @include border-radius($alchemy-global-radius bottom);
+        color: alchemy-scheme('medium-grey');
+      }
+      &:before { content: str-replace($alchemy-key, '-', ' '); }
+      &:after {
+        content: "#{$base-alchemy-value}";
+        color: alchemy-scheme('grey', 'light');
+      }
     }
+
+
+    $variant-gradient: (unquote("to right"),);
+
+    $index: 0;
+      @each $variant-name, $variant-value in $alchemy-variants {
+        $variant-gradient: append($variant-gradient, $variant-value $index * $variant-height);
+        $index: $index + 1;
+        $variant-gradient: append($variant-gradient, $variant-value $index * $variant-height);
+      }
+
+      .c-swatch__variants {
+        position: absolute;
+        width: $variant-height * length($alchemy-variants);
+        height: $variant-height;
+        right: 24px;
+        bottom: 20px;
+        background: linear-gradient(#{$variant-gradient});
+        @include border-radius($alchemy-global-radius/2);
+        box-shadow: 0 0 3px rgba(black,.4);
+      }
   }
 }

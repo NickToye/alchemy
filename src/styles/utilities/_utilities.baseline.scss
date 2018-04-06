@@ -1,23 +1,39 @@
 // Utilities :: Baseline
 
+@function rem($target) {
+@if $target == 0 {
+  @return 0;
+}
+  $rem-size: $target / $inuit-global-font-size;
+  @return #{$rem-size}rem;
+}
+
 @mixin baseline-guide() {
   @include linear-gradient($guide-color 1px, transparent 1px);
-  background-size: 100% rem($rhythm-unit);
+  background-size: 100% rem($inuit-rhythm-unit);
   border-bottom: 1px solid $guide-color;
 }
 
-$rhythm-unit: $inuit-global-baseline;
-$guide-color: rgba(255, 179, 29, 0.5);
+$guide-color: rgba(255, 255, 255, 0.5);
+$blueprint-colour: rgb(61, 143, 183);
 
 .u-baseline {
   @include baseline-guide;
+  background-color: $blueprint-colour;
+  color: $white;
+
   [class^='u-h'],
   [class^='u-p'] {
     cursor: pointer;
-    transition: all linear 0.3s;
+    transition: background-color linear 0.3s;
+
     &:hover {
       background: rgba(20, 35, 43, 0.5);
       color: rgba(255, 179, 29, 1);
     }
   }
+}
+
+.u-baseline-wrapper {
+  background-color: $blueprint-colour !important;
 }

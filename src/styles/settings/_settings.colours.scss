@@ -1,0 +1,106 @@
+// Settings :: Colours
+
+$alchemy-light: #fff;
+$alchemy-dark: #3f3f3f;
+$white: #fff;
+$black: #000;
+
+$alchemy-scheme-key: 'base' !default;
+$alchemy-scheme-adjuster: 15%;
+
+$alchemy-scheme: (
+  'primary': (
+    'base': #fff000,
+    'light': lighten(#fff000, $alchemy-scheme-adjuster),
+    'dark': darken(#fff000, $alchemy-scheme-adjuster),
+    'contraster': $alchemy-dark
+  ),
+  'secondary1': (
+    'base': #de007b,
+    'light': lighten(#de007b, $alchemy-scheme-adjuster),
+    'dark': darken(#de007b, $alchemy-scheme-adjuster),
+    'contraster': $alchemy-light
+  ),
+  'secondary2': (
+    'base': #009fee,
+    'light': lighten(#009fee, $alchemy-scheme-adjuster),
+    'dark': darken(#009fee, $alchemy-scheme-adjuster),
+    'contraster': $alchemy-light
+  ),
+  'secondary3': (
+    'base': #9f090a,
+    'light': lighten(#9f090a, $alchemy-scheme-adjuster),
+    'dark': darken(#9f090a, $alchemy-scheme-adjuster),
+    'contraster': $alchemy-light
+  ),
+  'black': (
+    'base': #000,
+    'light': lighten(#000, $alchemy-scheme-adjuster),
+    'contraster': $alchemy-light
+  ),
+  'white': (
+    'base': #fff,
+    'dark': darken(#fff, $alchemy-scheme-adjuster),
+    'contraster': $alchemy-dark
+  ),
+  'pale-grey': (
+    'base': #f7f7f7,
+    'light': lighten(#f7f7f7, $alchemy-scheme-adjuster),
+    'dark': darken(#f7f7f7, $alchemy-scheme-adjuster),
+    'contraster': $alchemy-dark
+  ),
+  'light-grey': (
+    'base': #e5e5e5,
+    'light': lighten(#e5e5e5, $alchemy-scheme-adjuster),
+    'dark': darken(#e5e5e5, $alchemy-scheme-adjuster),
+    'contraster': $alchemy-dark
+  ),
+  'grey': (
+    'base': #6d6d6d,
+    'light': lighten(#6d6d6d, $alchemy-scheme-adjuster),
+    'dark': darken(#6d6d6d, $alchemy-scheme-adjuster),
+    'contraster': $alchemy-light
+  ),
+  'medium-grey': (
+    'base': #3f3f3f,
+    'light': lighten(#3f3f3f, $alchemy-scheme-adjuster),
+    'dark': darken(#3f3f3f, $alchemy-scheme-adjuster),
+    'contraster': $alchemy-light
+  ),
+  'dark-grey': (
+    'base': #202020,
+    'light': lighten(#202020, $alchemy-scheme-adjuster),
+    'dark': darken(#202020, $alchemy-scheme-adjuster),
+    'contraster': $alchemy-light
+  ),
+  'positive': (
+    'base': #59b25a,
+    'light': lighten(#59b25a, $alchemy-scheme-adjuster),
+    'dark': darken(#59b25a, $alchemy-scheme-adjuster),
+    'contraster': $alchemy-light
+  ),
+  'caution': (
+    'base': #ffc107,
+    'light': lighten(#ffc107, $alchemy-scheme-adjuster),
+    'dark': darken(#ffc107, $alchemy-scheme-adjuster),
+    'contraster': $alchemy-light
+  ),
+  'negative': (
+    'base': #c74441,
+    'light': lighten(#c74441, $alchemy-scheme-adjuster),
+    'dark': darken(#c74441, $alchemy-scheme-adjuster),
+    'contraster': $alchemy-light
+  ),
+  'info': (
+    'base': #357aba,
+    'light': lighten(#357aba, $alchemy-scheme-adjuster),
+    'dark': darken(#357aba, $alchemy-scheme-adjuster),
+    'contraster': $alchemy-light
+  )
+);
+
+$alchemy-opacity: (
+  'light': 0.8, // opacity used with lighter colors
+  'dark': 0.4,  // opacity used with darker colors
+  // ... etc.
+);

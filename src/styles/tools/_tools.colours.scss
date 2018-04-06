@@ -1,0 +1,29 @@
+// Tools :: Colours
+
+@function alchemy-scheme(
+  $name: 'primary',
+  $variant: $alchemy-scheme-key,
+  $opacity: 1
+) {
+  $color: null;
+
+  // Get the color spectrum
+  $color-spectrum: map-get($alchemy-scheme, $name);
+
+  // Get the color variant
+  @if $color-spectrum {
+    $color: map-get($color-spectrum, $variant);
+  }
+
+  // Get the alpha setting
+  $alpha: if(type-of($opacity) == 'number', $opacity, map-get($scotch-opacity, $opacity));
+
+  // Set the alpha of the color
+  @if $alpha {
+    $color: rgba($color, $alpha);
+  }
+
+  @return $color;
+}
+
+$variant-height: 1.5rem;

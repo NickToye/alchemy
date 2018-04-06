@@ -9,7 +9,8 @@
 // Baseline grid lines height.
 // Every spacing metric should be based on this.
 
-$inuit-global-baseline: 24px !default;
+$inuit-global-baseline: 6px !default;
+$inuit-rhythm-unit: 24px !default;
 
 // How many grid lines should our spacing unit variants span?
 // Each value should be an unitless integer.

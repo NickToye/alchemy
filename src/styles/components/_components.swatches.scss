@@ -1,0 +1,35 @@
+// Components :: Swatches
+
+.c-swatch {
+  height: 300px;
+  position: relative;
+  align-content: flex-start;
+
+  &::before,
+  &::after {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 64px;
+    padding: 12px 24px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+
+  }
+
+  &::before {
+    background: white;
+    font-weight: bold;
+
+    align-items: flex-start;
+    @include inuit-font-size(14px);
+  }
+
+  &::after {
+
+    align-items: flex-end;
+    @include inuit-font-size(11px);
+  }
+
+}
