@@ -1,5 +1,4 @@
 import React from 'react';
-import TypographyColourCard from './TypographyColourCard';
 
 class TypographyCard extends React.Component {
   constructor(props) {
@@ -7,6 +6,8 @@ class TypographyCard extends React.Component {
     this.state = {
       showBaseline: false,
       showMargin: false,
+      showContraster: false,
+      dropPickDisabled: false,
       droplets: [
         'primary',
         'secondary1',
@@ -47,6 +48,7 @@ class TypographyCard extends React.Component {
     this.showMarginAction = this.showMarginAction.bind(this);
     this.showDropPick = this.showDropPick.bind(this);
     this.showCanvasPick = this.showCanvasPick.bind(this);
+    this.showContrasterAction = this.showContrasterAction.bind(this);
   }
 
   showBaselineAction() {
@@ -59,10 +61,17 @@ class TypographyCard extends React.Component {
 
   showDropPick(e) {
     this.setState({ dropPick: e.target.value });
+    this.setState({ showContraster: false });
   }
 
   showCanvasPick(e) {
     this.setState({ canvasPick: e.target.value });
+  }
+
+  showContrasterAction() {
+    this.setState(prev => ({ showContraster: !prev.showContraster }));
+    this.setState({ dropPick: ''});
+    this.setState( prev => ({ dropPickDisabled: !prev.dropPickDisabled }));
   }
 
   render() {
@@ -120,6 +129,7 @@ class TypographyCard extends React.Component {
     ));
 
     const dropPick = this.state.dropPick;
+
     const dropletsList = this.state.droplets.map((drop, key) => {
       const isCurrent = this.state.dropPick === drop;
       return (
@@ -173,8 +183,16 @@ class TypographyCard extends React.Component {
             >
             <i className="fas fa-expand fa-lg" />
           </button>
+
           {dropletsList}
           {canvasList}
+          <button
+            className={'c-toolbar__btn '  + (this.state.showContraster ? 'active' : '')
+            }
+            onClick={this.showContrasterAction}
+          >
+            <i className="fas fa-adjust fa-lg" />
+          </button>
         </div>
 
 

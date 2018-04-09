@@ -23,6 +23,14 @@
     // color: currentColor;
   }
 
+  &.disabled {
+    svg {
+      color: alchemy-scheme('light-grey');
+      opacity: .6 ;
+      pointer-events: none;
+    }
+  }
+
   svg {
     pointer-events: none;
   }
