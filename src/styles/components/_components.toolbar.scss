@@ -1,8 +1,8 @@
 // Components :: Toolbar
 
 .c-toolbar {
-  width: 100%;
-  background: alchemy-scheme('black');
+  box-shadow: $alchemy-global-shadow;
+  display: inline-block;
 }
 
 
@@ -10,9 +10,35 @@
 .c-toolbar__btn {
   background: alchemy-scheme('pale-grey');
   border: none;
+  border-right: 1px solid alchemy-scheme('dark-grey', 'light', '20');
   color: alchemy-scheme('dark-grey');
   cursor: pointer;
   padding: 12px;
+
+  &:first-child {
+    @include border-radius($alchemy-global-radius left);
+  }
+
+  &:last-child {
+    @include border-radius($alchemy-global-radius right);
+  }
+
+  .c-toolbar__popover & {
+    // background: alchemy-scheme('light-grey');
+    border: none;
+    &:first-child {
+      @include border-radius($alchemy-global-radius left);
+    }
+
+    &:last-child {
+      @include border-radius($alchemy-global-radius right);
+    }
+  }
+
+  .tools-wrapper & {
+    border-radius: 0;
+  }
+
 
   &:focus {
     outline: none;
@@ -20,7 +46,7 @@
 
   &.active {
     background: alchemy-scheme('light-grey');
-    // color: currentColor;
+    border-right: 1px solid alchemy-scheme('pale-grey', 'dark', '80');
   }
 
   &.disabled {
@@ -33,6 +59,37 @@
 
   svg {
     pointer-events: none;
+  }
+
+}
+
+.tools-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+@-webkit-keyframes fade-in {
+	from   { opacity: 0; bottom: 0; }
+	to { opacity: 1; bottom: 50px; }
+}
+
+.c-toolbar__popover {
+  // display: none;
+
+  position: absolute;
+  bottom: 50px;
+  display: flex;
+
+  // border-bottom: 1px solid alchemy-scheme('dark-grey', 'light', 'lighter');
+  -webkit-animation: fade-in .3s linear 1, move-up .3s linear 1;
+
+  &:before {
+    @include triangle(
+      $direction : bottom,
+      $position  : top 100% left .75em,
+      $size: 6px,
+      $color     : alchemy-scheme('pale-grey')
+    );
   }
 
 }

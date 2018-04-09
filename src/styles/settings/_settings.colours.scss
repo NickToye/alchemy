@@ -100,7 +100,8 @@ $alchemy-scheme: (
 );
 
 $alchemy-opacity: (
-  'light': 0.8, // opacity used with lighter colors
-  'dark': 0.4,  // opacity used with darker colors
+  '20': 0.2,
+  '80': 0.8, // opacity used with lighter colors
+  '40': 0.4,  // opacity used with darker colors
   // ... etc.
 );

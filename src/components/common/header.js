@@ -11,7 +11,7 @@ const Header = () => {
           activeClassName="active"
         >
           <img
-            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/335203/Alchemy%403x.png"
+            src={require('/Users/nicktoye/Dev/alchemy/src/images/Alchemy@3x.png')}
             className="patch  patch--alchemy"
           />
         </IndexLink>
@@ -21,7 +21,7 @@ const Header = () => {
           activeClassName="active"
         >
           <img
-            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/335203/Colours%403x.png"
+            src={require('/Users/nicktoye/Dev/alchemy/src/images/Colours@3x.png')}
             className="patch"
           />
         </Link>
@@ -31,7 +31,7 @@ const Header = () => {
           activeClassName="active"
         >
           <img
-            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/335203/Typography%403x.png"
+            src={require('/Users/nicktoye/Dev/alchemy/src/images/Typography@3x.png')}
             className="patch"
           />
         </Link>
@@ -41,7 +41,7 @@ const Header = () => {
           activeClassName="active"
         >
           <img
-            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/335203/Buttons%403x.png"
+            src={require('/Users/nicktoye/Dev/alchemy/src/images/Buttons@3x.png')}
             className="patch"
           />
         </Link>
@@ -51,7 +51,7 @@ const Header = () => {
           activeClassName="active"
         >
           <img
-            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/335203/Buttons%403x.png"
+            src={require('/Users/nicktoye/Dev/alchemy/src/images/Layout@3x.png')}
             className="patch"
           />
         </Link>

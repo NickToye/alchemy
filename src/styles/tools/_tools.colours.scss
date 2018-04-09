@@ -16,7 +16,7 @@
   }
 
   // Get the alpha setting
-  $alpha: if(type-of($opacity) == 'number', $opacity, map-get($scotch-opacity, $opacity));
+  $alpha: if(type-of($opacity) == 'number', $opacity, map-get($alchemy-opacity, $opacity));
 
   // Set the alpha of the color
   @if $alpha {

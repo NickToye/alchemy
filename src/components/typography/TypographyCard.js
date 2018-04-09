@@ -7,6 +7,8 @@ class TypographyCard extends React.Component {
       showBaseline: false,
       showMargin: false,
       showContraster: false,
+      showDropletsPopover: false,
+      showCanvasPopover: false,
       dropPickDisabled: false,
       droplets: [
         'primary',
@@ -24,7 +26,7 @@ class TypographyCard extends React.Component {
         'negative',
         'info'
       ],
-      dropPick: 'dark-grey',
+      dropPick: 'white',
       canvas: [
         'primary',
         'secondary1',
@@ -41,7 +43,7 @@ class TypographyCard extends React.Component {
         'negative',
         'info'
       ],
-      canvasPick: 'white',
+      canvasPick: 'dark-grey',
     };
 
     this.showBaselineAction = this.showBaselineAction.bind(this);
@@ -49,6 +51,8 @@ class TypographyCard extends React.Component {
     this.showDropPick = this.showDropPick.bind(this);
     this.showCanvasPick = this.showCanvasPick.bind(this);
     this.showContrasterAction = this.showContrasterAction.bind(this);
+    this.showDropletsPopoverAction = this.showDropletsPopoverAction.bind(this);
+    this.showCanvasPopoverAction = this.showCanvasPopoverAction.bind(this);
   }
 
   showBaselineAction() {
@@ -62,6 +66,16 @@ class TypographyCard extends React.Component {
   showDropPick(e) {
     this.setState({ dropPick: e.target.value });
     this.setState({ showContraster: false });
+  }
+
+  showDropletsPopoverAction() {
+    this.setState(prev => ({ showDropletsPopover: !prev.showDropletsPopover }));
+    this.setState({ showCanvasPopover: false });
+  }
+
+  showCanvasPopoverAction() {
+    this.setState(prev => ({ showCanvasPopover: !prev.showCanvasPopover }));
+    this.setState({ showDropletsPopover: false });
   }
 
   showCanvasPick(e) {
@@ -168,7 +182,6 @@ class TypographyCard extends React.Component {
 
 
         <h3 className="u-h3">Type Sizes</h3>
-
         <div className="u-margin-bottom  c-toolbar">
           <button
             className={
@@ -183,9 +196,31 @@ class TypographyCard extends React.Component {
             >
             <i className="fas fa-expand fa-lg" />
           </button>
+          <div className="tools-wrapper">
+            <button className={'c-toolbar__btn ' + (this.state.showDropletsPopover ? 'active ' : ' ') + `u-alchemy-${this.state.dropPick}-colour`}
+              onClick={this.showDropletsPopoverAction}
+              >
+              <i className="fas fa-tint fa-lg" />
+            </button>
+            {(this.state.showDropletsPopover ?
+              <div className="c-toolbar__popover">{dropletsList}</div>
+              :
+              ''
+            )}
+          </div>
+          <div className="tools-wrapper">
+            <button className={'c-toolbar__btn ' + (this.state.showCanvasPopover ? 'active ' : '') + `u-alchemy-${this.state.canvasPick}-colour`}
+              onClick={this.showCanvasPopoverAction}
+            >
+            <i className="fas fa-paint-brush fa-lg" />
+          </button>
+          {(this.state.showCanvasPopover ?
+            <div className="c-toolbar__popover">{canvasList}</div>
+            :
+            ''
+          )}
+          </div>
 
-          <div className="droplets-wrapper">{dropletsList}</div>
-          {canvasList}
           <button
             className={'c-toolbar__btn '  + (this.state.showContraster ? 'active' : '')
             }
