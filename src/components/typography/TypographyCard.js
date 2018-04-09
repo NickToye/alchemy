@@ -184,7 +184,7 @@ class TypographyCard extends React.Component {
             <i className="fas fa-expand fa-lg" />
           </button>
 
-          {dropletsList}
+          <div className="droplets-wrapper">{dropletsList}</div>
           {canvasList}
           <button
             className={'c-toolbar__btn '  + (this.state.showContraster ? 'active' : '')
