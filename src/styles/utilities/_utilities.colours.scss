@@ -25,6 +25,37 @@
       }
     }
 
+    $tones: (
+      50, 100, 200, 300, 400, 500, 600, 700, 800, 900
+    );
+
+    @each $tone in $tones {
+      .c-swatch__tone-#{$tone} {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        background-color: darken($base-alchemy-value, $tone/25);
+
+        fizz: $tone/20;
+
+        &:before {
+          align-self: center;
+          position: absolute;
+          left: 12px;
+          content: "#{$tone}";
+        }
+
+        &:after {
+          align-self: center;
+          content: "value";
+          position: absolute;
+          right: 12px;
+        }
+      }
+    }
+
+
 
     $variant-gradient: (unquote("to right"),);
 
@@ -46,4 +77,21 @@
         box-shadow: 0 0 3px rgba(black,.4);
       }
   }
+
+
+}
+
+
+
+.c-swatch__tones {
+  width: 98%;
+  margin: 0 auto;
+}
+
+.c-swatch__tone {
+  height: 42px;
+  width: 100%;
+  background-color: inherit;
+
+
 }

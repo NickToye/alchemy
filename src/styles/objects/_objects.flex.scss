@@ -6,3 +6,11 @@
   flex-flow: column nowrap;
   justify-content: center;
 }
+
+.o-flex__row {
+  flex-direction: row;
+}
+
+.o-flex__wrap {
+  flex-wrap: wrap;
+}

@@ -1,13 +1,28 @@
 // Tools :: Position
 
+// [Private]
+// Position helper mixin
+// Article about it: http://hugogiraudel.com/2013/08/05/offsets-sass-mixin/
+// ---
+// @param [string] $position: position type
+// @param [list] $args: list of offsets and values
+// ---
 @mixin _position($position, $args) {
-  @each $o in top right bottom left {
-    $i: index($args, $o);
-    @if $i
-    and $i + 1 <= length($args)
-    and type-of( nth($args, $i + 1) ) == number {
-      #{$o}: nth($args, $i + 1);
-    }
-  }
+@each $o in top right bottom left {
+  $i: index($args, $o);
+@if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number
+    {
+  #{$o}: nth($args, $i + 1);
+}
+}
   position: $position;
+}
+
+// Absolute positioning helper mixin
+// Article about it: http://hugogiraudel.com/2013/08/05/offsets-sass-mixin/
+// ---
+// @param [list] $args: list of offsets and values
+// ---
+@mixin absolute($args) {
+  @include _position(absolute, $args);
 }

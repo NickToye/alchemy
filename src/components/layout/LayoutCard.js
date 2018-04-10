@@ -8,9 +8,7 @@ class LayoutCard extends React.Component {
           <h2>Layout</h2>
         </header>
 
-        <div className="u-margin-bottom">
 
-        </div>
       </section>
     );
   }

@@ -48,3 +48,9 @@ $typeface: (
     font-family: $value;
   }
 }
+
+// Helper classes
+
+.u-text-capitalise {
+  text-transform: capitalize;
+}

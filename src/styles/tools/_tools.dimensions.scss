@@ -1,0 +1,7 @@
+// Tools :: Dimensions
+
+// Size @include size(100px);
+@mixin size($width, $height: $width) {
+  height: $height;
+  width: $width;
+}

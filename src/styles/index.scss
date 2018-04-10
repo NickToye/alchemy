@@ -8,14 +8,17 @@
 
 // Tools
 // @import 'tools/tools.font-size';
+@import 'tools/tools.animate';
 @import 'tools/tools.border-radius';
 @import 'tools/tools.clearfix';
 @import 'tools/tools.colours';
 // @import 'tools/tools.hidden';
 // @import 'node_modules/sass-mq/mq';
 @import 'tools/tools.cosmetics';
+@import 'tools/tools.dimensions';
 @import 'tools/tools.helpers';
-// @import 'tools/tools.shapes';
+@import 'tools/tools.position';
+@import 'tools/tools.shapes';
 @import 'tools/tools.typesetting';
 
 // Generic
@@ -65,3 +68,7 @@ $inuit-offsets: true;
 @import 'utilities/utilities.spacings';
 @import 'utilities/utilities.typography';
 // @import "utilities/utilities.widths";
+
+@import "./node_modules/animate-sass/animate.scss";
+
+// node_modules/animate-sass/_animate.scss

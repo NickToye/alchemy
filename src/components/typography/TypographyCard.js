@@ -24,7 +24,7 @@ class TypographyCard extends React.Component {
         'positive',
         'caution',
         'negative',
-        'info'
+        'info',
       ],
       dropPick: 'white',
       canvas: [
@@ -41,7 +41,7 @@ class TypographyCard extends React.Component {
         'positive',
         'caution',
         'negative',
-        'info'
+        'info',
       ],
       canvasPick: 'dark-grey',
     };
@@ -84,8 +84,8 @@ class TypographyCard extends React.Component {
 
   showContrasterAction() {
     this.setState(prev => ({ showContraster: !prev.showContraster }));
-    this.setState({ dropPick: ''});
-    this.setState( prev => ({ dropPickDisabled: !prev.dropPickDisabled }));
+    this.setState({ dropPick: '' });
+    this.setState(prev => ({ dropPickDisabled: !prev.dropPickDisabled }));
   }
 
   render() {
@@ -129,7 +129,13 @@ class TypographyCard extends React.Component {
       { id: 7, faceName: 'FS Emeric Bold', faceClass: 'fs-emeric-bold' },
     ];
     const typographyList = typography.map(type => (
-      <div className={`u-${type.element} u-alchemy-${this.state.dropPick}-colour ` + (this.state.showMargin ? 'u-margin-none' : '')} key={type.id}>
+      <div
+        className={
+          `u-${type.element} u-alchemy-${this.state.dropPick}-colour ` +
+          (this.state.showMargin ? 'u-margin-none' : '')
+        }
+        key={type.id}
+      >
         {type.label} - {type.fontSize}px
       </div>
     ));
@@ -148,7 +154,10 @@ class TypographyCard extends React.Component {
       const isCurrent = this.state.dropPick === drop;
       return (
         <button
-          className={`u-alchemy-${drop}-colour c-toolbar__btn ` + (isCurrent ? 'active' : '')}
+          className={
+            `u-alchemy-${drop}-colour c-toolbar__btn ` +
+            (isCurrent ? 'active' : '')
+          }
           key={key}
           value={drop}
           onClick={this.showDropPick}
@@ -163,7 +172,10 @@ class TypographyCard extends React.Component {
       const isCurrent = this.state.canvasPick === drop;
       return (
         <button
-          className={`u-alchemy-${drop}-colour c-toolbar__btn ` + (isCurrent ? 'active' : '')}
+          className={
+            `u-alchemy-${drop}-colour c-toolbar__btn ` +
+            (isCurrent ? 'active' : '')
+          }
           key={key}
           value={drop}
           onClick={this.showCanvasPick}
@@ -174,14 +186,12 @@ class TypographyCard extends React.Component {
     });
     return (
       <section className="o-section  u-padding">
-        <header className="u-margin-bottom-huge">
+        <header className="u-margin-bottom-large">
           <h2 className="u-h2  u-margin-bottom-none">Typography</h2>
           <p>A tool that will display the correct typography.</p>
         </header>
 
 
-
-        <h3 className="u-h3">Type Sizes</h3>
         <div className="u-margin-bottom  c-toolbar">
           <button
             className={
@@ -191,58 +201,74 @@ class TypographyCard extends React.Component {
           >
             <i className="fas fa-th fa-lg" />
           </button>
-          <button className={'c-toolbar__btn ' + (this.state.showMargin ? 'active' : ' ')}
+          <button
+            className={
+              'c-toolbar__btn ' + (this.state.showMargin ? 'active' : ' ')
+            }
             onClick={this.showMarginAction}
-            >
+          >
             <i className="fas fa-expand fa-lg" />
           </button>
           <div className="tools-wrapper">
-            <button className={'c-toolbar__btn ' + (this.state.showDropletsPopover ? 'active ' : ' ') + `u-alchemy-${this.state.dropPick}-colour`}
+            <button
+              className={
+                'c-toolbar__btn ' +
+                (this.state.showDropletsPopover ? 'active ' : ' ') +
+                `u-alchemy-${this.state.dropPick}-colour`
+              }
               onClick={this.showDropletsPopoverAction}
-              >
+            >
               <i className="fas fa-tint fa-lg" />
             </button>
-            {(this.state.showDropletsPopover ?
+            {this.state.showDropletsPopover ? (
               <div className="c-toolbar__popover">{dropletsList}</div>
-              :
+            ) : (
               ''
             )}
           </div>
           <div className="tools-wrapper">
-            <button className={'c-toolbar__btn ' + (this.state.showCanvasPopover ? 'active ' : '') + `u-alchemy-${this.state.canvasPick}-colour`}
+            <button
+              className={
+                'c-toolbar__btn ' +
+                (this.state.showCanvasPopover ? 'active ' : '') +
+                `u-alchemy-${this.state.canvasPick}-colour`
+              }
               onClick={this.showCanvasPopoverAction}
             >
-            <i className="fas fa-paint-brush fa-lg" />
-          </button>
-          {(this.state.showCanvasPopover ?
-            <div className="c-toolbar__popover">{canvasList}</div>
-            :
-            ''
-          )}
+              <i className="fas fa-paint-brush fa-lg" />
+            </button>
+            {this.state.showCanvasPopover ? (
+              <div className="c-toolbar__popover">{canvasList}</div>
+            ) : (
+              ''
+            )}
           </div>
 
           <button
-            className={'c-toolbar__btn '  + (this.state.showContraster ? 'active' : '')
+            className={
+              'c-toolbar__btn ' + (this.state.showContraster ? 'active' : '')
             }
             onClick={this.showContrasterAction}
           >
             <i className="fas fa-adjust fa-lg" />
           </button>
         </div>
-
-
-
-        <div className={`u-alchemy-${this.state.canvasPick}-bg o-pod  u-padding  u-margin-bottom-huge ` + (this.state.showBaseline ? 'u-baseline-wrapper' : '')}>
-          <div
-            className={this.state.showBaseline ? 'u-baseline' : ''}
-          >
+        <h3 className="u-h3">Type Sizes</h3>
+        <div
+          className={
+            `u-alchemy-${
+              this.state.canvasPick
+            }-bg o-pod  u-padding  u-margin-bottom-huge ` +
+            (this.state.showBaseline ? 'u-baseline-wrapper' : '')
+          }
+        >
+          <div className={this.state.showBaseline ? 'u-baseline' : ''}>
             {typographyList}
           </div>
         </div>
 
         <h3 className="u-h3">Typefaces</h3>
         <div className="o-pod  u-padding  u-margin-bottom  u-alchemy-white-bg">
-
           {typefaceList}
         </div>
       </section>
