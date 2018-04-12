@@ -4,6 +4,6 @@
 
 **Leverages the [React Slingshot](https://github.com/coryhouse/react-slingshot) starter files by Cory House.**
 
-##Installation
+## Installation
 
 Coming soon...
