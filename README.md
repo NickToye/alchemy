@@ -1,6 +1,6 @@
 # Alchemy
 
-**Front End Toolkit built upon the brilliant [`https://github.com/inuitcss`]InuitCSS by the equally brilliant Harry Roberts (@csswizardry)**
+**Front End Toolkit built upon the brilliant [InuitCSS](https://github.com/inuitcss) by the equally brilliant Harry Roberts (@csswizardry)**
 
 \*\*Leverages the React Slingshot starter files by Cory House
 
