@@ -1,9 +1,9 @@
 # Alchemy
 
-**Front End Toolkit built upon the brilliant [InuitCSS](https://github.com/inuitcss), created by the equally brilliant Harry Roberts (@csswizardry)**
+**Front End Toolkit built upon the brilliant [InuitCSS](https://github.com/inuitcss), created by the equally brilliant Harry Roberts (@csswizardry).**
 
-**Leverages the [React Slingshot](https://github.com/coryhouse/react-slingshot) starter files by Cory House**
+**Leverages the [React Slingshot](https://github.com/coryhouse/react-slingshot) starter files by Cory House.**
 
-inuitcss is a framework in its truest sense: it does not provide you with UI and
-design out of the box, instead, it provides you with a solid architectural
-baseline upon which to complete your own work.
+##Installation
+
+Coming soon...
