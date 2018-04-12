@@ -24,7 +24,7 @@ class TypographyCard extends React.Component {
         'positive',
         'caution',
         'negative',
-        'info',
+        'info'
       ],
       dropPick: 'white',
       canvas: [
@@ -41,9 +41,9 @@ class TypographyCard extends React.Component {
         'positive',
         'caution',
         'negative',
-        'info',
+        'info'
       ],
-      canvasPick: 'dark-grey',
+      canvasPick: 'dark-grey'
     };
 
     this.showBaselineAction = this.showBaselineAction.bind(this);
@@ -95,29 +95,29 @@ class TypographyCard extends React.Component {
         element: 'h1',
         fontSize: 36,
         label: 'Heading 1',
-        typeface: 'FS Emeric Light',
+        typeface: 'FS Emeric Light'
       },
       {
         id: 2,
         element: 'h2',
         fontSize: 28,
         label: 'Heading 2',
-        typeface: 'FS Emeric Light',
+        typeface: 'FS Emeric Light'
       },
       {
         id: 3,
         element: 'h3',
         fontSize: 24,
         label: 'Heading 3',
-        typeface: 'FS Emeric Light',
+        typeface: 'FS Emeric Light'
       },
       {
         id: 4,
         element: 'p',
         fontSize: 16,
         label: 'Paragraph',
-        typeface: 'FS Emeric Regular',
-      },
+        typeface: 'FS Emeric Regular'
+      }
     ];
     const typeface = [
       { id: 1, faceName: 'FS Emeric Light', faceClass: 'fs-emeric-light' },
@@ -126,7 +126,7 @@ class TypographyCard extends React.Component {
       { id: 4, faceName: 'FS Emeric Regular', faceClass: 'fs-emeric-regular' },
       { id: 5, faceName: 'FS Emeric Core', faceClass: 'fs-emeric-core' },
       { id: 6, faceName: 'FS Emeric Thin', faceClass: 'fs-emeric-thin' },
-      { id: 7, faceName: 'FS Emeric Bold', faceClass: 'fs-emeric-bold' },
+      { id: 7, faceName: 'FS Emeric Bold', faceClass: 'fs-emeric-bold' }
     ];
     const typographyList = typography.map(type => (
       <div
@@ -191,7 +191,6 @@ class TypographyCard extends React.Component {
           <p>A tool that will display the correct typography.</p>
         </header>
 
-
         <div className="u-margin-bottom  c-toolbar">
           <button
             className={
@@ -221,7 +220,9 @@ class TypographyCard extends React.Component {
               <i className="fas fa-tint fa-lg" />
             </button>
             {this.state.showDropletsPopover ? (
-              <div className="c-toolbar__popover">{dropletsList}</div>
+              <div className="c-toolbar__popover  animated fadeInUp">
+                {dropletsList}
+              </div>
             ) : (
               ''
             )}
@@ -238,7 +239,9 @@ class TypographyCard extends React.Component {
               <i className="fas fa-paint-brush fa-lg" />
             </button>
             {this.state.showCanvasPopover ? (
-              <div className="c-toolbar__popover">{canvasList}</div>
+              <div className="c-toolbar__popover  animated fadeInUp">
+                {canvasList}
+              </div>
             ) : (
               ''
             )}

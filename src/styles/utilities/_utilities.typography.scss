@@ -38,7 +38,7 @@ $typeface: (
 @each $type, $values in $types {
   #{$type},
   .u-#{$type} {
-    @include inuit-font-size(nth($values, 1));
+    @include alchemy-font-size(nth($values, 1));
     font-family: nth($values, 2);
   }
 }

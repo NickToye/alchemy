@@ -1,6 +1,8 @@
 // Tools :: Animate
+/* stylelint-disable */
 
-$base-duration: .7s !default;
+$base-duration: $alchemy-global-speed !default;
 
 $use-fadeIn: true;
+$use-fadeInUp: true;
 $use-fadeOut: true;

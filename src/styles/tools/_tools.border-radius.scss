@@ -1,6 +1,7 @@
 // Tools :: Border Radius
+/* stylelint-disable */
 
-@function addUnit($value, $unit:px) {
+@function addUnit($value, $unit: px) {
   @if (type-of($value) == number and unitless($value)) {
     @return ($value / ($value * 0 + 1)) + $unit;
   } @else {
@@ -11,27 +12,27 @@
 // @include border-radius(10 bottom-left, 30 bottom-right);
 
 @mixin border-radius($args...) {
-  $corners : ();
-  $directions : ();
-  $excess-units : 0;
+  $corners: ();
+  $directions: ();
+  $excess-units: 0;
 
   $args: if(length($args) > 0, $args, null);
 
   @for $i from 1 through length($args) {
-
     @each $rad in nth($args, $i) {
       @if type-of($rad) == number and length($corners) < 4 {
-        $corners : append($corners, $rad);
-      } @elseif type-of($rad) == number and length($corners) == 4 {
-        $excess-units : $excess-units + 1;
+        $corners: append($corners, $rad);
+      }
+      @elseif type-of($rad) == number and length($corners) == 4 {
+        $excess-units: $excess-units + 1;
       }
     }
     @each $dir in nth($args, $i) {
       @if type-of($dir) == string {
         @if $dir == circle {
-          $corners : 100%;
+          $corners: 100%;
         } @else {
-          $directions : append($directions, $dir);
+          $directions: append($directions, $dir);
         }
       }
     }
@@ -41,35 +42,37 @@
     @warn "You can't have more than 4 units per argument. You have added '#{$excess-units}' number"+ if($excess-units != 1, 's', '') +" too many. Squares don't work that way.";
   }
 
-  $corners : if(length($corners) == 0, 16, $corners);
-  $corner-count : length($corners);
+  $corners: if(length($corners) == 0, 16, $corners);
+  $corner-count: length($corners);
 
   @if length($directions) == 0 {
     @if $corner-count == 4 {
-      $directions : top-left, top-right, bottom-right, bottom-left;
+      $directions: top-left, top-right, bottom-right, bottom-left;
     }
     @elseif $corner-count == 3 {
-      $directions : top-left, top-right, bottom-right;
+      $directions: top-left, top-right, bottom-right;
     }
     @elseif $corner-count == 2 {
-      $directions : top-left, top-right;
+      $directions: top-left, top-right;
     }
     @elseif $corner-count == 1 {
-      $directions : all;
+      $directions: all;
     }
   }
 
-  $direction-count : length($directions);
+  $direction-count: length($directions);
 
   @for $i from 1 through $direction-count {
-    $direction : nth($directions, $i);
-    $radius : 0;
+    $direction: nth($directions, $i);
+    $radius: 0;
     @if $corner-count == $direction-count {
       $radius: nth($corners, $i);
     } @else {
       @if $corner-count > $direction-count and $i == $direction-count {
         $radius: nth($corners, $i);
-        @include warning('You have entered more units than directions. Reverting back to the first number you entered');
+        @include warning(
+          'You have entered more units than directions. Reverting back to the first number you entered'
+        );
       } @else {
         $radius: nth($corners, 1);
       }
@@ -81,29 +84,28 @@
     }
     @elseif $direction == top {
       -webkit-border-top-left-radius: addUnit($radius);
-      -webkit-border-top-right-radius: addUnit($radius);
       border-top-left-radius: addUnit($radius);
+      -webkit-border-top-right-radius: addUnit($radius);
       border-top-right-radius: addUnit($radius);
     }
     @elseif $direction == right {
-      -webkit-border-top-right-radius: addUnit($radius);
       -webkit-border-bottom-right-radius: addUnit($radius);
-      border-top-right-radius: addUnit($radius);
       border-bottom-right-radius: addUnit($radius);
+      -webkit-border-top-right-radius: addUnit($radius);
+      border-top-right-radius: addUnit($radius);
     }
     @elseif $direction == bottom {
       -webkit-border-bottom-left-radius: addUnit($radius);
-      -webkit-border-bottom-right-radius: addUnit($radius);
       border-bottom-left-radius: addUnit($radius);
+      -webkit-border-bottom-right-radius: addUnit($radius);
       border-bottom-right-radius: addUnit($radius);
     }
     @elseif $direction == left {
-      -webkit-border-top-left-radius: addUnit($radius);
       -webkit-border-bottom-left-radius: addUnit($radius);
-      border-top-left-radius: addUnit($radius);
       border-bottom-left-radius: addUnit($radius);
-    }
-    @else {
+      -webkit-border-top-left-radius: addUnit($radius);
+      border-top-left-radius: addUnit($radius);
+    } @else {
       -webkit-border-#{$direction}-radius: addUnit($radius);
       border-#{$direction}-radius: addUnit($radius);
     }

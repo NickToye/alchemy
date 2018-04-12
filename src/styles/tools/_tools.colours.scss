@@ -1,29 +1,23 @@
 // Tools :: Colours
 
-@function alchemy-scheme(
-  $name: 'primary',
-  $variant: $alchemy-scheme-key,
-  $opacity: 1
-) {
-  $color: null;
+@function alchemy-color-level($color-name: 'primary', $level: 0) {
+  $color: alchemy-color($color-name);
+  $color-base: if($level < 0, alchemy-color('black'), alchemy-color('white'));
 
-  // Get the color spectrum
-  $color-spectrum: map-get($alchemy-scheme, $name);
-
-  // Get the color variant
-  @if $color-spectrum {
-    $color: map-get($color-spectrum, $variant);
-  }
-
-  // Get the alpha setting
-  $alpha: if(type-of($opacity) == 'number', $opacity, map-get($alchemy-opacity, $opacity));
-
-  // Set the alpha of the color
-  @if $alpha {
-    $color: rgba($color, $alpha);
-  }
-
-  @return $color;
+  @return mix($color-base, $color, abs($level) * $alchemy-color-interval);
 }
 
-$variant-height: 1.5rem;
+@function alchemy-color-contrast($bgcolor, $threshold: 40) {
+  @return if(
+    lightness($bgcolor) >= $threshold,
+    $alchemy-color-dark,
+    $alchemy-color-light
+  );
+}
+
+@function alchemy-color($key: 'primary') {
+  @return map-get($alchemy-colors, $key);
+}
+
+$alchemy-color-dark: alchemy-color(dark-grey);
+$alchemy-color-light: alchemy-color('white');

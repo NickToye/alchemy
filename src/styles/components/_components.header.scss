@@ -1,7 +1,7 @@
 // Components :: Header
 
 .c-header {
-  background: rgb(23, 53, 74); // TODO: Change this to a variable
+  background: $alchemy-init-header;
   display: flex;
   width: 100%;
 }

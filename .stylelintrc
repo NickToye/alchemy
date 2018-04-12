@@ -29,7 +29,7 @@
     "function-parentheses-space-inside": "never",
     "function-url-quotes": "always",
     "indentation": [ 2, {
-      "except": ["block"],
+
       "message": "Please use 2 spaces for indentation. Tabs make The Architect grumpy.",
       "severity": "warning"
     } ],
@@ -47,7 +47,7 @@
     "media-feature-name-no-vendor-prefix": true,
     "media-feature-parentheses-space-inside": "never",
     "no-missing-end-of-source-newline": true,
-    "number-leading-zero": "always",
+    "number-leading-zero": "never",
     "number-no-trailing-zeros": true,
     "order/order": [
       [
@@ -82,7 +82,7 @@
       }
     ],
     "scss/at-extend-no-missing-placeholder": true,
-    "scss/at-function-pattern": "^[a-z]+([a-z0-9-]+[a-z0-9]+)?$",
+    "scss/at-function-pattern": "^[a-z]+[a-zA-Z0-9]+([a-z0-9-]+[a-z0-9]+)?$",
     "scss/at-import-no-partial-leading-underscore": true,
     "scss/at-import-partial-extension-blacklist": ["scss"],
     "scss/at-mixin-pattern": "^[a-z]+([a-z0-9-]+[a-z0-9]+)?$",

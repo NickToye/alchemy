@@ -5,15 +5,14 @@
   display: inline-block;
 }
 
-
-
 .c-toolbar__btn {
-  background: alchemy-scheme('pale-grey');
-  border: none;
-  border-right: 1px solid alchemy-scheme('dark-grey', 'light', '20');
-  color: alchemy-scheme('dark-grey');
+  background: alchemy-color-level('light-grey', -1);
+  border: 0;
+  border-right: 1px solid alchemy-color-level('light-grey', -3);
+  color: alchemy-color('dark-grey');
   cursor: pointer;
   padding: 12px;
+  transition: $alchemy-global-transition;
 
   &:first-child {
     @include border-radius($alchemy-global-radius left);
@@ -24,8 +23,9 @@
   }
 
   .c-toolbar__popover & {
-    // background: alchemy-scheme('light-grey');
-    border: none;
+    background: alchemy-color-level('light-grey', -1);
+    border: 0;
+
     &:first-child {
       @include border-radius($alchemy-global-radius left);
     }
@@ -39,20 +39,22 @@
     border-radius: 0;
   }
 
-
   &:focus {
     outline: none;
   }
 
+  &:hover {
+    background: alchemy-color-level('pale-grey', 3);
+  }
+
   &.active {
-    background: alchemy-scheme('light-grey');
-    border-right: 1px solid alchemy-scheme('pale-grey', 'dark', '80');
+    background: alchemy-color-level('pale-grey', 2);
   }
 
   &.disabled {
     svg {
-      color: alchemy-scheme('light-grey');
-      opacity: .6 ;
+      color: alchemy-color('light-grey');
+      opacity: .6;
       pointer-events: none;
     }
   }
@@ -60,7 +62,6 @@
   svg {
     pointer-events: none;
   }
-
 }
 
 .tools-wrapper {
@@ -68,28 +69,17 @@
   position: relative;
 }
 
-@-webkit-keyframes fade-in {
-	from   { opacity: 0; bottom: 0; }
-	to { opacity: 1; bottom: 50px; }
-}
-
 .c-toolbar__popover {
-  // display: none;
+  @include absolute(bottom 50px);
 
-  position: absolute;
-  bottom: 50px;
   display: flex;
 
-  // border-bottom: 1px solid alchemy-scheme('dark-grey', 'light', 'lighter');
-  -webkit-animation: fade-in .3s linear 1, move-up .3s linear 1;
-
-  &:before {
+  &::before {
     @include triangle(
-      $direction : bottom,
-      $position  : top 100% left .75em,
+      $direction: bottom,
+      $position: top 100% left .75em,
       $size: 6px,
-      $color     : alchemy-scheme('pale-grey')
+      $color: alchemy-color-level('light-grey', -1)
     );
   }
-
 }

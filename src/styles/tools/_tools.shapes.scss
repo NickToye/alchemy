@@ -1,5 +1,7 @@
 // Tools :: Shapes
 
+/* stylelint-disable */
+
 // Arrow helper mixin
 // ---
 // @param [string] $direction: arrow direction
@@ -9,23 +11,23 @@
 // ---
 @mixin triangle($direction, $position, $color: currentColor, $size: 1em) {
   // Make sure the direction is valid
-@if not index(top right bottom left, $direction) {
-  @warn 'Direction must be one of top, right, bottom or left.';
-} @else {
-  $perpendicular-borders: $size solid transparent;
-  @include absolute($position); // Position
-  @include size(0); // Size
-  content: '';
-  z-index: 2;
+  @if not index(top right bottom left, $direction) {
+    @warn 'Direction must be one of top, right, bottom or left.';
+  } @else {
+    $perpendicular-borders: $size solid transparent;
+    @include absolute($position); // Position
+    @include size(0); // Size
+    content: '';
+    z-index: 2;
 
-  border-#{opposite-position($direction)}: $size * 1.5 solid $color;
+    border-#{opposite-position($direction)}: $size * 1.5 solid $color;
 
-@if $direction == top or $direction == bottom {
-  border-left: $perpendicular-borders;
-  border-right: $perpendicular-borders;
-} @else if $direction == right or $direction == left {
-  border-bottom: $perpendicular-borders;
-  border-top: $perpendicular-borders;
-}
-}
+    @if $direction == top or $direction == bottom {
+      border-left: $perpendicular-borders;
+      border-right: $perpendicular-borders;
+    } @else if $direction == right or $direction == left {
+      border-bottom: $perpendicular-borders;
+      border-top: $perpendicular-borders;
+    }
+  }
 }

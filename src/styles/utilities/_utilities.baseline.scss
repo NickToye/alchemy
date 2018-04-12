@@ -1,9 +1,9 @@
 // Utilities :: Baseline
 
 @function rem($target) {
-@if $target == 0 {
-  @return 0;
-}
+  @if $target == 0 {
+    @return 0;
+  }
   $rem-size: $target / $inuit-global-font-size;
   @return #{$rem-size}rem;
 }
@@ -14,21 +14,20 @@
   border-bottom: 1px solid $guide-color;
 }
 
-$guide-color: rgba(255, 255, 255, 0.5);
+$guide-color: rgba(alchemy-color('white'), .5);
 $blueprint-colour: rgb(61, 143, 183);
 
 .u-baseline {
   @include baseline-guide;
   background-color: $blueprint-colour;
-  color: $white;
 
   [class^='u-h'],
   [class^='u-p'] {
     cursor: pointer;
-    transition: background-color linear 0.3s;
+    transition: $alchemy-global-transition;
 
     &:hover {
-      background: rgba(20, 35, 43, 0.5);
+      background: rgba(20, 35, 43, .5);
       color: rgba(255, 179, 29, 1);
     }
   }

@@ -22,7 +22,7 @@ html {
 }
 
 body {
-  background: #14232b;
-  color: white;
+  background: $alchemy-init-bg;
+  color: alchemy-color('white');
   font-family: 'Montserrat', sans-serif;
 }

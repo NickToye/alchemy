@@ -2,7 +2,7 @@
 
 // Page-level constraining and wrapping elements.
 
-$inuit-wrapper-width: $global-wrapper-width;
+$inuit-wrapper-width: $alchemy-global-width;
 
 @if (type-of($inuit-wrapper-width) != number) {
   @error '`#{$inuit-wrapper-width}` needs to be a number.';

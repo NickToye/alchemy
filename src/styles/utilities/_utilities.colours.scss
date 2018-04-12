@@ -1,97 +1,59 @@
 // Utilities :: Colours
 
-@each $alchemy-key, $alchemy-variants in $alchemy-scheme {
-  $base-alchemy-value: map-get($alchemy-variants, 'base');
-  $contrast-alchemy-value: map-get($alchemy-variants, 'contraster');
-
-  .u-alchemy-#{$alchemy-key}-colour {
-    color: $base-alchemy-value;
-  }
-
+@each $alchemy-key, $alchemy-value in $alchemy-colors {
   .u-alchemy-#{$alchemy-key}-bg {
-    background-color: $base-alchemy-value;
-    color: $contrast-alchemy-value;
+    background-color: $alchemy-value;
+    color: alchemy-color-contrast($alchemy-value);
 
     &.c-swatch {
-      &:before,
-      &:after {
+      &::before,
+      &::after {
         @include border-radius($alchemy-global-radius bottom);
-        color: alchemy-scheme('medium-grey');
+        color: alchemy-color(dark-grey);
       }
-      &:before { content: str-replace($alchemy-key, '-', ' '); }
-      &:after {
-        content: "#{$base-alchemy-value}";
-        color: alchemy-scheme('grey', 'light');
+
+      &::before {
+        content: '#{$alchemy-key}';
       }
-    }
 
-    $tones: (
-      50, 100, 200, 300, 400, 500, 600, 700, 800, 900
-    );
-
-    @each $tone in $tones {
-      .c-swatch__tone-#{$tone} {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
-        background-color: darken($base-alchemy-value, $tone/25);
-
-        fizz: $tone/20;
-
-        &:before {
-          align-self: center;
-          position: absolute;
-          left: 12px;
-          content: "#{$tone}";
-        }
-
-        &:after {
-          align-self: center;
-          content: "value";
-          position: absolute;
-          right: 12px;
-        }
+      &::after {
+        color: alchemy-color('grey');
+        content: '#{$alchemy-value}';
       }
     }
-
-
-
-    $variant-gradient: (unquote("to right"),);
-
-    $index: 0;
-      @each $variant-name, $variant-value in $alchemy-variants {
-        $variant-gradient: append($variant-gradient, $variant-value $index * $variant-height);
-        $index: $index + 1;
-        $variant-gradient: append($variant-gradient, $variant-value $index * $variant-height);
-      }
-
-      .c-swatch__variants {
-        position: absolute;
-        width: $variant-height * length($alchemy-variants);
-        height: $variant-height;
-        right: 24px;
-        bottom: 20px;
-        background: linear-gradient(#{$variant-gradient});
-        @include border-radius($alchemy-global-radius/2);
-        box-shadow: 0 0 3px rgba(black,.4);
-      }
   }
 
+  .u-alchemy-#{$alchemy-key}-colour {
+    color: $alchemy-value;
+  }
 
-}
+  @for $i from 1 through $alchemy-mix-levels {
+    $name: alchemy-color-level('#{$alchemy-key}', $i);
 
+    .u-alchemy-#{$alchemy-key}-l#{$i}-bg {
+      background: alchemy-color-level('#{$alchemy-key}', $i);
+      color: alchemy-color-contrast($alchemy-value);
 
+      &::before {
+        content: 'Light #{$i}';
+      }
 
-.c-swatch__tones {
-  width: 98%;
-  margin: 0 auto;
-}
+      &::after {
+        content: '#{$name}';
+      }
+    }
 
-.c-swatch__tone {
-  height: 42px;
-  width: 100%;
-  background-color: inherit;
+    .u-alchemy-#{$alchemy-key}-d#{$i}-bg {
+      background: alchemy-color-level('#{$alchemy-key}', -$i);
+      color: alchemy-color-contrast($alchemy-value, 60);
 
+      &::before {
+        content: 'Dark #{$i}';
+      }
 
+      &::after {
+        content: '#{$name}';
+      }
+    }
+  }
 }

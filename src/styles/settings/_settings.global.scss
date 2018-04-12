@@ -8,7 +8,7 @@
 // Standardise some UI treatments.
 
 $alchemy-global-radius: 6px !default;
-$global-transition: all 300ms ease-in-out !default;
-$alchemy-global-shadow: 0 0 5px rgba(0,0,0,.4);
-
-$global-wrapper-width: 1600px !default;
+$alchemy-global-speed: 200ms;
+$alchemy-global-transition: all $alchemy-global-speed ease-in-out !default;
+$alchemy-global-shadow: 0 0 5px rgba(0, 0, 0, .4);
+$alchemy-global-width: 1600px !default;

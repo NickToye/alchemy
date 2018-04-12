@@ -69,6 +69,5 @@ $inuit-offsets: true;
 @import 'utilities/utilities.typography';
 // @import "utilities/utilities.widths";
 
-@import "./node_modules/animate-sass/animate.scss";
-
-// node_modules/animate-sass/_animate.scss
+// Third Parties
+@import './node_modules/animate-sass/animate';
