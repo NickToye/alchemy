@@ -1,7 +1,10 @@
-# ![inuitcss](http://inuitcss.com/img/logo-small.png)
+# Alchemy
 
-**Extensible, scalable, Sass-based, OOCSS framework for large and long-lasting
-UI projects.**
+**Front End Toolkit built upon the brilliant InuitCSS by the equally brilliant Harry Roberts (@csswizardry)**
+
+\*\*Leverages the React Slingshot starter files by Cory House
+
+### [`_example.settings.config.scss`](https://github.com/inuitcss/inuitcss/blob/master/settings/_example.settings.config.scss)
 
 inuitcss is a framework in its truest sense: it does not provide you with UI and
 design out of the box, instead, it provides you with a solid architectural
