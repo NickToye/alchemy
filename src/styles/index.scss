@@ -5,6 +5,7 @@
 @import 'settings/settings.global';
 @import 'settings/settings.config';
 @import 'settings/settings.colours';
+@import 'settings/settings.sizes';
 
 // Tools
 // @import 'tools/tools.font-size';
@@ -62,6 +63,7 @@ $inuit-offsets: true;
 @import 'utilities/utilities.baseline';
 @import 'utilities/utilities.colours';
 // @import "utilities/utilities.headings";
+@import 'utilities/utilities.helpers';
 // @import "utilities/utilities.hide";
 // @import "utilities/utilities.print";
 // @import "utilities/utilities.responsive-spacings";

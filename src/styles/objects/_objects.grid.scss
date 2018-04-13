@@ -6,7 +6,7 @@
   grid-template-columns: repeat(5, 1fr);
 
   &--auto {
-    grid-template-columns: repeat(6, 150px);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 
   &--code {

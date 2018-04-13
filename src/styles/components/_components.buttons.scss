@@ -1,24 +1,77 @@
 // Components :: Buttons
 
 .c-btn {
-  background: transparent;
   border: 0;
-  border-radius: 3px;
   cursor: pointer;
-  font-size: 14px;
-  margin-right: 12px;
-  padding: 12px;
+  display: inline-block;
+  font: inherit;
+  margin: 0;
+  padding: $inuit-global-spacing-unit-small $inuit-global-spacing-unit;
+  text-align: center;
   transition: $alchemy-global-transition;
+  vertical-align: middle;
 
   &:focus {
     outline: 0;
   }
+}
 
-  &--negative {
-    background-color: rgb(199, 68, 65);
+// Colour Variants
+@each $alchemy-key, $alchemy-value in $alchemy-colors {
+  .c-btn--#{$alchemy-key} {
+    background-color: $alchemy-value;
+
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      color: alchemy-color-contrast($alchemy-value);
+      text-decoration: none; /* [4] */
+    }
+
+    &:hover,
+    &:focus {
+      background-color: alchemy-color-level('#{$alchemy-key}', -2);
+    }
+  }
+}
+
+// Size Variants
+@each $alchemy-key, $alchemy-value in $alchemy-sizes {
+  .c-btn--#{$alchemy-key} {
+    padding: $alchemy-value/2 $alchemy-value;
+  }
+}
+
+// Rounded Buttons
+.c-btn--rounded {
+  border-radius: $alchemy-global-radius;
+}
+
+// Ghost Buttons
+$btn-ghost-border-width: 2px;
+
+.c-btn--ghost {
+  border: $btn-ghost-border-width solid currentColor;
+  padding: ($inuit-global-spacing-unit-small - $btn-ghost-border-width)
+    ($inuit-global-spacing-unit - $btn-ghost-border-width);
+
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    background: none;
   }
 
-  &--negative:hover {
-    background-color: darken(rgb(199, 68, 65), 10%);
+  @each $alchemy-key, $alchemy-value in $alchemy-sizes {
+    &.c-btn--#{$alchemy-key} {
+      padding: $alchemy-value/2 $alchemy-value;
+    }
+  }
+
+  @each $alchemy-key, $alchemy-value in $alchemy-colors {
+    &.c-btn--#{$alchemy-key} {
+      color: $alchemy-value;
+    }
   }
 }

@@ -13,7 +13,7 @@
       }
 
       &::before {
-        content: '#{$alchemy-key}';
+        content: str-replace($alchemy-key, '-', ' ');
       }
 
       &::after {
