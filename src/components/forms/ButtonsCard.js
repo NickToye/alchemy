@@ -229,13 +229,6 @@ class ButtonsCard extends React.Component {
 
     return (
       <section className="o-section u-padding">
-        <header>
-          <h2 className="u-h2">Buttons</h2>
-          <p>A tool that will display the correct buttons.</p>
-        </header>
-
-        <h3 className="u-h3">Button Styles</h3>
-
         <div className="u-margin-bottom u-margin-right  c-toolbar">
           {colourTypeList}
           <div className="tools-wrapper">
@@ -256,25 +249,35 @@ class ButtonsCard extends React.Component {
             ) : (
               ''
             )}
-          </div>
-        </div>
-        <div className="u-margin-bottom  c-toolbar">
-          <button
-            className={
-              'c-toolbar__btn ' +
-              (this.state.showRoundedButtons ? 'active' : '')
-            }
-            onClick={this.showRoundedButtonsAction}
-          >
-            <span className="u-padding-right-small">Rounded Buttons</span>
-            <i
+
+
+            </div>
+            <button
               className={
-                'fas fa-check fa-lg ' +
+                'c-toolbar__btn ' +
                 (this.state.showRoundedButtons ? 'active' : '')
               }
-            />
-          </button>
-        </div>
+              onClick={this.showRoundedButtonsAction}
+            >
+              <span className="u-padding-right-small">Rounded Buttons</span>
+              <i
+                className={
+                  'fas fa-check fa-lg ' +
+                  (this.state.showRoundedButtons ? 'active' : '')
+                }
+              />
+            </button>
+          </div>
+
+        <header>
+          <h2 className="u-h2">Buttons</h2>
+          <p>A tool that will display the correct buttons.</p>
+        </header>
+
+        <h3 className="u-h3">Button Styles</h3>
+
+
+
 
         <div className="u-margin-bottom">
           <h4 className="u-text-capitalise">{this.state.colourTypePick}</h4>

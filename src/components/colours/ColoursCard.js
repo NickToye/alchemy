@@ -206,12 +206,13 @@ class ColoursCard extends React.Component {
 
     return (
       <section className="o-section  u-padding">
+        <div className="u-margin-bottom  u-margin-right  c-toolbar">{colourTypeList}</div>
         <header className="u-margin-bottom-large">
           <h2 className="u-margin-bottom-none">Colour</h2>
           <p>A tool that will display the correct colours.</p>
         </header>
 
-        <div className="u-margin-bottom  c-toolbar">{colourTypeList}</div>
+
 
         <div className="u-margin-bottom">
           <h3 className="u-text-capitalise">{selectedColourType}</h3>

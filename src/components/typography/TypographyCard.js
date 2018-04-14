@@ -186,12 +186,7 @@ class TypographyCard extends React.Component {
     });
     return (
       <section className="o-section  u-padding">
-        <header className="u-margin-bottom-large">
-          <h2 className="u-h2  u-margin-bottom-none">Typography</h2>
-          <p>A tool that will display the correct typography.</p>
-        </header>
-
-        <div className="u-margin-bottom  c-toolbar">
+        <div className="u-margin-bottom  u-margin-right  c-toolbar">
           <button
             className={
               'c-toolbar__btn ' + (this.state.showBaseline ? 'active' : ' ')
@@ -256,6 +251,12 @@ class TypographyCard extends React.Component {
             <i className="fas fa-adjust fa-lg" />
           </button>
         </div>
+        <header className="u-margin-bottom-large">
+          <h2 className="u-h2  u-margin-bottom-none">Typography</h2>
+          <p>A tool that will display the correct typography.</p>
+        </header>
+
+
         <h3 className="u-h3">Type Sizes</h3>
         <div
           className={

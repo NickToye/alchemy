@@ -3,6 +3,8 @@
 .c-toolbar {
   box-shadow: $alchemy-global-shadow;
   display: inline-block;
+  position: absolute;
+  right: 0;
 }
 
 .c-toolbar__btn {
@@ -70,14 +72,14 @@
 }
 
 .c-toolbar__popover {
-  @include absolute(bottom 50px);
+  @include absolute(bottom 50px right 0);
 
   display: flex;
 
   &::before {
     @include triangle(
       $direction: bottom,
-      $position: top 100% left .75em,
+      $position: top 100% right .75em,
       $size: 6px,
       $color: alchemy-color-level('light-grey', -1)
     );
