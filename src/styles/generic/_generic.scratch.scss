@@ -1,1 +1,168 @@
 // Generic :: Scratch
+
+.atomic-makup {
+  display: flex;
+  justify-content: flex-start !important;
+
+  > * {
+    display: inline-block;
+  }
+}
+
+.nucleus {
+  @include size(6px);
+  background-color: alchemy-color(secondary1);
+  box-shadow: $alchemy-global-shadow;
+  outline: 1px solid black;
+}
+
+.atomic-small {
+  @include size(12px);
+  background-color: alchemy-color(primary);
+  box-shadow: $alchemy-global-shadow;
+  outline: 1px solid black;
+}
+
+.atomic-standard {
+  @include size(24px);
+  background-color: alchemy-color(primary);
+  box-shadow: $alchemy-global-shadow;
+  outline: 1px solid black;
+}
+
+.atomic-large {
+  @include size(48px);
+  background-color: alchemy-color(primary);
+  box-shadow: $alchemy-global-shadow;
+  outline: 1px solid black;
+}
+
+.atomic-huge {
+  @include size(96px);
+  background-color: alchemy-color(primary);
+  box-shadow: $alchemy-global-shadow;
+  outline: 1px solid black;
+}
+
+.atomic-padding-unit {
+  @include size($inuit-global-spacing-unit-factor * $inuit-global-baseline);
+
+  background-color: alchemy-color(secondary1);
+  position: relative;
+
+  &::before,
+  &::after {
+    @include alchemy-font-size($inuit-font-size-small);
+    content: '24px';
+  }
+
+  &::before {
+    @include absolute(right -36px);
+  }
+
+  &::after {
+    @include absolute(bottom -24px);
+  }
+}
+
+$alchemy-units: (
+  'tiny': 6,
+  'small': 12,
+  'standard': 24,
+  'large': 48,
+  'huge': 96
+);
+
+@each $unit, $value in $alchemy-units {
+  $half-value: $value/2;
+  $special-value: $value - 6;
+  $double-value: $value * 2;
+
+  .atomic-padding-unit-#{$unit} {
+    // @include size(400px);
+    @include stripes(45deg, $color1: #7e9772, $color2: darken(#7e9772, 15%));
+    border: 1px solid rgba(black, .8);
+    box-shadow: $alchemy-global-shadow;
+    position: relative;
+
+    &::before,
+    &::after {
+      @include alchemy-font-size($inuit-font-size-tiny);
+      color: alchemy-color(primary);
+      content: '#{$value}px';
+    }
+
+    &::before {
+      @include absolute(right 0 top 50%);
+      line-height: 50%;
+      text-align: center;
+      transform: rotate(90deg);
+      width: #{$double-value}px;
+    }
+
+    &::after {
+      @include absolute(left 50%);
+      bottom: #{$special-value}px;
+      height: 12px;
+      line-height: 1;
+      transform: translateX(-50%);
+    }
+
+    &-content {
+      @include alchemy-font-size($inuit-font-size-tiny, 16px);
+      align-items: center;
+
+      background-color: alchemy-color(dark-grey);
+      border: 1px solid rgba(black, .8);
+      box-shadow: $alchemy-global-shadow;
+      display: flex;
+      height: 100%;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  .atomic-margin-unit-#{$unit} {
+    @include stripes(45deg, $color1: #cb9d71, $color2: darken(#cb9d71, 15%));
+    border: 1px solid rgba(black, .8);
+    box-shadow: $alchemy-global-shadow;
+    position: relative;
+
+    &::before,
+    &::after {
+      @include alchemy-font-size($inuit-font-size-tiny);
+      color: alchemy-color(primary);
+      content: '#{$value}px';
+    }
+
+    &::before {
+      @include absolute(right 0 top 50%);
+      line-height: 50%;
+      text-align: center;
+      transform: rotate(90deg);
+      width: #{$double-value}px;
+    }
+
+    &::after {
+      @include absolute(left 50%);
+      bottom: #{$special-value}px;
+      height: 12px;
+      line-height: 1;
+      transform: translateX(-50%);
+    }
+
+    &-content {
+      @include alchemy-font-size($inuit-font-size-tiny, 16px);
+      align-items: center;
+      background-color: alchemy-color(dark-grey);
+      border: 1px solid rgba(black, .8);
+      box-shadow: $alchemy-global-shadow;
+      display: flex;
+      // height: 100%;
+      justify-content: center;
+      text-align: center;
+      // width: 100%;
+    }
+  }
+}

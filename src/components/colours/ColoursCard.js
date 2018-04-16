@@ -151,9 +151,7 @@ class ColoursCard extends React.Component {
         <div
           className={`c-swatch__tone  u-alchemy-${colourClassName}-${tone}-bg`}
           key={key}
-        >
-          {tone}
-        </div>
+        />
       ));
       return (
         <div className={`o-flex  o-flex__row  o-flex__wrap  c-swatch__tones`}>
@@ -198,7 +196,7 @@ class ColoursCard extends React.Component {
           value={type}
           onClick={this.showColourTypePick}
         >
-          <i className="fas fa-fw fa-paint-brush fa-lg u-padding-right-tiny" />
+          <i className="fas fa-fw fa-tag fa-lg u-padding-right-tiny" />
           {type}
         </button>
       );
@@ -206,13 +204,13 @@ class ColoursCard extends React.Component {
 
     return (
       <section className="o-section  u-padding">
-        <div className="u-margin-bottom  u-margin-right  c-toolbar">{colourTypeList}</div>
+        <div className="u-margin-bottom  u-margin-right  c-toolbar">
+          {colourTypeList}
+        </div>
         <header className="u-margin-bottom-large">
           <h2 className="u-margin-bottom-none">Colour</h2>
           <p>A tool that will display the correct colours.</p>
         </header>
-
-
 
         <div className="u-margin-bottom">
           <h3 className="u-text-capitalise">{selectedColourType}</h3>

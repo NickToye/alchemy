@@ -49,6 +49,10 @@
     background: alchemy-color-level('pale-grey', 3);
   }
 
+  // svg {
+  //   color: alchemy-color('grey');
+  // }
+
   &.active {
     background: alchemy-color-level('pale-grey', 2);
   }

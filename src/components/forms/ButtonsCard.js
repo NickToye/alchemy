@@ -7,6 +7,7 @@ class ButtonsCard extends React.Component {
       colourTypes: ['brand', 'neutral', 'utility', 'ghost'],
       colourTypePick: 'brand',
       showRoundedButtons: false,
+      showLargeRoundedButtons: false,
       showDropletsPopover: false,
       droplets: [
         'primary',
@@ -28,12 +29,22 @@ class ButtonsCard extends React.Component {
     };
     this.showColourTypePick = this.showColourTypePick.bind(this);
     this.showRoundedButtonsAction = this.showRoundedButtonsAction.bind(this);
+    this.showLargeRoundedButtonsAction = this.showLargeRoundedButtonsAction.bind(
+      this
+    );
     this.showDropPick = this.showDropPick.bind(this);
     this.showDropletsPopoverAction = this.showDropletsPopoverAction.bind(this);
   }
 
   showRoundedButtonsAction() {
     this.setState(prev => ({ showRoundedButtons: !prev.showRoundedButtons }));
+    this.setState({ showLargeRoundedButtons: false });
+  }
+
+  showLargeRoundedButtonsAction() {
+    this.setState(prev => ({
+      showLargeRoundedButtons: !prev.showLargeRoundedButtons
+    }));
   }
 
   showColourTypePick(e) {
@@ -157,6 +168,7 @@ class ButtonsCard extends React.Component {
     function ButtonSizes(props) {
       const colourClassName = props.colourClassName;
       const showRoundedButtons = props.showRoundedButtons;
+      const showLargeRoundedButtons = props.showLargeRoundedButtons;
       const colourTypePick = props.colourTypePick;
       const colourDropPick = props.colourDropPick;
       const buttonSizesMap = sizes.map((size, key) => (
@@ -164,6 +176,7 @@ class ButtonsCard extends React.Component {
           className={
             `c-btn  c-btn--${colourClassName}  c-btn--${size} ` +
             (showRoundedButtons ? 'c-btn--rounded ' : '') +
+            (showLargeRoundedButtons ? 'c-btn--rounded-large ' : '') +
             `u-margin-bottom  u-text-capitalise ` +
             (colourTypePick === 'ghost' ? `c-btn--${colourDropPick} ` : 'fffff')
           }
@@ -192,6 +205,9 @@ class ButtonsCard extends React.Component {
             className={
               `c-btn  c-btn--${swatch.colourClass} ` +
               (this.state.showRoundedButtons ? 'c-btn--rounded ' : '') +
+              (this.state.showLargeRoundedButtons
+                ? 'c-btn--rounded-large '
+                : '') +
               (this.state.colourTypePick === 'ghost'
                 ? `c-btn--${this.state.dropPick} `
                 : '') +
@@ -204,6 +220,7 @@ class ButtonsCard extends React.Component {
           <ButtonSizes
             colourClassName={swatch.colourClass}
             showRoundedButtons={this.state.showRoundedButtons}
+            showLargeRoundedButtons={this.state.showLargeRoundedButtons}
             colourTypePick={this.state.colourTypePick}
             colourDropPick={this.state.dropPick}
           />
@@ -221,7 +238,7 @@ class ButtonsCard extends React.Component {
           key={key}
           onClick={this.showColourTypePick}
         >
-          <i className="fas fa-fw fa-paint-brush fa-lg u-padding-right-tiny" />
+          <i className="fas fa-fw fa-tag fa-lg u-padding-right-tiny" />
           {type}
         </button>
       );
@@ -232,16 +249,21 @@ class ButtonsCard extends React.Component {
         <div className="u-margin-bottom u-margin-right  c-toolbar">
           {colourTypeList}
           <div className="tools-wrapper">
-            <button
-              className={
-                'c-toolbar__btn ' +
-                (this.state.showDropletsPopover ? 'active ' : ' ') +
-                `u-alchemy-${this.state.dropPick}-colour`
-              }
-              onClick={this.showDropletsPopoverAction}
-            >
-              <i className="fas fa-tint fa-lg" />
-            </button>
+            {this.state.colourTypePick === 'ghost' ? (
+              <button
+                className={
+                  'c-toolbar__btn ' +
+                  (this.state.showDropletsPopover ? 'active ' : ' ') +
+                  `u-alchemy-${this.state.dropPick}-colour`
+                }
+                onClick={this.showDropletsPopoverAction}
+              >
+                <i className="fas fa-tint fa-lg" />
+              </button>
+            ) : (
+              ''
+            )}
+
             {this.state.showDropletsPopover ? (
               <div className="c-toolbar__popover  animated fadeInUp">
                 {dropletsList}
@@ -249,35 +271,44 @@ class ButtonsCard extends React.Component {
             ) : (
               ''
             )}
-
-
-            </div>
+          </div>
+          <button
+            className={
+              'c-toolbar__btn ' +
+              (this.state.showRoundedButtons ? 'active' : '')
+            }
+            onClick={this.showRoundedButtonsAction}
+          >
+            <span className="u-padding-right-small">Rounded Buttons</span>
+            <i
+              className={
+                'fas fa-square fa-lg ' +
+                (this.state.showRoundedButtons ? 'active' : '')
+              }
+            />
+          </button>
+          {this.state.showRoundedButtons ? (
             <button
               className={
                 'c-toolbar__btn ' +
-                (this.state.showRoundedButtons ? 'active' : '')
+                (this.state.showLargeRoundedButtons ? 'active' : '')
               }
-              onClick={this.showRoundedButtonsAction}
+              onClick={this.showLargeRoundedButtonsAction}
             >
-              <span className="u-padding-right-small">Rounded Buttons</span>
-              <i
-                className={
-                  'fas fa-check fa-lg ' +
-                  (this.state.showRoundedButtons ? 'active' : '')
-                }
-              />
+              <span className="u-padding-right-small">Large</span>
+              <i className={'fas fa-plus fa-lg '} />
             </button>
-          </div>
+          ) : (
+            ''
+          )}
+        </div>
 
-        <header>
-          <h2 className="u-h2">Buttons</h2>
+        <header className="u-margin-bottom-large">
+          <h2 className="u-margin-none">Buttons</h2>
           <p>A tool that will display the correct buttons.</p>
         </header>
 
         <h3 className="u-h3">Button Styles</h3>
-
-
-
 
         <div className="u-margin-bottom">
           <h4 className="u-text-capitalise">{this.state.colourTypePick}</h4>
