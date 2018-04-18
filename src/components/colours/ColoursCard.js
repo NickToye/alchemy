@@ -154,7 +154,7 @@ class ColoursCard extends React.Component {
         />
       ));
       return (
-        <div className={`o-flex  o-flex__row  o-flex__wrap  c-swatch__tones`}>
+        <div className={`o-flex  o-flex--row  o-flex--wrap  c-swatch__tones`}>
           {colourTonesMap}
         </div>
       );
@@ -203,7 +203,7 @@ class ColoursCard extends React.Component {
     });
 
     return (
-      <section className="o-section  u-padding">
+      <section className="o-section  u-padding  u-relative">
         <div className="u-margin-bottom  u-margin-right  c-toolbar">
           {colourTypeList}
         </div>

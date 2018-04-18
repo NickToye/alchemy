@@ -13,7 +13,7 @@
 @import 'tools/tools.border-radius';
 @import 'tools/tools.clearfix';
 @import 'tools/tools.colours';
-// @import 'tools/tools.hidden';
+@import 'tools/tools.hidden';
 // @import 'node_modules/sass-mq/mq';
 @import 'tools/tools.cosmetics';
 @import 'tools/tools.dimensions';
@@ -36,11 +36,12 @@
 // @import 'elements/elements.tables';
 
 // Objects
-@import 'objects/objects.wrapper';
-@import 'objects/objects.grid';
 @import 'objects/objects.flex';
+@import 'objects/objects.grid';
+@import 'objects/objects.wrapper';
+
 // @import "objects/objects.layout";
-// @import "objects/objects.media";
+@import 'objects/objects.media';
 // @import "objects/objects.flag";
 // @import "objects/objects.list-bare";
 // @import "objects/objects.list-inline";
@@ -52,6 +53,7 @@
 // @import "objects/objects.pack";
 
 // Components
+@import 'components/components.atoms';
 @import 'components/components.buttons';
 @import 'components/components.header';
 @import 'components/components.navigation';
@@ -64,7 +66,7 @@ $inuit-offsets: true;
 @import 'utilities/utilities.colours';
 // @import "utilities/utilities.headings";
 @import 'utilities/utilities.helpers';
-// @import "utilities/utilities.hide";
+@import "utilities/utilities.hide";
 // @import "utilities/utilities.print";
 // @import "utilities/utilities.responsive-spacings";
 @import 'utilities/utilities.spacings';

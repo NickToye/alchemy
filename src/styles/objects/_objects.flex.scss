@@ -4,13 +4,24 @@
   align-content: center;
   display: flex;
   flex-flow: column nowrap;
+}
+
+.o-flex--start {
+  justify-content: flex-start;
+}
+
+.o-flex--justift-center {
   justify-content: center;
 }
 
-.o-flex__row {
+.o-flex--row {
   flex-direction: row;
 }
 
-.o-flex__wrap {
+.o-flex--wrap {
   flex-wrap: wrap;
+}
+
+.o-flex__item {
+  flex: 1;
 }

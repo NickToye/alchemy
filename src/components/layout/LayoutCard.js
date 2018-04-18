@@ -1,6 +1,26 @@
 import React from 'react';
 
 class LayoutCard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showXray: false,
+      showXrayOpacity: false
+    };
+
+    this.showXrayAction = this.showXrayAction.bind(this);
+    this.showXrayOpacityAction = this.showXrayOpacityAction.bind(this);
+  }
+
+  showXrayAction() {
+    this.setState(prev => ({ showXray: !prev.showXray }));
+    this.setState({ showXrayOpacity: false });
+  }
+
+  showXrayOpacityAction() {
+    this.setState(prev => ({ showXrayOpacity: !prev.showXrayOpacity }));
+  }
+
   render() {
     const factors = [
       {
@@ -63,6 +83,52 @@ class LayoutCard extends React.Component {
       );
     });
 
+    const atoms = [
+      {
+        id: 1,
+        size: 'small',
+        unit: 12,
+        factor: 2
+      },
+      {
+        id: 2,
+        size: 'standard',
+        unit: 24,
+        factor: 4
+      },
+      {
+        id: 3,
+        size: 'large',
+        unit: 48,
+        factor: 8
+      },
+      {
+        id: 4,
+        size: 'huge',
+        unit: 96,
+        factor: 16
+      }
+    ];
+
+    const atomicElements = atoms.map((atom, key) => {
+      return (
+        <div className="o-media" key={atom.key}>
+          <div
+            className={`o-media__img  atomic-${atom.size} u-margin-right-small`}
+          >
+            <div className="nucleus" />
+          </div>
+          <p className="o-media__body  u-margin-none">
+            <span className="u-margin-right-small">
+              Atomic Unit {atom.size}
+            </span>
+            <small className="u-alchemy-primary-colour">{atom.unit}px</small>
+            <br />Nucleus Unit (6px) multiplied by a factor of {atom.factor}.
+          </p>
+        </div>
+      );
+    });
+
     return (
       <section className="o-section u-padding">
         <header className="u-margin-bottom-large">
@@ -79,60 +145,16 @@ class LayoutCard extends React.Component {
           </header>
 
           <div className="o-grid  o-grid--centre  o-grid--auto">
-            <div className="atomic-makup">
-              <div className="nucleus u-margin-right-small" />
-              <p className="u-margin-none">
+            <div className="o-media">
+              <div className="o-media__img  nucleus u-margin-right-small" />
+              <p className="o-media__body  u-margin-none">
                 <span className="u-margin-right-small">Nucleus Unit</span>
                 <small className="u-alchemy-primary-colour">6px</small>
                 <br />Nucleus Unit (6px) multiplied by a factor of 1.
               </p>
             </div>
 
-            <div className="atomic-makup">
-              <div className="atomic-small u-margin-right-small">
-                <div className="nucleus" />
-              </div>
-              <p className="u-margin-none">
-                <span className="u-margin-right-small">Atomic Unit Small</span>
-                <small className="u-alchemy-primary-colour">12px</small>
-                <br />Nucleus Unit (6px) multiplied by a factor of 2.
-              </p>
-            </div>
-
-            <div className="atomic-makup">
-              <div className="atomic-standard u-margin-right-small">
-                <div className="nucleus" />
-              </div>
-              <p className="u-margin-none">
-                <span className="u-margin-right-small">
-                  Atomic Unit Standard
-                </span>
-                <small className="u-alchemy-primary-colour">24px</small>
-                <br />Nucleus Unit (6px) multiplied by a factor of 4.
-              </p>
-            </div>
-
-            <div className="atomic-makup">
-              <div className="atomic-large u-margin-right-small">
-                <div className="nucleus" />
-              </div>
-              <p className="u-margin-none">
-                <span className="u-margin-right-small">Atomic Unit Large</span>
-                <small className="u-alchemy-primary-colour">48px</small>
-                <br />Nucleus Unit (6px) multiplied by a factor of 8.
-              </p>
-            </div>
-
-            <div className="atomic-makup">
-              <div className="atomic-huge u-margin-right-small">
-                <div className="nucleus" />
-              </div>
-              <p className="u-margin-none">
-                <span className="u-margin-right-small">Atomic Unit Huge</span>
-                <small className="u-alchemy-primary-colour">96px</small>
-                <br />Nucleus Unit (6px) multiplied by a factor of 16.
-              </p>
-            </div>
+            {atomicElements}
           </div>
         </div>
 
@@ -144,11 +166,115 @@ class LayoutCard extends React.Component {
           </div>
         </div>
 
-        <div className="u-margin-bottom-large">
+        <div className="u-margin-bottom-huge">
           <h3>Margin</h3>
 
           <div className="o-grid  o-grid--centre  o-grid--auto">
             {factorsMargin}
+          </div>
+        </div>
+
+        <div className="u-margin-bottom-large u-padding-top-large  u-relative">
+          <header className="u-margin-bottom">
+            <h3>Layout Example</h3>
+          </header>
+          <div className="u-margin-bottom  c-toolbar">
+            <button
+              className={
+                'c-toolbar__btn ' + (this.state.showXray ? 'active' : ' ')
+              }
+              onClick={this.showXrayAction}
+            >
+              <i className="fas fa-x-ray fa-lg" />
+            </button>
+            <button
+              className={
+                'c-toolbar__btn ' +
+                (this.state.showXrayOpacity ? 'active' : ' ')
+              }
+              onClick={this.showXrayOpacityAction}
+            >
+              <i className="fas fa-heart fa-lg" />
+            </button>
+          </div>
+
+          <div className="o-flex  o-flex--row  o-flex--start  alchemy-layout-example  u-padding">
+            <div className="o-flex__item  alchemy-layout-example-child  u-margin-right">
+              <p className="u-margin-bottom">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Maecenas sed diam eget risus varius blandit sit amet non magna.
+                Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
+                auctor.
+              </p>
+              <p className="u-margin-bottom">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Maecenas sed diam eget risus varius blandit sit amet non magna.
+                Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
+                auctor.
+              </p>
+              <p className="u-margin-bottom">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Maecenas sed diam eget risus varius blandit sit amet non magna.
+                Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
+                auctor.
+              </p>
+              <p className="u-margin-bottom">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Maecenas sed diam eget risus varius blandit sit amet non magna.
+                Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
+                auctor.
+              </p>
+              <p className="u-margin-bottom">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Maecenas sed diam eget risus varius blandit sit amet non magna.
+                Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
+                auctor.
+              </p>
+            </div>
+            <div className="o-flex__item  o-flex  o-flex--column  alchemy-layout-example-child  u-margin-left">
+              <img
+                src="https://placeimg.com/1200/400/arch"
+                className="u-margin-bottom-large"
+              />
+              <div className="alchemy-layout-example-child-block  u-padding-large">
+                <h2>This is a content block</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Maecenas sed diam eget risus varius blandit sit amet non
+                  magna.
+                </p>
+              </div>
+            </div>
+
+            {this.state.showXray ? (
+              <div
+                className={
+                  'o-flex  o-flex--row  o-flex--start alchemy-layout-example-xray  u-padding ' +
+                  (this.state.showXrayOpacity
+                    ? 'alchemy-layout-example-xray-opacity'
+                    : ' ')
+                }
+              >
+                <div className="o-flex__item alchemy-layout-example-child-xray" />
+                <div className="o-flex__item  o-flex  o-flex--column  o-flex--start  alchemy-layout-example-child-xray  u-margin-left">
+                  <div className="alchemy-layout-example-xray-margin  o-flex__item">
+                    <div className="alchemy-layout-example-child-block-xray u-margin-bottom-large" />
+                  </div>
+                  <div className="alchemy-layout-example-child-block-xray  alchemy-layout-example-xray-padding  u-padding-large  o-flex__item">
+                    <div className="alchemy-layout-example-xray-padding-inner">
+                      <h2>This is a content block</h2>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Maecenas sed diam eget risus varius blandit sit amet non
+                        magna.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              ''
+            )}
           </div>
         </div>
       </section>

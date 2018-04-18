@@ -1,10 +1,10 @@
 // Components :: Toolbar
 
 .c-toolbar {
+  @include absolute(top $inuit-rhythm-unit right 0);
+
   box-shadow: $alchemy-global-shadow;
-  display: inline-block;
-  position: absolute;
-  right: 0;
+  display: flex;
 }
 
 .c-toolbar__btn {
@@ -13,6 +13,7 @@
   border-right: 1px solid alchemy-color-level('light-grey', -3);
   color: alchemy-color('dark-grey');
   cursor: pointer;
+  margin: 0;
   padding: 12px;
   transition: $alchemy-global-transition;
 

@@ -6,6 +6,7 @@ import ColoursCard from './components/colours/ColoursCard';
 import TypographyCard from './components/typography/TypographyCard';
 import ButtonsCard from './components/forms/ButtonsCard';
 import LayoutCard from './components/layout/LayoutCard';
+import AnimationsCard from './components/animations/AnimationsCard';
 
 export default (
   <Route path="/" component={App}>
@@ -14,5 +15,6 @@ export default (
     <Route path="typography" component={TypographyCard} />
     <Route path="buttons" component={ButtonsCard} />
     <Route path="layout" component={LayoutCard} />
+    <Route path="animations" component={AnimationsCard} />
   </Route>
 );

@@ -174,7 +174,7 @@ class TypographyCard extends React.Component {
         <button
           className={
             `u-alchemy-${drop}-colour c-toolbar__btn ` +
-            (isCurrent ? 'active' : '')
+              (isCurrent ? 'active' : '')
           }
           key={key}
           value={drop}
@@ -185,7 +185,7 @@ class TypographyCard extends React.Component {
       );
     });
     return (
-      <section className="o-section  u-padding">
+      <section className="o-section  u-padding  u-relative">
         <div className="u-margin-bottom  u-margin-right  c-toolbar">
           <button
             className={
@@ -255,7 +255,6 @@ class TypographyCard extends React.Component {
           <h2 className="u-h2  u-margin-bottom-none">Typography</h2>
           <p>A tool that will display the correct typography.</p>
         </header>
-
 
         <h3 className="u-h3">Type Sizes</h3>
         <div

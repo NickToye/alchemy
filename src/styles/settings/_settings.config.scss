@@ -22,3 +22,18 @@ $inuit-config: (
 @function inuit-config($key) {
   @return map-get($inuit-config, $key);
 }
+
+// Alchemy Atom Settings
+
+$alchemy-atoms: (
+  'tiny': 6,
+  'small': 12,
+  'standard': 24,
+  'large': 48,
+  'huge': 96
+);
+
+$alchemy-spacing-properties: (
+  'padding': ('padding', #789772, darken(#789772, 15%)),
+  'margin': ('margin', #cb9d71, darken(#cb9d71, 15%))
+) !default;

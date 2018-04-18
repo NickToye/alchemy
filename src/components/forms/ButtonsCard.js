@@ -186,7 +186,7 @@ class ButtonsCard extends React.Component {
         </button>
       ));
       return (
-        <div className={`o-flex  o-flex__column  o-flex__wrap`}>
+        <div className={`o-flex  o-flex__column  o-flex--wrap`}>
           <h4>Size Variations</h4>
           {buttonSizesMap}
         </div>
@@ -245,7 +245,7 @@ class ButtonsCard extends React.Component {
     });
 
     return (
-      <section className="o-section u-padding">
+      <section className="o-section u-padding  u-relative">
         <div className="u-margin-bottom u-margin-right  c-toolbar">
           {colourTypeList}
           <div className="tools-wrapper">
