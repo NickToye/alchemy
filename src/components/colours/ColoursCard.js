@@ -1,11 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import ColourSwatches from './ColourSwatches';
 
 class ColoursCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       colourTypes: ['brand', 'neutral', 'utility'],
-      colourTypePick: 'brand'
+      colourTypePick: 'brand',
     };
 
     this.showColourTypePick = this.showColourTypePick.bind(this);
@@ -19,6 +21,21 @@ class ColoursCard extends React.Component {
     this.setState({ showColourTones: e.target.value });
   }
 
+  renderColourTones(props) {
+    const tones = ['l1', 'l2', 'l3', 'l4', 'l5', 'd1', 'd2', 'd3', 'd4', 'd5'];
+    const colourClassName = this.props.colourClassName;
+    return (
+      <div className={`o-flex  o-flex--row  o-flex--wrap  c-swatch__tones`}>
+        {tones.map((tone, key) => (
+          <div
+            className={`c-swatch__tone  u-alchemy-${colourClassName}-${tone}-bg`}
+            key={key}
+          />
+        ))}
+      </div>
+    );
+  }
+
   render() {
     const swatches = [
       {
@@ -27,7 +44,7 @@ class ColoursCard extends React.Component {
           'This is the primary colour. Used mainly in the logo and accents.',
         colourClass: 'primary',
         colourTones: [this.state.colourTones],
-        colourType: 'brand'
+        colourType: 'brand',
       },
       {
         id: 2,
@@ -35,7 +52,7 @@ class ColoursCard extends React.Component {
           'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.',
         colourClass: 'secondary1',
         colourTones: [this.state.colourTones],
-        colourType: 'brand'
+        colourType: 'brand',
       },
       {
         id: 3,
@@ -43,7 +60,7 @@ class ColoursCard extends React.Component {
           'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.',
         colourClass: 'secondary2',
         colourTones: [this.state.colourTones],
-        colourType: 'brand'
+        colourType: 'brand',
       },
       {
         id: 4,
@@ -51,7 +68,7 @@ class ColoursCard extends React.Component {
           'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.',
         colourClass: 'secondary3',
         colourTones: [this.state.colourTones],
-        colourType: 'brand'
+        colourType: 'brand',
       },
       {
         id: 5,
@@ -59,7 +76,7 @@ class ColoursCard extends React.Component {
           'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.',
         colourClass: 'black',
         colourTones: [this.state.colourTones],
-        colourType: 'neutral'
+        colourType: 'neutral',
       },
       {
         id: 6,
@@ -67,7 +84,7 @@ class ColoursCard extends React.Component {
           'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.',
         colourClass: 'white',
         colourTones: [this.state.colourTones],
-        colourType: 'neutral'
+        colourType: 'neutral',
       },
       {
         id: 7,
@@ -75,7 +92,7 @@ class ColoursCard extends React.Component {
           'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.',
         colourClass: 'pale-grey',
         colourTones: [this.state.colourTones],
-        colourType: 'neutral'
+        colourType: 'neutral',
       },
       {
         id: 8,
@@ -83,7 +100,7 @@ class ColoursCard extends React.Component {
           'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.',
         colourClass: 'light-grey',
         colourTones: [this.state.colourTones],
-        colourType: 'neutral'
+        colourType: 'neutral',
       },
       {
         id: 9,
@@ -91,7 +108,7 @@ class ColoursCard extends React.Component {
           'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.',
         colourClass: 'grey',
         colourTones: [this.state.colourTones],
-        colourType: 'neutral'
+        colourType: 'neutral',
       },
       {
         id: 10,
@@ -99,7 +116,7 @@ class ColoursCard extends React.Component {
           'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.',
         colourClass: 'medium-grey',
         colourTones: [this.state.colourTones],
-        colourType: 'neutral'
+        colourType: 'neutral',
       },
       {
         id: 11,
@@ -107,7 +124,7 @@ class ColoursCard extends React.Component {
           'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.',
         colourClass: 'dark-grey',
         colourTones: [this.state.colourTones],
-        colourType: 'neutral'
+        colourType: 'neutral',
       },
       {
         id: 12,
@@ -115,7 +132,7 @@ class ColoursCard extends React.Component {
           'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.',
         colourClass: 'positive',
         colourTones: [this.state.colourTones],
-        colourType: 'utility'
+        colourType: 'utility',
       },
       {
         id: 13,
@@ -123,7 +140,7 @@ class ColoursCard extends React.Component {
           'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.',
         colourClass: 'caution',
         colourTones: [this.state.colourTones],
-        colourType: 'utility'
+        colourType: 'utility',
       },
       {
         id: 14,
@@ -131,7 +148,7 @@ class ColoursCard extends React.Component {
           'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.',
         colourClass: 'negative',
         colourTones: [this.state.colourTones],
-        colourType: 'utility'
+        colourType: 'utility',
       },
       {
         id: 15,
@@ -139,28 +156,11 @@ class ColoursCard extends React.Component {
           'Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.',
         colourClass: 'info',
         colourTones: [this.state.colourTones],
-        colourType: 'utility'
-      }
+        colourType: 'utility',
+      },
     ];
 
     const selectedColourType = this.state.colourTypePick;
-
-    function ColourTones(props) {
-      const colourClassName = props.colourClassName;
-      const colourTonesMap = tones.map((tone, key) => (
-        <div
-          className={`c-swatch__tone  u-alchemy-${colourClassName}-${tone}-bg`}
-          key={key}
-        />
-      ));
-      return (
-        <div className={`o-flex  o-flex--row  o-flex--wrap  c-swatch__tones`}>
-          {colourTonesMap}
-        </div>
-      );
-    }
-
-    const tones = ['l1', 'l2', 'l3', 'l4', 'l5', 'd1', 'd2', 'd3', 'd4', 'd5'];
 
     const swatchesList = swatches
       .filter(function(filteredSwatches) {
@@ -179,7 +179,7 @@ class ColoursCard extends React.Component {
               <span className="swatch-label">{swatch.usage}</span>
             </div>
           </div>
-          <ColourTones colourClassName={swatch.colourClass} />
+          {this.renderColourTones()}
         </div>
       ));
 
@@ -222,5 +222,9 @@ class ColoursCard extends React.Component {
     );
   }
 }
+
+ColoursCard.propTypes = {
+  colourClassName: PropTypes.string,
+};
 
 export default ColoursCard;
