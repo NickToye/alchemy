@@ -1,0 +1,16 @@
+// Alchemy :: Development
+
+.a-development {
+  padding-top: 10px;
+  position: relative;
+
+  &::before {
+    @include stripes(45deg, $color1: #f8cb5b, $color2: #000000);
+    @include absolute(top 0);
+    @include size(100%, 10px);
+
+    box-shadow: $alchemy-global-shadow;
+    content: '';
+    display: block;
+  }
+}

@@ -1,5 +1,6 @@
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import StyleLintPlugin from 'stylelint-webpack-plugin';
 import path from 'path';
 
 export default {
@@ -29,12 +30,19 @@ export default {
     new webpack.NoEmitOnErrorsPlugin(),
     new HtmlWebpackPlugin({
       // Create HTML file that includes references to bundled CSS and JS.
-      template: 'src/index.html',
+      template: 'src/index-dev.ejs',
+      favicon: 'src/favicon-dev.ico',
       minify: {
         removeComments: true,
         collapseWhitespace: true,
       },
       inject: true,
+    }),
+    new StyleLintPlugin({
+      configFile: '.stylelintrc',
+      failOnError: false,
+      quiet: false,
+      syntax: 'scss',
     }),
   ],
   module: {

@@ -21,7 +21,7 @@
     @include alchemy-font-size(14px);
 
     align-items: flex-start;
-    background: white;
+    background: alchemy-color('white');
     font-weight: bold;
   }
 

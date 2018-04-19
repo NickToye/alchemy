@@ -5,7 +5,7 @@ class LayoutCard extends React.Component {
     super(props);
     this.state = {
       showXray: false,
-      showXrayOpacity: false
+      showXrayOpacity: false,
     };
 
     this.showXrayAction = this.showXrayAction.bind(this);
@@ -25,24 +25,24 @@ class LayoutCard extends React.Component {
     const factors = [
       {
         id: 1,
-        size: 'tiny'
+        size: 'tiny',
       },
       {
         id: 2,
-        size: 'small'
+        size: 'small',
       },
       {
         id: 3,
-        size: 'standard'
+        size: 'standard',
       },
       {
         id: 4,
-        size: 'large'
+        size: 'large',
       },
       {
         id: 5,
-        size: 'huge'
-      }
+        size: 'huge',
+      },
     ];
 
     const factorsPadding = factors.map((factor, key) => {
@@ -88,26 +88,26 @@ class LayoutCard extends React.Component {
         id: 1,
         size: 'small',
         unit: 12,
-        factor: 2
+        factor: 2,
       },
       {
         id: 2,
         size: 'standard',
         unit: 24,
-        factor: 4
+        factor: 4,
       },
       {
         id: 3,
         size: 'large',
         unit: 48,
-        factor: 8
+        factor: 8,
       },
       {
         id: 4,
         size: 'huge',
         unit: 96,
-        factor: 16
-      }
+        factor: 16,
+      },
     ];
 
     const atomicElements = atoms.map((atom, key) => {

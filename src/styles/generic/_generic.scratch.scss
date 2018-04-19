@@ -26,7 +26,7 @@
 
 .alchemy-layout-example-child-xray {
   box-shadow: $alchemy-global-shadow;
-  outline: 1px solid black;
+  outline: 1px solid alchemy-color('black');
 
   &:nth-child(1) {
     background-color: alchemy-color('dark-grey');
@@ -38,9 +38,9 @@
 }
 
 .alchemy-layout-example-child-block-xray {
-  background: red;
+  background: alchemy-color('negative');
   box-shadow: $alchemy-global-shadow;
-  outline: 1px solid black;
+  outline: 1px solid alchemy-color('black');
 
   &:nth-child(1) {
     background-color: alchemy-color('dark-grey');
@@ -69,7 +69,6 @@
   background-color: alchemy-color('dark-grey');
 }
 
-
 // Animations
 
 .a-animations {
@@ -79,7 +78,6 @@
   margin: 0 auto;
   max-width: 400px;
 }
-
 
 // Utility classes
 

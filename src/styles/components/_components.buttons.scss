@@ -40,7 +40,7 @@
 @each $alchemy-key, $alchemy-value in $alchemy-sizes {
   .c-btn--#{$alchemy-key} {
     @include alchemy-font-size(nth($alchemy-value, 2), $modifier: -1);
-    padding: nth($alchemy-value,1)/2 nth($alchemy-value,1);
+    padding: nth($alchemy-value, 1) / 2 nth($alchemy-value, 1);
   }
 }
 
