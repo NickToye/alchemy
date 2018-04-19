@@ -65,6 +65,16 @@ const Header = () => {
             className="patch"
           />
         </Link>
+        <Link
+          to="/code"
+          className="u-padding-horizontal-small"
+          activeClassName="active"
+        >
+          <img
+            src={require('/Users/nicktoye/Dev/alchemy/src/images/Code@3x.png')}
+            className="patch"
+          />
+        </Link>
       </nav>
     </header>
   );
