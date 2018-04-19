@@ -61,7 +61,7 @@ const Header = () => {
           activeClassName="active"
         >
           <img
-            src={require('/Users/nicktoye/Dev/alchemy/src/images/Layout@3x.png')}
+            src={require('/Users/nicktoye/Dev/alchemy/src/images/Animation@3x.png')}
             className="patch"
           />
         </Link>
