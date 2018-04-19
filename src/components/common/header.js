@@ -11,7 +11,7 @@ const Header = () => {
           activeClassName="active"
         >
           <img
-            src={require('/Users/nicktoye/Dev/alchemy/src/images/Alchemy@3x.png')}
+            src={require('../../images/Alchemy@3x.png')}
             className="patch  patch--alchemy"
           />
         </IndexLink>
@@ -21,7 +21,7 @@ const Header = () => {
           activeClassName="active"
         >
           <img
-            src={require('/Users/nicktoye/Dev/alchemy/src/images/Colours@3x.png')}
+            src={require('../../images/Colours@3x.png')}
             className="patch"
           />
         </Link>
@@ -31,7 +31,7 @@ const Header = () => {
           activeClassName="active"
         >
           <img
-            src={require('/Users/nicktoye/Dev/alchemy/src/images/Typography@3x.png')}
+            src={require('../../images/Typography@3x.png')}
             className="patch"
           />
         </Link>
@@ -41,7 +41,7 @@ const Header = () => {
           activeClassName="active"
         >
           <img
-            src={require('/Users/nicktoye/Dev/alchemy/src/images/Buttons@3x.png')}
+            src={require('../../images/Buttons@3x.png')}
             className="patch"
           />
         </Link>
@@ -51,7 +51,7 @@ const Header = () => {
           activeClassName="active"
         >
           <img
-            src={require('/Users/nicktoye/Dev/alchemy/src/images/Layout@3x.png')}
+            src={require('../../images/Layout@3x.png')}
             className="patch"
           />
         </Link>
@@ -61,7 +61,7 @@ const Header = () => {
           activeClassName="active"
         >
           <img
-            src={require('/Users/nicktoye/Dev/alchemy/src/images/Animation@3x.png')}
+            src={require('../../images/Animation@3x.png')}
             className="patch"
           />
         </Link>
@@ -71,7 +71,7 @@ const Header = () => {
           activeClassName="active"
         >
           <img
-            src={require('/Users/nicktoye/Dev/alchemy/src/images/Code@3x.png')}
+            src={require('../../images/Code@3x.png')}
             className="patch"
           />
         </Link>
