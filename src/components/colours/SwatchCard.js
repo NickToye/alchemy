@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Tone from './Tone';
+import ToneCard from './ToneCard';
 
-class Swatch extends React.Component {
+class SwatchCard extends React.Component {
   render() {
     const tones = ['l1', 'l2', 'l3', 'l4', 'l5', 'd1', 'd2', 'd3', 'd4', 'd5'];
     const details = this.props.details;
@@ -14,7 +14,7 @@ class Swatch extends React.Component {
         />
         <div className="o-flex  o-flex--row  o-flex--wrap  c-swatch__tones">
           {Object.keys(tones).map(key => (
-            <Tone key={key} toneDetails={tones[key]} colourClass={details.colourClass} />
+            <ToneCard key={key} toneDetails={tones[key]} colourClass={details.colourClass} />
           ))}
         </div>
       </div>
@@ -22,8 +22,8 @@ class Swatch extends React.Component {
   }
 }
 
-Swatch.propTypes = {
+SwatchCard.propTypes = {
   details: PropTypes.object,
 };
 
-export default Swatch;
+export default SwatchCard;

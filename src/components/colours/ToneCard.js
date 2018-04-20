@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class Tone extends React.Component {
+class ToneCard extends React.Component {
   render() {
     const details = this.props.toneDetails;
     const colourClass = this.props.colourClass;
@@ -10,9 +10,9 @@ class Tone extends React.Component {
   }
 }
 
-Tone.propTypes = {
+ToneCard.propTypes = {
   toneDetails: PropTypes.string,
   colourClass: PropTypes.string,
 };
 
-export default Tone;
+export default ToneCard;

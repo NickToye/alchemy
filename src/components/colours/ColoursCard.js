@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import sampleColours from '../sample-colours';
-import Swatch from './Swatch';
+import sampleColours from '../data/sample-colours';
+import SwatchCard from './SwatchCard';
 
 class ColoursCard extends React.Component {
   constructor(props) {
@@ -52,7 +52,7 @@ class ColoursCard extends React.Component {
               .filter(function(filteredSwatches) {
                 return colours[filteredSwatches].colourType === selectedColourType;
               })
-              .map((key, filteredSwatches) => <Swatch key={key} details={this.state.colours[key]} />)}
+              .map((key, filteredSwatches) => <SwatchCard key={key} details={this.state.colours[key]} />)}
           </div>
         </div>
       </section>

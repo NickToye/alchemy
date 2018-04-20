@@ -1,5 +1,8 @@
 import React from 'react';
 
+import sampleColours from '../data/sample-colours';
+import Droplet from '../colours/Droplet';
+
 class TypographyCard extends React.Component {
   constructor(props) {
     super(props);
@@ -10,22 +13,7 @@ class TypographyCard extends React.Component {
       showDropletsPopover: false,
       showCanvasPopover: false,
       dropPickDisabled: false,
-      droplets: [
-        'primary',
-        'secondary1',
-        'secondary2',
-        'secondary3',
-        'black',
-        'light-grey',
-        'pale-grey',
-        'grey',
-        'medium-grey',
-        'dark-grey',
-        'positive',
-        'caution',
-        'negative',
-        'info',
-      ],
+      droplets: sampleColours,
       dropPick: 'white',
       canvas: [
         'primary',
@@ -140,42 +128,33 @@ class TypographyCard extends React.Component {
       </div>
     ));
     const typefaceList = typeface.map(face => (
-      <p
-        className={`u-${face.faceClass} u-p u-margin-bottom-none`}
-        key={face.id}
-      >
+      <p className={`u-${face.faceClass} u-p u-margin-bottom-none`} key={face.id}>
         {face.faceName}
       </p>
     ));
 
     const dropPick = this.state.dropPick;
 
-    const dropletsList = this.state.droplets.map((drop, key) => {
-      const isCurrent = this.state.dropPick === drop;
-      return (
-        <button
-          className={
-            `u-alchemy-${drop}-colour c-toolbar__btn ` +
-            (isCurrent ? 'active' : '')
-          }
-          key={key}
-          value={drop}
-          onClick={this.showDropPick}
-        >
-          <i className="fas fa-tint fa-lg" />
-        </button>
-      );
-    });
+    // const dropletsList = this.state.droplets.map((drop, key) => {
+    //   const isCurrent = this.state.dropPick === drop;
+    //   return (
+    //     <button
+    //       className={`u-alchemy-${drop}-colour c-toolbar__btn ` + (isCurrent ? 'active' : '')}
+    //       key={key}
+    //       value={drop}
+    //       onClick={this.showDropPick}
+    //     >
+    //       <i className="fas fa-tint fa-lg" />
+    //     </button>
+    //   );
+    // });
 
     const canvasPick = this.state.canvasPick;
     const canvasList = this.state.canvas.map((drop, key) => {
       const isCurrent = this.state.canvasPick === drop;
       return (
         <button
-          className={
-            `u-alchemy-${drop}-colour c-toolbar__btn ` +
-            (isCurrent ? 'active' : '')
-          }
+          className={`u-alchemy-${drop}-colour c-toolbar__btn ` + (isCurrent ? 'active' : '')}
           key={key}
           value={drop}
           onClick={this.showCanvasPick}
@@ -188,26 +167,23 @@ class TypographyCard extends React.Component {
       <section className="o-section  u-padding  u-relative">
         <div className="u-margin-bottom  u-margin-right  c-toolbar">
           <button
-            className={
-              'c-toolbar__btn ' + (this.state.showBaseline ? 'active' : ' ')
-            }
+            className={'c-toolbar__btn ' + (this.state.showBaseline ? 'active' : ' ')}
             onClick={this.showBaselineAction}
           >
             <i className="fas fa-th fa-lg" />
           </button>
           <button
-            className={
-              'c-toolbar__btn ' + (this.state.showMargin ? 'active' : ' ')
-            }
+            className={'c-toolbar__btn ' + (this.state.showMargin ? 'active' : ' ')}
             onClick={this.showMarginAction}
           >
             <i className="fas fa-expand fa-lg" />
           </button>
+
           <div className="tools-wrapper">
             <button
               className={
                 'c-toolbar__btn ' +
-                (this.state.showDropletsPopover ? 'active ' : ' ') +
+                (this.state.showDropletsPopover ? 'active ' : '') +
                 `u-alchemy-${this.state.dropPick}-colour`
               }
               onClick={this.showDropletsPopoverAction}
@@ -216,12 +192,15 @@ class TypographyCard extends React.Component {
             </button>
             {this.state.showDropletsPopover ? (
               <div className="c-toolbar__popover  animated fadeInUp">
-                {dropletsList}
+                {Object.keys(this.state.droplets).map(key => (
+                  <Droplet key={key} details={this.state.droplets[key]} action={this.showDropPick} />
+                ))}
               </div>
             ) : (
               ''
             )}
           </div>
+
           <div className="tools-wrapper">
             <button
               className={
@@ -234,18 +213,14 @@ class TypographyCard extends React.Component {
               <i className="fas fa-paint-brush fa-lg" />
             </button>
             {this.state.showCanvasPopover ? (
-              <div className="c-toolbar__popover  animated fadeInUp">
-                {canvasList}
-              </div>
+              <div className="c-toolbar__popover  animated fadeInUp">{canvasList}</div>
             ) : (
               ''
             )}
           </div>
 
           <button
-            className={
-              'c-toolbar__btn ' + (this.state.showContraster ? 'active' : '')
-            }
+            className={'c-toolbar__btn ' + (this.state.showContraster ? 'active' : '')}
             onClick={this.showContrasterAction}
           >
             <i className="fas fa-adjust fa-lg" />
@@ -259,21 +234,15 @@ class TypographyCard extends React.Component {
         <h3 className="u-h3">Type Sizes</h3>
         <div
           className={
-            `u-alchemy-${
-              this.state.canvasPick
-            }-bg o-pod  u-padding  u-margin-bottom-huge ` +
+            `u-alchemy-${this.state.canvasPick}-bg o-pod  u-padding  u-margin-bottom-huge ` +
             (this.state.showBaseline ? 'u-baseline-wrapper' : '')
           }
         >
-          <div className={this.state.showBaseline ? 'u-baseline' : ''}>
-            {typographyList}
-          </div>
+          <div className={this.state.showBaseline ? 'u-baseline' : ''}>{typographyList}</div>
         </div>
 
         <h3 className="u-h3">Typefaces</h3>
-        <div className="o-pod  u-padding  u-margin-bottom  u-alchemy-white-bg">
-          {typefaceList}
-        </div>
+        <div className="o-pod  u-padding  u-margin-bottom  u-alchemy-white-bg">{typefaceList}</div>
       </section>
     );
   }
