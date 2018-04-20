@@ -12,9 +12,11 @@ class Swatch extends React.Component {
           className={`u-alchemy-${details.colourClass}-bg  c-swatch  o-grid__el  u-padding`}
           key={details.id}
         />
-        {Object.keys(tones).map(key => (
-          <Tone key={key} toneDetails={tones[key]} colourClass={details.colourClass} />
-        ))}
+        <div className="o-flex  o-flex--row  o-flex--wrap  c-swatch__tones">
+          {Object.keys(tones).map(key => (
+            <Tone key={key} toneDetails={tones[key]} colourClass={details.colourClass} />
+          ))}
+        </div>
       </div>
     );
   }

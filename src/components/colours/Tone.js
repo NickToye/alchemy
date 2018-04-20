@@ -6,13 +6,7 @@ class Tone extends React.Component {
     const details = this.props.toneDetails;
     const colourClass = this.props.colourClass;
 
-    return (
-      <div className="o-flex">
-        <div className="c-swatch__variants" />
-
-        <div className={`c-swatch__tone  u-alchemy-${colourClass}-${details}-bg`} key={details.key} />
-      </div>
-    );
+    return <div className={`c-swatch__tone  u-alchemy-${colourClass}-${details}-bg`} key={details.key} />;
   }
 }
 

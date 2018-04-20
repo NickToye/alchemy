@@ -19,44 +19,8 @@ class ColoursCard extends React.Component {
     this.setState({ colourTypePick: e.target.value });
   }
 
-  showColourTonesAction(e) {
-    this.setState({ showColourTones: e.target.value });
-  }
-
-  renderColourTones(props) {
-    const tones = ['l1', 'l2', 'l3', 'l4', 'l5', 'd1', 'd2', 'd3', 'd4', 'd5'];
-    const colourClassName = this.props.colourClassName;
-    return (
-      <div className={`o-flex  o-flex--row  o-flex--wrap  c-swatch__tones`}>
-        {tones.map((tone, key) => (
-          <div className={`c-swatch__tone  u-alchemy-${colourClassName}-${tone}-bg`} key={key} />
-        ))}
-      </div>
-    );
-  }
-
   render() {
     const selectedColourType = this.state.colourTypePick;
-    const swatches = this.state.colours;
-
-    // const swatchesList = swatches
-    //   .filter(function(filteredSwatches) {
-    //     return filteredSwatches.colourType === selectedColourType;
-    //   })
-    //   .map((swatch, filteredSwatches) => (
-    //     <div key={swatch.key}>
-    //       <div
-    //         className={`u-alchemy-${swatch.colourClass}-bg  c-swatch  o-grid__el  u-padding`}
-    //         key={swatch.id}
-    //       >
-    //         <div className="o-flex">
-    //           <div className="c-swatch__variants" />
-    //           <span className="swatch-label">{swatch.usage}</span>
-    //         </div>
-    //       </div>
-    //       {this.renderColourTones()}
-    //     </div>
-    //   ));
 
     const colourTypeList = this.state.colourTypes.map((type, key) => {
       const isCurrent = this.state.colourTypePick === type;
@@ -84,9 +48,11 @@ class ColoursCard extends React.Component {
         <div className="u-margin-bottom">
           <h3 className="u-text-capitalise">{selectedColourType}</h3>
           <div className="o-grid  o-grid--centre  o-grid--start o-grid--auto">
-            {Object.keys(this.state.colours).map(key => (
-              <Swatch key={key} details={this.state.colours[key]} />
-            ))}
+            {Object.keys(this.state.colours)
+              .filter(function(filteredSwatches) {
+                return filteredSwatches === selectedColourType;
+              })
+              .map((key, filteredSwatches) => <Swatch key={key} details={this.state.colours[key]} />)}
           </div>
         </div>
       </section>
@@ -101,4 +67,3 @@ ColoursCard.propTypes = {
 export default ColoursCard;
 
 // TODO Re-apply filter to swatches
-// FIX Tones #Important
