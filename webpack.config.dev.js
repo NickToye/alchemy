@@ -132,3 +132,5 @@ export default {
     ],
   },
 };
+
+// TODO Fix StyleLint, crashes on lint errors
