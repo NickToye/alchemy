@@ -21,7 +21,7 @@ class ColoursCard extends React.Component {
 
   render() {
     const selectedColourType = this.state.colourTypePick;
-
+    const colours = this.state.colours;
     const colourTypeList = this.state.colourTypes.map((type, key) => {
       const isCurrent = this.state.colourTypePick === type;
       return (
@@ -50,7 +50,7 @@ class ColoursCard extends React.Component {
           <div className="o-grid  o-grid--centre  o-grid--start o-grid--auto">
             {Object.keys(this.state.colours)
               .filter(function(filteredSwatches) {
-                return filteredSwatches === selectedColourType;
+                return colours[filteredSwatches].colourType === selectedColourType;
               })
               .map((key, filteredSwatches) => <Swatch key={key} details={this.state.colours[key]} />)}
           </div>
@@ -65,5 +65,3 @@ ColoursCard.propTypes = {
 };
 
 export default ColoursCard;
-
-// TODO Re-apply filter to swatches
