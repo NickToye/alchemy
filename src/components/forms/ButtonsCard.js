@@ -1,9 +1,10 @@
 import React from 'react';
 
 import colours from '../data/colours';
-
+import sizes from '../data/sizes';
 import Droplet from '../colours/Droplet';
 import Button from './Button';
+import ButtonSized from './ButtonSized';
 import ColourType from '../colours/ColourType';
 
 class ButtonsCard extends React.Component {
@@ -16,6 +17,7 @@ class ButtonsCard extends React.Component {
       showLargeRoundedButtons: false,
       showDropletsPopover: false,
       showGhost: false,
+      size: sizes,
       colours: colours,
       dropPick: 'white',
     };
@@ -58,136 +60,37 @@ class ButtonsCard extends React.Component {
   }
 
   render() {
-    // const swatches = [
-    //   {
-    //     id: 1,
-    //     colourClass: 'primary',
-    //     colourType: 'brand',
-    //   },
-    //   {
-    //     id: 2,
-    //     colourClass: 'secondary1',
-    //     colourType: 'brand',
-    //   },
-    //   {
-    //     id: 3,
-    //     colourClass: 'secondary2',
-    //     colourType: 'brand',
-    //   },
-    //   {
-    //     id: 4,
-    //     colourClass: 'secondary3',
-    //     colourType: 'brand',
-    //   },
-    //   {
-    //     id: 5,
-    //     colourClass: 'black',
-    //     colourType: 'neutral',
-    //   },
-    //   {
-    //     id: 6,
-    //     colourClass: 'white',
-    //     colourType: 'neutral',
-    //   },
-    //   {
-    //     id: 7,
-    //     colourClass: 'pale-grey',
-    //     colourType: 'neutral',
-    //   },
-    //   {
-    //     id: 8,
-    //     colourClass: 'light-grey',
-    //     colourType: 'neutral',
-    //   },
-    //   {
-    //     id: 9,
-    //     colourClass: 'grey',
-    //     colourType: 'neutral',
-    //   },
-    //   {
-    //     id: 10,
-    //     colourClass: 'medium-grey',
-    //     colourType: 'neutral',
-    //   },
-    //   {
-    //     id: 11,
-    //     colourClass: 'dark-grey',
-    //     colourType: 'neutral',
-    //   },
-    //   {
-    //     id: 12,
-    //     colourClass: 'positive',
-    //     colourType: 'utility',
-    //   },
-    //   {
-    //     id: 13,
-    //     colourClass: 'caution',
-    //     colourType: 'utility',
-    //   },
-    //   {
-    //     id: 14,
-    //     colourClass: 'negative',
-    //     colourType: 'utility',
-    //   },
-    //   {
-    //     id: 15,
-    //     colourClass: 'info',
-    //     colourType: 'utility',
-    //   },
-    //   {
-    //     id: 16,
-    //     colourClass: 'ghost',
-    //     colourType: 'ghost',
-    //   },
-    // ];
-
     const dropPick = this.state.dropPick;
-
-    // const dropletsList = this.state.colours.map((drop, key) => {
-    //   const isCurrent = this.state.dropPick === drop;
-    //   return (
-    //     <button
-    //       className={`u-alchemy-${drop}-colour c-toolbar__btn ` + (isCurrent ? 'active' : '')}
-    //       key={key}
-    //       value={drop}
-    //       onClick={this.showDropPick}
-    //     >
-    //       <i className="fas fa-tint fa-lg" />
-    //     </button>
-    //   );
-    // });
 
     const selectedColourType = this.state.colourTypePick;
 
-    function ButtonSizes(props) {
-      const colourClassName = props.colourClassName;
-      const showRoundedButtons = props.showRoundedButtons;
-      const showLargeRoundedButtons = props.showLargeRoundedButtons;
-      const colourTypePick = props.colourTypePick;
-      const colourDropPick = props.colourDropPick;
-      const buttonSizesMap = sizes.map((size, key) => (
-        <button
-          className={
-            `c-btn  c-btn--${colourClassName}  c-btn--${size} ` +
-            (showRoundedButtons ? 'c-btn--rounded ' : '') +
-            (showLargeRoundedButtons ? 'c-btn--rounded-large ' : '') +
-            `u-margin-bottom  u-text-capitalise ` +
-            (colourTypePick === 'ghost' ? `c-btn--${colourDropPick} ` : 'fffff')
-          }
-          key={key}
-        >
-          {size} Button
-        </button>
-      ));
-      return (
-        <div className={`o-flex  o-flex__column  o-flex--wrap`}>
-          <h4>Size Variations</h4>
-          {buttonSizesMap}
-        </div>
-      );
-    }
-
-    const sizes = ['tiny', 'small', 'standard', 'large', 'huge'];
+    // function ButtonSizes(props) {
+    //   const colourClassName = props.colourClassName;
+    //   const showRoundedButtons = props.showRoundedButtons;
+    //   const showLargeRoundedButtons = props.showLargeRoundedButtons;
+    //   const colourTypePick = props.colourTypePick;
+    //   const colourDropPick = props.colourDropPick;
+    //   const buttonSizesMap = sizes.map((size, key) => (
+    //     <button
+    //       className={
+    //         `c-btn  c-btn--${colourClassName}  c-btn--${size} ` +
+    //         (showRoundedButtons ? 'c-btn--rounded ' : '') +
+    //         (showLargeRoundedButtons ? 'c-btn--rounded-large ' : '') +
+    //         `u-margin-bottom  u-text-capitalise ` +
+    //         (colourTypePick === 'ghost' ? `c-btn--${colourDropPick} ` : 'fffff')
+    //       }
+    //       key={key}
+    //     >
+    //       {size} Button
+    //     </button>
+    //   ));
+    //   return (
+    //     <div className={`o-flex  o-flex__column  o-flex--wrap`}>
+    //       <h4>Size Variations</h4>
+    //       {buttonSizesMap}
+    //     </div>
+    //   );
+    // }
 
     // const buttonColours = swatches
     //   .filter(function(filteredSwatches) {
@@ -217,21 +120,6 @@ class ButtonsCard extends React.Component {
     //     </div>
     //   ));
 
-    // const colourTypeList = this.state.colourTypes.map((type, key) => {
-    //   const isCurrent = this.state.colourTypePick === type;
-    //   return (
-    //     <button
-    //       className={`c-toolbar__btn  u-text-capitalise ` + (isCurrent ? 'active' : '')}
-    //       value={type}
-    //       key={key}
-    //       onClick={this.showColourTypePick}
-    //     >
-    //       <i className="fas fa-fw fa-tag fa-lg u-padding-right-tiny" />
-    //       {type}
-    //     </button>
-    //   );
-    // });
-
     return (
       <section className="o-section u-padding  u-relative">
         <div className="u-margin-bottom u-margin-right  c-toolbar">
@@ -241,7 +129,7 @@ class ButtonsCard extends React.Component {
           <div className="tools-wrapper">
             <button className={'c-toolbar__btn '} onClick={this.showGhostAction}>
               <span className="u-padding-right-small">Show Ghost</span>
-              <i className={'fas fa-square fa-lg ' + (this.state.showGhost ? 'active' : '')} />
+              <i className={'far fa-square fa-lg ' + (this.state.showGhost ? 'active' : '')} />
             </button>
 
             {this.state.showDropletsPopover ? (
@@ -289,13 +177,18 @@ class ButtonsCard extends React.Component {
                 return colours[filteredSwatches].colourType === selectedColourType;
               })
               .map((key, filteredSwatches) => (
-                <Button
-                  key={key}
-                  details={this.state.colours[key]}
-                  roundedButtons={this.state.showRoundedButtons}
-                  largeRoundedButtons={this.state.showLargeRoundedButtons}
-                  showGhost={this.state.showGhost}
-                />
+                <div key={key} className="o-flex o--column">
+                  <Button
+                    key={key}
+                    details={this.state.colours[key]}
+                    roundedButtons={this.state.showRoundedButtons}
+                    largeRoundedButtons={this.state.showLargeRoundedButtons}
+                    showGhost={this.state.showGhost}
+                  />
+                  {Object.keys(this.state.size).map(key => (
+                    <ButtonSized key={key} swatch={[key].colourClass} sizing={this.state.size[key]} />
+                  ))}
+                </div>
               ))}
           </div>
         </div>
