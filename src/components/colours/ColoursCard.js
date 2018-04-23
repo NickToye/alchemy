@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import sampleColours from '../data/sample-colours';
+import colours from '../data/colours';
 import SwatchCard from './SwatchCard';
 
 class ColoursCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      colours: sampleColours,
+      colours: colours,
       colourTypes: ['brand', 'neutral', 'utility'],
       colourTypePick: 'brand',
     };

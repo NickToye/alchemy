@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class Droplet extends React.Component {
+class Canvas extends React.Component {
   render() {
     const details = this.props.details;
     return (
@@ -11,15 +11,15 @@ class Droplet extends React.Component {
         value={details.colourClass}
         onClick={this.props.action}
       >
-        <i className="fas fa-tint fa-lg" />
+        <i className="fas fa-paint-brush fa-lg" />
       </button>
     );
   }
 }
 
-Droplet.propTypes = {
+Canvas.propTypes = {
   details: PropTypes.object,
   action: PropTypes.func,
 };
 
-export default Droplet;
+export default Canvas;

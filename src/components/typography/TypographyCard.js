@@ -1,7 +1,13 @@
 import React from 'react';
 
-import sampleColours from '../data/sample-colours';
+import colours from '../data/colours';
+import typefaces from '../data/typefaces';
+import typography from '../data/typography';
+
 import Droplet from '../colours/Droplet';
+import Canvas from '../colours/Canvas';
+import Type from '../typography/Type';
+import Face from '../typography/Face';
 
 class TypographyCard extends React.Component {
   constructor(props) {
@@ -13,25 +19,11 @@ class TypographyCard extends React.Component {
       showDropletsPopover: false,
       showCanvasPopover: false,
       dropPickDisabled: false,
-      droplets: sampleColours,
-      dropPick: 'white',
-      canvas: [
-        'primary',
-        'secondary1',
-        'secondary2',
-        'secondary3',
-        'black',
-        'light-grey',
-        'pale-grey',
-        'grey',
-        'medium-grey',
-        'dark-grey',
-        'positive',
-        'caution',
-        'negative',
-        'info',
-      ],
-      canvasPick: 'dark-grey',
+      colours: colours,
+      type: typography,
+      face: typefaces,
+      dropPick: 'white', // TODO Try and pick a colour from an array
+      canvasPick: 'dark-grey', // TODO Try and pick a colour from an array
     };
 
     this.showBaselineAction = this.showBaselineAction.bind(this);
@@ -77,92 +69,9 @@ class TypographyCard extends React.Component {
   }
 
   render() {
-    const typography = [
-      {
-        id: 1,
-        element: 'h1',
-        fontSize: 36,
-        label: 'Heading 1',
-        typeface: 'FS Emeric Light',
-      },
-      {
-        id: 2,
-        element: 'h2',
-        fontSize: 28,
-        label: 'Heading 2',
-        typeface: 'FS Emeric Light',
-      },
-      {
-        id: 3,
-        element: 'h3',
-        fontSize: 24,
-        label: 'Heading 3',
-        typeface: 'FS Emeric Light',
-      },
-      {
-        id: 4,
-        element: 'p',
-        fontSize: 16,
-        label: 'Paragraph',
-        typeface: 'FS Emeric Regular',
-      },
-    ];
-    const typeface = [
-      { id: 1, faceName: 'FS Emeric Light', faceClass: 'fs-emeric-light' },
-      { id: 2, faceName: 'FS Emeric Book', faceClass: 'fs-emeric-book' },
-      { id: 3, faceName: 'FS Emeric Medium', faceClass: 'fs-emeric-medium' },
-      { id: 4, faceName: 'FS Emeric Regular', faceClass: 'fs-emeric-regular' },
-      { id: 5, faceName: 'FS Emeric Core', faceClass: 'fs-emeric-core' },
-      { id: 6, faceName: 'FS Emeric Thin', faceClass: 'fs-emeric-thin' },
-      { id: 7, faceName: 'FS Emeric Bold', faceClass: 'fs-emeric-bold' },
-    ];
-    const typographyList = typography.map(type => (
-      <div
-        className={
-          `u-${type.element} u-alchemy-${this.state.dropPick}-colour ` +
-          (this.state.showMargin ? 'u-margin-none' : '')
-        }
-        key={type.id}
-      >
-        {type.label} - {type.fontSize}px
-      </div>
-    ));
-    const typefaceList = typeface.map(face => (
-      <p className={`u-${face.faceClass} u-p u-margin-bottom-none`} key={face.id}>
-        {face.faceName}
-      </p>
-    ));
-
     const dropPick = this.state.dropPick;
-
-    // const dropletsList = this.state.droplets.map((drop, key) => {
-    //   const isCurrent = this.state.dropPick === drop;
-    //   return (
-    //     <button
-    //       className={`u-alchemy-${drop}-colour c-toolbar__btn ` + (isCurrent ? 'active' : '')}
-    //       key={key}
-    //       value={drop}
-    //       onClick={this.showDropPick}
-    //     >
-    //       <i className="fas fa-tint fa-lg" />
-    //     </button>
-    //   );
-    // });
-
     const canvasPick = this.state.canvasPick;
-    const canvasList = this.state.canvas.map((drop, key) => {
-      const isCurrent = this.state.canvasPick === drop;
-      return (
-        <button
-          className={`u-alchemy-${drop}-colour c-toolbar__btn ` + (isCurrent ? 'active' : '')}
-          key={key}
-          value={drop}
-          onClick={this.showCanvasPick}
-        >
-          <i className="fas fa-paint-brush fa-lg" />
-        </button>
-      );
-    });
+
     return (
       <section className="o-section  u-padding  u-relative">
         <div className="u-margin-bottom  u-margin-right  c-toolbar">
@@ -192,8 +101,8 @@ class TypographyCard extends React.Component {
             </button>
             {this.state.showDropletsPopover ? (
               <div className="c-toolbar__popover  animated fadeInUp">
-                {Object.keys(this.state.droplets).map(key => (
-                  <Droplet key={key} details={this.state.droplets[key]} action={this.showDropPick} />
+                {Object.keys(this.state.colours).map(key => (
+                  <Droplet key={key} details={this.state.colours[key]} action={this.showDropPick} />
                 ))}
               </div>
             ) : (
@@ -213,7 +122,11 @@ class TypographyCard extends React.Component {
               <i className="fas fa-paint-brush fa-lg" />
             </button>
             {this.state.showCanvasPopover ? (
-              <div className="c-toolbar__popover  animated fadeInUp">{canvasList}</div>
+              <div className="c-toolbar__popover  animated fadeInUp">
+                {Object.keys(this.state.colours).map(key => (
+                  <Canvas key={key} details={this.state.colours[key]} action={this.showCanvasPick} />
+                ))}
+              </div>
             ) : (
               ''
             )}
@@ -238,11 +151,23 @@ class TypographyCard extends React.Component {
             (this.state.showBaseline ? 'u-baseline-wrapper' : '')
           }
         >
-          <div className={this.state.showBaseline ? 'u-baseline' : ''}>{typographyList}</div>
+          <div
+            className={
+              `u-alchemy-${this.state.dropPick}-colour ` + (this.state.showBaseline ? 'u-baseline' : '')
+            }
+          >
+            {Object.keys(this.state.type).map(key => (
+              <Type key={key} details={this.state.type[key]} margin={this.state.showMargin} />
+            ))}
+          </div>
         </div>
 
         <h3 className="u-h3">Typefaces</h3>
-        <div className="o-pod  u-padding  u-margin-bottom  u-alchemy-white-bg">{typefaceList}</div>
+        <div className="o-pod  u-padding  u-margin-bottom  u-alchemy-white-bg">
+          {Object.keys(this.state.face).map(key => (
+            <Face key={key} details={this.state.face[key]} margin={this.state.showMargin} />
+          ))}
+        </div>
       </section>
     );
   }
