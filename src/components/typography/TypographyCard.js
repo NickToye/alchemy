@@ -22,8 +22,8 @@ class TypographyCard extends React.Component {
       colours: colours,
       type: typography,
       face: typefaces,
-      dropPick: 'white', // TODO Try and pick a colour from an array
-      canvasPick: 'dark-grey', // TODO Try and pick a colour from an array
+      dropPick: '', // TODO Try and pick a colour from an array
+      canvasPick: '', // TODO Try and pick a colour from an array
     };
 
     this.showBaselineAction = this.showBaselineAction.bind(this);

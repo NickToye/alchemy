@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import colours from '../data/colours';
 import SwatchCard from './SwatchCard';
+import ColourType from './ColourType';
 
 class ColoursCard extends React.Component {
   constructor(props) {
@@ -21,25 +22,15 @@ class ColoursCard extends React.Component {
 
   render() {
     const selectedColourType = this.state.colourTypePick;
-    const colours = this.state.colours;
-    const colourTypeList = this.state.colourTypes.map((type, key) => {
-      const isCurrent = this.state.colourTypePick === type;
-      return (
-        <button
-          className={`c-toolbar__btn  u-text-capitalise ` + (isCurrent ? 'active' : '')}
-          key={key}
-          value={type}
-          onClick={this.showColourTypePick}
-        >
-          <i className="fas fa-fw fa-tag fa-lg u-padding-right-tiny" />
-          {type}
-        </button>
-      );
-    });
+    // const colours = this.state.colours;
 
     return (
       <section className="o-section  u-padding  u-relative">
-        <div className="u-margin-bottom  u-margin-right  c-toolbar">{colourTypeList}</div>
+        <div className="u-margin-bottom  u-margin-right  c-toolbar">
+          {Object.keys(this.state.colourTypes).map(key => (
+            <ColourType key={key} details={this.state.colourTypes[key]} action={this.showColourTypePick} />
+          ))}
+        </div>
         <header className="u-margin-bottom-large">
           <h2 className="u-margin-bottom-none">Colour</h2>
           <p>A tool that will display the correct colours.</p>
