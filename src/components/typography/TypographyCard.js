@@ -164,9 +164,7 @@ class TypographyCard extends React.Component {
 
         <h3 className="u-h3">Typefaces</h3>
         <div className="o-pod  u-padding  u-margin-bottom  u-alchemy-white-bg">
-          {Object.keys(this.state.face).map(key => (
-            <Face key={key} details={this.state.face[key]} margin={this.state.showMargin} />
-          ))}
+          {Object.keys(this.state.face).map(key => <Face key={key} details={this.state.face[key]} />)}
         </div>
       </section>
     );
