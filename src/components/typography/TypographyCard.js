@@ -177,24 +177,24 @@ class TypographyCard extends React.Component {
         </div>
 
         <h3 className="u-h3">Typefaces</h3>
-        <div className="o-pod  u-padding  u-margin-bottom  u-alchemy-white-bg">
-          <div className="c-textbar  o-flex  o-flex--row u-margin-bottom">
-            <input
-              className="c-textbar_action o-form_input"
-              type="text"
-              value={this.state.exampleText}
-              onChange={this.updateExampleText}
-              size="30"
+        <div className="c-textbar  o-flex  o-flex--row u-padding">
+          <input
+            className="c-textbar_action o-form_input"
+            type="text"
+            value={this.state.exampleText}
+            onChange={this.updateExampleText}
+            size="30"
+          />
+          {Object.keys(this.state.elements).map(key => (
+            <Element
+              key={key}
+              details={this.state.elements[key]}
+              elementPick={this.state.exampleElement}
+              action={this.updateExampleElement}
             />
-            {Object.keys(this.state.elements).map(key => (
-              <Element
-                key={key}
-                details={this.state.elements[key]}
-                elementPick={this.state.exampleElement}
-                action={this.updateExampleElement}
-              />
-            ))}
-          </div>
+          ))}
+        </div>
+        <div className="o-pod  u-padding  u-margin-bottom  u-alchemy-white-bg">
           {Object.keys(this.state.face).map(key => (
             <Face
               key={key}

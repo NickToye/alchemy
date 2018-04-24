@@ -85,7 +85,8 @@
 }
 
 .c-textbar {
-  // @include border-radius($alchemy-global-radius);
+  background: #173748;
+  @include border-radius($alchemy-global-radius top);
   // background: alchemy-color('dark-grey');
 }
 
