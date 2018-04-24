@@ -27,7 +27,7 @@ class TypographyCard extends React.Component {
       canvasPick: '', // TODO Try and pick a colour from an array
       exampleText: 'Alchemy Type Tester',
       exampleElement: 'p',
-      elements: ['h1', 'h2', 'h3', 'h4', 'p'],
+      elements: ['h1', 'h2', 'h3', 'p'],
     };
 
     this.showBaselineAction = this.showBaselineAction.bind(this);
@@ -178,7 +178,7 @@ class TypographyCard extends React.Component {
 
         <h3 className="u-h3">Typefaces</h3>
         <div className="o-pod  u-padding  u-margin-bottom  u-alchemy-white-bg">
-          <div className="c-textbar  o-flex  o-flex--row u-margin-bottom  u-padding-small">
+          <div className="c-textbar  o-flex  o-flex--row u-margin-bottom">
             <input
               className="c-textbar_action o-form_input"
               type="text"

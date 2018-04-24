@@ -8,4 +8,11 @@
   @include alchemy-font-size(14px);
   border: 0;
   padding: $inuit-global-spacing-unit-tiny $inuit-global-spacing-unit-small;
+  transition: $alchemy-global-transition;
+
+  &:focus {
+    outline: none;
+    background-color: alchemy-color('light-grey');
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+  }
 }

@@ -85,18 +85,27 @@
 }
 
 .c-textbar {
-  @include border-radius($alchemy-global-radius);
-  background: alchemy-color('dark-grey');
+  // @include border-radius($alchemy-global-radius);
+  // background: alchemy-color('dark-grey');
 }
 
 .c-textbar_action {
-  border-right: 1px solid alchemy-color('medium-grey');
+  border: 1px solid alchemy-color('medium-grey');
+  border-right: 0;
 
   &:last-child {
-    border-right: 0;
+    border-right: 1px solid alchemy-color('medium-grey');
+  }
+
+  &:hover {
+    background-color: alchemy-color('light-grey');
   }
 
   &.active {
-    background-color: alchemy-color-level('secondary1', 4);
+    background-color: alchemy-color-level('light-grey', -1);
+  }
+
+  &.c-btn {
+    width: 40px;
   }
 }
