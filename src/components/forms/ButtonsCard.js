@@ -1,10 +1,10 @@
 import React from 'react';
 
 import colours from '../data/colours';
-import sizes from '../data/sizes';
+
 import Droplet from '../colours/Droplet';
 import Button from './Button';
-import ButtonSized from './ButtonSized';
+
 import ColourType from '../colours/ColourType';
 
 class ButtonsCard extends React.Component {
@@ -17,7 +17,7 @@ class ButtonsCard extends React.Component {
       showLargeRoundedButtons: false,
       showDropletsPopover: false,
       showGhost: false,
-      size: sizes,
+
       colours: colours,
       dropPick: 'white',
     };
@@ -171,13 +171,13 @@ class ButtonsCard extends React.Component {
 
         <div className="u-margin-bottom">
           <h4 className="u-text-capitalise">{this.state.colourTypePick}</h4>
-          <div className="o-grid  o-grid--centre  o-grid--start o-grid--auto">
+          <div className="o-grid">
             {Object.keys(this.state.colours)
               .filter(function(filteredSwatches) {
                 return colours[filteredSwatches].colourType === selectedColourType;
               })
               .map((key, filteredSwatches) => (
-                <div key={key} className="o-flex o--column">
+                <div key={key}>
                   <Button
                     key={key}
                     details={this.state.colours[key]}
@@ -185,9 +185,6 @@ class ButtonsCard extends React.Component {
                     largeRoundedButtons={this.state.showLargeRoundedButtons}
                     showGhost={this.state.showGhost}
                   />
-                  {Object.keys(this.state.size).map(key => (
-                    <ButtonSized key={key} swatch={[key].colourClass} sizing={this.state.size[key]} />
-                  ))}
                 </div>
               ))}
           </div>

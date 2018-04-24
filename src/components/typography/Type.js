@@ -18,7 +18,7 @@ class Type extends React.Component {
 
 Type.propTypes = {
   details: PropTypes.object,
-  margin: PropTypes.object,
+  margin: PropTypes.bool,
 };
 
 export default Type;

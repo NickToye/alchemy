@@ -19,7 +19,7 @@ class ColourType extends React.Component {
 }
 
 ColourType.propTypes = {
-  details: PropTypes.object,
+  details: PropTypes.string,
   action: PropTypes.func,
 };
 
