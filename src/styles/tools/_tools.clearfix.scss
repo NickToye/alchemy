@@ -8,7 +8,7 @@
 // }
 
 @mixin inuit-clearfix() {
-  &::after {
+  &:after {
     clear: both !important;
     content: '' !important;
     display: block !important;

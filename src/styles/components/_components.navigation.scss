@@ -7,11 +7,11 @@
 .patch {
   cursor: pointer;
   max-height: 150px;
-  opacity: .4;
-  transition: opacity linear .3s;
+  opacity: 0.4;
+  transition: opacity linear 0.3s;
 
   &:hover {
-    opacity: .6;
+    opacity: 0.6;
   }
 
   .active & {

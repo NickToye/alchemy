@@ -8,6 +8,7 @@ import Droplet from '../colours/Droplet';
 import Canvas from '../colours/Canvas';
 import Type from '../typography/Type';
 import Face from '../typography/Face';
+import Element from '../typography/Element';
 
 class TypographyCard extends React.Component {
   constructor(props) {
@@ -24,6 +25,9 @@ class TypographyCard extends React.Component {
       face: typefaces,
       dropPick: '', // TODO Try and pick a colour from an array
       canvasPick: '', // TODO Try and pick a colour from an array
+      exampleText: 'Alchemy Type Tester',
+      exampleElement: 'p',
+      elements: ['h1', 'h2', 'h3', 'h4', 'p'],
     };
 
     this.showBaselineAction = this.showBaselineAction.bind(this);
@@ -33,6 +37,8 @@ class TypographyCard extends React.Component {
     this.showContrasterAction = this.showContrasterAction.bind(this);
     this.showDropletsPopoverAction = this.showDropletsPopoverAction.bind(this);
     this.showCanvasPopoverAction = this.showCanvasPopoverAction.bind(this);
+    this.updateExampleText = this.updateExampleText.bind(this);
+    this.updateExampleElement = this.updateExampleElement.bind(this);
   }
 
   showBaselineAction() {
@@ -66,6 +72,14 @@ class TypographyCard extends React.Component {
     this.setState(prev => ({ showContraster: !prev.showContraster }));
     this.setState({ dropPick: '' });
     this.setState(prev => ({ dropPickDisabled: !prev.dropPickDisabled }));
+  }
+
+  updateExampleText(e) {
+    this.setState({ exampleText: e.target.value });
+  }
+
+  updateExampleElement(e) {
+    this.setState({ exampleElement: e.target.value });
   }
 
   render() {
@@ -164,7 +178,31 @@ class TypographyCard extends React.Component {
 
         <h3 className="u-h3">Typefaces</h3>
         <div className="o-pod  u-padding  u-margin-bottom  u-alchemy-white-bg">
-          {Object.keys(this.state.face).map(key => <Face key={key} details={this.state.face[key]} />)}
+          <div className="c-textbar  o-flex  o-flex--row u-margin-bottom  u-padding-small">
+            <input
+              className="c-textbar_action o-form_input"
+              type="text"
+              value={this.state.exampleText}
+              onChange={this.updateExampleText}
+              size="30"
+            />
+            {Object.keys(this.state.elements).map(key => (
+              <Element
+                key={key}
+                details={this.state.elements[key]}
+                elementPick={this.state.exampleElement}
+                action={this.updateExampleElement}
+              />
+            ))}
+          </div>
+          {Object.keys(this.state.face).map(key => (
+            <Face
+              key={key}
+              details={this.state.face[key]}
+              exampleText={this.state.exampleText}
+              exampleElement={this.state.exampleElement}
+            />
+          ))}
         </div>
       </section>
     );

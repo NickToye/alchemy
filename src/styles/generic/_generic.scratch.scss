@@ -14,7 +14,6 @@
   @include absolute(left 0 top 0);
   @include stripes(45deg, $color1: #789772, $color2: darken(#789772, 15%));
   @include size(100%);
-
   transition: $alchemy-global-transition;
   z-index: 2;
 
@@ -54,7 +53,7 @@
 }
 
 .alchemy-layout-example-xray-opacity {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .alchemy-layout-example-xray-margin {
@@ -73,7 +72,6 @@
 
 .a-animations {
   @include size(400px, 200px);
-
   border-radius: $alchemy-global-radius;
   margin: 0 auto;
   max-width: 400px;

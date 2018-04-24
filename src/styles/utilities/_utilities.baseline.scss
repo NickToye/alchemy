@@ -1,6 +1,6 @@
 // Utilities :: Baseline
 
-@function rem($target) {
+@function alchemy-rem($target) {
   @if $target == 0 {
     @return 0;
   }
@@ -8,17 +8,17 @@
   @return #{$rem-size}rem;
 }
 
-@mixin baseline-guide() {
+@mixin alchemy-baseline-guide() {
   @include linear-gradient($guide-color 1px, transparent 1px);
-  background-size: 100% rem($inuit-rhythm-unit);
+  background-size: 100% alchemy-rem($inuit-rhythm-unit);
   border-bottom: 1px solid $guide-color;
 }
 
-$guide-color: rgba(alchemy-color('white'), .5);
+$guide-color: rgba(alchemy-color('white'), 0.5);
 $blueprint-colour: rgb(61, 143, 183);
 
 .u-baseline {
-  @include baseline-guide;
+  @include alchemy-baseline-guide;
   background-color: $blueprint-colour;
 
   [class^='u-h'],
@@ -27,7 +27,7 @@ $blueprint-colour: rgb(61, 143, 183);
     transition: $alchemy-global-transition;
 
     &:hover {
-      background: rgba(20, 35, 43, .5);
+      background: rgba(20, 35, 43, 0.5);
       color: rgba(255, 179, 29, 1);
     }
   }

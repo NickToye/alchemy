@@ -4,9 +4,11 @@ import PropTypes from 'prop-types';
 class ColourType extends React.Component {
   render() {
     const details = this.props.details;
+    const colourTypePick = this.props.colourTypePick;
+    const isCurrent = colourTypePick === details;
     return (
       <button
-        className={`c-toolbar__btn  u-text-capitalise `}
+        className={`c-toolbar__btn  u-text-capitalise ` + (isCurrent ? 'active' : '')}
         key={details.key}
         value={details}
         onClick={this.props.action}
@@ -21,6 +23,7 @@ class ColourType extends React.Component {
 ColourType.propTypes = {
   details: PropTypes.string,
   action: PropTypes.func,
+  colourTypePick: PropTypes.string,
 };
 
 export default ColourType;

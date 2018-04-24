@@ -2,7 +2,6 @@
 
 .c-toolbar {
   @include absolute(top $inuit-rhythm-unit right 0);
-
   box-shadow: $alchemy-global-shadow;
   display: flex;
 }
@@ -61,7 +60,7 @@
   &.disabled {
     svg {
       color: alchemy-color('light-grey');
-      opacity: .6;
+      opacity: 0.6;
       pointer-events: none;
     }
   }
@@ -78,15 +77,26 @@
 
 .c-toolbar__popover {
   @include absolute(bottom 50px right 0);
-
   display: flex;
 
-  &::before {
-    @include triangle(
-      $direction: bottom,
-      $position: top 100% right .75em,
-      $size: 6px,
-      $color: alchemy-color-level('light-grey', -1)
-    );
+  &:before {
+    @include triangle($direction: bottom, $position: top 100% right 0.75em, $size: 6px, $color: alchemy-color-level('light-grey', -1));
+  }
+}
+
+.c-textbar {
+  @include border-radius($alchemy-global-radius);
+  background: alchemy-color('dark-grey');
+}
+
+.c-textbar_action {
+  border-right: 1px solid alchemy-color('medium-grey');
+
+  &:last-child {
+    border-right: 0;
+  }
+
+  &.active {
+    background-color: alchemy-color-level('secondary1', 4);
   }
 }

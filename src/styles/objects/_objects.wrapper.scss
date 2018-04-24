@@ -10,7 +10,6 @@ $inuit-wrapper-width: $alchemy-global-width;
 
 .o-wrapper {
   @include inuit-clearfix();
-
   margin-left: auto;
   margin-right: auto;
   max-width: $inuit-wrapper-width;

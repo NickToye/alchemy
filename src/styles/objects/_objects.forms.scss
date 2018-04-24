@@ -1,0 +1,11 @@
+// Objects :: Forms
+
+.o-form {
+  outline: 1px solid alchemy-color(primary);
+}
+
+.o-form_input {
+  @include alchemy-font-size(14px);
+  border: 0;
+  padding: $inuit-global-spacing-unit-tiny $inuit-global-spacing-unit-small;
+}

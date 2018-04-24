@@ -2,15 +2,12 @@
 
 .nucleus {
   @include size(6px);
-
   background-color: alchemy-color(secondary1);
   box-shadow: $alchemy-global-shadow;
   outline: 1px solid alchemy-color('black');
 }
 
-@each $alchemy-property-namespace,
-  $alchemy-property in $alchemy-spacing-properties
-{
+@each $alchemy-property-namespace, $alchemy-property in $alchemy-spacing-properties {
   @each $alchemy-atom, $alchemy-value in $alchemy-atoms {
     $half-value: $alchemy-value/2;
     $special-value: $alchemy-value - 6;
@@ -18,34 +15,26 @@
 
     .atomic-#{$alchemy-atom} {
       @include size(#{$alchemy-value}px);
-
       background-color: alchemy-color(primary);
       box-shadow: $alchemy-global-shadow;
       outline: 1px solid alchemy-color('black');
     }
 
     .atomic-#{nth($alchemy-property,1)}-unit-#{$alchemy-atom} {
-      @include stripes(
-        45deg,
-        $color1: nth($alchemy-property, 2),
-        $color2: nth($alchemy-property, 3)
-      );
-
+      @include stripes(45deg, $color1: nth($alchemy-property, 2), $color2: nth($alchemy-property, 3));
       border: 1px solid alchemy-color('black');
       box-shadow: $alchemy-global-shadow;
       position: relative;
 
-      &::before,
-      &::after {
+      &:before,
+      &:after {
         @include alchemy-font-size($inuit-font-size-tiny);
-
         color: alchemy-color(primary);
         content: '#{$alchemy-value}px';
       }
 
-      &::before {
+      &:before {
         @include absolute(right 0 top 50%);
-
         text-align: center;
         transform: translateY(-50%) rotate(90deg);
         width: #{$double-value}px;
@@ -55,9 +44,8 @@
         }
       }
 
-      &::after {
+      &:after {
         @include absolute(left 50%);
-
         bottom: #{$special-value}px;
         height: 12px;
         line-height: 1;
@@ -66,7 +54,6 @@
 
       &-content {
         @include alchemy-font-size($inuit-font-size-tiny, 16px);
-
         align-items: center;
         background-color: alchemy-color(dark-grey);
         border: 1px solid alchemy-color('black');

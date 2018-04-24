@@ -5,8 +5,8 @@
   height: 250px;
   position: relative;
 
-  &::before,
-  &::after {
+  &:before,
+  &:after {
     align-items: center;
     bottom: 0;
     display: flex;
@@ -17,15 +17,14 @@
     width: 100%;
   }
 
-  &::before {
+  &:before {
     @include alchemy-font-size(14px);
-
     align-items: flex-start;
     background: alchemy-color('white');
     font-weight: bold;
   }
 
-  &::after {
+  &:after {
     @include alchemy-font-size(11px);
     align-items: flex-end;
   }
@@ -38,12 +37,11 @@
 
 .c-swatch__tone {
   @include alchemy-font-size(11px);
-
   padding: 12px 24px;
   position: relative;
   width: 100%;
 
-  &::after {
+  &:after {
     position: absolute;
     right: 24px;
   }

@@ -37,6 +37,7 @@ $typeface: (
 );
 
 @each $type, $values in $types {
+
   #{$type},
   .u-#{$type} {
     @include alchemy-font-size(nth($values, 1));
@@ -45,6 +46,7 @@ $typeface: (
 }
 
 @each $face, $value in $typeface {
+
   .u-#{$face} {
     font-family: $value;
   }

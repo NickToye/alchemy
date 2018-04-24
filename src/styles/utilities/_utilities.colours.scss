@@ -6,17 +6,17 @@
     color: alchemy-color-contrast($alchemy-value);
 
     &.c-swatch {
-      &::before,
-      &::after {
+      &:before,
+      &:after {
         @include border-radius($alchemy-global-radius bottom);
         color: alchemy-color(dark-grey);
       }
 
-      &::before {
+      &:before {
         content: str-replace($alchemy-key, '-', ' ');
       }
 
-      &::after {
+      &:after {
         color: alchemy-color('grey');
         content: '#{$alchemy-value}';
       }
@@ -34,11 +34,11 @@
       background: alchemy-color-level('#{$alchemy-key}', $i);
       color: alchemy-color-contrast($alchemy-value);
 
-      &::before {
+      &:before {
         content: 'Light #{$i}';
       }
 
-      &::after {
+      &:after {
         content: '#{$name}';
       }
     }
@@ -47,11 +47,11 @@
       background: alchemy-color-level('#{$alchemy-key}', -$i);
       color: alchemy-color-contrast($alchemy-value, 60);
 
-      &::before {
+      &:before {
         content: 'Dark #{$i}';
       }
 
-      &::after {
+      &:after {
         content: '#{$name}';
       }
     }
