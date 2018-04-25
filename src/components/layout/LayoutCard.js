@@ -1,5 +1,6 @@
 import React from 'react';
 import AtomicElement from './AtomicElement';
+import Box from './Box';
 import sizes from '../data/sizes';
 
 class LayoutCard extends React.Component {
@@ -8,7 +9,7 @@ class LayoutCard extends React.Component {
     this.state = {
       showXray: false,
       showXrayOpacity: false,
-      atoms: sizes,
+      sizes: sizes,
     };
 
     this.showXrayAction = this.showXrayAction.bind(this);
@@ -25,105 +26,6 @@ class LayoutCard extends React.Component {
   }
 
   render() {
-    const factors = [
-      {
-        id: 1,
-        size: 'tiny',
-      },
-      {
-        id: 2,
-        size: 'small',
-      },
-      {
-        id: 3,
-        size: 'standard',
-      },
-      {
-        id: 4,
-        size: 'large',
-      },
-      {
-        id: 5,
-        size: 'huge',
-      },
-    ];
-
-    const factorsPadding = factors.map((factor, key) => {
-      return (
-        <div
-          className={
-            `atomic-padding-unit-${factor.size} ` +
-            (factor.size === 'standard' ? 'u-padding ' : `u-padding-${factor.size} `) +
-            `u-margin-bottom-large`
-          }
-          key={key}
-        >
-          <div className={`atomic-padding-unit-${factor.size}-content`}>
-            Content Area <br />with {factor.size} padding
-          </div>
-        </div>
-      );
-    });
-
-    const factorsMargin = factors.map((factor, key) => {
-      return (
-        <div className="atomic-canvas" key={key}>
-          <div className={`atomic-margin-unit-${factor.size} `} key={key}>
-            <div
-              className={
-                `atomic-margin-unit-${factor.size}-content ` +
-                (factor.size === 'standard' ? 'u-margin ' : `u-margin-${factor.size} `)
-              }
-            >
-              Content Area with {factor.size} margin
-            </div>
-          </div>
-        </div>
-      );
-    });
-
-    const atoms = [
-      {
-        id: 1,
-        size: 'small',
-        unit: 12,
-        factor: 2,
-      },
-      {
-        id: 2,
-        size: 'standard',
-        unit: 24,
-        factor: 4,
-      },
-      {
-        id: 3,
-        size: 'large',
-        unit: 48,
-        factor: 8,
-      },
-      {
-        id: 4,
-        size: 'huge',
-        unit: 96,
-        factor: 16,
-      },
-    ];
-
-    const atomicElements = atoms.map((atom, key) => {
-      return (
-        <div className="o-media" key={atom.key}>
-          <div className={`o-media__img  atomic-${atom.size} u-margin-right-small`}>
-            <div className="nucleus" />
-          </div>
-          <p className="o-media__body  u-margin-none">
-            <span className="u-margin-right-small">Atomic Unit {atom.size}</span>
-            <small className="u-alchemy-primary-colour">{atom.unit}px</small>
-            <br />Nucleus Unit (6px) multiplied by a factor of {atom.factor}.
-          </p>
-        </div>
-      );
-    });
-
     return (
       <section className="o-section u-padding">
         <header className="u-margin-bottom-large">
@@ -149,8 +51,8 @@ class LayoutCard extends React.Component {
           </div>
 
           <div className="o-grid  o-grid--centre  o-grid--auto">
-            {Object.keys(this.state.atoms).map(key => (
-              <AtomicElement key={key} details={this.state.atoms[key]} />
+            {Object.keys(this.state.sizes).map(key => (
+              <AtomicElement key={key} details={this.state.sizes[key]} />
             ))}
           </div>
         </div>
@@ -158,13 +60,21 @@ class LayoutCard extends React.Component {
         <div className="u-margin-bottom-large">
           <h3>Padding</h3>
 
-          <div className="o-grid  o-grid--centre  o-grid--auto">{factorsPadding}</div>
+          <div className="o-grid  o-grid--centre  o-grid--auto">
+            {Object.keys(this.state.sizes).map(key => (
+              <Box key={key} property={'padding'} details={this.state.sizes[key]} />
+            ))}
+          </div>
         </div>
 
         <div className="u-margin-bottom-huge">
           <h3>Margin</h3>
 
-          <div className="o-grid  o-grid--centre  o-grid--auto">{factorsMargin}</div>
+          <div className="o-grid  o-grid--centre  o-grid--auto">
+            {Object.keys(this.state.sizes).map(key => (
+              <Box key={key} property={'margin'} details={this.state.sizes[key]} />
+            ))}
+          </div>
         </div>
 
         <div className="u-margin-bottom-large u-padding-top-large  u-relative">
