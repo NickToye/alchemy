@@ -71,10 +71,19 @@
 // Animations
 
 .a-animations {
-  @include size(400px, 200px);
+  @include size(100%, 200px);
   border-radius: $alchemy-global-radius;
-  margin: 0 auto;
-  max-width: 400px;
+
+  img {
+    margin: 0 auto;
+    max-height: 80%;
+    opacity: 0.5;
+  }
+}
+
+.a-animations_wrapper {
+  border-radius: $alchemy-global-radius;
+  overflow: hidden;
 }
 
 // Utility classes

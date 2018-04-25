@@ -7,3 +7,35 @@
 .u-text-capitalise {
   text-transform: capitalize;
 }
+
+$base-distance: 10px !default;
+
+.u-initial-transform-left {
+  transform: translate3d(-100%, 0, 0);
+}
+
+.u-initial-transform-right {
+  transform: translate3d(100%, 0, 0);
+}
+
+.u-initial-transform-up {
+  transform: translate3d(0, 100%, 0);
+}
+
+.u-initial-transform-down {
+  transform: translate3d(0, -100%, 0);
+}
+
+.u-initial-transform-fade-in {
+  opacity: 0;
+}
+
+.u-initial-transform-fade-in-up {
+  opacity: 0;
+  transform: translateY($base-distance * 2);
+}
+
+.u-initial-transform-bounce-in {
+  opacity: 0;
+  transform: scale(0.3);
+}
