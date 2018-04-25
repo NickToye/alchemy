@@ -1,4 +1,6 @@
 import React from 'react';
+import AtomicElement from './AtomicElement';
+import sizes from '../data/sizes';
 
 class LayoutCard extends React.Component {
   constructor(props) {
@@ -6,6 +8,7 @@ class LayoutCard extends React.Component {
     this.state = {
       showXray: false,
       showXrayOpacity: false,
+      atoms: sizes,
     };
 
     this.showXrayAction = this.showXrayAction.bind(this);
@@ -50,9 +53,7 @@ class LayoutCard extends React.Component {
         <div
           className={
             `atomic-padding-unit-${factor.size} ` +
-            (factor.size === 'standard'
-              ? 'u-padding '
-              : `u-padding-${factor.size} `) +
+            (factor.size === 'standard' ? 'u-padding ' : `u-padding-${factor.size} `) +
             `u-margin-bottom-large`
           }
           key={key}
@@ -71,9 +72,7 @@ class LayoutCard extends React.Component {
             <div
               className={
                 `atomic-margin-unit-${factor.size}-content ` +
-                (factor.size === 'standard'
-                  ? 'u-margin '
-                  : `u-margin-${factor.size} `)
+                (factor.size === 'standard' ? 'u-margin ' : `u-margin-${factor.size} `)
               }
             >
               Content Area with {factor.size} margin
@@ -113,15 +112,11 @@ class LayoutCard extends React.Component {
     const atomicElements = atoms.map((atom, key) => {
       return (
         <div className="o-media" key={atom.key}>
-          <div
-            className={`o-media__img  atomic-${atom.size} u-margin-right-small`}
-          >
+          <div className={`o-media__img  atomic-${atom.size} u-margin-right-small`}>
             <div className="nucleus" />
           </div>
           <p className="o-media__body  u-margin-none">
-            <span className="u-margin-right-small">
-              Atomic Unit {atom.size}
-            </span>
+            <span className="u-margin-right-small">Atomic Unit {atom.size}</span>
             <small className="u-alchemy-primary-colour">{atom.unit}px</small>
             <br />Nucleus Unit (6px) multiplied by a factor of {atom.factor}.
           </p>
@@ -144,34 +139,32 @@ class LayoutCard extends React.Component {
             </p>
           </header>
 
-          <div className="o-grid  o-grid--centre  o-grid--auto">
-            <div className="o-media">
-              <div className="o-media__img  nucleus u-margin-right-small" />
-              <p className="o-media__body  u-margin-none">
-                <span className="u-margin-right-small">Nucleus Unit</span>
-                <small className="u-alchemy-primary-colour">6px</small>
-                <br />Nucleus Unit (6px) multiplied by a factor of 1.
-              </p>
-            </div>
+          <div className="o-media u-margin-bottom">
+            <div className="o-media__img  nucleus u-margin-right-small" />
+            <p className="o-media__body  u-margin-none">
+              <span className="u-margin-right-small">Nucleus Unit</span>
+              <small className="u-alchemy-primary-colour">6px</small>
+              <br />Nucleus Unit (6px) multiplied by a factor of 1.
+            </p>
+          </div>
 
-            {atomicElements}
+          <div className="o-grid  o-grid--centre  o-grid--auto">
+            {Object.keys(this.state.atoms).map(key => (
+              <AtomicElement key={key} details={this.state.atoms[key]} />
+            ))}
           </div>
         </div>
 
         <div className="u-margin-bottom-large">
           <h3>Padding</h3>
 
-          <div className="o-grid  o-grid--centre  o-grid--auto">
-            {factorsPadding}
-          </div>
+          <div className="o-grid  o-grid--centre  o-grid--auto">{factorsPadding}</div>
         </div>
 
         <div className="u-margin-bottom-huge">
           <h3>Margin</h3>
 
-          <div className="o-grid  o-grid--centre  o-grid--auto">
-            {factorsMargin}
-          </div>
+          <div className="o-grid  o-grid--centre  o-grid--auto">{factorsMargin}</div>
         </div>
 
         <div className="u-margin-bottom-large u-padding-top-large  u-relative">
@@ -180,68 +173,58 @@ class LayoutCard extends React.Component {
           </header>
           <div className="u-margin-bottom  c-toolbar">
             <button
-              className={
-                'c-toolbar__btn ' + (this.state.showXray ? 'active' : ' ')
-              }
+              className={'c-toolbar__btn ' + (this.state.showXray ? 'active' : ' ')}
               onClick={this.showXrayAction}
             >
               <i className="fas fa-x-ray fa-lg" />
             </button>
-            <button
-              className={
-                'c-toolbar__btn ' +
-                (this.state.showXrayOpacity ? 'active' : ' ')
-              }
-              onClick={this.showXrayOpacityAction}
-            >
-              <i className="fas fa-heart fa-lg" />
-            </button>
+            {this.state.showXray ? (
+              <button
+                className={'c-toolbar__btn ' + (this.state.showXrayOpacity ? 'active' : ' ')}
+                onClick={this.showXrayOpacityAction}
+              >
+                <i className="fas fa-eye fa-lg" />
+              </button>
+            ) : (
+              ''
+            )}
           </div>
 
           <div className="o-flex  o-flex--row  o-flex--start  alchemy-layout-example  u-padding">
             <div className="o-flex__item  alchemy-layout-example-child  u-margin-right">
               <p className="u-margin-bottom">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Maecenas sed diam eget risus varius blandit sit amet non magna.
-                Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius
+                blandit sit amet non magna. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
                 auctor.
               </p>
               <p className="u-margin-bottom">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Maecenas sed diam eget risus varius blandit sit amet non magna.
-                Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius
+                blandit sit amet non magna. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
                 auctor.
               </p>
               <p className="u-margin-bottom">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Maecenas sed diam eget risus varius blandit sit amet non magna.
-                Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius
+                blandit sit amet non magna. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
                 auctor.
               </p>
               <p className="u-margin-bottom">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Maecenas sed diam eget risus varius blandit sit amet non magna.
-                Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius
+                blandit sit amet non magna. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
                 auctor.
               </p>
               <p className="u-margin-bottom">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Maecenas sed diam eget risus varius blandit sit amet non magna.
-                Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius
+                blandit sit amet non magna. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
                 auctor.
               </p>
             </div>
             <div className="o-flex__item  o-flex  o-flex--column  alchemy-layout-example-child  u-margin-left">
-              <img
-                src="https://placeimg.com/1200/400/arch"
-                className="u-margin-bottom-large"
-              />
+              <img src="https://placeimg.com/1200/400/arch" className="u-margin-bottom-large" />
               <div className="alchemy-layout-example-child-block  u-padding-large">
                 <h2>This is a content block</h2>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Maecenas sed diam eget risus varius blandit sit amet non
-                  magna.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius
+                  blandit sit amet non magna.
                 </p>
               </div>
             </div>
@@ -250,9 +233,7 @@ class LayoutCard extends React.Component {
               <div
                 className={
                   'o-flex  o-flex--row  o-flex--start alchemy-layout-example-xray  u-padding ' +
-                  (this.state.showXrayOpacity
-                    ? 'alchemy-layout-example-xray-opacity'
-                    : ' ')
+                  (this.state.showXrayOpacity ? 'alchemy-layout-example-xray-opacity' : ' ')
                 }
               >
                 <div className="o-flex__item alchemy-layout-example-child-xray" />
@@ -264,9 +245,8 @@ class LayoutCard extends React.Component {
                     <div className="alchemy-layout-example-xray-padding-inner">
                       <h2>This is a content block</h2>
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Maecenas sed diam eget risus varius blandit sit amet non
-                        magna.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus
+                        varius blandit sit amet non magna.
                       </p>
                     </div>
                   </div>

@@ -28,7 +28,7 @@ class ButtonSized extends React.Component {
 
 ButtonSized.propTypes = {
   sizing: PropTypes.object,
-  swatch: PropTypes.object,
+  swatch: PropTypes.string,
   ghost: PropTypes.bool,
   rounded: PropTypes.bool,
   largeRounded: PropTypes.bool,
