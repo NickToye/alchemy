@@ -151,11 +151,11 @@ class TypographyCard extends React.Component {
           </button>
         </div>
         <header className="u-margin-bottom-large">
-          <h2 className="u-h2  u-margin-bottom-none">Typography</h2>
+          <h1 className="u-margin-bottom-none">Typography</h1>
           <p>A tool that will display the correct typography.</p>
         </header>
 
-        <h3 className="u-h3">Type Sizes</h3>
+        <h2>Type Sizes</h2>
         <div
           className={
             `u-alchemy-${this.state.canvasPick}-bg o-pod  u-padding  u-margin-bottom-huge ` +
@@ -173,7 +173,7 @@ class TypographyCard extends React.Component {
           </div>
         </div>
 
-        <h3 className="u-h3">Typefaces</h3>
+        <h2>Typefaces</h2>
         <div className="c-textbar  o-flex  o-flex--row u-padding">
           <input
             className="c-textbar_action o-form_input"

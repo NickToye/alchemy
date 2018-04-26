@@ -13,3 +13,23 @@
     display: block;
   }
 }
+
+.a-page {
+  max-width: 1000px;
+}
+
+.a-note {
+  @include border-radius($alchemy-global-radius);
+}
+
+.a-code-example {
+  @include border-radius($alchemy-global-radius);
+  background: $alchemy-code-bg;
+  color: alchemy-color('white');
+  padding: $inuit-global-spacing-unit;
+}
+
+.a-code-label {
+  color: alchemy-color(info);
+  font-style: italic;
+}

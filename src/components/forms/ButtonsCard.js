@@ -113,14 +113,14 @@ class ButtonsCard extends React.Component {
         </div>
 
         <header className="u-margin-bottom-large">
-          <h2 className="u-margin-none">Buttons</h2>
+          <h1 className="u-margin-none">Buttons</h1>
           <p>A tool that will display the correct buttons.</p>
         </header>
 
-        <h3 className="u-h3">Button Styles</h3>
+        <h2>Button Styles</h2>
 
         <div className="u-margin-bottom">
-          <h4 className="u-text-capitalise">{this.state.colourTypePick}</h4>
+          <h3 className="u-text-capitalise">{this.state.colourTypePick}</h3>
           <div className="o-grid">
             {Object.keys(this.state.colours)
               .filter(function(filteredSwatches) {

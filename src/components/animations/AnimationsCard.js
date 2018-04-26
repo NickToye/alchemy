@@ -40,7 +40,7 @@ class AnimationsCard extends React.Component {
       <section className="o-section u-padding u-relative">
         <div className="u-margin-bottom  u-margin-right  c-toolbar">{animationTypeList}</div>
         <header className="u-margin-bottom-large">
-          <h2 className="u-margin-none">Animations</h2>
+          <h1 className="u-margin-none">Animations</h1>
           <p>A tool to display animations available to elements.</p>
         </header>
 

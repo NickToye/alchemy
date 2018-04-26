@@ -29,13 +29,13 @@ class LayoutCard extends React.Component {
     return (
       <section className="o-section u-padding">
         <header className="u-margin-bottom-large">
-          <h2 className="u-margin-none">Layout</h2>
+          <h1 className="u-margin-none">Layout</h1>
           <p>A tool to display paddings and margins around elements.</p>
         </header>
 
         <div className="u-margin-bottom-large  u-padding-bottom-small">
           <header className="u-margin-bottom">
-            <h3 className="u-margin-bottom-small">Atomic Unit</h3>
+            <h2 className="u-margin-bottom-small">Atomic Unit</h2>
             <p>
               The atomic unit is based on a global baseline of 6px. <br />
             </p>

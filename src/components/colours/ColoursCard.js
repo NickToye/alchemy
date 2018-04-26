@@ -36,12 +36,12 @@ class ColoursCard extends React.Component {
           ))}
         </div>
         <header className="u-margin-bottom-large">
-          <h2 className="testing u-margin-bottom-none">Colour</h2>
+          <h1 className="testing u-margin-bottom-none">Colours</h1>
           <p>A tool that will display the correct colours.</p>
         </header>
 
         <div className="u-margin-bottom">
-          <h3 className="u-text-capitalise">{selectedColourType}</h3>
+          <h2 className="u-text-capitalise">{selectedColourType}</h2>
           <div className="o-grid  o-grid--centre  o-grid--start o-grid--auto">
             {Object.keys(this.state.colours)
               .filter(function(filteredSwatches) {

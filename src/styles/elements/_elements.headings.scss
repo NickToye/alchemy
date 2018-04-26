@@ -13,8 +13,6 @@
 // `font-size` with a pixel fallback, as well as generating a `line-height` that
 // will sit on our baseline grid.
 
-
-
 h1,
 .u-h1 {
   @include alchemy-font-size(150px);
@@ -42,7 +40,6 @@ h6 {
 
 // TODO: Move this code block
 h1,
-h2,
-h3 {
+h2 {
   color: alchemy-color(primary);
 }

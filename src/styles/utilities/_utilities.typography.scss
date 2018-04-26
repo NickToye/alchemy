@@ -19,7 +19,8 @@ $types: (
   h2: (28px, $fs-emeric-light),
   h3: (24px, $fs-emeric-light),
   h4: (16px, $fs-emeric-medium),
-  p: (16px, $fs-emeric-regular)
+  p: (16px, $fs-emeric-regular),
+  li: (16px, $fs-emeric-regular)
 );
 
 $typeface: (
@@ -37,7 +38,6 @@ $typeface: (
 );
 
 @each $type, $values in $types {
-
   #{$type},
   .u-#{$type} {
     @include alchemy-font-size(nth($values, 1));
@@ -46,7 +46,6 @@ $typeface: (
 }
 
 @each $face, $value in $typeface {
-
   .u-#{$face} {
     font-family: $value;
   }

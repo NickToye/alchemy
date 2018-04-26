@@ -6,5 +6,3 @@ import routes from './routes';
 import './styles/index.scss';
 
 render(<Router history={browserHistory} routes={routes} />, document.getElementById('app'));
-
-// TODO What is Istanbul?
