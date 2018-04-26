@@ -21,9 +21,6 @@ class AnimationsCard extends React.Component {
 
   render() {
     const selectedAnimationType = this.state.animationTypePick;
-
-    const animationTypePick = this.state.animationTypePick;
-
     const animationTypeList = this.state.animationTypes.map((type, key) => {
       const isCurrent = this.state.animationTypePick === type;
       return (
@@ -55,7 +52,7 @@ class AnimationsCard extends React.Component {
               .filter(function(filteredAnimations) {
                 return animations[filteredAnimations].animationType === selectedAnimationType;
               })
-              .map((key, filteredAnimations) => (
+              .map(key => (
                 <div key={key}>
                   <Animation key={key} details={this.state.animations[key]} />
                 </div>

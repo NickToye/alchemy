@@ -22,7 +22,6 @@ class ColoursCard extends React.Component {
 
   render() {
     const selectedColourType = this.state.colourTypePick;
-    // const colours = this.state.colours;
 
     return (
       <section className="o-section  u-padding  u-relative">
@@ -37,7 +36,7 @@ class ColoursCard extends React.Component {
           ))}
         </div>
         <header className="u-margin-bottom-large">
-          <h2 className="u-margin-bottom-none">Colour</h2>
+          <h2 className="testing u-margin-bottom-none">Colour</h2>
           <p>A tool that will display the correct colours.</p>
         </header>
 
@@ -48,7 +47,7 @@ class ColoursCard extends React.Component {
               .filter(function(filteredSwatches) {
                 return colours[filteredSwatches].colourType === selectedColourType;
               })
-              .map((key, filteredSwatches) => <SwatchCard key={key} details={this.state.colours[key]} />)}
+              .map(key => <SwatchCard key={key} details={this.state.colours[key]} />)}
           </div>
         </div>
       </section>

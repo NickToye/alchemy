@@ -44,7 +44,7 @@ class ButtonsCard extends React.Component {
     this.setState({ colourTypePick: e.target.value });
   }
 
-  showGhostAction(e) {
+  showGhostAction() {
     this.setState(prev => ({
       showGhost: !prev.showGhost,
     }));
@@ -60,8 +60,6 @@ class ButtonsCard extends React.Component {
   }
 
   render() {
-    const dropPick = this.state.dropPick;
-
     const selectedColourType = this.state.colourTypePick;
 
     return (
@@ -128,7 +126,7 @@ class ButtonsCard extends React.Component {
               .filter(function(filteredSwatches) {
                 return colours[filteredSwatches].colourType === selectedColourType;
               })
-              .map((key, filteredSwatches) => (
+              .map(key => (
                 <div key={key}>
                   <Button
                     key={key}

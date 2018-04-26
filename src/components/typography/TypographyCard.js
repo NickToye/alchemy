@@ -83,9 +83,6 @@ class TypographyCard extends React.Component {
   }
 
   render() {
-    const dropPick = this.state.dropPick;
-    const canvasPick = this.state.canvasPick;
-
     return (
       <section className="o-section  u-padding  u-relative">
         <div className="u-margin-bottom  u-margin-right  c-toolbar">

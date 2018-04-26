@@ -26,7 +26,6 @@
     "test:watch": "jest --watch",
     "open:cover": "npm run test:cover && opn ./coverage/lcov-report/index.html",
     "analyze-bundle": "babel-node ./tools/analyzeBundle.js",
-    "testx": "mocha src/styles/test/run.js",
     "stylelint": "./node_modules/.bin/stylelint \"**/*.scss\" --syntax scss",
     "stylelint:watch": "npm run stylelint -- --watch",
     "stylelint-check": "stylelint-config-prettier-check"
@@ -89,6 +88,7 @@
     "prompt": "1.0.0",
     "prop-types": "15.5.10",
     "raf": "3.3.2",
+    "react-addons-test-utils": "15.6.2",
     "react-hot-loader": "3.0.0-beta.6",
     "react-test-renderer": "16.0.0",
     "redux-immutable-state-invariant": "2.0.0",
