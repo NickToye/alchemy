@@ -15,7 +15,15 @@
 }
 
 .a-page {
-  max-width: 1000px;
+  color: alchemy-color('grey');
+
+  h3 {
+    color: alchemy-color('medium-grey');
+  }
+
+  strong {
+    color: alchemy-color('dark-grey');
+  }
 }
 
 .a-note {

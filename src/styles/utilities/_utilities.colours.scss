@@ -24,7 +24,7 @@
   }
 
   .u-alchemy-#{$alchemy-key}-colour {
-    color: $alchemy-value;
+    color: $alchemy-value !important;
   }
 
   @for $i from 1 through $alchemy-mix-levels {
