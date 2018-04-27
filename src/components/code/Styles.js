@@ -101,12 +101,12 @@ class Styles extends React.Component {
 
           <small className="a-code-label">File Title</small>
           <pre className="a-code-example">
-            <code>// Component :: Buttons</code>
+            <code>{`// Component :: Buttons`}</code>
           </pre>
 
           <small className="a-code-label">Section Title</small>
           <pre className="a-code-example">
-            <code>// Colour Variants</code>
+            <code>{`// Colour Variants`}</code>
           </pre>
 
           <p>Files with multiple sections within them should have 5 carriage spaces in between sections.</p>
