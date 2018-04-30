@@ -26,3 +26,11 @@ body {
   color: alchemy-color('white');
   font-family: Montserrat, sans-serif;
 }
+
+// TODO move this to its own component
+// TODO create a mixin for the hover states
+
+a:link,
+a:visited {
+  color: alchemy-color('secondary2');
+}

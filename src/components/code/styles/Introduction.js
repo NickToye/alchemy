@@ -5,7 +5,7 @@ class Introduction extends React.Component {
   render() {
     return (
       <ScrollableAnchor id={'introduction'}>
-        <div className="u-margin-bottom">
+        <div className="u-margin-bottom-huge">
           <h2 className="u-alchemy-secondary2-colour">Introduction</h2>
           <p>
             When working on your own or in a team, it is important that the code you write is of a certain

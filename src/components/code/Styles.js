@@ -8,6 +8,7 @@ import NamingConventions from './styles/NamingConventions';
 import CssSelectors from './styles/CssSelectors';
 import Specificity from './styles/Specificity';
 import ArchitecturalPrinciples from './styles/ArchitecturalPrinciples';
+import Sticky from '../common/Sticky';
 
 class Styles extends React.Component {
   constructor(props) {
@@ -16,15 +17,18 @@ class Styles extends React.Component {
       contents: StyleGuidelines,
     };
   }
+
   render() {
     return (
       <div className="a-page  u-padding u-alchemy-white-bg  o-flex  o-flex--row">
         <aside className="u-1/5 u-margin-right-large">
-          <ul className="o-list-bare">
-            {Object.keys(this.state.contents).map(key => (
-              <ContentsCard key={key} details={this.state.contents[key]} />
-            ))}
-          </ul>
+          <Sticky className="sticky-one" enter="370">
+            <ul className="o-list-bare  a-contents-box">
+              {Object.keys(this.state.contents).map(key => (
+                <ContentsCard key={key} details={this.state.contents[key]} />
+              ))}
+            </ul>
+          </Sticky>
         </aside>
         <main className="u-4/5">
           <Introduction />

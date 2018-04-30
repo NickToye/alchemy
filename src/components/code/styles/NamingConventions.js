@@ -6,7 +6,7 @@ class NamingConventions extends React.Component {
   render() {
     return (
       <ScrollableAnchor id={'naming-conventions'}>
-        <div className="u-margin-bottom">
+        <div className="u-margin-bottom-huge">
           <h2 className="u-alchemy-secondary2-colour">Naming Conventions</h2>
           <p>
             Naming conventions are important to maintain a strict, transparent and semantic codebase. A solid
