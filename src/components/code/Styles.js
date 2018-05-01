@@ -1,7 +1,7 @@
 import React from 'react';
 
 import StyleGuidelines from '../data/styleGuidelines';
-import ContentsCard from './ContentsCard';
+import ContentsCard from '../common/ContentsCard';
 import Introduction from './styles/Introduction';
 import Syntax from './styles/Syntax';
 import NamingConventions from './styles/NamingConventions';

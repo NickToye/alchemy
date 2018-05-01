@@ -61,6 +61,7 @@
 
 // Components
 @import 'components/components.atoms';
+@import 'components/components.banners';
 @import 'components/components.buttons';
 @import 'components/components.header';
 @import 'components/components.navigation';
@@ -85,6 +86,3 @@ $inuit-offsets: true;
 
 // Development
 @import 'alchemy/alchemy.development';
-
-
-// TODO Add a Surfaces component

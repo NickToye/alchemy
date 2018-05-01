@@ -24,6 +24,10 @@
     @include border-radius($alchemy-global-radius right);
   }
 
+  i {
+    pointer-events: none; // TODO Move this hack somewhere, or resolve more elegantly.
+  }
+
   .c-toolbar__popover & {
     background: alchemy-color-level('light-grey', -1);
     border: 0;
