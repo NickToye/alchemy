@@ -2,7 +2,7 @@
 
 .o-grid {
   display: grid;
-  grid-gap: 10px;
+  grid-gap: $inuit-global-spacing-unit;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
   &--auto {

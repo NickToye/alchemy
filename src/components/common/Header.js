@@ -23,6 +23,9 @@ const Header = () => {
         <Link to="/animations" className="u-padding-horizontal-small" activeClassName="active">
           <img src={require('../../images/Animation@3x.png')} className="patch" />
         </Link>
+        <Link to="/surfaces" className="u-padding-horizontal-small" activeClassName="active">
+          <img src={require('../../images/Animation@3x.png')} className="patch" />
+        </Link>
         <Link to="/code" className="u-padding-horizontal-small" activeClassName="active">
           <img src={require('../../images/Code@3x.png')} className="patch" />
         </Link>
