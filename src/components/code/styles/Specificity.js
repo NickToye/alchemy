@@ -1,6 +1,6 @@
 import React from 'react';
 import ScrollableAnchor from 'react-scrollable-anchor';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class Specificity extends React.Component {
   render() {

@@ -1,6 +1,6 @@
 import React from 'react';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import faCog from '@fortawesome/fontawesome-free-solid/faCog';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import faCog from '@fortawesome/fontawesome-free-solid/faCog';
 import PropTypes from 'prop-types';
 
 import Cartoon from './Cartoon';
@@ -28,7 +28,7 @@ class Animation extends React.Component {
 
     let animationStatus;
     if (this.state.activateAnimation) {
-      animationStatus = <FontAwesomeIcon icon={faCog} spin />;
+      animationStatus = <FontAwesomeIcon icon="cog" spin />;
     } else {
       animationStatus = details.animation;
     }
