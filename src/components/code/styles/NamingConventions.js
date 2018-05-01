@@ -270,5 +270,3 @@ class NamingConventions extends React.Component {
 }
 
 export default NamingConventions;
-
-// TODO Font Awesome icons not showing up in standard code view

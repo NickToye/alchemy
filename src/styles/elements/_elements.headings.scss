@@ -38,7 +38,6 @@ h6 {
   @include alchemy-font-size($inuit-font-size-h6);
 }
 
-// TODO: Move this code block
 h1,
 h2 {
   color: alchemy-color(primary);
