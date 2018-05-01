@@ -13,7 +13,8 @@ class Specificity extends React.Component {
             had good intentions, there could be a situation down the line where specifity becomes an issue.
           </p>
           <p>
-            It's main problem is that it sets precedents that can't be undone very easily. Take this example:
+            It&apos;s main problem is that it sets precedents that can&apos;t be undone very easily. Take this
+            example:
           </p>
           <small className="a-code-label u-alchemy-negative-colour">
             <FontAwesomeIcon icon="times" /> Poor Selector
@@ -36,7 +37,7 @@ class Specificity extends React.Component {
           </pre>
           <p>
             Because the 1st selector is overly specific, it will trump the 2nd selector, forcing you to take
-            action to raise it's specifity. Of course many developers will simply use an{' '}
+            action to raise it&apos;s specifity. Of course many developers will simply use an{' '}
             <code className="u-alchemy-positive-colour">!important</code> flag, but this is not adviseable in
             this situation.
           </p>
@@ -67,7 +68,7 @@ class Specificity extends React.Component {
           <p>How can we reduce the issues with specifity?</p>
           <ul className="u-margin-bottom">
             <li>Avoid using IDs in your CSS</li>
-            <li>Don't use nested selectors</li>
+            <li>Don&apos;t use nested selectors</li>
             <li>Do not qualify selectors</li>
             <li>Do not chain selectors</li>
           </ul>
@@ -117,8 +118,8 @@ form.newsletter-form { }
           </small>
           <pre className="a-code-example">
             <code>{`.u-hidden {
-display: none !important
-                }`}</code>
+  display: none !important
+}`}</code>
           </pre>
           <p>
             When using the utility class <code className="u-alchemy-positive-colour">.u-hidden</code> you only

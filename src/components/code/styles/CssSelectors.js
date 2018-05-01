@@ -48,7 +48,7 @@ class CssSelectors extends React.Component {
           <h3>Location Independence</h3>
           <p>
             Following on from the previous point, everything we write should be independant of location and
-            still render as intended regardless of it's place in the codebase.
+            still render as intended regardless of it&apos;s place in the codebase.
           </p>
           <small className="a-code-label u-alchemy-negative-colour">
             <FontAwesomeIcon icon="times" /> Incorrect Example of writing a location independant selector
@@ -70,7 +70,7 @@ class CssSelectors extends React.Component {
           </pre>
           <p>
             This single class can be reused anywhere in the codebase and it will still render the same. It is
-            portable, recyclable and doesn't have any dependencies.
+            portable, recyclable and doesn&apos;t have any dependencies.
           </p>
           <small className="a-code-label u-alchemy-positive-colour">
             <FontAwesomeIcon icon="check" /> Even better Example of writing a location independant selector

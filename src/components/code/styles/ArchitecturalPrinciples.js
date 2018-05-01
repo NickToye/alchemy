@@ -72,9 +72,9 @@ class ArchitecturalPrinciples extends React.Component {
           <h3>The Single Responsibility Principle</h3>
           <blockquote>
             <p>
-              …the single responsibility principle states that every context (class, function, variable, etc.)
-              should have a single responsibility, and that responsibility should be entirely encapsulated by
-              the context.
+              …the single responsibility principle states that every context (class, `function`, variable,
+              etc.) should have a single responsibility, and that responsibility should be entirely
+              encapsulated by the context.
             </p>
           </blockquote>
           <p>
@@ -179,10 +179,96 @@ class ArchitecturalPrinciples extends React.Component {
             effects for developers making use of that code elsewhere, so never modify existing code directly.
           </p>
           <h3>DRY</h3>
+          <p>Simply stands for Don&apos;t Repeat Yourself, designed to keep repetition down to a minimum.</p>
+          <blockquote>
+            <p>
+              Every piece of knowledge must have a single, unambiguous, authoritative representation within a
+              system.
+            </p>
+          </blockquote>
+          <p>The key isn&apos;t to avoid all repetition, but to abstract meaningful reptition. </p>
+          <small className="a-code-label u-alchemy-positive-colour">
+            <FontAwesomeIcon icon="check" />Simple example
+          </small>
+          <pre className="a-code-example">
+            <code>{`.page-title {
+  font-size: 3rem;
+  font-family: "Alchemista", sans-serif;
+  font-weight: bold;
+}
+
+.sub-title {
+  font-size: 2rem;
+  font-family: "Alchemista", sans-serif;
+  font-weight: bold;
+}
+`}</code>
+          </pre>
+          <p>
+            Here we clearly have duplication in CSS - the{' '}
+            <code className="u-alchemy-positive-colour">font-family</code> and{' '}
+            <code className="u-alchemy-positive-colour">font-weight</code>, so as it is not adviseable to use{' '}
+            <code className="u-alchemy-colour-positive">@extend</code> a{' '}
+            <code className="u-alchemy-positive-colour">@mixin</code> makes more sense.
+          </p>
+
+          <small className="a-code-label u-alchemy-positive-colour">
+            <FontAwesomeIcon icon="check" />Simple example abstracted with Mixin
+          </small>
+          <pre className="a-code-example">
+            <code>{`@mixin title-font() {
+  font-family: "Alchemista", sans-serif;
+  font-weight: bold;
+}
+
+.page-title {
+  @include title-font();
+  font-size: 3rem;
+}
+
+.sub-title {
+  @include title-font();
+  font-size: 2rem;
+}
+`}</code>
+          </pre>
+          <p>
+            Now the two declarations only exist once, and if we ever needed to change the typeface or weight,
+            we need only do it in one place.
+          </p>
 
           <h3>Composition over Inheritance</h3>
+          <p>
+            This principle suggests that large more complex systems should be composed from smaller parts,
+            rather than inheriting behaviour from larger objects. This will keep your code decoupled as
+            nothing inherently depends on anything else. Another example of this is to think of it like Atomic
+            Design.
+          </p>
+          <p>
+            Atomic Design principles are you start with the smallest <strong>atomic</strong> elements, build
+            up to <strong>molecules</strong>, and combine to <strong>organisms</strong>, and so on.
+          </p>
 
           <h3>The Separation of Concerns</h3>
+          <p>The definition is that code should be broken up:</p>
+          <blockquote>
+            <p>
+              into distinxt sections, such that each section addresses a separate concern. A concern is a set
+              of information that affects the code of a computer program. A program that embodies SoC well is
+              called modular.
+            </p>
+          </blockquote>
+          <p>
+            In terms of CSS, this just means we write code that only ever focusses itself on one task at a
+            time. This way you can be sure that you are not going to break other semantically unrelated pieces
+            of UI. This reduces the risk of failure, and should reduce the amount of bugs found in your
+            system.
+          </p>
+          <p>
+            SoC allows you to keep your code self-sufficient, ignorant to any other code and above all else,
+            maintainable. It increases reusability and confidence in what you are developing, all the while
+            reducing dependency.
+          </p>
         </div>
       </ScrollableAnchor>
     );

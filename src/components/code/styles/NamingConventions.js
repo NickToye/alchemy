@@ -231,9 +231,9 @@ class NamingConventions extends React.Component {
   `}</code>
           </pre>
           <p>
-            Now we can see which classes are related to each other, and how. We know what classes we can't use
-            outside of the scope of this piece of UI, and we know which classes we are free to reuse
-            elsewhere.
+            Now we can see which classes are related to each other, and how. We know what classes we
+            can&apos;t use outside of the scope of this piece of UI, and we know which classes we are free to
+            reuse elsewhere.
           </p>
 
           <h3>JavaScript Hooks</h3>
