@@ -82,22 +82,24 @@ class LayoutCard extends React.Component {
             <h3>Layout Example</h3>
           </header>
           <div className="u-margin-bottom  c-toolbar">
-            <button
-              className={'c-toolbar__btn ' + (this.state.showXray ? 'active' : ' ')}
-              onClick={this.showXrayAction}
-            >
-              <i className="fas fa-x-ray fa-lg" />
-            </button>
-            {this.state.showXray ? (
+            <div className="tools-wrapper">
               <button
-                className={'c-toolbar__btn ' + (this.state.showXrayOpacity ? 'active' : ' ')}
-                onClick={this.showXrayOpacityAction}
+                className={'c-toolbar__btn ' + (this.state.showXray ? 'active' : ' ')}
+                onClick={this.showXrayAction}
               >
-                <i className="fas fa-eye fa-lg" />
+                <i className="fas fa-x-ray fa-lg" />
               </button>
-            ) : (
-              ''
-            )}
+              {this.state.showXray ? (
+                <button
+                  className={'c-toolbar__btn ' + (this.state.showXrayOpacity ? 'active' : ' ')}
+                  onClick={this.showXrayOpacityAction}
+                >
+                  <i className="fas fa-eye fa-lg" />
+                </button>
+              ) : (
+                ''
+              )}
+            </div>
           </div>
 
           <div className="o-flex  o-flex--row  o-flex--start  alchemy-layout-example  u-padding">

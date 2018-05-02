@@ -26,14 +26,16 @@ class ColoursCard extends React.Component {
     return (
       <section className="o-section  u-padding  u-relative">
         <div className="u-margin-bottom  u-margin-right  c-toolbar">
-          {Object.keys(this.state.colourTypes).map(key => (
-            <ColourType
-              key={key}
-              details={this.state.colourTypes[key]}
-              colourTypePick={this.state.colourTypePick}
-              action={this.showColourTypePick}
-            />
-          ))}
+          <div className="tools-wrapper">
+            {Object.keys(this.state.colourTypes).map(key => (
+              <ColourType
+                key={key}
+                details={this.state.colourTypes[key]}
+                colourTypePick={this.state.colourTypePick}
+                action={this.showColourTypePick}
+              />
+            ))}
+          </div>
         </div>
         <header className="u-margin-bottom-large">
           <h1 className="testing u-margin-bottom-none">Colours</h1>

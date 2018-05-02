@@ -86,18 +86,20 @@ class TypographyCard extends React.Component {
     return (
       <section className="o-section  u-padding  u-relative">
         <div className="u-margin-bottom  u-margin-right  c-toolbar">
-          <button
-            className={'c-toolbar__btn ' + (this.state.showBaseline ? 'active' : ' ')}
-            onClick={this.showBaselineAction}
-          >
-            <i className="fas fa-th fa-lg" />
-          </button>
-          <button
-            className={'c-toolbar__btn ' + (this.state.showMargin ? 'active' : ' ')}
-            onClick={this.showMarginAction}
-          >
-            <i className="fas fa-expand fa-lg" />
-          </button>
+          <div className="tools-wrapper">
+            <button
+              className={'c-toolbar__btn ' + (this.state.showBaseline ? 'active' : ' ')}
+              onClick={this.showBaselineAction}
+            >
+              <i className="fas fa-th fa-lg" />
+            </button>
+            <button
+              className={'c-toolbar__btn ' + (this.state.showMargin ? 'active' : ' ')}
+              onClick={this.showMarginAction}
+            >
+              <i className="fas fa-expand fa-lg" />
+            </button>
+          </div>
 
           <div className="tools-wrapper">
             <button
@@ -142,13 +144,14 @@ class TypographyCard extends React.Component {
               ''
             )}
           </div>
-
-          <button
-            className={'c-toolbar__btn ' + (this.state.showContraster ? 'active' : '')}
-            onClick={this.showContrasterAction}
-          >
-            <i className="fas fa-adjust fa-lg" />
-          </button>
+          <div className="tools-wrapper">
+            <button
+              className={'c-toolbar__btn ' + (this.state.showContraster ? 'active' : '')}
+              onClick={this.showContrasterAction}
+            >
+              <i className="fas fa-adjust fa-lg" />
+            </button>
+          </div>
         </div>
         <header className="u-margin-bottom-large">
           <h1 className="u-margin-bottom-none">Typography</h1>

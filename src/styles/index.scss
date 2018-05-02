@@ -65,6 +65,7 @@
 @import 'components/components.buttons';
 @import 'components/components.header';
 @import 'components/components.navigation';
+@import 'components/components.range';
 @import 'components/components.swatches';
 @import 'components/components.toolbar';
 
@@ -77,6 +78,7 @@ $inuit-offsets: true;
 @import 'utilities/utilities.hide';
 // @import "utilities/utilities.print";
 // @import "utilities/utilities.responsive-spacings";
+@import 'utilities/utilities.opacity';
 @import 'utilities/utilities.spacings';
 @import 'utilities/utilities.typography';
 @import 'utilities/utilities.widths';

@@ -6,6 +6,7 @@ import Canvas from '../../colours/Canvas';
 import Banner from './Banner';
 import Position from '../../layout/Position';
 import gridPosition from '../../data/gridPosition';
+import Range from '../../forms/Range';
 
 class BannerComponent extends React.Component {
   constructor(props) {
@@ -19,9 +20,13 @@ class BannerComponent extends React.Component {
       colours: colours,
       dropPick: '',
       canvasPick: 'secondary2',
-      textCanvasPick: '',
+      textCanvasPick: 'secondary3',
       textBlockPositions: gridPosition,
       textBlockPositionPick: 'top',
+      showHalfLeft: false,
+      showHalfRight: false,
+      showOpacityPopover: false,
+      opacity: 0,
     };
 
     this.showDropPick = this.showDropPick.bind(this);
@@ -33,6 +38,10 @@ class BannerComponent extends React.Component {
     this.showTextBlockPositionPopoverAction = this.showTextBlockPositionPopoverAction.bind(this);
     this.showTextBlockAction = this.showTextBlockAction.bind(this);
     this.updateTextBlockPositionPick = this.updateTextBlockPositionPick.bind(this);
+    this.showHalfLeftAction = this.showHalfLeftAction.bind(this);
+    this.showHalfRightAction = this.showHalfRightAction.bind(this);
+    this.showOpacityPopoverAction = this.showOpacityPopoverAction.bind(this);
+    this.updateOpacity = this.updateOpacity.bind(this);
   }
 
   showDropPick(e) {
@@ -57,35 +66,71 @@ class BannerComponent extends React.Component {
     this.setState(prev => ({ showCanvasPopover: !prev.showCanvasPopover }));
     this.setState({ showDropletsPopover: false });
     this.setState({ showTextCanvasPopover: false });
+    this.setState({ showTextBlockPositionPopover: false });
+    this.setState({ showOpacityPopover: false });
   }
 
   showTextCanvasPopoverAction() {
     this.setState(prev => ({ showTextCanvasPopover: !prev.showTextCanvasPopover }));
     this.setState({ showCanvasPopover: false });
+    this.setState({ showTextBlockPositionPopover: false });
+    this.setState({ showOpacityPopover: false });
   }
 
   showTextBlockAction() {
     this.setState(prev => ({ showTextBlock: !prev.showTextBlock }));
     this.setState({ showCanvasPopover: false });
     this.setState({ showTextCanvasPopover: false });
+    this.setState({ showOpacityPopover: false });
   }
 
   showTextBlockPositionPopoverAction() {
     this.setState(prev => ({ showTextBlockPositionPopover: !prev.showTextBlockPositionPopover }));
     this.setState({ showCanvasPopover: false });
     this.setState({ showTextCanvasPopover: false });
+    this.setState({ showOpacityPopover: false });
   }
 
   updateTextBlockPositionPick(e) {
     this.setState({ textBlockPositionPick: e.target.value });
   }
 
+  showHalfLeftAction() {
+    this.setState(prev => ({ showHalfLeft: !prev.showHalfLeft }));
+    this.setState({ showHalfRight: false });
+  }
+
+  showHalfRightAction() {
+    this.setState(prev => ({ showHalfRight: !prev.showHalfRight }));
+    this.setState({ showHalfLeft: false });
+  }
+
+  showOpacityPopoverAction() {
+    this.setState(prev => ({ showOpacityPopover: !prev.showOpacityPopover }));
+    this.setState({ showCanvasPopover: false });
+    this.setState({ showTextCanvasPopover: false });
+    this.setState({ showTextBlockPositionPopover: false });
+  }
+
+  showOpacity(e) {
+    this.setState({
+      opacity: e.target.value,
+    });
+  }
+
+  updateOpacity(val) {
+    this.setState({
+      opacity: val,
+    });
+  }
+
   render() {
+    const { opacity } = this.state;
     return (
       <section className="u-margin-bottom u-relative">
         <div className="c-textbar  o-flex  o-flex--justify-between  o-flex--align-center  o-flex--row u-padding">
           <h2 className="u-alchemy-white-colour u-margin-none">Banners</h2>
-          <div>
+          <div className="o-surface--l1">
             <div className="tools-wrapper">
               <button
                 className={
@@ -108,58 +153,91 @@ class BannerComponent extends React.Component {
               )}
             </div>
 
-            <button className={'c-toolbar__btn '} onClick={this.showTextBlockAction}>
-              <i className="fas fa-font fa-lg" />
-            </button>
+            <div className="tools-wrapper">
+              <button
+                className={`c-toolbar__btn ` + (this.state.showTextBlock ? 'active ' : '')}
+                onClick={this.showTextBlockAction}
+              >
+                <i className="fas fa-font fa-lg" />
+              </button>
+            </div>
 
-            {this.state.showTextBlock ? (
-              <div className="tools-wrapper">
-                <button
-                  className={
-                    'c-toolbar__btn ' +
-                    (this.state.showTextCanvasPopover ? 'active ' : '') +
-                    `u-alchemy-${this.state.textCanvasPick}-colour`
-                  }
-                  onClick={this.showTextCanvasPopoverAction}
-                >
-                  <i className="fas fa-pencil-alt fa-lg" />
-                </button>
-                {this.state.showTextCanvasPopover ? (
-                  <div className="c-toolbar__popover  animated fadeInUp">
-                    {Object.keys(this.state.colours).map(key => (
-                      <Canvas key={key} details={this.state.colours[key]} action={this.showTextCanvasPick} />
-                    ))}
-                  </div>
-                ) : (
-                  ''
-                )}
-              </div>
-            ) : (
-              ''
-            )}
+            <div className="tools-wrapper">
+              <button
+                className={
+                  'c-toolbar__btn ' +
+                  (this.state.showTextCanvasPopover ? 'active ' : '') +
+                  `u-alchemy-${this.state.textCanvasPick}-colour`
+                }
+                onClick={this.showTextCanvasPopoverAction}
+              >
+                <i className="fas fa-pencil-alt fa-lg" />
+              </button>
+              {this.state.showTextCanvasPopover ? (
+                <div className="c-toolbar__popover  animated fadeInUp">
+                  {Object.keys(this.state.colours).map(key => (
+                    <Canvas key={key} details={this.state.colours[key]} action={this.showTextCanvasPick} />
+                  ))}
+                </div>
+              ) : (
+                ''
+              )}
+            </div>
 
-            {this.state.showTextBlock ? (
-              <div className="tools-wrapper">
-                <button className={`c-toolbar__btn`} onClick={this.showTextBlockPositionPopoverAction}>
-                  <i className="fas fa-align-center fa-lg" />
-                </button>
-                {this.state.showTextBlockPositionPopover ? (
-                  <div className="c-toolbar__popover  animated fadeInUp">
-                    {Object.keys(this.state.textBlockPositions).map(key => (
-                      <Position
-                        key={key}
-                        details={this.state.textBlockPositions[key]}
-                        action={this.updateTextBlockPositionPick}
-                      />
-                    ))}
-                  </div>
-                ) : (
-                  ''
-                )}
-              </div>
-            ) : (
-              ''
-            )}
+            <div className="tools-wrapper">
+              <button
+                className={`c-toolbar__btn ` + (this.state.showTextBlockPositionPopover ? 'active ' : '')}
+                onClick={this.showTextBlockPositionPopoverAction}
+              >
+                <i className="fas fa-align-center fa-lg" />
+              </button>
+              {this.state.showTextBlockPositionPopover ? (
+                <div className="c-toolbar__popover  animated fadeInUp">
+                  {Object.keys(this.state.textBlockPositions).map(key => (
+                    <Position
+                      key={key}
+                      details={this.state.textBlockPositions[key]}
+                      action={this.updateTextBlockPositionPick}
+                      textBlockPositionPick={this.state.textBlockPositionPick}
+                    />
+                  ))}
+                </div>
+              ) : (
+                ''
+              )}
+            </div>
+
+            <div className="tools-wrapper">
+              <button
+                className={`c-toolbar__btn ` + (this.state.showHalfLeft ? 'active ' : '')}
+                onClick={this.showHalfLeftAction}
+              >
+                <i className="fas fa-caret-square-left fa-lg" />
+              </button>
+            </div>
+            <div className="tools-wrapper">
+              <button
+                className={`c-toolbar__btn ` + (this.state.showHalfRight ? 'active ' : '')}
+                onClick={this.showHalfRightAction}
+              >
+                <i className="fas fa-caret-square-right fa-lg" />
+              </button>
+            </div>
+            <div className="tools-wrapper">
+              <button
+                className={`c-toolbar__btn ` + (this.state.showOpacityPopover ? 'active ' : '')}
+                onClick={this.showOpacityPopoverAction}
+              >
+                <i className="fas fa-lightbulb fa-lg" />
+              </button>
+              {this.state.showOpacityPopover ? (
+                <div className="c-toolbar__popover  animated fadeInUp">
+                  <Range range={opacity} updateOpacity={this.updateOpacity} />
+                </div>
+              ) : (
+                ''
+              )}
+            </div>
           </div>
         </div>
         <Banner
@@ -167,6 +245,9 @@ class BannerComponent extends React.Component {
           showText={this.state.showTextBlock}
           textCanvas={this.state.textCanvasPick}
           textPosition={this.state.textBlockPositionPick}
+          showHalfLeft={this.state.showHalfLeft}
+          showHalfRight={this.state.showHalfRight}
+          opacity={this.state.opacity}
         />
       </section>
     );

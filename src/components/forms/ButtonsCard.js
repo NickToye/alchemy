@@ -65,14 +65,16 @@ class ButtonsCard extends React.Component {
     return (
       <section className="o-section u-padding  u-relative">
         <div className="u-margin-bottom u-margin-right  c-toolbar">
-          {Object.keys(this.state.colourTypes).map(key => (
-            <ColourType
-              key={key}
-              details={this.state.colourTypes[key]}
-              colourTypePick={this.state.colourTypePick}
-              action={this.showColourTypePick}
-            />
-          ))}
+          <div className="tools-wrapper">
+            {Object.keys(this.state.colourTypes).map(key => (
+              <ColourType
+                key={key}
+                details={this.state.colourTypes[key]}
+                colourTypePick={this.state.colourTypePick}
+                action={this.showColourTypePick}
+              />
+            ))}
+          </div>
           <div className="tools-wrapper">
             <button
               className={'c-toolbar__btn ' + (this.state.showGhost ? 'active' : '')}
@@ -92,24 +94,26 @@ class ButtonsCard extends React.Component {
               ''
             )}
           </div>
-          <button
-            className={'c-toolbar__btn ' + (this.state.showRoundedButtons ? 'active' : '')}
-            onClick={this.showRoundedButtonsAction}
-          >
-            <span className="u-padding-right-small">Rounded Buttons</span>
-            <i className={'fas fa-square fa-lg ' + (this.state.showRoundedButtons ? 'active' : '')} />
-          </button>
-          {this.state.showRoundedButtons ? (
+          <div className="tools-wrapper">
             <button
-              className={'c-toolbar__btn ' + (this.state.showLargeRoundedButtons ? 'active' : '')}
-              onClick={this.showLargeRoundedButtonsAction}
+              className={'c-toolbar__btn ' + (this.state.showRoundedButtons ? 'active' : '')}
+              onClick={this.showRoundedButtonsAction}
             >
-              <span className="u-padding-right-small">Large</span>
-              <i className={'fas fa-plus fa-lg '} />
+              <span className="u-padding-right-small">Rounded Buttons</span>
+              <i className={'fas fa-square fa-lg ' + (this.state.showRoundedButtons ? 'active' : '')} />
             </button>
-          ) : (
-            ''
-          )}
+            {this.state.showRoundedButtons ? (
+              <button
+                className={'c-toolbar__btn ' + (this.state.showLargeRoundedButtons ? 'active' : '')}
+                onClick={this.showLargeRoundedButtonsAction}
+              >
+                <span className="u-padding-right-small">Large</span>
+                <i className={'fas fa-plus fa-lg '} />
+              </button>
+            ) : (
+              ''
+            )}
+          </div>
         </div>
 
         <header className="u-margin-bottom-large">
