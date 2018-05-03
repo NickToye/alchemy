@@ -2,7 +2,7 @@ import React from 'react';
 import {Link, IndexLink} from 'react-router';
 
 const Header = () => {
-  return (<header className="c-header  u-padding-tiny u-padding-top-huge">
+  return (<header className="c-header  u-padding-tiny">
     <div className="c-toolbar__mq u-padding-tiny">
       <small>Current Media Query:
       </small>
