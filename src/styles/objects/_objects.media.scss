@@ -6,7 +6,7 @@
  */
 
 .o-media {
-  @include inuit-clearfix();
+  @include alchemy-inuit-clearfix();
   display: block;
 }
 

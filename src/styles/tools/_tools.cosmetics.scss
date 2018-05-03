@@ -1,17 +1,11 @@
 // Tools :: Cosmetics
 
-@mixin linear-gradient($direction, $color-stops...) {
+@mixin alchemy-linear-gradient($direction, $color-stops...) {
   background: nth(nth($color-stops, 1), 1);
   background: linear-gradient(legacy-direction($direction), $color-stops);
   background: linear-gradient($direction, $color-stops);
 }
 
-@mixin stripes($angle: 0, $bar-width: 10px, $color1: red, $color2: black) {
-  background: repeating-linear-gradient(
-    $angle,
-    $color1,
-    $color1 $bar-width,
-    $color2 $bar-width,
-    $color2 $bar-width * 2
-  );
+@mixin alchemy-stripes($angle: 0, $bar-width: 10px, $color1: red, $color2: black) {
+  background: repeating-linear-gradient($angle, $color1, $color1 $bar-width, $color2 $bar-width, $color2 $bar-width * 2);
 }

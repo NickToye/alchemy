@@ -1,7 +1,7 @@
 // Objects :: Surface
 
 .o-surface {
-  @include size(100%, 150px);
+  @include alchemy-size(100%, 150px);
   background-color: alchemy-color('white');
 }
 

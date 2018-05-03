@@ -1,6 +1,6 @@
 // Tools :: Links
 
-@mixin link($link, $hover:$link, $visited:$link, $active:$hover) {
+@mixin alchemy-link($link, $hover: $link, $visited: $link, $active: $hover) {
   a {
     color: $link;
     transition: $alchemy-global-transition;

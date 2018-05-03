@@ -50,15 +50,11 @@ $inuit-fractions: 1 2 3 4 5 !default;
 
 $inuit-offsets: false !default;
 
-
-
 // A mixin to spit out our width classes. Pass in the columns we want the widths
 // to have, and an optional suffix for responsive widths. E.g. to create thirds
 // and quarters for a small breakpoint:
 //
 // @include widths(3 4, -sm);
-
-
 
 /**
  * A series of width helper classes that you can use to size things like grid
@@ -71,7 +67,7 @@ $inuit-offsets: false !default;
  * defined in the `$inuit-fractions` list.
  */
 
-@include inuit-widths($inuit-fractions);
+@include alchemy-inuit-widths($inuit-fractions);
 
 /**
  * If we’re using Sass-MQ, automatically generate grid system(s) for each of our
@@ -83,7 +79,7 @@ $inuit-offsets: false !default;
 @if (variable-exists(mq-breakpoints)) {
   @each $inuit-bp-name, $inuit-bp-value in $mq-breakpoints {
     @include mq($from: $inuit-bp-name) {
-      @include inuit-widths($inuit-fractions, #{$inuit-widths-breakpoint-separator}#{$inuit-bp-name});
+      @include alchemy-inuit-widths($inuit-fractions, #{$inuit-widths-breakpoint-separator}#{$inuit-bp-name});
     }
   }
 }

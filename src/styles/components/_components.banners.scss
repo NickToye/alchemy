@@ -1,7 +1,7 @@
 // Components :: Banners
 
 .c-banner {
-  @include size(100%, 600px);
+  @include alchemy-size(100%, 600px);
   overflow: hidden;
 }
 

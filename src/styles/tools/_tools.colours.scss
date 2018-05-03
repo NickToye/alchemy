@@ -8,11 +8,7 @@
 }
 
 @function alchemy-color-contrast($bgcolor, $threshold: 50) {
-  @return if(
-    lightness($bgcolor) >= $threshold,
-    $alchemy-color-dark,
-    $alchemy-color-light
-  );
+  @return if(lightness($bgcolor) >= $threshold, $alchemy-color-dark, $alchemy-color-light);
 }
 
 @function alchemy-color($key: 'primary') {
@@ -21,6 +17,3 @@
 
 $alchemy-color-dark: alchemy-color(dark-grey);
 $alchemy-color-light: alchemy-color('white');
-
-// TODO Add a colour contrast specifically for utility colours
-// FIXME Check why prettier not working with tool files

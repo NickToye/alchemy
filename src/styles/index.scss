@@ -1,16 +1,25 @@
-// Inuit based scss
+// Alchemy SASS
 
 // TODO Add a table of contents and a more concise title
+
+/*
+
+CONTENTS
+
+SETTINGS
+- Core
+- Global
+- Config
+- Cosmetics
+
+
+*/
 
 // Settings
 @import 'settings/settings.core';
 @import 'settings/settings.global';
 @import 'settings/settings.config';
-@import 'settings/settings.colours';
-@import 'settings/settings.sizes';
-@import 'settings/settings.surfaces';
-@import 'settings/settings.mq';
-@import 'settings/settings.typography';
+@import 'settings/settings.cosmetics';
 
 // Tools
 // @import 'tools/tools.font-size';

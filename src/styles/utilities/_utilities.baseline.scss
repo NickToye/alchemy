@@ -9,7 +9,7 @@
 }
 
 @mixin alchemy-baseline-guide() {
-  @include linear-gradient($guide-color 1px, transparent 1px);
+  @include alchemy-linear-gradient($guide-color 1px, transparent 1px);
   background-size: 100% alchemy-rem($inuit-rhythm-unit);
   border-bottom: 1px solid $guide-color;
 }

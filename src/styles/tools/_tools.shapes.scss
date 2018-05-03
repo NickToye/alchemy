@@ -16,7 +16,7 @@
   } @else {
     $perpendicular-borders: $size solid transparent;
     @include absolute($position); // Position
-    @include size(0); // Size
+    @include alchemy-size(0); // Size
     content: '';
     z-index: 2;
 

@@ -13,18 +13,17 @@ $inuit-config: (
 
 // You can access data in this map using the following function:
 //
-// inuit-config(<key>)
+// alchemy-config(<key>)
 //
 // Example usage:
 //
-// @if (inuit-config(debug) == true) { ...  }
+// @if (alchemy-config(debug) == true) { ...  }
 
-@function inuit-config($key) {
-  @return map-get($inuit-config, $key);
+@function alchemy-config($key) {
+  @return map-get($alchemy-config, $key);
 }
 
 // Alchemy Atom Settings
-
 $alchemy-atoms: (
   'tiny': 6,
   'small': 12,
@@ -37,3 +36,16 @@ $alchemy-spacing-properties: (
   'padding': ('padding', #789772, darken(#789772, 15%)),
   'margin': ('margin', #cb9d71, darken(#cb9d71, 15%))
 ) !default;
+
+// Alchemy Media Queries Settings
+$mq-responsive: true;
+
+$mq-breakpoints: (
+  room: 0px,
+  village: 414px,
+  town: 736px,
+  city: 768px,
+  country: 1024px,
+  continent: 1280px,
+  world: 1366px
+);
