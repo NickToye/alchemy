@@ -2,9 +2,11 @@
 
 .c-banner {
   @include size(100%, 600px);
+  overflow: hidden;
 }
 
 .c-banner__text {
+  background-color: transparent !important;
   display: flex;
   flex-flow: column nowrap;
   width: 47.5%;
@@ -51,6 +53,14 @@ $alchemy-position: (
     }
   }
 
+  &.c-banner--left {
+    text-align: left;
+  }
+
+  &.c-banner--right {
+    text-align: right;
+  }
+
   .c-banner__text {
     height: 100%;
   }
@@ -70,6 +80,7 @@ $alchemy-position: (
   height: 100%;
 }
 
-.c-banner__text__content {
-  background: transparent !important;
+.c-banner__img {
+  @include absolute(top 0 left 0);
+  object-fit: cover;
 }

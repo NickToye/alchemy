@@ -3,6 +3,7 @@ import React from 'react';
 import colours from '../../data/colours';
 // import Droplet from '../../colours/Droplet';
 import Canvas from '../../colours/Canvas';
+import TextCanvas from '../../colours/TextCanvas';
 import Banner from './Banner';
 import Position from '../../layout/Position';
 import gridPosition from '../../data/gridPosition';
@@ -12,11 +13,12 @@ class BannerComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      showImage: false,
       showDropletsPopover: false,
       showCanvasPopover: false,
       showTextCanvasPopover: false,
       showTextBlockPositionPopover: false,
-      showTextBlock: false,
+      showTextBlock: true,
       colours: colours,
       dropPick: '',
       canvasPick: 'secondary2',
@@ -26,9 +28,10 @@ class BannerComponent extends React.Component {
       showHalfLeft: false,
       showHalfRight: false,
       showOpacityPopover: false,
-      opacity: 0,
+      opacity: 10,
     };
 
+    this.showImageAction = this.showImageAction.bind(this);
     this.showDropPick = this.showDropPick.bind(this);
     this.showCanvasPick = this.showCanvasPick.bind(this);
     this.showTextCanvasPick = this.showTextCanvasPick.bind(this);
@@ -42,6 +45,10 @@ class BannerComponent extends React.Component {
     this.showHalfRightAction = this.showHalfRightAction.bind(this);
     this.showOpacityPopoverAction = this.showOpacityPopoverAction.bind(this);
     this.updateOpacity = this.updateOpacity.bind(this);
+  }
+
+  showImageAction() {
+    this.setState(prev => ({ showImage: !prev.showImage }));
   }
 
   showDropPick(e) {
@@ -133,6 +140,14 @@ class BannerComponent extends React.Component {
           <div className="o-surface--l1">
             <div className="tools-wrapper">
               <button
+                className={`c-toolbar__btn ` + (this.state.showImage ? 'active' : '')}
+                onClick={this.showImageAction}
+              >
+                <i className="fas fa-image fa-lg" />
+              </button>
+            </div>
+            <div className="tools-wrapper">
+              <button
                 className={
                   'c-toolbar__btn ' +
                   (this.state.showCanvasPopover ? 'active ' : '') +
@@ -176,7 +191,11 @@ class BannerComponent extends React.Component {
               {this.state.showTextCanvasPopover ? (
                 <div className="c-toolbar__popover  animated fadeInUp">
                   {Object.keys(this.state.colours).map(key => (
-                    <Canvas key={key} details={this.state.colours[key]} action={this.showTextCanvasPick} />
+                    <TextCanvas
+                      key={key}
+                      details={this.state.colours[key]}
+                      action={this.showTextCanvasPick}
+                    />
                   ))}
                 </div>
               ) : (
@@ -242,6 +261,7 @@ class BannerComponent extends React.Component {
         </div>
         <Banner
           canvas={this.state.canvasPick}
+          showImage={this.state.showImage}
           showText={this.state.showTextBlock}
           textCanvas={this.state.textCanvasPick}
           textPosition={this.state.textBlockPositionPick}

@@ -7,7 +7,7 @@
   @return mix($color-base, $color, abs($level) * $alchemy-color-interval);
 }
 
-@function alchemy-color-contrast($bgcolor, $threshold: 40) {
+@function alchemy-color-contrast($bgcolor, $threshold: 50) {
   @return if(
     lightness($bgcolor) >= $threshold,
     $alchemy-color-dark,

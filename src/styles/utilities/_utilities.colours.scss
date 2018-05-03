@@ -21,6 +21,14 @@
         content: '#{$alchemy-value}';
       }
     }
+
+    // > * {
+    //   color: alchemy-color-contrast($alchemy-value);
+    // }
+
+    .c-btn--ghost {
+      color: alchemy-color-contrast($alchemy-value);
+    }
   }
 
   .u-alchemy-#{$alchemy-key}-colour {
