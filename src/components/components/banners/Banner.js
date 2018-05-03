@@ -26,14 +26,20 @@ class Banner extends React.Component {
           <div className={`c-banner__text  u-alchemy-${textCanvas}-bg  u-padding u-relative`}>
             <div className={`c-banner__bg  u-alchemy-${textCanvas}-bg  u-alchemy-${opacity}`} />
             <div className={`c-banner__text__content  `}>
-              <h2>Headline</h2>
+              <h1>Fusce dapibus, tellus ac cursus commodo</h1>
 
               <p>
                 Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, Fusce dapibus, tellus
                 ac cursus commodo, tortor mauris condimentum nibh, Fusce dapibus, tellus ac cursus commodo,
                 tortor mauris condimentum nibh
               </p>
-              <button className="c-btn  c-btn--ghost">Click Me</button>
+              <div className="u-4/5">
+                <button className={`c-btn  c-btn--ghost c-btn--block u-margin-bottom-small`}>Click Me</button>
+                <form className="o-form  o-flex  o-flex--row">
+                  <input className="o-form__input o-flex__item-auto" type="text" placeholder="Type in here..." />
+                  <button className="c-btn  c-btn--secondary2">Find</button>
+                </form>
+              </div>
             </div>
           </div>
         ) : (

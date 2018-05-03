@@ -179,7 +179,7 @@ class TypographyCard extends React.Component {
         <h2>Typefaces</h2>
         <div className="c-textbar  o-flex  o-flex--row u-padding">
           <input
-            className="c-textbar_action o-form_input"
+            className="c-textbar_action o-form__input"
             type="text"
             value={this.state.exampleText}
             onChange={this.updateExampleText}
