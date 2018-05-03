@@ -23,6 +23,12 @@ const typography = {
     label: 'Paragraph',
     typeface: 'FS Emeric Regular',
   },
+  type5: {
+    element: 'small',
+    fontSize: 13,
+    label: 'Small',
+    typeface: 'FS Emeric Regular'
+  }
 };
 
 export default typography;

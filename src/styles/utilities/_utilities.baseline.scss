@@ -22,7 +22,8 @@ $blueprint-colour: rgb(61, 143, 183);
   background-color: $blueprint-colour;
 
   [class^='u-h'],
-  [class^='u-p'] {
+  [class^='u-p'],
+  [class^='u-small'] {
     cursor: pointer;
     transition: $alchemy-global-transition;
 
