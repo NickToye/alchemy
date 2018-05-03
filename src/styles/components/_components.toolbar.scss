@@ -156,3 +156,26 @@
     width: 40px;
   }
 }
+
+.c-toolbar__mq {
+  @include linear-gradient(to bottom, #f6f9fc, 90%, darken(#c5d1df, 15%));
+  @include absolute(top $inuit-global-spacing-unit right $inuit-global-spacing-unit);
+  @include border-radius($alchemy-global-radius-small);
+  color: alchemy-color('dark-grey');
+
+  @each $alchemy-key, $alchemy-value in $mq-breakpoints {
+    &:after {
+      @include alchemy-font-size(13px);
+      color: alchemy-color('info');
+      font-family: FS-Emeric-Core, Helvetica, sans-serif;
+      text-transform: capitalize;
+
+      @include mq($alchemy-key) {
+        content: '#{$alchemy-key}';
+      }
+    }
+  }
+
+
+
+}

@@ -3,7 +3,10 @@ import { Link, IndexLink } from 'react-router';
 
 const Header = () => {
   return (
-    <header className="c-header  u-padding-tiny">
+    <header className="c-header  u-padding-tiny u-padding-top-huge">
+      <div className="c-toolbar__mq u-padding-tiny">
+        <small>Current Media Query: </small>
+      </div>
       <nav className="c-navigation">
         <IndexLink to="/" className="u-padding-horizontal-small" activeClassName="active">
           <img src={require('../../images/Alchemy@3x.png')} className="patch  patch--alchemy" />
