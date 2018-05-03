@@ -13,8 +13,8 @@ class Cartoon extends React.Component {
         <div
           className={
             `a-animations  u-padding  u-alchemy-primary-bg  o-flex  ` +
-            (activateAnimation ? ` ${animateClass} animated ` : '') +
-            initialState
+            (activateAnimation ? ` ${animateClass} animated ` : `${initialState}`)
+
           }
         >
           <img src={require('../../images/card-logo.png')} className="" />

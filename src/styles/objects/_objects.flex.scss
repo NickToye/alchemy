@@ -10,8 +10,16 @@
   justify-content: flex-start;
 }
 
-.o-flex--justift-center {
+.o-flex--justify-between {
+  justify-content: space-between;
+}
+
+.o-flex--justify-center {
   justify-content: center;
+}
+
+.o-flex--align-center {
+  align-items: center;
 }
 
 .o-flex--row {
@@ -24,4 +32,8 @@
 
 .o-flex__item {
   flex: 1;
+}
+
+.o-flex__item-auto {
+  flex: auto;
 }

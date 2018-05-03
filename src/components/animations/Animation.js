@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import faCog from '@fortawesome/fontawesome-free-solid/faCog';
 import PropTypes from 'prop-types';
 
 import Cartoon from './Cartoon';
@@ -23,8 +25,16 @@ class Animation extends React.Component {
 
   render() {
     const details = this.props.details;
+
+    let animationStatus;
+    if (this.state.activateAnimation) {
+      animationStatus = <FontAwesomeIcon icon="cog" spin />;
+    } else {
+      animationStatus = details.animation;
+    }
+
     return (
-      <div key={details.key}>
+      <div key={details.key} className="u-margin-bottom">
         <Cartoon
           animateClass={this.state.activeAnimation}
           activateAnimation={this.state.activateAnimation}
@@ -36,7 +46,7 @@ class Animation extends React.Component {
           value={details.animateClass}
           onClick={this.animateAction}
         >
-          {details.animation}
+          {animationStatus}
         </button>
       </div>
     );
@@ -49,7 +59,3 @@ Animation.propTypes = {
 };
 
 export default Animation;
-
-{
-  /* TODO Bounce In needs fixing */
-}

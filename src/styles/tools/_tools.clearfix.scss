@@ -7,7 +7,7 @@
 //   @include inuit-clearfix();
 // }
 
-@mixin inuit-clearfix() {
+@mixin alchemy-inuit-clearfix() {
   &:after {
     clear: both !important;
     content: '' !important;

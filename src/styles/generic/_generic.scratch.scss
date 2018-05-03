@@ -12,8 +12,8 @@
 
 .alchemy-layout-example-xray {
   @include absolute(left 0 top 0);
-  @include stripes(45deg, $color1: #789772, $color2: darken(#789772, 15%));
-  @include size(100%);
+  @include alchemy-stripes(45deg, $color1: alchemy-color('primary'), $color2: darken(alchemy-color('primary'), 15%));
+  @include alchemy-size(100%);
   transition: $alchemy-global-transition;
   z-index: 2;
 
@@ -57,11 +57,11 @@
 }
 
 .alchemy-layout-example-xray-margin {
-  @include stripes(45deg, $color1: #cb9d71, $color2: darken(#cb9d71, 15%));
+  @include alchemy-stripes(45deg, $color1: #cb9d71, $color2: darken(#cb9d71, 15%));
 }
 
 .alchemy-layout-example-xray-padding {
-  @include stripes(45deg, $color1: #789772, $color2: darken(#789772, 15%));
+  @include alchemy-stripes(45deg, $color1: #789772, $color2: darken(#789772, 15%));
 }
 
 .alchemy-layout-example-xray-padding-inner {
@@ -71,7 +71,7 @@
 // Animations
 
 .a-animations {
-  @include size(100%, 200px);
+  @include alchemy-size(100%, 200px);
   border-radius: $alchemy-global-radius;
 
   img {
@@ -90,4 +90,26 @@
 
 .u-relative {
   position: relative;
+}
+
+// Sticky stuff
+
+.Sticky {
+  padding: 20px;
+  border-radius: 3px;
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 20px;
+  width: 325px;
+
+  h3 {
+    margin: 0;
+  }
+
+  &.sticky {
+    position: fixed;
+    top: 24px;
+    border-radius: 0;
+    margin: 0;
+  }
 }

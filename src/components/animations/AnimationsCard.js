@@ -38,7 +38,9 @@ class AnimationsCard extends React.Component {
 
     return (
       <section className="o-section u-padding u-relative">
-        <div className="u-margin-bottom  u-margin-right  c-toolbar">{animationTypeList}</div>
+        <div className="u-margin-bottom  u-margin-right  c-toolbar">
+          <div className="tools-wrapper">{animationTypeList}</div>
+        </div>
         <header className="u-margin-bottom-large">
           <h1 className="u-margin-none">Animations</h1>
           <p>A tool to display animations available to elements.</p>

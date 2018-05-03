@@ -1,7 +1,7 @@
 // Components :: Atoms
 
 .nucleus {
-  @include size(6px);
+  @include alchemy-size(6px);
   background-color: alchemy-color(secondary1);
   box-shadow: $alchemy-global-shadow;
   outline: 1px solid alchemy-color('black');
@@ -14,14 +14,14 @@
     $double-value: $alchemy-value * 2;
 
     .atomic-#{$alchemy-atom} {
-      @include size(#{$alchemy-value}px);
+      @include alchemy-size(#{$alchemy-value}px);
       background-color: alchemy-color(primary);
       box-shadow: $alchemy-global-shadow;
       outline: 1px solid alchemy-color('black');
     }
 
     .atomic-#{nth($alchemy-property,1)}-unit-#{$alchemy-atom} {
-      @include stripes(45deg, $color1: nth($alchemy-property, 2), $color2: nth($alchemy-property, 3));
+      @include alchemy-stripes(45deg, $color1: nth($alchemy-property, 2), $color2: nth($alchemy-property, 3));
       border: 1px solid alchemy-color('black');
       box-shadow: $alchemy-global-shadow;
       position: relative;
@@ -65,7 +65,7 @@
         text-align: center;
 
         @if $alchemy-property-namespace == 'padding' {
-          @include size(100%);
+          @include alchemy-size(100%);
         }
       }
     }

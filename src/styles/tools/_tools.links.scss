@@ -1,0 +1,17 @@
+// Tools :: Links
+
+@mixin alchemy-link($link, $hover: $link, $visited: $link, $active: $hover) {
+  a {
+    color: $link;
+    transition: $alchemy-global-transition;
+    &:visited {
+      color: $visited;
+    }
+    &:hover {
+      color: $hover;
+    }
+    &:active {
+      color: $active;
+    }
+  }
+}

@@ -22,6 +22,7 @@ html {
 }
 
 body {
+  @include alchemy-link(alchemy-color('secondary2'), alchemy-color-level('secondary2', -3));
   background: $alchemy-init-bg;
   color: alchemy-color('white');
   font-family: Montserrat, sans-serif;

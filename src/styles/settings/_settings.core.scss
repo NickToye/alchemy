@@ -41,6 +41,16 @@ $inuit-global-spacing-unit-huge: $inuit-global-baseline *
 $inuit-global-font-size: 16px !default;
 $inuit-global-line-height: $inuit-global-spacing-unit !default;
 
+// By default, inuitcss uses fractions-like classes like `<div class="u-1/4">`.
+// You can change the `/` to whatever you fancy with this variable.
+$inuit-widths-delimiter: \/ !default;
+
+// When using Sass-MQ, this defines the separator for the breakpoints suffix
+// in the class name. By default, we are generating the responsive suffixes
+// for the classes with a `@` symbol so you get classes like:
+// <div class="u-3/12@mobile">
+$inuit-widths-breakpoint-separator: \@ !default;
+
 // Check that the chosen font rules are pixel numbers.
 
 @each $_inuit-font-globals in $inuit-global-font-size $inuit-global-line-height

@@ -7,6 +7,8 @@ import TypographyCard from './components/typography/TypographyCard';
 import ButtonsCard from './components/forms/ButtonsCard';
 import LayoutCard from './components/layout/LayoutCard';
 import AnimationsCard from './components/animations/AnimationsCard';
+import SurfacesCard from './components/surfaces/SurfacesCard';
+import ComponentsCard from './components/components/ComponentsCard';
 import CodeCard from './components/code/CodeCard';
 
 export default (
@@ -17,6 +19,8 @@ export default (
     <Route path="buttons" component={ButtonsCard} />
     <Route path="layout" component={LayoutCard} />
     <Route path="animations" component={AnimationsCard} />
+    <Route path="surfaces" component={SurfacesCard} />
+    <Route path="components" component={ComponentsCard} />
     <Route path="code" component={CodeCard} />
   </Route>
 );

@@ -4,7 +4,7 @@
   ],
   "ignoreFiles": [
     "./src/styles/generic/_generic.normalize.scss",
-    "./src/styles/tools/**/*.scss",
+    # "./src/styles/tools/**/*.scss",
     "./src/styles/settings/*.scss",
     "./src/styles/test/*.scss"
   ],

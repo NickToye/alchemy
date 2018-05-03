@@ -7,14 +7,15 @@
 }
 
 .c-toolbar__btn {
-  background: alchemy-color-level('light-grey', -1);
+  // background: alchemy-color-level('light-grey', -1);
+  background: transparent;
   border: 0;
-  border-right: 1px solid alchemy-color-level('light-grey', -3);
+  // border-right: 1px dashed lighten(#7ba0c5, 10%);
   color: alchemy-color('dark-grey');
   cursor: pointer;
   margin: 0;
   padding: 12px;
-  transition: $alchemy-global-transition;
+  // transition: $alchemy-global-transition;
 
   &:first-child {
     @include border-radius($alchemy-global-radius left);
@@ -24,17 +25,8 @@
     @include border-radius($alchemy-global-radius right);
   }
 
-  .c-toolbar__popover & {
-    background: alchemy-color-level('light-grey', -1);
-    border: 0;
-
-    &:first-child {
-      @include border-radius($alchemy-global-radius left);
-    }
-
-    &:last-child {
-      @include border-radius($alchemy-global-radius right);
-    }
+  i {
+    pointer-events: none; // TODO Move this hack somewhere, or resolve more elegantly.
   }
 
   .tools-wrapper & {
@@ -46,7 +38,8 @@
   }
 
   &:hover {
-    background: alchemy-color-level('pale-grey', 3);
+    @include alchemy-linear-gradient(to bottom, #adc9e3, 90%, darken(#7ba0c5, 20%));
+    color: alchemy-color('white');
   }
 
   // svg {
@@ -54,7 +47,8 @@
   // }
 
   &.active {
-    background: alchemy-color-level('pale-grey', 2);
+    @include alchemy-linear-gradient(to bottom, #adc9e3, 90%, darken(#7ba0c5, 20%));
+    color: alchemy-color('white');
   }
 
   &.disabled {
@@ -70,17 +64,69 @@
   }
 }
 
+#range {
+  -webkit-appearance: none;
+  outline: none;
+  @include alchemy-linear-gradient(to left, darken(#4b749b, 15%), #4b749b);
+  height: 6px;
+  width: 200px;
+  border-radius: 5px;
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: darken(#4b749b, 25%);
+  }
+}
+
+.rangeslider-horizontal .rangeslider__fill {
+  @include alchemy-linear-gradient(to left, darken(#4b749b, 15%), #4b749b);
+}
+
 .tools-wrapper {
   display: inline-block;
   position: relative;
+  @include alchemy-linear-gradient(to bottom, #f6f9fc, 90%, darken(#c5d1df, 15%));
+
+  &:first-child {
+    @include border-radius($alchemy-global-radius-small left);
+
+    .c-toolbar__btn:first-child {
+      @include border-radius($alchemy-global-radius-small left);
+    }
+  }
+
+  &:last-child {
+    @include border-radius($alchemy-global-radius-small right);
+
+    .c-toolbar__btn:last-child {
+      @include border-radius($alchemy-global-radius-small right);
+    }
+  }
 }
 
 .c-toolbar__popover {
   @include absolute(bottom 50px right 0);
+  @include border-radius($alchemy-global-radius-small);
+  @include alchemy-linear-gradient(to bottom, #c5d1df, 90%, darken(#c5d1df, 15%));
+  // background: alchemy-color-level('light-grey', -1);
   display: flex;
 
   &:before {
-    @include triangle($direction: bottom, $position: top 100% right 0.75em, $size: 6px, $color: alchemy-color-level('light-grey', -1));
+    @include triangle($direction: bottom, $position: top 100% right 0.75em, $size: 6px, $color: #96aec4);
+  }
+
+  // .c-toolbar__btn {
+  //   background: alchemy-color-level('light-grey', -1);
+  // }
+
+  .c-toolbar__btn:first-child {
+    @include border-radius($alchemy-global-radius-small left);
+  }
+
+  .c-toolbar__btn:last-child {
+    @include border-radius($alchemy-global-radius-small right);
   }
 }
 
@@ -108,5 +154,25 @@
 
   &.c-btn {
     width: 40px;
+  }
+}
+
+.c-toolbar__mq {
+  @include alchemy-linear-gradient(to bottom, #f6f9fc, 90%, darken(#c5d1df, 15%));
+  @include absolute(top $inuit-global-spacing-unit right $inuit-global-spacing-unit);
+  @include border-radius($alchemy-global-radius-small);
+  color: alchemy-color('dark-grey');
+
+  @each $alchemy-key, $alchemy-value in $mq-breakpoints {
+    &:after {
+      @include alchemy-font-size(13px);
+      color: alchemy-color('info');
+      font-family: FS-Emeric-Core, Helvetica, sans-serif;
+      text-transform: capitalize;
+
+      @include mq($alchemy-key) {
+        content: '#{$alchemy-key}';
+      }
+    }
   }
 }

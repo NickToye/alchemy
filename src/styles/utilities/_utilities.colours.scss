@@ -21,10 +21,18 @@
         content: '#{$alchemy-value}';
       }
     }
+
+    // > * {
+    //   color: alchemy-color-contrast($alchemy-value);
+    // }
+
+    .c-btn--ghost {
+      color: alchemy-color-contrast($alchemy-value);
+    }
   }
 
   .u-alchemy-#{$alchemy-key}-colour {
-    color: $alchemy-value;
+    color: $alchemy-value !important;
   }
 
   @for $i from 1 through $alchemy-mix-levels {

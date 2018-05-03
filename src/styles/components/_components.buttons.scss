@@ -8,7 +8,7 @@
   margin: 0;
   padding: $inuit-global-spacing-unit-small $inuit-global-spacing-unit;
   text-align: center;
-  transition: $alchemy-global-transition;
+  // transition: $alchemy-global-transition;
   vertical-align: middle;
 
   &:focus {
@@ -77,4 +77,10 @@ $btn-ghost-border-width: 2px;
       color: $alchemy-value;
     }
   }
+}
+
+// Block Buttons
+
+.c-btn--block {
+  width: 100%;
 }
