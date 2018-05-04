@@ -58,7 +58,7 @@ Banner.propTypes = {
   textPosition: PropTypes.string,
   showHalfLeft: PropTypes.bool,
   showHalfRight: PropTypes.bool,
-  opacity: PropTypes.string,
+  opacity: PropTypes.number,
 };
 
 export default Banner;

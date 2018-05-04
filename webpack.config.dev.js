@@ -132,5 +132,3 @@ export default {
     ],
   },
 };
-
-// FIXME Fix StyleLint, crashes on lint errors
