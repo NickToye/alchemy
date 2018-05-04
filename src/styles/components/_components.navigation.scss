@@ -1,4 +1,58 @@
 // Components :: Navigation
 
+<<<<<<< HEAD
+.c-navigation {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  a {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    text-decoration: none;
+    color: #f0a62e;
+    padding: 0 24px !important;
+
+    &:visited {
+      color: #f0a62e;
+    }
+  }
+}
+
+// TODO: Refactor patch to something more generic
+.patch {
+  cursor: pointer;
+  max-height: 64px;
+  opacity: 0.4;
+  transition: opacity linear 0.3s;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  .active & {
+    opacity: 1;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &--sm {
+    margin-bottom: 24px;
+    max-height: 150px;
+  }
+
+  &--alchemy {
+    opacity: 1;
+    max-height: 150px;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+=======
 // .c-navigation {
 // }
+>>>>>>> 84dbbe9bbad4c4c7a4318f89f9747225020a4a8c
