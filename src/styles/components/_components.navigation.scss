@@ -1,12 +1,27 @@
 // Components :: Navigation
 
-// .c-navigation {
-// }
+.c-navigation {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  a {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    text-decoration: none;
+    color: #f0a62e;
+    padding: 0 24px !important;
+
+    &:visited {
+      color: #f0a62e;
+    }
+  }
+}
 
 // TODO: Refactor patch to something more generic
 .patch {
   cursor: pointer;
-  max-height: 150px;
+  max-height: 64px;
   opacity: 0.4;
   transition: opacity linear 0.3s;
 
@@ -29,6 +44,7 @@
 
   &--alchemy {
     opacity: 1;
+    max-height: 150px;
 
     &:hover {
       opacity: 1;
