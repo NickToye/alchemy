@@ -2,36 +2,3 @@
 
 // .c-navigation {
 // }
-
-// TODO: Refactor patch to something more generic
-.patch {
-  cursor: pointer;
-  max-height: 150px;
-  opacity: 0.4;
-  transition: opacity linear 0.3s;
-
-  &:hover {
-    opacity: 0.6;
-  }
-
-  .active & {
-    opacity: 1;
-
-    &:hover {
-      opacity: 1;
-    }
-  }
-
-  &--sm {
-    margin-bottom: 24px;
-    max-height: 150px;
-  }
-
-  &--alchemy {
-    opacity: 1;
-
-    &:hover {
-      opacity: 1;
-    }
-  }
-}

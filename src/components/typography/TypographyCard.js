@@ -23,8 +23,8 @@ class TypographyCard extends React.Component {
       colours: colours,
       type: typography,
       face: typefaces,
-      dropPick: '', // TODO Try and pick a colour from an array
-      canvasPick: '', // TODO Try and pick a colour from an array
+      dropPick: '',
+      canvasPick: '',
       exampleText: 'Alchemy Type Tester',
       exampleElement: 'p',
       elements: ['h1', 'h2', 'h3', 'p'],

@@ -1,5 +1,7 @@
 // Components :: Toolbar
 
+// TODO Tidy up Toolbar Component
+
 .c-toolbar {
   @include absolute(top $inuit-rhythm-unit right 0);
   box-shadow: $alchemy-global-shadow;

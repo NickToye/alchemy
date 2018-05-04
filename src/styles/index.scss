@@ -1,7 +1,5 @@
 // Alchemy SASS
 
-// TODO Add a table of contents and a more concise title
-
 /*
 
 CONTENTS
@@ -12,8 +10,70 @@ SETTINGS
 - Config
 - Cosmetics
 
+TOOLS
+- Animate
+- Border Radius
+- Clearfix
+- Colours
+- Cosmetics
+- Dimensions
+- Helpers
+- Hidden
+- Links
+- Position
+- Sass MQ (Node Modules)
+- Shapes
+- Typesetting
+- Widths
+
+GENERIC
+- Box Sizing
+- Reset
+- Sharing
+- Scratch
+
+ELEMENTS
+- Headings
+- Page
+
+OBJECTS
+- Flex
+- Forms
+- Grid
+- List Bare
+- Media
+- Surface
+- Table
+- Wrapper
+
+COMPONENTS
+- Atoms
+- Banners
+- Buttons
+- Header
+- Navigation
+- Range
+- Swatches
+- Toolbar
+
+UTILITIES
+- Baseline
+- Colours
+- Helpers
+- Hide
+- Opacity
+- Spacings
+- Typography
+- Widths
+
+THIRD PARTIES
+- Animate (animate-sass)
+
+DEVELOPMENT
+- Alchemy
 
 */
+
 
 // Settings
 @import 'settings/settings.core';
@@ -21,54 +81,55 @@ SETTINGS
 @import 'settings/settings.config';
 @import 'settings/settings.cosmetics';
 
+
 // Tools
-// @import 'tools/tools.font-size';
 @import 'tools/tools.animate';
 @import 'tools/tools.border-radius';
 @import 'tools/tools.clearfix';
 @import 'tools/tools.colours';
-@import 'tools/tools.hidden';
-@import 'node_modules/sass-mq/mq';
 @import 'tools/tools.cosmetics';
 @import 'tools/tools.dimensions';
 @import 'tools/tools.helpers';
+@import 'tools/tools.hidden';
 @import 'tools/tools.links';
 @import 'tools/tools.position';
+@import 'node_modules/sass-mq/mq';
 @import 'tools/tools.shapes';
 @import 'tools/tools.typesetting';
 @import 'tools/tools.widths';
 
+
 // Generic
 @import 'generic/generic.box-sizing';
-// @import 'generic/generic.normalize';
 @import 'generic/generic.reset';
-@import 'generic/generic.shared';
 @import 'generic/generic.scratch';
+@import 'generic/generic.shared';
+
 
 // Elements
-@import 'elements/elements.page';
 @import 'elements/elements.headings';
-// @import 'elements/elements.images';
-// @import 'elements/elements.tables';
+@import 'elements/elements.page';
+
 
 // Objects
 @import 'objects/objects.flex';
 @import 'objects/objects.forms';
 @import 'objects/objects.grid';
+@import 'objects/objects.list-bare';
+@import 'objects/objects.media';
 @import 'objects/objects.surface';
+@import 'objects/objects.table';
 @import 'objects/objects.wrapper';
 
 // @import "objects/objects.layout";
-@import 'objects/objects.media';
 // @import "objects/objects.flag";
-@import 'objects/objects.list-bare';
 // @import "objects/objects.list-inline";
 // @import "objects/objects.box";
 // @import "objects/objects.block";
 // @import "objects/objects.ratio";
 // @import "objects/objects.crop";
-@import 'objects/objects.table';
 // @import "objects/objects.pack";
+
 
 // Components
 @import 'components/components.atoms';
@@ -79,6 +140,7 @@ SETTINGS
 @import 'components/components.range';
 @import 'components/components.swatches';
 @import 'components/components.toolbar';
+
 
 // Utilities
 $inuit-offsets: true;
@@ -94,8 +156,10 @@ $inuit-offsets: true;
 @import 'utilities/utilities.typography';
 @import 'utilities/utilities.widths';
 
+
 // Third Parties
 @import './node_modules/animate-sass/animate';
+
 
 // Development
 @import 'alchemy/alchemy.development';

@@ -5,6 +5,7 @@ import ContentsCard from '../common/ContentsCard';
 import Sticky from '../common/Sticky';
 
 import BannerComponent from './banners/BannerComponent';
+import CardComponent from './cards/CardComponent';
 
 class ComponentsCard extends React.Component {
   constructor(props) {
@@ -32,6 +33,7 @@ class ComponentsCard extends React.Component {
           </aside>
           <main className="u-4/5">
             <BannerComponent />
+            <CardComponent />
           </main>
         </div>
       </section>
