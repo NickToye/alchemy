@@ -51,11 +51,10 @@
   }
 }
 
-
 // Patches
 .a-patch {
   cursor: pointer;
-  max-height: 150px;
+  max-height: 64px;
   opacity: 0.4;
   transition: opacity linear 0.3s;
 
@@ -78,9 +77,16 @@
 
   &--alchemy {
     opacity: 1;
+    max-height: 112px;
+    display: flex;
+    align-self: center;
 
     &:hover {
       opacity: 1;
     }
   }
+}
+
+.a-logo {
+  background: darken($alchemy-init-header, 5%);
 }
