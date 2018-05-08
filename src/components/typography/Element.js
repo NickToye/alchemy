@@ -9,7 +9,7 @@ class Element extends React.Component {
 
     return (
       <button
-        className={'c-textbar_action c-btn c-btn--small ' + (isCurrent ? 'active' : '')}
+        className={'c-textbar_btn c-btn c-btn--small ' + (isCurrent ? 'active' : '')}
         value={details}
         key={details.key}
         onClick={this.props.action}

@@ -14,7 +14,7 @@ class Surface extends React.Component {
 }
 
 Surface.propTypes = {
-  details: PropTypes.object,
+  details: PropTypes.string,
 };
 
 export default Surface;

@@ -42,3 +42,5 @@ class ComponentsCard extends React.Component {
 }
 
 export default ComponentsCard;
+
+// TODO add a Card component

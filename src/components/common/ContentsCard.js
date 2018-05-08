@@ -6,7 +6,9 @@ class ContentsCard extends React.Component {
     const details = this.props.details;
     return (
       <li key={details.id}>
-        <a href={`#` + details.identifier}>{details.section}</a>
+        <a href={`#` + details.identifier} className="u-padding-horizontal-small u-padding-vertical-tiny">
+          {details.section}
+        </a>
       </li>
     );
   }

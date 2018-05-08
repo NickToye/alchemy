@@ -47,7 +47,19 @@
 
 .a-contents-box {
   a {
+    display: block;
     text-decoration: none;
+
+    &:link,
+    &:visited {
+      color: alchemy-color('white');
+    }
+  }
+  li {
+    border-bottom: 1px dashed rgba(alchemy-color('white'), 0.2);
+    &:last-child {
+      border: 0;
+    }
   }
 }
 
@@ -89,4 +101,8 @@
 
 .a-logo {
   background: darken($alchemy-init-header, 5%);
+}
+
+.a-alchemy-bg {
+  background-color: $alchemy-init-header;
 }

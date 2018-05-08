@@ -67,3 +67,5 @@ class AnimationsCard extends React.Component {
 }
 
 export default AnimationsCard;
+
+// TODO Put sidebar navigation instead of Buttons
