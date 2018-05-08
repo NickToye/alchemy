@@ -19,7 +19,7 @@ const Header = () => {
           <img src={require('../../images/Typography@3x.png')} className="a-patch" />
           <span>Typography</span>
         </Link>
-        <Link to="/buttons" className="u-padding-horizontal-small o-flex__item" activeClassName="active">
+        <Link to="/forms" className="u-padding-horizontal-small o-flex__item" activeClassName="active">
           <img src={require('../../images/Buttons@3x.png')} className="a-patch" />
           <span>Forms</span>
         </Link>

@@ -49,6 +49,17 @@
   a {
     display: block;
     text-decoration: none;
+
+    &:link,
+    &:visited {
+      color: alchemy-color('white');
+    }
+  }
+  li {
+    border-bottom: 1px dashed rgba(alchemy-color('white'), 0.2);
+    &:last-child {
+      border: 0;
+    }
   }
   li:hover {
     background: rgba(alchemy-color('black'), 0.2);

@@ -4,6 +4,7 @@
   align-content: flex-start;
   height: 250px;
   position: relative;
+  z-index: 1;
 
   &:before,
   &:after {
@@ -31,6 +32,7 @@
 }
 
 .c-swatch__tones {
+  @include border-radius($alchemy-global-radius bottom);
   margin: 0 auto;
   width: 98%;
 }

@@ -96,7 +96,7 @@
 }
 
 .tools-wrapper {
-  display: inline-block;
+  // display: inline-block;
   position: relative;
   @include alchemy-linear-gradient(to bottom, #f6f9fc, 90%, darken(#c5d1df, 15%));
 
@@ -147,9 +147,13 @@
   // background: alchemy-color('dark-grey');
 }
 
-.c-textbar_action {
-  border: 1px solid alchemy-color('medium-grey');
-  border-right: 0;
+.c-textbar_input {
+  @include alchemy-font-size(14px);
+  @include border-radius($alchemy-global-radius left);
+  border: 0;
+  margin: 0;
+  padding-top: 6px;
+  padding-bottom: 6px;
 
   &:last-child {
     border-right: 1px solid alchemy-color('medium-grey');
@@ -162,10 +166,10 @@
   &.active {
     background-color: alchemy-color-level('light-grey', -1);
   }
+}
 
-  &.c-btn {
-    width: 40px;
-  }
+.c-textbar_btn {
+  height: 36px;
 }
 
 .c-toolbar__mq {
