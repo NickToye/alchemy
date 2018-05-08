@@ -6,6 +6,7 @@ import Droplet from '../colours/Droplet';
 import Button from './Button';
 
 import ColourType from '../colours/ColourType';
+import ScrollableAnchor from 'react-scrollable-anchor';
 
 class ButtonsCard extends React.Component {
   constructor(props) {
@@ -63,92 +64,87 @@ class ButtonsCard extends React.Component {
     const selectedColourType = this.state.colourTypePick;
 
     return (
-      <section className="o-section u-padding  u-relative">
-        <div className="u-margin-bottom u-margin-right  c-toolbar">
-          <div className="tools-wrapper">
-            {Object.keys(this.state.colourTypes).map(key => (
-              <ColourType
-                key={key}
-                details={this.state.colourTypes[key]}
-                colourTypePick={this.state.colourTypePick}
-                action={this.showColourTypePick}
-              />
-            ))}
-          </div>
-          <div className="tools-wrapper">
-            <button
-              className={'c-toolbar__btn ' + (this.state.showGhost ? 'active' : '')}
-              onClick={this.showGhostAction}
-            >
-              <span className="u-padding-right-small">Show Ghost</span>
-              <i className={'far fa-square fa-lg '} />
-            </button>
-
-            {this.state.showDropletsPopover ? (
-              <div className="c-toolbar__popover  animated fadeInUp">
-                {Object.keys(this.state.colours).map(key => (
-                  <Droplet key={key} details={this.state.colours[key]} action={this.showDropPick} />
+      <ScrollableAnchor id="buttons">
+        <section className="o-section u-relative o-surface--l2">
+          <div className="c-textbar  o-flex  o-flex--justify-between  o-flex--align-center  o-flex--row u-padding">
+            <h2 className="u-alchemy-white-colour u-margin-none">Button Styles</h2>
+            <div className="o-surface--l1 o-flex o-flex--row">
+              <div className="tools-wrapper">
+                {Object.keys(this.state.colourTypes).map(key => (
+                  <ColourType
+                    key={key}
+                    details={this.state.colourTypes[key]}
+                    colourTypePick={this.state.colourTypePick}
+                    action={this.showColourTypePick}
+                  />
                 ))}
               </div>
-            ) : (
-              ''
-            )}
-          </div>
-          <div className="tools-wrapper">
-            <button
-              className={'c-toolbar__btn ' + (this.state.showRoundedButtons ? 'active' : '')}
-              onClick={this.showRoundedButtonsAction}
-            >
-              <span className="u-padding-right-small">Rounded Buttons</span>
-              <i className={'fas fa-square fa-lg ' + (this.state.showRoundedButtons ? 'active' : '')} />
-            </button>
-            {this.state.showRoundedButtons ? (
-              <button
-                className={'c-toolbar__btn ' + (this.state.showLargeRoundedButtons ? 'active' : '')}
-                onClick={this.showLargeRoundedButtonsAction}
-              >
-                <span className="u-padding-right-small">Large</span>
-                <i className={'fas fa-plus fa-lg '} />
-              </button>
-            ) : (
-              ''
-            )}
-          </div>
-        </div>
+              <div className="tools-wrapper">
+                <button
+                  className={'c-toolbar__btn ' + (this.state.showGhost ? 'active' : '')}
+                  onClick={this.showGhostAction}
+                >
+                  <span className="u-padding-right-small">Show Ghost</span>
+                  <i className={'far fa-square fa-lg '} />
+                </button>
 
-        <header className="u-margin-bottom-large">
-          <h1 className="u-margin-none">Buttons</h1>
-          <p>A tool that will display the correct buttons.</p>
-        </header>
-
-        <h2>Button Styles</h2>
-
-        <div className="u-margin-bottom">
-          <h3 className="u-text-capitalise">{this.state.colourTypePick}</h3>
-          <div className="o-grid">
-            {Object.keys(this.state.colours)
-              .filter(function(filteredSwatches) {
-                return colours[filteredSwatches].colourType === selectedColourType;
-              })
-              .map(key => (
-                <div key={key}>
-                  <Button
-                    key={key}
-                    details={this.state.colours[key]}
-                    roundedButtons={this.state.showRoundedButtons}
-                    largeRoundedButtons={this.state.showLargeRoundedButtons}
-                    showGhost={this.state.showGhost}
-                  />
-                </div>
-              ))}
+                {this.state.showDropletsPopover ? (
+                  <div className="c-toolbar__popover  animated fadeInUp">
+                    {Object.keys(this.state.colours).map(key => (
+                      <Droplet key={key} details={this.state.colours[key]} action={this.showDropPick} />
+                    ))}
+                  </div>
+                ) : (
+                  ''
+                )}
+              </div>
+              <div className="tools-wrapper">
+                <button
+                  className={'c-toolbar__btn ' + (this.state.showRoundedButtons ? 'active' : '')}
+                  onClick={this.showRoundedButtonsAction}
+                >
+                  <span className="u-padding-right-small">Rounded Buttons</span>
+                  <i className={'fas fa-square fa-lg ' + (this.state.showRoundedButtons ? 'active' : '')} />
+                </button>
+                {this.state.showRoundedButtons ? (
+                  <button
+                    className={'c-toolbar__btn ' + (this.state.showLargeRoundedButtons ? 'active' : '')}
+                    onClick={this.showLargeRoundedButtonsAction}
+                  >
+                    <span className="u-padding-right-small">Large</span>
+                    <i className={'fas fa-plus fa-lg '} />
+                  </button>
+                ) : (
+                  ''
+                )}
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+
+          <div className="u-margin-bottom u-padding a-alchemy-bg-dark">
+            <h3 className="u-text-capitalise">{this.state.colourTypePick}</h3>
+            <div className="o-grid">
+              {Object.keys(this.state.colours)
+                .filter(function(filteredSwatches) {
+                  return colours[filteredSwatches].colourType === selectedColourType;
+                })
+                .map(key => (
+                  <div key={key}>
+                    <Button
+                      key={key}
+                      details={this.state.colours[key]}
+                      roundedButtons={this.state.showRoundedButtons}
+                      largeRoundedButtons={this.state.showLargeRoundedButtons}
+                      showGhost={this.state.showGhost}
+                    />
+                  </div>
+                ))}
+            </div>
+          </div>
+        </section>
+      </ScrollableAnchor>
     );
   }
 }
 
 export default ButtonsCard;
-
-// TODO Change Buttons Card to Forms Card, and add a Buttons Card to that
-// TODO Put the Buttons content inside white box with toolbar in header

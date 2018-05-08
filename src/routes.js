@@ -4,7 +4,7 @@ import App from './components/App';
 import HomeCard from './components/home/HomeCard';
 import ColoursCard from './components/colours/ColoursCard';
 import TypographyCard from './components/typography/TypographyCard';
-import ButtonsCard from './components/forms/ButtonsCard';
+import FormsCard from './components/forms/FormsCard';
 import LayoutCard from './components/layout/LayoutCard';
 import AnimationsCard from './components/animations/AnimationsCard';
 import SurfacesCard from './components/surfaces/SurfacesCard';
@@ -16,7 +16,7 @@ export default (
     <IndexRoute component={HomeCard} />
     <Route path="colours" component={ColoursCard} />
     <Route path="typography" component={TypographyCard} />
-    <Route path="buttons" component={ButtonsCard} />
+    <Route path="forms" component={FormsCard} />
     <Route path="layout" component={LayoutCard} />
     <Route path="animations" component={AnimationsCard} />
     <Route path="surfaces" component={SurfacesCard} />

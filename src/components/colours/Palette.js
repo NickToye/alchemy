@@ -15,16 +15,21 @@ class Palette extends React.Component {
     const palette = this.props.palette;
     return (
       <ScrollableAnchor id={palette.identifier}>
-        <div key={palette.key} className="u-margin-bottom-huge">
-          <h2>{palette.section} palette</h2>
-          <div className="o-grid  o-grid--centre  o-grid--start o-grid--auto">
+        <section
+          key={palette.key}
+          className="o-section  u-margin-bottom-huge  o-surface--l2 a-alchemy-bg-dark"
+        >
+          <div className="c-textbar  o-flex  o-flex--justify-between  o-flex--align-center  o-flex--row u-padding">
+            <h2 className="u-alchemy-white-colour u-margin-none">{palette.section} palette</h2>
+          </div>
+          <div className="o-grid  o-grid--centre  o-grid--start o-grid--auto u-padding">
             {Object.keys(this.state.colours)
               .filter(function(filteredSwatches) {
                 return colours[filteredSwatches].colourType === palette.identifier;
               })
               .map(key => <SwatchCard key={key} colour={this.state.colours[key]} />)}
           </div>
-        </div>
+        </section>
       </ScrollableAnchor>
     );
   }

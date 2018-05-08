@@ -3,7 +3,7 @@
 .o-grid {
   display: grid;
   grid-gap: $inuit-global-spacing-unit;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(20%, 1fr)); // TODO this needs to be less specific
 
   &--auto {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

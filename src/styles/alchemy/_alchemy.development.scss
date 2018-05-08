@@ -106,3 +106,7 @@
 .a-alchemy-bg {
   background-color: $alchemy-init-header;
 }
+
+.a-alchemy-bg-dark {
+  background-color: darken($alchemy-init-header, 5%);
+}
