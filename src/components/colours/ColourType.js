@@ -2,6 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class ColourType extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     const details = this.props.details;
     const colourTypePick = this.props.colourTypePick;

@@ -1,7 +1,6 @@
 // Alchemy :: Development
 
 // TODO Tidy up development file
-// TODO Create more patches for navigation
 
 .a-development {
   padding-top: 10px;
@@ -19,6 +18,7 @@
 
 .a-page {
   color: alchemy-color('grey');
+  @include border-radius($alchemy-global-radius);
 
   h3 {
     color: alchemy-color('medium-grey');
@@ -47,7 +47,11 @@
 
 .a-contents-box {
   a {
+    display: block;
     text-decoration: none;
+  }
+  li:hover {
+    background: rgba(alchemy-color('black'), 0.2);
   }
 }
 
@@ -89,4 +93,10 @@
 
 .a-logo {
   background: darken($alchemy-init-header, 5%);
+}
+
+.a-aside .Sticky {
+  background: #173748;
+  @include border-radius($alchemy-global-radius);
+  padding: 0;
 }
