@@ -86,6 +86,16 @@
   overflow: hidden;
 }
 
+// Surfaces
+
+.o-surface {
+  img {
+    margin: 0 auto;
+    max-height: 80%;
+    opacity: 0.5;
+  }
+}
+
 // Utility classes
 
 .u-relative {

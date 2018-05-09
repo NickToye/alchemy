@@ -13,7 +13,6 @@ class Cartoon extends React.Component {
   }
 
   animateAction(e) {
-    console.log(e.target.value);
     this.setState({ activeAnimation: e.target.value });
     this.setState({ activateAnimation: true });
     setTimeout(() => {
@@ -22,7 +21,6 @@ class Cartoon extends React.Component {
   }
 
   render() {
-    // const animateClass = this.props.animateClass;
     const initialState = this.props.initialState;
     const animation = this.props.animation;
 
