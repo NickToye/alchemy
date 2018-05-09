@@ -50,8 +50,8 @@ class LayoutExampleCard extends React.Component {
           </div>
 
           <div className="u-margin-bottom u-padding a-alchemy-bg-dark">
-            <div className="o-flex  o-flex--row  o-flex--start  alchemy-layout-example  u-padding">
-              <div className="o-flex__item  alchemy-layout-example-child  u-margin-right">
+            <div className="o-layout  o-layout--large  alchemy-layout-example  u-padding-vertical">
+              <div className="o-layout__item  u-1/4  alchemy-layout-example-child">
                 <p className="u-margin-bottom">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius
                   blandit sit amet non magna. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
@@ -78,7 +78,7 @@ class LayoutExampleCard extends React.Component {
                   auctor.
                 </p>
               </div>
-              <div className="o-flex__item  o-flex  o-flex--column  alchemy-layout-example-child  u-margin-left">
+              <div className="o-layout__item  u-3/4  o-flex  o-flex--column  alchemy-layout-example-child">
                 <img src="https://placeimg.com/1200/400/arch" className="u-margin-bottom-large" />
                 <div className="alchemy-layout-example-child-block  u-padding-large">
                   <h2>This is a content block</h2>
@@ -97,11 +97,11 @@ class LayoutExampleCard extends React.Component {
                   }
                 >
                   <div className="o-flex__item alchemy-layout-example-child-xray" />
-                  <div className="o-flex__item  o-flex  o-flex--column  o-flex--start  alchemy-layout-example-child-xray  u-margin-left">
-                    <div className="alchemy-layout-example-xray-margin  o-flex__item">
+                  <div className="o-layout  alchemy-layout-example-child-xray  u-margin-left">
+                    <div className="alchemy-layout-example-xray-margin  u-1/4  o-layout__item">
                       <div className="alchemy-layout-example-child-block-xray u-margin-bottom-large" />
                     </div>
-                    <div className="alchemy-layout-example-child-block-xray  alchemy-layout-example-xray-padding  u-padding-large  o-flex__item">
+                    <div className="alchemy-layout-example-child-block-xray  alchemy-layout-example-xray-padding  u-padding-large  u-3/4  o-layout__item">
                       <div className="alchemy-layout-example-xray-padding-inner">
                         <h2>This is a content block</h2>
                         <p>

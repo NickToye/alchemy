@@ -1,4 +1,4 @@
-const styleGuidelines = {
+const StyleGuidelines = {
   section1: {
     section: 'Introduction',
     identifier: 'introduction',
@@ -25,4 +25,4 @@ const styleGuidelines = {
   },
 };
 
-export default styleGuidelines;
+export default StyleGuidelines;

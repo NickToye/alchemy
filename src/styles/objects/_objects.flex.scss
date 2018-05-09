@@ -22,6 +22,11 @@
   align-items: center;
 }
 
+.o-flex--center {
+  align-items: center;
+  justify-content: center;
+}
+
 .o-flex--row {
   flex-direction: row;
 }

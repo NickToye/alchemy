@@ -139,7 +139,7 @@ class BannerComponent extends React.Component {
         <section className="u-margin-bottom u-relative">
           <div className="c-textbar  o-flex  o-flex--justify-between  o-flex--align-center  o-flex--row u-padding">
             <h2 className="u-alchemy-white-colour u-margin-none">Banners</h2>
-            <div className="o-surface--l1">
+            <div className="o-surface--l1  o-flex  o-flex--row">
               <div className="tools-wrapper">
                 <button
                   className={`c-toolbar__btn ` + (this.state.showImage ? 'active' : '')}

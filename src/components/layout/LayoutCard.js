@@ -5,7 +5,8 @@ import layoutTypes from '../data/layoutTypes';
 import AtomicUnitCard from './AtomicUnitCard';
 import PaddingCard from './PaddingCard';
 import MarginCard from './MarginCard';
-import LayoutExampleCard from './LayoutExampleCard';
+import LayoutGrid from './LayoutGrid';
+// import LayoutExampleCard from './LayoutExampleCard';
 import Sticky from '../common/Sticky';
 
 class LayoutCard extends React.Component {
@@ -39,7 +40,8 @@ class LayoutCard extends React.Component {
             <AtomicUnitCard />
             <PaddingCard />
             <MarginCard />
-            <LayoutExampleCard />
+            <LayoutGrid />
+            {/*<LayoutExampleCard />*/}
           </main>
         </div>
       </section>

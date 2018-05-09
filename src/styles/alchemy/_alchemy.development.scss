@@ -111,3 +111,35 @@
   @include border-radius($alchemy-global-radius);
   padding: 0;
 }
+
+// Layout
+
+.a-layout-debug {
+  height: 300px;
+
+
+}
+
+.a-layout-item-debug {
+  background: alchemy-color('primary');
+  height: 300px;
+  position: relative;
+
+  &:after {
+    content: '⇠ 44px ⇢';
+    position: absolute;
+    right: -48px;
+    font-size: 10px;
+  }
+
+
+}
+
+.o-layout__item {
+  &:last-child {
+
+    .a-layout-item-debug:after {
+      display: none;
+    }
+  }
+}

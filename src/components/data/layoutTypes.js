@@ -12,6 +12,10 @@ const layoutTypes = {
     identifier: 'margin',
   },
   section4: {
+    section: 'Layout Grid',
+    identifier: 'layout-grid',
+  },
+  section5: {
     section: 'Layout Example',
     identifier: 'layout-example',
   },

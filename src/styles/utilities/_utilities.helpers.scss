@@ -39,3 +39,7 @@ $base-distance: 10px !default;
   opacity: 0;
   transform: scale(0.3);
 }
+
+.u-transition-all {
+  transition: $alchemy-global-transition;
+}
