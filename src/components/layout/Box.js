@@ -12,8 +12,7 @@ class Box extends React.Component {
           <div
             className={
               `atomic-${property}-unit-${details.sizeClass} ` +
-              (details.sizeClass === `standard` ? `u-${property} ` : `u-${property}-${details.sizeClass} `) +
-              `u-margin-bottom-large`
+              (details.sizeClass === `standard` ? `u-${property} ` : `u-${property}-${details.sizeClass} `)
             }
             key={details.key}
           >

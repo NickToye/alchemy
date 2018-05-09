@@ -74,13 +74,11 @@ DEVELOPMENT
 
 */
 
-
 // Settings
 @import 'settings/settings.core';
 @import 'settings/settings.global';
 @import 'settings/settings.config';
 @import 'settings/settings.cosmetics';
-
 
 // Tools
 @import 'tools/tools.animate';
@@ -98,18 +96,15 @@ DEVELOPMENT
 @import 'tools/tools.typesetting';
 @import 'tools/tools.widths';
 
-
 // Generic
 @import 'generic/generic.box-sizing';
 @import 'generic/generic.reset';
 @import 'generic/generic.scratch';
 @import 'generic/generic.shared';
 
-
 // Elements
 @import 'elements/elements.headings';
 @import 'elements/elements.page';
-
 
 // Objects
 @import 'objects/objects.flex';
@@ -130,7 +125,6 @@ DEVELOPMENT
 // @import "objects/objects.crop";
 // @import "objects/objects.pack";
 
-
 // Components
 @import 'components/components.atoms';
 @import 'components/components.banners';
@@ -140,7 +134,6 @@ DEVELOPMENT
 @import 'components/components.range';
 @import 'components/components.swatches';
 @import 'components/components.toolbar';
-
 
 // Utilities
 $inuit-offsets: true;
@@ -156,12 +149,8 @@ $inuit-offsets: true;
 @import 'utilities/utilities.typography';
 @import 'utilities/utilities.widths';
 
-
 // Third Parties
 @import './node_modules/animate-sass/animate';
 
-
 // Development
 @import 'alchemy/alchemy.development';
-
-// TODO Add style to sidebar navigation

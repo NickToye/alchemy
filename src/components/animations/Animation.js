@@ -1,8 +1,8 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import faCog from '@fortawesome/fontawesome-free-solid/faCog';
 import PropTypes from 'prop-types';
-
+import animations from '../data/animations';
 import Cartoon from './Cartoon';
 
 class Animation extends React.Component {
@@ -11,10 +11,12 @@ class Animation extends React.Component {
     this.state = {
       activeAnimation: '',
       activateAnimation: false,
+      animations: animations,
     };
 
     this.animateAction = this.animateAction.bind(this);
   }
+
   animateAction(e) {
     this.setState({ activeAnimation: e.target.value });
     this.setState({ activateAnimation: true });
@@ -24,37 +26,43 @@ class Animation extends React.Component {
   }
 
   render() {
-    const details = this.props.details;
+    // debugger;
+    const animation = this.props.animation;
 
-    let animationStatus;
-    if (this.state.activateAnimation) {
-      animationStatus = <FontAwesomeIcon icon="cog" spin />;
-    } else {
-      animationStatus = details.animation;
-    }
+    // let animationStatus;
+    // if (this.state.activateAnimation) {
+    //   animationStatus = <FontAwesomeIcon icon="cog" spin />;
+    // } else {
+    //   animationStatus = animation.animation;
+    // }
 
     return (
-      <div key={details.key} className="u-margin-bottom">
-        <Cartoon
-          animateClass={this.state.activeAnimation}
-          activateAnimation={this.state.activateAnimation}
-          initialState={details.initialState}
-        />
-        <button
-          className="c-btn c-btn--rounded  c-btn--secondary2"
-          key={details.key}
-          value={details.animateClass}
-          onClick={this.animateAction}
-        >
-          {animationStatus}
-        </button>
-      </div>
+      <section key={animation.key} className="o-section u-margin-bottom-huge o-surface--l2 a-alchemy-bg-dark">
+        <div className="c-textbar  o-flex  o-flex--justify-between  o-flex--align-center  o-flex--row u-padding">
+          <h2 className="u-alchemy-white-colour u-margin-none">{animation.section} palette</h2>
+        </div>
+
+        <div className="o-grid o-grid--centre o-grid--start o-grid--auto u-padding">
+          {Object.keys(this.state.animations)
+            .filter(function(filteredAnimations) {
+              return animations[filteredAnimations].animationType === animation.section;
+            })
+            .map(key => (
+              <Cartoon
+                key={key}
+                animation={this.state.animations[key]}
+                activateAnimation={this.state.activateAnimation}
+                action={this.animateAction[key]}
+              />
+            ))}
+        </div>
+      </section>
     );
   }
 }
 
 Animation.propTypes = {
-  details: PropTypes.object,
+  animation: PropTypes.object,
   action: PropTypes.func,
 };
 

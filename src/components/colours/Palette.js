@@ -12,6 +12,7 @@ class Palette extends React.Component {
     };
   }
   render() {
+    // debugger;
     const palette = this.props.palette;
     return (
       <ScrollableAnchor id={palette.identifier}>

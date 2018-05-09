@@ -91,7 +91,7 @@
   position: relative;
   @include alchemy-linear-gradient(to bottom, #f6f9fc, 90%, darken(#c5d1df, 15%));
 
-  &:first-child {
+  &:first-of-type {
     @include border-radius($alchemy-global-radius-small left);
 
     .c-toolbar__btn:first-child {
@@ -99,7 +99,7 @@
     }
   }
 
-  &:last-child {
+  &:last-of-type {
     @include border-radius($alchemy-global-radius-small right);
 
     .c-toolbar__btn:last-child {
