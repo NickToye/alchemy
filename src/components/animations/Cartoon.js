@@ -1,17 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class Cartoon extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      activateAnimation: false,
+    };
+
+    this.animateAction = this.animateAction.bind(this);
+  }
+
+  animateAction(e) {
+    console.log(e.target.value);
+    this.setState({ activeAnimation: e.target.value });
+    this.setState({ activateAnimation: true });
+    setTimeout(() => {
+      this.setState({ activateAnimation: false });
+    }, 3000);
   }
 
   render() {
     // const animateClass = this.props.animateClass;
     const initialState = this.props.initialState;
-    const activateAnimation = this.props.activateAnimation;
     const animation = this.props.animation;
+
+    let animationStatus;
+    if (this.state.activateAnimation) {
+      animationStatus = <FontAwesomeIcon icon="cog" spin />;
+    } else {
+      animationStatus = animation.animation;
+    }
 
     return (
       <div>
@@ -19,19 +39,19 @@ class Cartoon extends React.Component {
           <div
             className={
               `a-animations  u-padding  u-alchemy-primary-bg  o-flex  ` +
-              (activateAnimation ? ` ${animation.animateClass} animated ` : `${initialState}`)
+              (this.state.activateAnimation ? ` ${animation.animateClass} animated ` : `${initialState}`)
             }
           >
             <img src={require('../../images/card-logo.png')} className="" />
           </div>
         </div>
         <button
-          className="c-btn c-btn--rounded  c-btn--secondary2"
+          className="c-btn  c-btn--rounded  c-btn--secondary2  c-btn--block"
           key={animation.key}
           value={animation.animateClass}
-          onClick={this.props.action}
+          onClick={this.animateAction}
         >
-          {animation.animation}
+          {animationStatus}
         </button>
       </div>
     );
