@@ -18,6 +18,7 @@
 
 .a-page {
   color: alchemy-color('grey');
+  @include border-radius($alchemy-global-radius);
 
   h3 {
     color: alchemy-color('medium-grey');
@@ -59,6 +60,9 @@
     &:last-child {
       border: 0;
     }
+  }
+  li:hover {
+    background: rgba(alchemy-color('black'), 0.2);
   }
 }
 
@@ -102,10 +106,8 @@
   background: darken($alchemy-init-header, 5%);
 }
 
-.a-alchemy-bg {
-  background-color: $alchemy-init-header;
-}
-
-.a-alchemy-bg-dark {
-  background-color: darken($alchemy-init-header, 5%);
+.a-aside .Sticky {
+  background: #173748;
+  @include border-radius($alchemy-global-radius);
+  padding: 0;
 }

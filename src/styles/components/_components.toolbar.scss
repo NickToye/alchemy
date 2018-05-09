@@ -13,7 +13,7 @@
   background: transparent;
   border: 0;
   // border-right: 1px dashed lighten(#7ba0c5, 10%);
-  color: alchemy-color('dark-grey');
+  color: #40648a;
   cursor: pointer;
   margin: 0;
   padding: 12px;
@@ -28,6 +28,7 @@
   }
 
   i {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
     pointer-events: none; // TODO Move this hack somewhere, or resolve more elegantly.
   }
 
@@ -42,6 +43,10 @@
   &:hover {
     @include alchemy-linear-gradient(to bottom, #adc9e3, 90%, darken(#7ba0c5, 20%));
     color: alchemy-color('white');
+
+    i {
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+    }
   }
 
   // svg {
@@ -51,6 +56,10 @@
   &.active {
     @include alchemy-linear-gradient(to bottom, #adc9e3, 90%, darken(#7ba0c5, 20%));
     color: alchemy-color('white');
+
+    i {
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+    }
   }
 
   &.disabled {

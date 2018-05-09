@@ -32,7 +32,7 @@ class CodeCard extends React.Component {
     const guidelinesTypeList = this.state.guidelinesType.map((type, key) => {
       const isCurrent = this.state.guidelinesTypePick === type;
       return (
-        <div className="tools-wrapper" key={key}>
+        <div key={key} className="tools-wrapper">
           <button
             className={`c-toolbar__btn  u-text-capitalise ` + (isCurrent ? 'active' : '')}
             key={key}

@@ -40,6 +40,7 @@ OBJECTS
 - Flex
 - Forms
 - Grid
+- Layout
 - List Bare
 - Media
 - Surface
@@ -110,13 +111,13 @@ DEVELOPMENT
 @import 'objects/objects.flex';
 @import 'objects/objects.forms';
 @import 'objects/objects.grid';
+@import 'objects/objects.layout';
 @import 'objects/objects.list-bare';
 @import 'objects/objects.media';
 @import 'objects/objects.surface';
 @import 'objects/objects.table';
 @import 'objects/objects.wrapper';
 
-// @import "objects/objects.layout";
 // @import "objects/objects.flag";
 // @import "objects/objects.list-inline";
 // @import "objects/objects.box";
@@ -154,3 +155,8 @@ $inuit-offsets: true;
 
 // Development
 @import 'alchemy/alchemy.development';
+
+// TODOS
+
+// TODO Change main navigation from c-navigation to a-navigation as it is custom.
+// TODO Revisit the sticky aside sizing.

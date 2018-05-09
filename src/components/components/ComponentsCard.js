@@ -22,7 +22,7 @@ class ComponentsCard extends React.Component {
           <p>A collection of components.</p>
         </header>
         <div className="o-flex  o-flex--row">
-          <aside className="u-1/5  u-alchemy-white-bg u-margin-right-large">
+          <aside className="a-aside  u-1/5  u-margin-right-large">
             <Sticky className="sticky-one" enter="370">
               <ul className="o-list-bare  a-contents-box">
                 {Object.keys(this.state.contents).map(key => (

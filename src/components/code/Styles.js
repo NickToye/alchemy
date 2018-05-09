@@ -15,29 +15,48 @@ class Styles extends React.Component {
     super(props);
     this.state = {
       contents: StyleGuidelines,
+      contentsPick: 'introduction',
     };
+
+    this.showContentsPick = this.showContentsPick.bind(this);
+  }
+
+  showContentsPick(e) {
+    this.setState({ contentsPick: e.target.value });
   }
 
   render() {
+    // console.log(this.state.contentPick);
     return (
-      <div className="a-page  u-padding u-alchemy-white-bg  o-flex  o-flex--row">
-        <aside className="u-1/5 u-margin-right-large">
-          <Sticky className="sticky-one" enter="370">
-            <ul className="o-list-bare  a-contents-box">
-              {Object.keys(this.state.contents).map(key => (
-                <ContentsCard key={key} details={this.state.contents[key]} />
-              ))}
-            </ul>
-          </Sticky>
-        </aside>
-        <main className="u-4/5">
-          <Introduction />
-          <Syntax />
-          <NamingConventions />
-          <CssSelectors />
-          <Specificity />
-          <ArchitecturalPrinciples />
-        </main>
+      <div className="o-wrapper  o-wrapper--full u-padding-none u-margin-none">
+        <div className="o-layout">
+          <div className="u-1/5 o-layout__item">
+            <aside className="a-aside">
+              <Sticky className="sticky-one" enter="370">
+                <ul className="o-list-bare  u-margin-none  a-contents-box">
+                  {Object.keys(this.state.contents).map(key => (
+                    <ContentsCard
+                      key={key}
+                      details={this.state.contents[key]}
+                      contentsPick={this.state.contentsPick}
+                      action={this.showContentsPick}
+                    />
+                  ))}
+                </ul>
+              </Sticky>
+            </aside>
+          </div>
+          <div className="u-4/5 o-layout__item">
+            <main className="a-page  u-padding u-alchemy-white-bg">
+              <Introduction />
+              <Syntax />
+              <NamingConventions />
+              <CssSelectors />
+              <Specificity />
+              <ArchitecturalPrinciples />
+            </main>
+          </div>
+        </div>
       </div>
     );
   }
