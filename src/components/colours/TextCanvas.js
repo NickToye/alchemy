@@ -6,7 +6,7 @@ class TextCanvas extends React.Component {
     const details = this.props.details;
     return (
       <button
-        className={`u-alchemy-${details.colourClass}-colour c-toolbar__btn `}
+        className={`u-alchemy-${details.colourClass}-colour a-toolbar__btn `}
         key={details.key}
         value={details.colourClass}
         onClick={this.props.action}

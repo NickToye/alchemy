@@ -32,9 +32,9 @@ class CodeCard extends React.Component {
     const guidelinesTypeList = this.state.guidelinesType.map((type, key) => {
       const isCurrent = this.state.guidelinesTypePick === type;
       return (
-        <div key={key} className="tools-wrapper">
+        <div key={key} className="a-toolbar__wrapper">
           <button
-            className={`c-toolbar__btn  u-text-capitalise ` + (isCurrent ? 'active' : '')}
+            className={`a-toolbar__btn  u-text-capitalise ` + (isCurrent ? 'active' : '')}
             key={key}
             value={type}
             onClick={this.showGuidelinesTypePick}
@@ -63,3 +63,5 @@ class CodeCard extends React.Component {
 }
 
 export default CodeCard;
+
+// TODO restyle toolbar

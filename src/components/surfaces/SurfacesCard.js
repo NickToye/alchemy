@@ -40,7 +40,7 @@ class SurfacesCard extends React.Component {
           </aside>
           <main className="u-4/5">
             <section className="o-section u-margin-bottom-huge o-surface--l2 a-alchemy-bg-dark">
-              <div className="c-textbar  o-flex  o-flex--justify-between  o-flex--align-center  o-flex--row u-padding">
+              <div className="a-toolbar  o-flex  o-flex--justify-between  o-flex--align-center  o-flex--row u-padding">
                 <h2 className="u-alchemy-white-colour u-margin-none">Surfaces palette</h2>
               </div>
               <div className="o-grid  o-grid--centre  o-grid--auto u-padding u-alchemy-pale-grey-bg">

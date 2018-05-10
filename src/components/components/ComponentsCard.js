@@ -6,6 +6,7 @@ import Sticky from '../common/Sticky';
 
 import BannerComponent from './banners/BannerComponent';
 import CardComponent from './cards/CardComponent';
+import NavigationComponent from './navigation/NavigationComponent';
 
 class ComponentsCard extends React.Component {
   constructor(props) {
@@ -34,6 +35,7 @@ class ComponentsCard extends React.Component {
           <main className="u-4/5">
             <BannerComponent />
             <CardComponent />
+            <NavigationComponent />
           </main>
         </div>
       </section>
@@ -44,3 +46,4 @@ class ComponentsCard extends React.Component {
 export default ComponentsCard;
 
 // TODO add a Card component
+// TODO Create a navigation card in components

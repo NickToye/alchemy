@@ -3,3 +3,15 @@
 .c-range {
   width: 100%;
 }
+
+.c-range__input {
+  -webkit-appearance: none;
+  outline: none;
+
+  &::-webkit-slider-thumb {
+    @include alchemy-size($alchemy-global-range-handle);
+    -webkit-appearance: none;
+    border-radius: 50%;
+    background: alchemy-color('primary');
+  }
+}

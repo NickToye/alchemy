@@ -14,7 +14,7 @@ class ToolbarButton extends React.Component {
 
     return (
       <button
-        className={`c-toolbar__btn  u-text-capitalise ` + (isCurrent ? 'active' : '')}
+        className={`a-toolbar__btn  u-text-capitalise ` + (isCurrent ? 'active' : '')}
         key={details.key}
         value={details.sizeClass}
         onClick={this.props.action}
@@ -33,5 +33,3 @@ ToolbarButton.propTypes = {
 };
 
 export default ToolbarButton;
-
-// TODO Change name of this as it is a Size only toolbar button

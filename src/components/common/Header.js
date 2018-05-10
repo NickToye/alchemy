@@ -4,13 +4,13 @@ import { Link, IndexLink } from 'react-router';
 const Header = () => {
   return (
     <header className="c-header">
-      <div className="c-toolbar__mq u-padding-tiny">
+      <div className="a-toolbar__mq u-padding-tiny">
         <small>Current Media Query: </small>
       </div>
       <IndexLink to="/" className="u-padding-small a-logo" activeClassName="active">
         <img src={require('../../images/Alchemy@3x.png')} className="a-patch  a-patch--alchemy" />
       </IndexLink>
-      <nav className="c-navigation  o-flex  o-flex--row">
+      <nav className="a-navigation  o-flex  o-flex--row">
         <Link to="/colours" className="u-padding-horizontal-small o-flex__item" activeClassName="active">
           <img src={require('../../images/Colours@3x.png')} className="a-patch" />
           <span>Colours</span>

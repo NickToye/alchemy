@@ -6,7 +6,11 @@ const componentList = {
   component2: {
     section: 'Cards',
     identifier: 'cards',
-  }
+  },
+  component3: {
+    section: 'Navigation',
+    identifier: 'navigation',
+  },
 };
 
 export default componentList;

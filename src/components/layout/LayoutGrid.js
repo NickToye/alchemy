@@ -4,7 +4,7 @@ import Grid from './Grid';
 import sizes from '../data/sizes';
 import GridType from '../data/GridType';
 import ScrollableAnchor from 'react-scrollable-anchor';
-import ToolbarButton from '../common/ToolbarButton';
+import ToolbarButton from './ToolbarButton';
 
 class LayoutGrid extends React.Component {
   constructor(props) {
@@ -32,9 +32,9 @@ class LayoutGrid extends React.Component {
     return (
       <ScrollableAnchor id="layout-grid">
         <section className="o-section u-relative o-surface--l2">
-          <div className="c-textbar o-flex o-flex--justify-between o-flex--align-center o-flex--row u-padding">
+          <div className="a-toolbar o-flex o-flex--justify-between o-flex--align-center o-flex--row u-padding">
             <h2 className="u-alchemy-white-colour u-margin-none">Layout Grid</h2>
-            <div className="tools-wrapper">
+            <div className="a-toolbar__wrapper">
               {Object.keys(this.state.sizes).map(key => (
                 <ToolbarButton
                   key={key}
@@ -44,7 +44,7 @@ class LayoutGrid extends React.Component {
                 />
               ))}
               <button
-                className={`c-toolbar__btn ` + (this.state.showGutters ? 'active' : '')}
+                className={`a-toolbar__btn ` + (this.state.showGutters ? 'active' : '')}
                 onClick={this.showGutters}
               >
                 Show Gutters Info

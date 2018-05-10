@@ -161,3 +161,34 @@
     display: none;
   }
 }
+
+// Navigation
+
+.a-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  a {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    text-decoration: none;
+    padding: 0 24px !important;
+
+    &:link,
+    &:visited {
+      color: rgba(alchemy-color('white'), 0.5);
+      opacity: 0.6;
+    }
+
+    &:hover {
+      color: rgba(alchemy-color('white'), 1);
+      opacity: 0.8;
+    }
+
+    &.active {
+      color: #f0a62e;
+      opacity: 1;
+    }
+  }
+}

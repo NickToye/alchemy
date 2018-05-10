@@ -15,9 +15,10 @@ class Range extends React.Component {
   render() {
     const { range } = this.props;
     return (
-      <div className="c-range  c-toolbar__range  o-flex  u-padding-small">
+      <div className="c-range  a-toolbar__range  o-flex  u-padding-small">
         <input
           id="range"
+          className="c-range__input a-toolbar__range__input"
           type="range"
           value={range}
           min="0"

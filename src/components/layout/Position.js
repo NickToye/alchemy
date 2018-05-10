@@ -9,7 +9,7 @@ class Position extends React.Component {
     return (
       <button
         key={details.key}
-        className={`c-toolbar__btn ` + (isCurrent ? 'active' : '')}
+        className={`a-toolbar__btn ` + (isCurrent ? 'active' : '')}
         value={details.className}
         onClick={this.props.action}
       >

@@ -1,0 +1,174 @@
+// Alchemy :: Toolbar
+
+.a-toolbar {
+  @include border-radius($alchemy-global-radius top);
+  background: $alchemy-colour1;
+  box-shadow: $alchemy-global-shadow;
+}
+
+
+.a-toolbar__wrapper {
+  @include alchemy-linear-gradient(to bottom, $alchemy-colour8, 90%, darken($alchemy-colour7, 15%));
+  position: relative;
+
+  &:first-of-type {
+    @include border-radius($alchemy-global-radius-small left);
+
+    .a-toolbar__btn:first-child {
+      @include border-radius($alchemy-global-radius-small left);
+    }
+  }
+
+  &:last-of-type {
+    @include border-radius($alchemy-global-radius-small right);
+
+    .a-toolbar__btn:last-child {
+      @include border-radius($alchemy-global-radius-small right);
+    }
+  }
+}
+
+
+.a-toolbar__popover {
+  @include absolute(bottom 50px right 0);
+  @include border-radius($alchemy-global-radius-small);
+  @include alchemy-linear-gradient(to bottom, $alchemy-colour7, 90%, darken($alchemy-colour7, 15%));
+  display: flex;
+
+  &:before {
+    @include triangle($direction: bottom, $position: top 100% right 0.75em, $size: 6px, $color: $alchemy-colour6);
+  }
+
+  .a-toolbar__btn:first-child {
+    @include border-radius($alchemy-global-radius-small left);
+  }
+
+  .a-toolbar__btn:last-child {
+    @include border-radius($alchemy-global-radius-small right);
+  }
+}
+
+
+.a-toolbar__btn {
+  background: transparent;
+  border: 0;
+  color: $alchemy-colour1;
+  cursor: pointer;
+  margin: 0;
+  padding: $inuit-global-spacing-unit-small;
+
+  &:first-child {
+    @include border-radius($alchemy-global-radius left);
+  }
+
+  &:last-child {
+    @include border-radius($alchemy-global-radius right);
+  }
+
+  i {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+    pointer-events: none; // TODO Move this hack somewhere, or resolve more elegantly.
+  }
+
+  .a-toolbar__wrapper & {
+    border-radius: 0;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    @include alchemy-linear-gradient(to bottom, $alchemy-colour5, 90%, darken($alchemy-colour4, 20%));
+    color: alchemy-color('white');
+
+    i {
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &.active {
+    @include alchemy-linear-gradient(to bottom, $alchemy-colour5, 90%, darken($alchemy-colour4, 20%));
+    color: alchemy-color('white');
+
+    i {
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &.disabled {
+    svg {
+      color: alchemy-color('light-grey');
+      opacity: 0.6;
+      pointer-events: none;
+    }
+  }
+
+  svg {
+    pointer-events: none;
+  }
+
+
+}
+
+
+.a-toolbar__input {
+  @include alchemy-font-size(14px);
+  @include border-radius($alchemy-global-radius left);
+  border: 0;
+  margin: 0;
+  padding-top: 6px;
+  padding-bottom: 6px;
+
+  &:last-child {
+    border-right: 1px solid alchemy-color('medium-grey');
+  }
+
+  &:hover {
+    background-color: alchemy-color('light-grey');
+  }
+
+  &.active {
+    background-color: alchemy-color-level('light-grey', -1);
+  }
+
+}
+
+
+.a-toolbar__input__btn {
+  padding: 0 $inuit-global-spacing-unit-small;
+  height: $inuit-global-spacing-unit-small * 3;
+}
+
+
+.a-toolbar__mq {
+  @include alchemy-linear-gradient(to bottom, $alchemy-colour8, 90%, darken($alchemy-colour7, 15%));
+  @include absolute(top $inuit-global-spacing-unit right $inuit-global-spacing-unit);
+  @include border-radius($alchemy-global-radius-small);
+  color: alchemy-color('dark-grey');
+
+  @each $alchemy-key, $alchemy-value in $mq-breakpoints {
+    &:after {
+      @include alchemy-font-size(13px);
+      color: alchemy-color('info');
+      font-family: FS-Emeric-Core, Helvetica, sans-serif; // TODO change this to be a variable.
+      text-transform: capitalize;
+
+      @include mq($alchemy-key) {
+        content: '#{$alchemy-key}';
+      }
+    }
+  }
+}
+
+
+.a-toolbar__range__input {
+  @include alchemy-linear-gradient(to left, darken($alchemy-colour3, 15%), $alchemy-colour3);
+  height: 6px;
+  width: 200px;
+  border-radius: 5px;
+
+  &::-webkit-slider-thumb {
+    background: darken($alchemy-colour3, 25%);
+  }
+}

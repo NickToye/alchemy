@@ -9,6 +9,7 @@ SETTINGS
 - Global
 - Config
 - Cosmetics
+- Alchemy
 
 TOOLS
 - Animate
@@ -80,6 +81,7 @@ DEVELOPMENT
 @import 'settings/settings.global';
 @import 'settings/settings.config';
 @import 'settings/settings.cosmetics';
+@import 'settings/settings.alchemy';
 
 // Tools
 @import 'tools/tools.animate';
@@ -134,7 +136,8 @@ DEVELOPMENT
 @import 'components/components.navigation';
 @import 'components/components.range';
 @import 'components/components.swatches';
-@import 'components/components.toolbar';
+
+
 
 // Utilities
 $inuit-offsets: true;
@@ -153,10 +156,10 @@ $inuit-offsets: true;
 // Third Parties
 @import './node_modules/animate-sass/animate';
 
-// Development
+// Alchemy Development
 @import 'alchemy/alchemy.development';
+@import 'alchemy/alchemy.toolbar';
 
 // TODOS
 
-// TODO Change main navigation from c-navigation to a-navigation as it is custom.
 // TODO Revisit the sticky aside sizing.

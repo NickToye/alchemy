@@ -73,28 +73,28 @@ class TypeSizes extends React.Component {
     return (
       <ScrollableAnchor id="type-sizes">
         <section className="u-margin-bottom u-relative">
-          <div className="c-textbar  o-flex  o-flex--justify-between  o-flex--align-center  o-flex--row u-padding">
+          <div className="a-toolbar  o-flex  o-flex--justify-between  o-flex--align-center  o-flex--row u-padding">
             <h2 className="u-alchemy-white-colour u-margin-none">Type Sizes</h2>
             <div className="o-surface--l1 o-flex o-flex--row">
-              <div className="tools-wrapper">
+              <div className="a-toolbar__wrapper">
                 <button
-                  className={'c-toolbar__btn ' + (this.state.showBaseline ? 'active' : ' ')}
+                  className={'a-toolbar__btn ' + (this.state.showBaseline ? 'active' : ' ')}
                   onClick={this.showBaselineAction}
                 >
                   <i className="fas fa-th fa-lg" />
                 </button>
                 <button
-                  className={'c-toolbar__btn ' + (this.state.showMargin ? 'active' : ' ')}
+                  className={'a-toolbar__btn ' + (this.state.showMargin ? 'active' : ' ')}
                   onClick={this.showMarginAction}
                 >
                   <i className="fas fa-expand fa-lg" />
                 </button>
               </div>
 
-              <div className="tools-wrapper">
+              <div className="a-toolbar__wrapper">
                 <button
                   className={
-                    'c-toolbar__btn ' +
+                    'a-toolbar__btn ' +
                     (this.state.showDropletsPopover ? 'active ' : '') +
                     `u-alchemy-${this.state.dropPick}-colour`
                   }
@@ -103,7 +103,7 @@ class TypeSizes extends React.Component {
                   <i className="fas fa-tint fa-lg" />
                 </button>
                 {this.state.showDropletsPopover ? (
-                  <div className="c-toolbar__popover  animated fadeInUp">
+                  <div className="a-toolbar__popover  animated fadeInUp">
                     {Object.keys(this.state.colours).map(key => (
                       <Droplet key={key} details={this.state.colours[key]} action={this.showDropPick} />
                     ))}
@@ -113,10 +113,10 @@ class TypeSizes extends React.Component {
                 )}
               </div>
 
-              <div className="tools-wrapper">
+              <div className="a-toolbar__wrapper">
                 <button
                   className={
-                    'c-toolbar__btn ' +
+                    'a-toolbar__btn ' +
                     (this.state.showCanvasPopover ? 'active ' : '') +
                     `u-alchemy-${this.state.canvasPick}-colour`
                   }
@@ -125,7 +125,7 @@ class TypeSizes extends React.Component {
                   <i className="fas fa-paint-brush fa-lg" />
                 </button>
                 {this.state.showCanvasPopover ? (
-                  <div className="c-toolbar__popover  animated fadeInUp">
+                  <div className="a-toolbar__popover  animated fadeInUp">
                     {Object.keys(this.state.colours).map(key => (
                       <Canvas key={key} details={this.state.colours[key]} action={this.showCanvasPick} />
                     ))}
@@ -134,9 +134,9 @@ class TypeSizes extends React.Component {
                   ''
                 )}
               </div>
-              <div className="tools-wrapper">
+              <div className="a-toolbar__wrapper">
                 <button
-                  className={'c-toolbar__btn ' + (this.state.showContraster ? 'active' : '')}
+                  className={'a-toolbar__btn ' + (this.state.showContraster ? 'active' : '')}
                   onClick={this.showContrasterAction}
                 >
                   <i className="fas fa-adjust fa-lg" />

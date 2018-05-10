@@ -7,7 +7,7 @@ class SelectsCard extends React.Component {
     return (
       <ScrollableAnchor id="selects">
         <section className="o-section u-relative o-surface--l2">
-          <div className="c-textbar o-flex o-flex--justify--between o-flex--align-center o-flex--row u-padding">
+          <div className="a-toolbar o-flex o-flex--justify--between o-flex--align-center o-flex--row u-padding">
             <h2 className="u-alchemy-white-colour u-margin-none">Selects</h2>
           </div>
 

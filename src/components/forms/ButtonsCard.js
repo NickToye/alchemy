@@ -66,10 +66,10 @@ class ButtonsCard extends React.Component {
     return (
       <ScrollableAnchor id="buttons">
         <section className="o-section u-relative o-surface--l2">
-          <div className="c-textbar  o-flex  o-flex--justify-between  o-flex--align-center  o-flex--row u-padding">
+          <div className="a-toolbar  o-flex  o-flex--justify-between  o-flex--align-center  o-flex--row u-padding">
             <h2 className="u-alchemy-white-colour u-margin-none">Button Styles</h2>
             <div className="o-surface--l1 o-flex o-flex--row">
-              <div className="tools-wrapper">
+              <div className="a-toolbar__wrapper">
                 {Object.keys(this.state.colourTypes).map(key => (
                   <ColourType
                     key={key}
@@ -79,9 +79,9 @@ class ButtonsCard extends React.Component {
                   />
                 ))}
               </div>
-              <div className="tools-wrapper">
+              <div className="a-toolbar__wrapper">
                 <button
-                  className={'c-toolbar__btn ' + (this.state.showGhost ? 'active' : '')}
+                  className={'a-toolbar__btn ' + (this.state.showGhost ? 'active' : '')}
                   onClick={this.showGhostAction}
                 >
                   <span className="u-padding-right-small">Show Ghost</span>
@@ -89,7 +89,7 @@ class ButtonsCard extends React.Component {
                 </button>
 
                 {this.state.showDropletsPopover ? (
-                  <div className="c-toolbar__popover  animated fadeInUp">
+                  <div className="a-toolbar__popover  animated fadeInUp">
                     {Object.keys(this.state.colours).map(key => (
                       <Droplet key={key} details={this.state.colours[key]} action={this.showDropPick} />
                     ))}
@@ -98,9 +98,9 @@ class ButtonsCard extends React.Component {
                   ''
                 )}
               </div>
-              <div className="tools-wrapper">
+              <div className="a-toolbar__wrapper">
                 <button
-                  className={'c-toolbar__btn ' + (this.state.showRoundedButtons ? 'active' : '')}
+                  className={'a-toolbar__btn ' + (this.state.showRoundedButtons ? 'active' : '')}
                   onClick={this.showRoundedButtonsAction}
                 >
                   <span className="u-padding-right-small">Rounded Buttons</span>
@@ -108,7 +108,7 @@ class ButtonsCard extends React.Component {
                 </button>
                 {this.state.showRoundedButtons ? (
                   <button
-                    className={'c-toolbar__btn ' + (this.state.showLargeRoundedButtons ? 'active' : '')}
+                    className={'a-toolbar__btn ' + (this.state.showLargeRoundedButtons ? 'active' : '')}
                     onClick={this.showLargeRoundedButtonsAction}
                   >
                     <span className="u-padding-right-small">Large</span>

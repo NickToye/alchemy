@@ -12,7 +12,7 @@ class ColourType extends React.Component {
     const isCurrent = colourTypePick === details;
     return (
       <button
-        className={`c-toolbar__btn  u-text-capitalise ` + (isCurrent ? 'active' : '')}
+        className={`a-toolbar__btn  u-text-capitalise ` + (isCurrent ? 'active' : '')}
         key={details.key}
         value={details}
         onClick={this.props.action}

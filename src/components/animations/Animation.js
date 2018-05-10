@@ -26,7 +26,7 @@ class Animation extends React.Component {
           key={animation.key}
           className="o-section u-margin-bottom-huge o-surface--l2 a-alchemy-bg-dark"
         >
-          <div className="c-textbar  o-flex  o-flex--justify-between  o-flex--align-center  o-flex--row u-padding">
+          <div className="a-toolbar  o-flex  o-flex--justify-between  o-flex--align-center  o-flex--row u-padding">
             <h2 className="u-alchemy-white-colour u-margin-none">{animation.section} palette</h2>
           </div>
 

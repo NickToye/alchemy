@@ -31,12 +31,12 @@ class TypeFaces extends React.Component {
     return (
       <ScrollableAnchor id="typefaces">
         <section className="u-margin-bottom u-relative">
-          <div className="c-textbar  o-flex  o-flex--justify-between  o-flex--align-center  o-flex--row u-padding">
+          <div className="a-toolbar  o-flex  o-flex--justify-between  o-flex--align-center  o-flex--row u-padding">
             <h2 className="u-alchemy-white-colour u-margin-none">Type Faces</h2>
             <div className="o-surface--l1">
-              <div className="o-flex  o-flex--row  tools-wrapper">
+              <div className="a-toolbar__wrapper  o-flex  o-flex--row">
                 <input
-                  className="c-textbar_input o-form__input"
+                  className="a-toolbar__input o-form__input"
                   type="text"
                   value={this.state.exampleText}
                   onChange={this.updateExampleText}

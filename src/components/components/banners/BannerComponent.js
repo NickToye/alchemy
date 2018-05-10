@@ -137,21 +137,21 @@ class BannerComponent extends React.Component {
     return (
       <ScrollableAnchor id={'banners'}>
         <section className="u-margin-bottom u-relative">
-          <div className="c-textbar  o-flex  o-flex--justify-between  o-flex--align-center  o-flex--row u-padding">
+          <div className="a-toolbar  o-flex  o-flex--justify-between  o-flex--align-center  o-flex--row u-padding">
             <h2 className="u-alchemy-white-colour u-margin-none">Banners</h2>
             <div className="o-surface--l1  o-flex  o-flex--row">
-              <div className="tools-wrapper">
+              <div className="a-toolbar__wrapper">
                 <button
-                  className={`c-toolbar__btn ` + (this.state.showImage ? 'active' : '')}
+                  className={`a-toolbar__btn ` + (this.state.showImage ? 'active' : '')}
                   onClick={this.showImageAction}
                 >
                   <i className="fas fa-image fa-lg" />
                 </button>
               </div>
-              <div className="tools-wrapper">
+              <div className="a-toolbar__wrapper">
                 <button
                   className={
-                    'c-toolbar__btn ' +
+                    'a-toolbar__btn ' +
                     (this.state.showCanvasPopover ? 'active ' : '') +
                     `u-alchemy-${this.state.canvasPick}-colour`
                   }
@@ -160,7 +160,7 @@ class BannerComponent extends React.Component {
                   <i className="fas fa-paint-brush fa-lg" />
                 </button>
                 {this.state.showCanvasPopover ? (
-                  <div className="c-toolbar__popover  animated fadeInUp">
+                  <div className="a-toolbar__popover  animated fadeInUp">
                     {Object.keys(this.state.colours).map(key => (
                       <Canvas key={key} details={this.state.colours[key]} action={this.showCanvasPick} />
                     ))}
@@ -170,19 +170,19 @@ class BannerComponent extends React.Component {
                 )}
               </div>
 
-              <div className="tools-wrapper">
+              <div className="a-toolbar__wrapper">
                 <button
-                  className={`c-toolbar__btn ` + (this.state.showTextBlock ? 'active ' : '')}
+                  className={`a-toolbar__btn ` + (this.state.showTextBlock ? 'active ' : '')}
                   onClick={this.showTextBlockAction}
                 >
                   <i className="fas fa-font fa-lg" />
                 </button>
               </div>
 
-              <div className="tools-wrapper">
+              <div className="a-toolbar__wrapper">
                 <button
                   className={
-                    'c-toolbar__btn ' +
+                    'a-toolbar__btn ' +
                     (this.state.showTextCanvasPopover ? 'active ' : '') +
                     `u-alchemy-${this.state.textCanvasPick}-colour`
                   }
@@ -191,7 +191,7 @@ class BannerComponent extends React.Component {
                   <i className="fas fa-pencil-alt fa-lg" />
                 </button>
                 {this.state.showTextCanvasPopover ? (
-                  <div className="c-toolbar__popover  animated fadeInUp">
+                  <div className="a-toolbar__popover  animated fadeInUp">
                     {Object.keys(this.state.colours).map(key => (
                       <TextCanvas
                         key={key}
@@ -205,15 +205,15 @@ class BannerComponent extends React.Component {
                 )}
               </div>
 
-              <div className="tools-wrapper">
+              <div className="a-toolbar__wrapper">
                 <button
-                  className={`c-toolbar__btn ` + (this.state.showTextBlockPositionPopover ? 'active ' : '')}
+                  className={`a-toolbar__btn ` + (this.state.showTextBlockPositionPopover ? 'active ' : '')}
                   onClick={this.showTextBlockPositionPopoverAction}
                 >
                   <i className="fas fa-align-center fa-lg" />
                 </button>
                 {this.state.showTextBlockPositionPopover ? (
-                  <div className="c-toolbar__popover  animated fadeInUp">
+                  <div className="a-toolbar__popover  animated fadeInUp">
                     {Object.keys(this.state.textBlockPositions).map(key => (
                       <Position
                         key={key}
@@ -228,31 +228,31 @@ class BannerComponent extends React.Component {
                 )}
               </div>
 
-              <div className="tools-wrapper">
+              <div className="a-toolbar__wrapper">
                 <button
-                  className={`c-toolbar__btn ` + (this.state.showHalfLeft ? 'active ' : '')}
+                  className={`a-toolbar__btn ` + (this.state.showHalfLeft ? 'active ' : '')}
                   onClick={this.showHalfLeftAction}
                 >
                   <i className="fas fa-caret-square-left fa-lg" />
                 </button>
               </div>
-              <div className="tools-wrapper">
+              <div className="a-toolbar__wrapper">
                 <button
-                  className={`c-toolbar__btn ` + (this.state.showHalfRight ? 'active ' : '')}
+                  className={`a-toolbar__btn ` + (this.state.showHalfRight ? 'active ' : '')}
                   onClick={this.showHalfRightAction}
                 >
                   <i className="fas fa-caret-square-right fa-lg" />
                 </button>
               </div>
-              <div className="tools-wrapper">
+              <div className="a-toolbar__wrapper">
                 <button
-                  className={`c-toolbar__btn ` + (this.state.showOpacityPopover ? 'active ' : '')}
+                  className={`a-toolbar__btn ` + (this.state.showOpacityPopover ? 'active ' : '')}
                   onClick={this.showOpacityPopoverAction}
                 >
                   <i className="fas fa-lightbulb fa-lg" />
                 </button>
                 {this.state.showOpacityPopover ? (
-                  <div className="c-toolbar__popover  animated fadeInUp">
+                  <div className="a-toolbar__popover  animated fadeInUp">
                     <Range range={opacity} updateOpacity={this.updateOpacity} />
                   </div>
                 ) : (
