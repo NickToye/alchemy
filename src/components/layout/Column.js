@@ -5,14 +5,12 @@ class Column extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
-
   }
-
-
 
   render() {
     const details = this.props.details;
     const layoutSize = this.props.layoutSize;
+    const showGutters = this.props.gutters;
 
     let layoutSizeUnit;
     if (layoutSize === 'tiny') {
@@ -27,12 +25,11 @@ class Column extends React.Component {
       layoutSizeUnit = 24;
     }
 
-
     return (
       <div key={details.key} className={`o-layout__item  u-1/${details.gridColumns}`}>
         <div className="a-layout-item-debug o-flex  o-flex--center o-surface--x">
           <small className="u-alchemy-dark-grey-colour">{details.gridColumnsWidth}%</small>
-          <span className="a-alchemy-gutter">{layoutSizeUnit}</span>
+          {showGutters ? <span className="a-alchemy-gutter">{layoutSizeUnit}</span> : ''}
         </div>
       </div>
     );
@@ -42,6 +39,7 @@ class Column extends React.Component {
 Column.propTypes = {
   details: PropTypes.object,
   layoutSize: PropTypes.string,
+  gutters: PropTypes.bool,
 };
 
 export default Column;

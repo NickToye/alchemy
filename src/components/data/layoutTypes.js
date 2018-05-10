@@ -15,10 +15,6 @@ const layoutTypes = {
     section: 'Layout Grid',
     identifier: 'layout-grid',
   },
-  section5: {
-    section: 'Layout Example',
-    identifier: 'layout-example',
-  },
 };
 
 export default layoutTypes;

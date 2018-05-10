@@ -13,13 +13,19 @@ class LayoutGrid extends React.Component {
       grids: GridType,
       sizes: sizes,
       activeSize: 'standard',
+      showGutters: false,
     };
 
     this.updateSize = this.updateSize.bind(this);
+    this.showGutters = this.showGutters.bind(this);
   }
 
   updateSize(e) {
     this.setState({ activeSize: e.target.value });
+  }
+
+  showGutters() {
+    this.setState(prev => ({ showGutters: !prev.showGutters }));
   }
 
   render() {
@@ -37,6 +43,12 @@ class LayoutGrid extends React.Component {
                   action={this.updateSize}
                 />
               ))}
+              <button
+                className={`c-toolbar__btn ` + (this.state.showGutters ? 'active' : '')}
+                onClick={this.showGutters}
+              >
+                Show Gutters Info
+              </button>
             </div>
           </div>
 
@@ -47,6 +59,7 @@ class LayoutGrid extends React.Component {
                 layoutSize={this.state.activeSize}
                 layoutSizeUnit={this.state.activeSizeUnit}
                 details={this.state.grids[key]}
+                gutters={this.state.showGutters}
               />
             ))}
           </div>

@@ -13,6 +13,7 @@ class Grid extends React.Component {
     const details = this.props.details;
     const colsArray = Array.from(Array(details.gridColumns), (_, x) => x);
     const layoutSize = this.props.layoutSize;
+    const gutters = this.props.gutters;
 
     return (
       <div>
@@ -21,7 +22,7 @@ class Grid extends React.Component {
 
           <div className={`o-layout a-layout-debug  o-layout--${layoutSize}`}>
             {Object.keys(colsArray).map(key => (
-              <Column key={key} details={details} layoutSize={layoutSize} />
+              <Column key={key} details={details} layoutSize={layoutSize} gutters={gutters} />
             ))}
           </div>
         </div>
@@ -33,6 +34,7 @@ class Grid extends React.Component {
 Grid.propTypes = {
   details: PropTypes.object,
   layoutSize: PropTypes.string,
+  gutters: PropTypes.bool,
 };
 
 export default Grid;
