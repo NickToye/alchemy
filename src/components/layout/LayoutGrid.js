@@ -19,7 +19,6 @@ class LayoutGrid extends React.Component {
   }
 
   updateSize(e) {
-
     this.setState({ activeSize: e.target.value });
   }
 
@@ -31,13 +30,25 @@ class LayoutGrid extends React.Component {
             <h2 className="u-alchemy-white-colour u-margin-none">Layout Grid</h2>
             <div className="tools-wrapper">
               {Object.keys(this.state.sizes).map(key => (
-                <ToolbarButton key={key} details={this.state.sizes[key]} activeSize={this.state.activeSize} action={this.updateSize} />
+                <ToolbarButton
+                  key={key}
+                  details={this.state.sizes[key]}
+                  activeSize={this.state.activeSize}
+                  action={this.updateSize}
+                />
               ))}
             </div>
           </div>
 
           <div className="u-margin-bottom u-padding a-alchemy-bg-dark">
-            {Object.keys(this.state.grids).map(key => <Grid key={key} layoutSize={this.state.activeSize} details={this.state.grids[key]} />)}
+            {Object.keys(this.state.grids).map(key => (
+              <Grid
+                key={key}
+                layoutSize={this.state.activeSize}
+                layoutSizeUnit={this.state.activeSizeUnit}
+                details={this.state.grids[key]}
+              />
+            ))}
           </div>
         </section>
       </ScrollableAnchor>

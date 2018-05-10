@@ -20,7 +20,9 @@ class Grid extends React.Component {
           <h3>{details.gridName}</h3>
 
           <div className={`o-layout a-layout-debug  o-layout--${layoutSize}`}>
-            {Object.keys(colsArray).map(key => <Column key={key} details={details} />)}
+            {Object.keys(colsArray).map(key => (
+              <Column key={key} details={details} layoutSize={layoutSize} />
+            ))}
           </div>
         </div>
       </div>

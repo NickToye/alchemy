@@ -9,3 +9,7 @@
     box-shadow: #{$alchemy-surface};
   }
 }
+
+.o-surface--x {
+  box-shadow: $alchemy-global-shadow;
+}

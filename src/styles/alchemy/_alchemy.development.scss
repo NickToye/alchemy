@@ -114,32 +114,50 @@
 
 // Layout
 
+:root {
+  --fizz: $inuit-global-spacing-unit;
+}
+
 .a-layout-debug {
   height: 300px;
-
-
 }
 
 .a-layout-item-debug {
   background: alchemy-color('primary');
   height: 300px;
   position: relative;
-
-  &:after {
-    content: '⇠ 44px ⇢';
-    position: absolute;
-    right: -48px;
-    font-size: 10px;
-  }
-
-
 }
 
-.o-layout__item {
-  &:last-child {
+.a-alchemy-gutter {
+  @include absolute(right -24px);
+  @include alchemy-font-size(12px);
+  color: alchemy-color('black');
+  text-align: center;
+  width: 24px;
+  z-index: -1;
+  background: alchemy-color('white');
 
-    .a-layout-item-debug:after {
-      display: none;
-    }
+  .o-layout--tiny & {
+    @include absolute(right -6px);
+    width: 6px;
+  }
+
+  .o-layout--small & {
+    @include absolute(right -12px);
+    width: 12px;
+  }
+
+  .o-layout--large & {
+    @include absolute(right -48px);
+    width: 48px;
+  }
+
+  .o-layout--huge & {
+    @include absolute(right -96px);
+    width: 96px;
+  }
+
+  .o-layout__item:last-child & {
+    display: none;
   }
 }
