@@ -42,7 +42,7 @@ class Specificity extends React.Component {
             this situation.
           </p>
           <p>There are 2 options though besides the brute force option.</p>
-          <ul className="u-margin-bottom">
+          <ul className="u-margin-bottom-large">
             <li>Refactor</li>
             <li>A more specific selector</li>
           </ul>
@@ -58,7 +58,7 @@ class Specificity extends React.Component {
             Now if you had to add a third form with a different style, you would need to write an even more
             specific selector, which sets you on a downward spiral. Specifity can:
           </p>
-          <ul className="u-margin-bottom">
+          <ul className="u-margin-bottom-large">
             <li>limits your ability to extend a codebase</li>
             <li>disrupts the inheriting nature of the CSS cascade</li>
             <li>pushes your codebase to use more code then it needs to</li>
@@ -66,7 +66,7 @@ class Specificity extends React.Component {
             <li>can increase frustration for developers</li>
           </ul>
           <p>How can we reduce the issues with specifity?</p>
-          <ul className="u-margin-bottom">
+          <ul className="u-margin-bottom-large">
             <li>Avoid using IDs in your CSS</li>
             <li>Don&apos;t use nested selectors</li>
             <li>Do not qualify selectors</li>

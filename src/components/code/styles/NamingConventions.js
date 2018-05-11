@@ -12,7 +12,7 @@ class NamingConventions extends React.Component {
             Naming conventions are important to maintain a strict, transparent and semantic codebase. A solid
             naming convention will inform you and your team:
           </p>
-          <ul className="u-margin-bottom">
+          <ul className="u-margin-bottom-large">
             <li>what a class does</li>
             <li>where the class can be used</li>
             <li>what the class might be related to</li>
@@ -57,7 +57,7 @@ class NamingConventions extends React.Component {
             like convention.
           </p>
           <p>BEM splits component classes into 3 groups:</p>
-          <ul className="u-margin-bottom">
+          <ul className="u-margin-bottom-large">
             <li>
               <strong>Block</strong> - This is the root of the component
             </li>

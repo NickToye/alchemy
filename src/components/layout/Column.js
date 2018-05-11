@@ -27,7 +27,7 @@ class Column extends React.Component {
 
     return (
       <div key={details.key} className={`o-layout__item  u-1/${details.gridColumns}`}>
-        <div className="a-layout-item-debug o-flex  o-flex--center o-surface--x">
+        <div className="a-layout-item o-flex  o-flex--center o-surface--x">
           <small className="u-alchemy-dark-grey-colour">{details.gridColumnsWidth}%</small>
           {showGutters ? <span className="a-alchemy-gutter">{layoutSizeUnit}</span> : ''}
         </div>

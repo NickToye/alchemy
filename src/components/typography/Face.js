@@ -8,10 +8,10 @@ class Face extends React.Component {
     const exampleElement = this.props.exampleElement;
     return (
       <div>
-        <p className={`u-${details.faceClass} u-p u-margin-bottom-none`} key={details.key}>
+        <p className={`u-alchemy-face-${details.faceClass} u-p u-margin-bottom-none`} key={details.key}>
           {details.faceName}
         </p>
-        <p className={`u-${exampleElement}`}>{exampleText}</p>
+        <p className={`u-${exampleElement}  u-alchemy-face-${details.faceClass}`}>{exampleText}</p>
       </div>
     );
   }

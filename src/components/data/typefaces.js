@@ -1,31 +1,31 @@
 const typefaces = {
   typeface1: {
     faceName: 'FS Emeric Light',
-    faceClass: 'fs-emeric-light',
+    faceClass: 'light',
   },
   typeface2: {
     faceName: 'FS Emeric Book',
-    faceClass: 'fs-emeric-book',
+    faceClass: 'book',
   },
   typeface3: {
     faceName: 'FS Emeric Medium',
-    faceClass: 'fs-emeric-medium',
+    faceClass: 'medium',
   },
   typeface4: {
     faceName: 'FS Emeric Regular',
-    faceClass: 'fs-emeric-regular',
+    faceClass: 'regular',
   },
   typeface5: {
     faceName: 'FS Emeric Core',
-    faceClass: 'fs-emeric-core',
+    faceClass: 'core',
   },
   typeface6: {
     faceName: 'FS Emeric Thin',
-    faceClass: 'fs-emeric-thin',
+    faceClass: 'thin',
   },
   typeface7: {
     faceName: 'FS Emeric Bold',
-    faceClass: 'fs-emeric-bold',
+    faceClass: 'bold',
   },
 };
 

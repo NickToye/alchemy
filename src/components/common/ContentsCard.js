@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class ContentsCard extends React.Component {
-
-
   render() {
     const details = this.props.details;
     const activeLink = this.props.activeLink;
@@ -29,9 +27,7 @@ class ContentsCard extends React.Component {
 ContentsCard.propTypes = {
   details: PropTypes.object,
   action: PropTypes.func,
-  activeLink: PropTypes.string
+  activeLink: PropTypes.string,
 };
 
 export default ContentsCard;
-
-// TODO set active state on active link

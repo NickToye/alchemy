@@ -1,7 +1,6 @@
 // Alchemy :: Development
 
-// TODO Tidy up development file
-
+// Development Bar
 .a-development {
   padding-top: 10px;
   position: relative;
@@ -16,23 +15,21 @@
   }
 }
 
+
+// Page Style
 .a-page {
-  color: alchemy-color('grey');
   @include border-radius($alchemy-global-radius);
-
-  h3 {
-    color: alchemy-color('medium-grey');
-  }
-
-  strong {
-    color: alchemy-color('dark-grey');
-  }
+  color: alchemy-color('medium-grey');
 }
 
+
+// Note
 .a-note {
   @include border-radius($alchemy-global-radius);
 }
 
+
+// Code Example
 .a-code-example {
   @include border-radius($alchemy-global-radius);
   background: $alchemy-code-bg;
@@ -40,11 +37,15 @@
   padding: $inuit-global-spacing-unit;
 }
 
+
+// Code Label
 .a-code-label {
   color: alchemy-color(info);
   font-style: italic;
 }
 
+
+// Contents Box
 .a-contents-box {
   a {
     display: block;
@@ -67,6 +68,7 @@
   }
 
 }
+
 
 // Patches
 .a-patch {
@@ -109,22 +111,17 @@
 }
 
 .Sticky {
-  background: #173748;
   @include border-radius($alchemy-global-radius);
-  padding: 0;
+  background: $alchemy-colour1;
 }
+
 
 // Layout
-
-:root {
-  --fizz: $inuit-global-spacing-unit;
-}
-
-.a-layout-debug {
+.a-layout {
   height: 300px;
 }
 
-.a-layout-item-debug {
+.a-layout-item {
   background: alchemy-color('primary');
   height: 300px;
   position: relative;
@@ -133,11 +130,11 @@
 .a-alchemy-gutter {
   @include absolute(right -24px);
   @include alchemy-font-size(12px);
+  background: alchemy-color('white');
   color: alchemy-color('black');
   text-align: center;
   width: 24px;
   z-index: -1;
-  background: alchemy-color('white');
 
   .o-layout--tiny & {
     @include absolute(right -6px);
@@ -164,16 +161,13 @@
   }
 }
 
-// Navigation
 
+// Navigation
 .a-navigation {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  @include alchemy-flexbox($align-items: center, $justify: space-around);
+
   a {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
+    @include alchemy-flexbox($direction: column, $wrap: nowrap, $align-items: center);
     text-decoration: none;
     padding: 0 24px !important;
 

@@ -66,9 +66,9 @@
     @include border-radius($alchemy-global-radius right);
   }
 
-  i {
+  > * {
+    pointer-events: none;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
-    pointer-events: none; // TODO Move this hack somewhere, or resolve more elegantly.
   }
 
   .a-toolbar__wrapper & {
@@ -146,7 +146,7 @@
     &:after {
       @include alchemy-font-size(13px);
       color: alchemy-color('info');
-      font-family: FS-Emeric-Core, Helvetica, sans-serif; // TODO change this to be a variable.
+      font-family: $alchemy-face-core;
       text-transform: capitalize;
 
       @include mq($alchemy-key) {

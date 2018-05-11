@@ -65,5 +65,3 @@ class CodeCard extends React.Component {
 }
 
 export default CodeCard;
-
-// TODO restyle toolbar

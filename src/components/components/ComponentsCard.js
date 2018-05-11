@@ -63,6 +63,3 @@ class ComponentsCard extends React.Component {
 }
 
 export default ComponentsCard;
-
-// TODO add a Card component
-// TODO Create a navigation card in components

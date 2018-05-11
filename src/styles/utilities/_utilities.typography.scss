@@ -9,7 +9,7 @@
 }
 
 @each $face, $value in $typeface {
-  .u-#{$face} {
+  .u-alchemy-face-#{$face} {
     font-family: $value;
   }
 }

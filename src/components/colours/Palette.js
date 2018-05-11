@@ -23,7 +23,7 @@ class Palette extends React.Component {
           <div className="a-toolbar  o-flex  o-flex--justify-between  o-flex--align-center  o-flex--row u-padding">
             <h2 className="u-alchemy-white-colour u-margin-none">{palette.section} palette</h2>
           </div>
-          <div className="o-grid  o-grid--centre  o-grid--start o-grid--auto u-padding">
+          <div className="o-grid  o-grid--centre  o-grid--start u-padding">
             {Object.keys(this.state.colours)
               .filter(function(filteredSwatches) {
                 return colours[filteredSwatches].colourType === palette.identifier;

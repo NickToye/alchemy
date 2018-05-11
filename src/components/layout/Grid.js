@@ -20,7 +20,7 @@ class Grid extends React.Component {
         <div className="u-margin-bottom-large">
           <h3>{details.gridName}</h3>
 
-          <div className={`o-layout a-layout-debug  o-layout--${layoutSize}`}>
+          <div className={`o-layout a-layout  o-layout--${layoutSize}`}>
             {Object.keys(colsArray).map(key => (
               <Column key={key} details={details} layoutSize={layoutSize} gutters={gutters} />
             ))}

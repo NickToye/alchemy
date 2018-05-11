@@ -61,4 +61,9 @@
   }
 }
 
-// TODO Setup a file to style the colours for tables.
+.o-table--bordered {
+  th,
+  td {
+    border: 1px solid $alchemy-colour1;
+  }
+}

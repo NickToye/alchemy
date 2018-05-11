@@ -106,8 +106,8 @@ class CssSelectors extends React.Component {
             Although this is personal preference, having selectors prefixed with descriptive letters can prove
             useful when writing and implementing CSS.
           </p>
-          <table className="o-table  o-table--small">
-            <thead>
+          <table className="o-table  o-table--small  o-table--bordered">
+            <thead className="u-alchemy-light-grey-bg">
               <tr>
                 <th>Prefix</th>
                 <th>Example</th>
@@ -154,7 +154,7 @@ class CssSelectors extends React.Component {
             The reason for this is because modern browsers read selectors from <strong>right-to-left</strong>.
             So in that first example a browser will read the selector as:
           </p>
-          <ul className="u-margin-bottom">
+          <ul className="u-margin-bottom-large">
             <li>
               find all the <code className="u-alchemy-positive-colour">ul</code> in the DOM;
             </li>
@@ -176,7 +176,7 @@ class CssSelectors extends React.Component {
             </li>
           </ul>
           <p>The second example is far more simpler and much more efficient:</p>
-          <ul className="u-margin-bottom">
+          <ul className="u-margin-bottom-large">
             <li>
               find all the elements with a class of{' '}
               <code className="u-alchemy-positive-colour">.primary-nav</code>
@@ -188,7 +188,7 @@ class CssSelectors extends React.Component {
           </p>
           <h3>General Rules</h3>
           <p>Selectors are fundamental to writing quality efficient CSS.</p>
-          <ul className="u-margin-bottom">
+          <ul className="u-margin-bottom-large">
             <li>
               <strong>Select what you want explicitly</strong>, rather then relying on circumstances or
               coincidence.

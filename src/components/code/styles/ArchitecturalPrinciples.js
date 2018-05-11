@@ -18,7 +18,7 @@ class ArchitecturalPrinciples extends React.Component {
           </p>
           <h3>High-level Overview</h3>
           <p>At a very high-level, your architecture will help you:</p>
-          <ul className="u-margin-bottom">
+          <ul className="u-margin-bottom-large">
             <li>provide a consistent environment</li>
             <li>allow for fast changes</li>
             <li>allow for scalability</li>
@@ -160,7 +160,7 @@ class ArchitecturalPrinciples extends React.Component {
             A selector like <code className="u-alchemy-positive-colour">.content .box {}</code> is troublesome
             because:
           </p>
-          <ul className="u-margin-bottom">
+          <ul className="u-margin-bottom-large">
             <li>
               the <code className="u-alchemy-positive-colour">.box</code> component is locked inside{' '}
               <code className="u-alchemy-positive-colour">.content</code>, which means the modification is

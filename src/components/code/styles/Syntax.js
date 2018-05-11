@@ -18,7 +18,7 @@ class Syntax extends React.Component {
             wherever possible.
           </p>
           <p>What we want from a clean codebase is:</p>
-          <ul className="u-margin-bottom">
+          <ul className="u-margin-bottom-large">
             <li>two (2) space indents, no tabs</li>
             <li>80 character wide columns</li>
             <li>multi-line CSS</li>
@@ -34,7 +34,7 @@ class Syntax extends React.Component {
             However, this has to be done in a sensible and logical way. Separating components out into their
             own semantically named files has the following benefits:
           </p>
-          <ul className="u-margin-bottom">
+          <ul className="u-margin-bottom-large">
             <li>You know exactly where your files are</li>
             <li>You know what line of CSS you need to debug if there any issues</li>
             <li>Page specific files and foundation files are all in their own semantically named folders</li>
@@ -54,7 +54,7 @@ class Syntax extends React.Component {
             <code> .editorconfig </code> file.
           </p>
           <p>The benefits include:</p>
-          <ul className="u-margin-bottom">
+          <ul className="u-margin-bottom-large">
             <li>the ability to have multiple files open side by side</li>
             <li>an improved experience when viewing the CSS in github or a terminal window</li>
             <li>providing a comfortable reading length</li>
