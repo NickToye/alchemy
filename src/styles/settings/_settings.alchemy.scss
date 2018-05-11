@@ -8,3 +8,18 @@ $alchemy-colour5: #adc9e3;
 $alchemy-colour6: #96aec4;
 $alchemy-colour7: #c5d1df;
 $alchemy-colour8: #f6f9fc;
+
+$alchemy-primary: #6ac3f3;
+$alchemy-secondary: #de5e35;
+$alchemy-tertiary: #ffb12f;
+
+$alchemy-dev-colours: (
+  'primary': $alchemy-primary,
+  'secondary': $alchemy-secondary,
+  'tertiary': $alchemy-tertiary
+);
+
+// Colours
+$alchemy-init-header: #173649;
+$alchemy-init-bg: #14232b;
+$alchemy-code-bg: #193748;

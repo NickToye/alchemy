@@ -137,16 +137,22 @@
 }
 
 .a-toolbar__mq {
-  @include alchemy-linear-gradient(to bottom, $alchemy-colour8, 90%, darken($alchemy-colour7, 15%));
-  @include absolute(top $inuit-global-spacing-unit right $inuit-global-spacing-unit);
-  @include border-radius($alchemy-global-radius-small);
-  color: alchemy-color('dark-grey');
+  @include alchemy-flexbox($direction: column, $justify: center, $wrap: nowrap);
+  align-self: stretch;
+  // @include alchemy-linear-gradient(to bottom, $alchemy-colour8, 90%, darken($alchemy-colour7, 15%));
+  // @include absolute(top $inuit-global-spacing-unit right $inuit-global-spacing-unit);
+  background: darken($alchemy-colour1, 5%);
+  text-align: center;
+  // @include border-radius($alchemy-global-radius-small);
+
 
   @each $alchemy-key, $alchemy-value in $mq-breakpoints {
     &:after {
-      @include alchemy-font-size(13px);
-      color: alchemy-color('info');
+      @include alchemy-font-size(14px);
+      color: $alchemy-primary;
+      display: block;
       font-family: $alchemy-face-core;
+      text-align: center;
       text-transform: capitalize;
 
       @include mq($alchemy-key) {

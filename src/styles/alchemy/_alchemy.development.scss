@@ -1,12 +1,21 @@
 // Alchemy :: Development
 
+// Utility Colours
+
+@each $alchemy-key, $alchemy-val in $alchemy-dev-colours {
+  .a-alchemy-#{$alchemy-key}-colour {
+    color: $alchemy-val;
+  }
+}
+
+
 // Development Bar
 .a-development {
   padding-top: 10px;
   position: relative;
 
   &:before {
-    @include alchemy-stripes(45deg, $color1: #f8cb5b, $color2: #000000);
+    @include alchemy-stripes(45deg, $color1: $alchemy-secondary, $color2: $alchemy-tertiary);
     @include absolute(top 0);
     @include alchemy-size(100%, 10px);
     box-shadow: $alchemy-global-shadow;
@@ -107,7 +116,9 @@
 }
 
 .a-logo {
-  background: darken($alchemy-init-header, 5%);
+  @include alchemy-flexbox();
+  align-self: stretch;
+  background: darken($alchemy-colour1, 5%);
 }
 
 .Sticky {

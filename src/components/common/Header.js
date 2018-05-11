@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link, IndexLink } from 'react-router';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Header = () => {
   return (
-    <header className="c-header">
-      <div className="a-toolbar__mq u-padding-tiny">
-        <small>Current Media Query: </small>
-      </div>
+    <header className="c-header  o-flex  o-flex--row  o-flex--align-center  o-flex--justify-between">
+
       <IndexLink to="/" className="u-padding-small a-logo" activeClassName="active">
         <img src={require('../../images/Alchemy@3x.png')} className="a-patch  a-patch--alchemy" />
       </IndexLink>
@@ -44,6 +43,12 @@ const Header = () => {
           <span>Code</span>
         </Link>
       </nav>
+      <div className="a-toolbar__mq u-padding">
+        <small className="a-alchemy-secondary-colour">MQ</small>
+        <div className="a-devices o-flex  o-flex--center u-padding-vertical-tiny a-alchemy-tertiary-colour">
+          <FontAwesomeIcon icon="desktop" />
+        </div>
+      </div>
     </header>
   );
 };
