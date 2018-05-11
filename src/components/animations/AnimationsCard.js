@@ -9,15 +9,21 @@ class AnimationsCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      animationTypes: animationTypes,
-      animationTypePick: 'Fades',
+      contents: animationTypes,
+      activeLink: '',
     };
 
-    this.showAnimationTypePick = this.showAnimationTypePick.bind(this);
+    this.setActiveLink = this.setActiveLink.bind(this);
   }
 
-  showAnimationTypePick(e) {
-    this.setState({ animationTypePick: e.target.value });
+  componentDidMount() {
+    this.setState({
+      activeLink: this.state.contents.section1.identifier,
+    });
+  }
+
+  setActiveLink(e) {
+    this.setState({ activeLink: e.target.dataset.value });
   }
 
   render() {
@@ -31,15 +37,20 @@ class AnimationsCard extends React.Component {
           <aside className="u-1/5 u-margin-right-large">
             <Sticky className="sticky-one a-alchemy-bg o-surface--l1" enter="370">
               <ul className="o-list-bare  u-margin-bottom-none a-contents-box">
-                {Object.keys(this.state.animationTypes).map(key => (
-                  <ContentsCard key={key} details={this.state.animationTypes[key]} />
+                {Object.keys(this.state.contents).map(key => (
+                  <ContentsCard
+                    key={key}
+                    details={this.state.contents[key]}
+                    activeLink={this.state.activeLink}
+                    action={this.setActiveLink}
+                  />
                 ))}
               </ul>
             </Sticky>
           </aside>
           <main className="u-4/5">
-            {Object.keys(this.state.animationTypes).map(key => (
-              <Animation key={key} animation={this.state.animationTypes[key]} />
+            {Object.keys(this.state.contents).map(key => (
+              <Animation key={key} animation={this.state.contents[key]} />
             ))}
           </main>
         </div>

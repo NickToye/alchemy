@@ -12,8 +12,8 @@ class LayoutCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      layoutTypes: layoutTypes,
-      activeLink: ''
+      contents: layoutTypes,
+      activeLink: '',
     };
 
     this.setActiveLink = this.setActiveLink.bind(this);
@@ -21,8 +21,8 @@ class LayoutCard extends React.Component {
 
   componentDidMount() {
     this.setState({
-      activeLink: this.state.layoutTypes.section1.identifier
-    })
+      activeLink: this.state.contents.section1.identifier,
+    });
   }
 
   setActiveLink(e) {
@@ -30,7 +30,6 @@ class LayoutCard extends React.Component {
   }
 
   render() {
-
     return (
       <section className="o-section u-padding">
         <header className="u-margin-bottom-large">
@@ -42,8 +41,13 @@ class LayoutCard extends React.Component {
           <aside className="u-1/5 u-margin-right-large">
             <Sticky className="sticky-one a-alchemy-bg o-surface--l1" enter="370">
               <ul className="o-list-bare  u-margin-bottom-none a-contents-box">
-                {Object.keys(this.state.layoutTypes).map(key => (
-                  <ContentsCard key={key} details={this.state.layoutTypes[key]} activeLink={this.state.activeLink} action={this.setActiveLink} />
+                {Object.keys(this.state.contents).map(key => (
+                  <ContentsCard
+                    key={key}
+                    details={this.state.contents[key]}
+                    activeLink={this.state.activeLink}
+                    action={this.setActiveLink}
+                  />
                 ))}
               </ul>
             </Sticky>

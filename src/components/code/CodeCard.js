@@ -48,7 +48,9 @@ class CodeCard extends React.Component {
 
     return (
       <section className="o-section  u-padding  u-relative">
-        <div className="u-margin-bottom  u-margin-right  c-toolbar">{guidelinesTypeList}</div>
+        <div className="u-margin-bottom  u-margin-right  a-toolbar  a-toolbar--float  o-flex  o-flex--row">
+          {guidelinesTypeList}
+        </div>
         <header className="u-margin-bottom-large">
           <h1 className="u-h1  u-margin-bottom-none">Code Guidelines</h1>
           <p>A set of coding standards.</p>

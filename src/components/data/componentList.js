@@ -1,13 +1,13 @@
 const componentList = {
-  component1: {
+  section1: {
     section: 'Banners',
     identifier: 'banners',
   },
-  component2: {
+  section2: {
     section: 'Cards',
     identifier: 'cards',
   },
-  component3: {
+  section3: {
     section: 'Navigation',
     identifier: 'navigation',
   },

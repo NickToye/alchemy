@@ -11,7 +11,7 @@ class ColoursCard extends React.Component {
     super(props);
     this.state = {
       colours: colours,
-      colourTypes: colourTypes,
+      contents: colourTypes,
       colourTypePick: 'brand',
       activeLinks: '',
     };
@@ -22,7 +22,7 @@ class ColoursCard extends React.Component {
 
   componentDidMount() {
     this.setState({
-      activeLink: this.state.colourTypes.section.identifider,
+      activeLink: this.state.contents.section1.identifier,
     });
   }
 
@@ -46,10 +46,10 @@ class ColoursCard extends React.Component {
           <aside className="u-1/5 u-margin-right-large">
             <Sticky className="sticky-one a-alchemy-bg o-surface--l1" enter="370">
               <ul className="o-list-bare  u-margin-bottom-none a-contents-box">
-                {Object.keys(this.state.colourTypes).map(key => (
+                {Object.keys(this.state.contents).map(key => (
                   <ContentsCard
                     key={key}
-                    details={this.state.colourTypes[key]}
+                    details={this.state.contents[key]}
                     activeLink={this.state.activeLink}
                     action={this.setActiveLink}
                   />
@@ -58,8 +58,8 @@ class ColoursCard extends React.Component {
             </Sticky>
           </aside>
           <main className="u-4/5">
-            {Object.keys(this.state.colourTypes).map(key => (
-              <Palette key={key} palette={this.state.colourTypes[key]} />
+            {Object.keys(this.state.contents).map(key => (
+              <Palette key={key} palette={this.state.contents[key]} />
             ))}
           </main>
         </div>

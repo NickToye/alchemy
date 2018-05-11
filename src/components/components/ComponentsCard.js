@@ -13,8 +13,22 @@ class ComponentsCard extends React.Component {
     super(props);
     this.state = {
       contents: ComponentList,
+      activeLink: '',
     };
+
+    this.setActiveLink = this.setActiveLink.bind(this);
   }
+
+  componentDidMount() {
+    this.setState({
+      activeLink: this.state.contents.section1.identifier,
+    });
+  }
+
+  setActiveLink(e) {
+    this.setState({ activeLink: e.target.dataset.value });
+  }
+
   render() {
     return (
       <section className="o-section u-padding">
@@ -27,7 +41,12 @@ class ComponentsCard extends React.Component {
             <Sticky className="sticky-one" enter="370">
               <ul className="o-list-bare  a-contents-box">
                 {Object.keys(this.state.contents).map(key => (
-                  <ContentsCard key={key} details={this.state.contents[key]} />
+                  <ContentsCard
+                    key={key}
+                    details={this.state.contents[key]}
+                    activeLink={this.state.activeLink}
+                    action={this.setActiveLink}
+                  />
                 ))}
               </ul>
             </Sticky>

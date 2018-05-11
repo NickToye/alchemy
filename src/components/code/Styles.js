@@ -15,14 +15,20 @@ class Styles extends React.Component {
     super(props);
     this.state = {
       contents: StyleGuidelines,
-      contentsPick: 'introduction',
+      activeLink: '',
     };
 
-    this.showContentsPick = this.showContentsPick.bind(this);
+    this.setActiveLink = this.setActiveLink.bind(this);
   }
 
-  showContentsPick(e) {
-    this.setState({ contentsPick: e.target.value });
+  componentDidMount() {
+    this.setState({
+      activeLink: this.state.contents.section1.identifier,
+    });
+  }
+
+  setActiveLink(e) {
+    this.setState({ activeLink: e.target.dataset.value });
   }
 
   render() {
@@ -36,8 +42,8 @@ class Styles extends React.Component {
                 <ContentsCard
                   key={key}
                   details={this.state.contents[key]}
-                  contentsPick={this.state.contentsPick}
-                  action={this.showContentsPick}
+                  activeLink={this.state.activeLink}
+                  action={this.setActiveLink}
                 />
               ))}
             </ul>

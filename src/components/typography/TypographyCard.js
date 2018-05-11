@@ -15,8 +15,21 @@ class TypographyCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      typographyTypes: typographyTypes,
+      contents: typographyTypes,
+      activeLink: '',
     };
+
+    this.setActiveLink = this.setActiveLink.bind(this);
+  }
+
+  componentDidMount() {
+    this.setState({
+      activeLink: this.state.contents.section1.identifier,
+    });
+  }
+
+  setActiveLink(e) {
+    this.setState({ activeLink: e.target.dataset.value });
   }
 
   render() {
@@ -30,8 +43,13 @@ class TypographyCard extends React.Component {
           <aside className="u-1/5 u-margin-right-large">
             <Sticky className="sticky-one a-alchemy-bg o-surface--l1" enter="370">
               <ul className="o-list-bare  u-margin-bottom-none a-contents-box">
-                {Object.keys(this.state.typographyTypes).map(key => (
-                  <ContentsCard key={key} details={this.state.typographyTypes[key]} />
+                {Object.keys(this.state.contents).map(key => (
+                  <ContentsCard
+                    key={key}
+                    details={this.state.contents[key]}
+                    activeLink={this.state.activeLink}
+                    action={this.setActiveLink}
+                  />
                 ))}
               </ul>
             </Sticky>

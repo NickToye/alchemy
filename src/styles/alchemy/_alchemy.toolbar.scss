@@ -6,6 +6,9 @@
   box-shadow: $alchemy-global-shadow;
 }
 
+.a-toolbar--float {
+  @include absolute(right 0);
+}
 
 .a-toolbar__wrapper {
   @include alchemy-linear-gradient(to bottom, $alchemy-colour8, 90%, darken($alchemy-colour7, 15%));
@@ -28,7 +31,6 @@
   }
 }
 
-
 .a-toolbar__popover {
   @include absolute(bottom 50px right 0);
   @include border-radius($alchemy-global-radius-small);
@@ -47,7 +49,6 @@
     @include border-radius($alchemy-global-radius-small right);
   }
 }
-
 
 .a-toolbar__btn {
   background: transparent;
@@ -107,10 +108,7 @@
   svg {
     pointer-events: none;
   }
-
-
 }
-
 
 .a-toolbar__input {
   @include alchemy-font-size(14px);
@@ -131,15 +129,12 @@
   &.active {
     background-color: alchemy-color-level('light-grey', -1);
   }
-
 }
-
 
 .a-toolbar__input__btn {
   padding: 0 $inuit-global-spacing-unit-small;
   height: $inuit-global-spacing-unit-small * 3;
 }
-
 
 .a-toolbar__mq {
   @include alchemy-linear-gradient(to bottom, $alchemy-colour8, 90%, darken($alchemy-colour7, 15%));
@@ -160,7 +155,6 @@
     }
   }
 }
-
 
 .a-toolbar__range__input {
   @include alchemy-linear-gradient(to left, darken($alchemy-colour3, 15%), $alchemy-colour3);

@@ -9,8 +9,22 @@ class JavaScript extends React.Component {
     super(props);
     this.state = {
       contents: jsGuidelines,
+      activeLink: '',
     };
+
+    this.setActiveLink = this.setActiveLink.bind(this);
   }
+
+  componentDidMount() {
+    this.setState({
+      activeLink: this.state.contents.section1.identifier,
+    });
+  }
+
+  setActiveLink(e) {
+    this.setState({ activeLink: e.target.dataset.value });
+  }
+
   render() {
     return (
       <div className="o-flex o-flex--row">
@@ -18,7 +32,12 @@ class JavaScript extends React.Component {
           <Sticky className="sticky-one" enter="370">
             <ul className="o-list-bare u-margin-none a-contents-box">
               {Object.keys(this.state.contents).map(key => (
-                <ContentsCard key={key} details={this.state.contents[key]} />
+                <ContentsCard
+                  key={key}
+                  details={this.state.contents[key]}
+                  activeLink={this.state.activeLink}
+                  action={this.setActiveLink}
+                />
               ))}
             </ul>
           </Sticky>
