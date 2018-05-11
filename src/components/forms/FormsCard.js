@@ -12,7 +12,20 @@ class FormsCard extends React.Component {
     super(props);
     this.state = {
       formElements: formElements,
+      activeLink: '',
     };
+
+    this.setActiveLink = this.setActiveLink.bind(this);
+  }
+
+  componentDidMount() {
+    this.setState({
+      activeLink: this.state.formElements.section1.identifier,
+    });
+  }
+
+  setActiveLink(e) {
+    this.setState({ activeLink: e.target.dataset.value });
   }
 
   render() {
@@ -28,7 +41,12 @@ class FormsCard extends React.Component {
             <Sticky className="sticky-one a-alchemy-bg o-surface--l1" enter="370">
               <ul className="o-list-bare  u-margin-bottom-none a-contents-box">
                 {Object.keys(this.state.formElements).map(key => (
-                  <ContentsCard key={key} details={this.state.formElements[key]} />
+                  <ContentsCard
+                    key={key}
+                    details={this.state.formElements[key]}
+                    activeLink={this.state.activeLink}
+                    action={this.setActiveLink}
+                  />
                 ))}
               </ul>
             </Sticky>

@@ -54,6 +54,10 @@
     &:visited {
       color: alchemy-color('white');
     }
+    &:hover,
+    &.active {
+      background: rgba(alchemy-color('black'), 0.2);
+    }
   }
   li {
     border-bottom: 1px dashed rgba(alchemy-color('white'), 0.2);
@@ -61,9 +65,7 @@
       border: 0;
     }
   }
-  li:hover {
-    background: rgba(alchemy-color('black'), 0.2);
-  }
+
 }
 
 // Patches

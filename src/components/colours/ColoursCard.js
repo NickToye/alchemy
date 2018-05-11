@@ -13,9 +13,21 @@ class ColoursCard extends React.Component {
       colours: colours,
       colourTypes: colourTypes,
       colourTypePick: 'brand',
+      activeLinks: '',
     };
 
     this.showColourTypePick = this.showColourTypePick.bind(this);
+    this.setActiveLink = this.setActiveLink.bind(this);
+  }
+
+  componentDidMount() {
+    this.setState({
+      activeLink: this.state.colourTypes.section.identifider,
+    });
+  }
+
+  setActiveLink(e) {
+    this.setState({ activeLink: e.target.dataset.value });
   }
 
   showColourTypePick(e) {
@@ -35,7 +47,12 @@ class ColoursCard extends React.Component {
             <Sticky className="sticky-one a-alchemy-bg o-surface--l1" enter="370">
               <ul className="o-list-bare  u-margin-bottom-none a-contents-box">
                 {Object.keys(this.state.colourTypes).map(key => (
-                  <ContentsCard key={key} details={this.state.colourTypes[key]} />
+                  <ContentsCard
+                    key={key}
+                    details={this.state.colourTypes[key]}
+                    activeLink={this.state.activeLink}
+                    action={this.setActiveLink}
+                  />
                 ))}
               </ul>
             </Sticky>

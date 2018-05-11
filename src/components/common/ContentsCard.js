@@ -2,21 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class ContentsCard extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+
 
   render() {
     const details = this.props.details;
+    const activeLink = this.props.activeLink;
+    const isCurrent = activeLink === details.identifier;
     // const contentPick = this.props.contentPick;
 
     return (
       <li key={details.key}>
         <a
           href={`#` + details.identifier}
-          className={`u-padding-horizontal-small u-padding-vertical-tiny`}
+          className={`u-padding-horizontal-small u-padding-vertical-tiny ` + (isCurrent ? 'active' : '')}
           key={details.key}
-          value={details.identifier}
+          data-value={details.identifier}
           onClick={this.props.action}
         >
           {details.section}
@@ -29,7 +29,9 @@ class ContentsCard extends React.Component {
 ContentsCard.propTypes = {
   details: PropTypes.object,
   action: PropTypes.func,
-  contentPick: PropTypes.string,
+  activeLink: PropTypes.string
 };
 
 export default ContentsCard;
+
+// TODO set active state on active link
