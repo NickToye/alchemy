@@ -9,18 +9,23 @@ import {
   faInfoCircle,
   faCog,
   faDesktop,
+  faMobileAlt,
+  faTabletAlt,
+  faLaptop,
 } from '@fortawesome/free-solid-svg-icons';
 
 import Header from './common/Header';
 
-library.add(faCheck, faTimes, faExclamationTriangle, faInfoCircle, faCog, faDesktop);
+library.add(faCheck, faTimes, faExclamationTriangle, faInfoCircle, faCog, faDesktop, faMobileAlt, faTabletAlt, faLaptop);
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       width: 0,
-      mq: '',
+      mq: 'room',
+      mqIcon: 'mobile-alt',
+      mqIconRotate: ''
     };
 
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
@@ -48,25 +53,38 @@ class App extends React.Component {
 
     this.setState({ width: window.innerWidth, height: window.innerHeight });
 
-    if (window.innerWidth > breakpoints.village) {
+
+    if (window.innerWidth < breakpoints.town) {
       this.setState({ mq: 'village' });
-    } else if (window.innerWidth > breakpoints.town) {
+      this.setState({ mqIcon: 'mobile-alt'});
+      this.setState({ mqIconRotate: 0 });
+    } else if (window.innerWidth < breakpoints.city) {
       this.setState({ mq: 'town' });
-    } else if (window.innerWidth <= breakpoints.city) {
-      this.setState({ mq: 'city' });
-    } else if (window.innerWidth <= breakpoints.country) {
+      this.setState({ mqIcon: 'tablet-alt'});
+      this.setState({ mqIconRotate: 0 });
+    } else if (window.innerWidth < breakpoints.country) {
+      this.setState({ mq: 'city '});
+      this.setState({ mqIcon: 'tablet-alt'});
+      this.setState({ mqIconRotate: 0 });
+    } else if (window.innerWidth < breakpoints.continent) {
       this.setState({ mq: 'country' });
-    } else if (window.innerWidth <= breakpoints.continent) {
+      this.setState({ mqIcon: 'tablet-alt'});
+      this.setState({ mqIconRotate: 90 });
+    } else if (window.innerWidth < breakpoints.world) {
       this.setState({ mq: 'continent' });
-    } else if (window.innerWidth <= breakpoints.world) {
+      this.setState({ mqIcon: 'laptop' });
+      this.setState({ mqIconRotate: 0 });
+    } else {
       this.setState({ mq: 'world' });
+      this.setState({ mqIcon: 'desktop' });
+      this.setState({ mqIconRotate: 0 });
     }
   }
 
   render() {
     return (
       <div className="o-wrapper  o-wrapper--full  u-padding-none">
-        <Header />
+        <Header mq={this.state.mqIcon} mqRotate={this.state.mqIconRotate} />
         {this.props.children}
       </div>
     );
