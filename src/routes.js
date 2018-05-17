@@ -10,6 +10,7 @@ import AnimationsCard from './components/animations/AnimationsCard';
 import SurfacesCard from './components/surfaces/SurfacesCard';
 import ComponentsCard from './components/components/ComponentsCard';
 import CodeCard from './components/code/CodeCard';
+import PlaygroundCard from './components/playground/PlaygroundCard';
 
 export default (
   <Route path="/" component={App}>
@@ -22,5 +23,6 @@ export default (
     <Route path="surfaces" component={SurfacesCard} />
     <Route path="components" component={ComponentsCard} />
     <Route path="code" component={CodeCard} />
+    <Route path="playground" component={PlaygroundCard} />
   </Route>
 );

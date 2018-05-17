@@ -8,6 +8,12 @@
   }
 }
 
+@each $alchemy-key, $alchemy-val in $alchemy-dev-colours {
+  .a-alchemy-#{$alchemy-key}-bg {
+    background-color: $alchemy-val;
+  }
+}
+
 // Development Bar
 .a-development {
   padding-top: 10px;

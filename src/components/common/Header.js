@@ -14,7 +14,6 @@ class Header extends React.Component {
     const mqIconRotate = this.props.mqRotate;
     return (
       <header className="c-header  o-flex  o-flex--row  o-flex--align-center  o-flex--justify-between">
-
         <IndexLink to="/" className="u-padding-small a-logo" activeClassName="active">
           <img src={require('../../images/Alchemy@3x.png')} className="a-patch  a-patch--alchemy" />
         </IndexLink>
@@ -51,6 +50,10 @@ class Header extends React.Component {
             <img src={require('../../images/Code@3x.png')} className="a-patch" />
             <span>Code</span>
           </Link>
+          <Link to="/playground" className="u-padding-horizontal-small o-flex__item" activeClassName="active">
+            <img src={require('../../images/Playground@3x.png')} className="a-patch" />
+            <span>Playground</span>
+          </Link>
         </nav>
         <div className="a-toolbar__mq u-padding">
           <small className="a-alchemy-secondary-colour">MQ</small>
@@ -59,7 +62,7 @@ class Header extends React.Component {
           </div>
         </div>
       </header>
-    )
+    );
   }
 }
 
