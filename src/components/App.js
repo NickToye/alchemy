@@ -25,7 +25,7 @@ class App extends React.Component {
       width: 0,
       mq: 'room',
       mqIcon: 'mobile-alt',
-      mqIconRotate: ''
+      mqIconRotate: null
     };
 
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
@@ -57,15 +57,15 @@ class App extends React.Component {
     if (window.innerWidth < breakpoints.town) {
       this.setState({ mq: 'village' });
       this.setState({ mqIcon: 'mobile-alt'});
-      this.setState({ mqIconRotate: 0 });
+      this.setState({ mqIconRotate: null });
     } else if (window.innerWidth < breakpoints.city) {
       this.setState({ mq: 'town' });
       this.setState({ mqIcon: 'tablet-alt'});
-      this.setState({ mqIconRotate: 0 });
+      this.setState({ mqIconRotate: null });
     } else if (window.innerWidth < breakpoints.country) {
       this.setState({ mq: 'city '});
       this.setState({ mqIcon: 'tablet-alt'});
-      this.setState({ mqIconRotate: 0 });
+      this.setState({ mqIconRotate: null });
     } else if (window.innerWidth < breakpoints.continent) {
       this.setState({ mq: 'country' });
       this.setState({ mqIcon: 'tablet-alt'});
@@ -73,11 +73,11 @@ class App extends React.Component {
     } else if (window.innerWidth < breakpoints.world) {
       this.setState({ mq: 'continent' });
       this.setState({ mqIcon: 'laptop' });
-      this.setState({ mqIconRotate: 0 });
+      this.setState({ mqIconRotate: null });
     } else {
       this.setState({ mq: 'world' });
       this.setState({ mqIcon: 'desktop' });
-      this.setState({ mqIconRotate: 0 });
+      this.setState({ mqIconRotate: null });
     }
   }
 
@@ -96,5 +96,3 @@ App.propTypes = {
 };
 
 export default App;
-
-// TODO Create a Media Query card

@@ -8,7 +8,6 @@
   }
 }
 
-
 // Development Bar
 .a-development {
   padding-top: 10px;
@@ -24,19 +23,16 @@
   }
 }
 
-
 // Page Style
 .a-page {
   @include border-radius($alchemy-global-radius);
   color: alchemy-color('medium-grey');
 }
 
-
 // Note
 .a-note {
   @include border-radius($alchemy-global-radius);
 }
-
 
 // Code Example
 .a-code-example {
@@ -46,13 +42,11 @@
   padding: $inuit-global-spacing-unit;
 }
 
-
 // Code Label
 .a-code-label {
   color: alchemy-color(info);
   font-style: italic;
 }
-
 
 // Contents Box
 .a-contents-box {
@@ -75,9 +69,7 @@
       border: 0;
     }
   }
-
 }
-
 
 // Patches
 .a-patch {
@@ -126,7 +118,6 @@
   background: $alchemy-colour1;
 }
 
-
 // Layout
 .a-layout {
   height: 300px;
@@ -172,7 +163,6 @@
   }
 }
 
-
 // Navigation
 .a-navigation {
   @include alchemy-flexbox($align-items: center, $justify: space-around);
@@ -197,5 +187,15 @@
       color: #f0a62e;
       opacity: 1;
     }
+  }
+}
+
+// Lifecycle
+.a-lifecycle {
+  opacity: 0.3;
+
+  &.active {
+    color: alchemy-color('positive');
+    opacity: 1;
   }
 }

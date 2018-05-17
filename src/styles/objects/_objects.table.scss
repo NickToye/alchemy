@@ -64,6 +64,6 @@
 .o-table--bordered {
   th,
   td {
-    border: 1px solid $alchemy-colour1;
+    border: 1px solid alchemy-color('medium-grey');
   }
 }
