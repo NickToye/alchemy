@@ -12,6 +12,10 @@
   text-align: center;
 }
 
+.u-border-radius {
+  border-radius: $alchemy-global-radius;
+}
+
 $base-distance: 10px !default;
 
 .u-initial-transform-left {

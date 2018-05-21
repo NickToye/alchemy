@@ -19,7 +19,6 @@
     @include alchemy-size(0); // Size
     content: '';
     z-index: 2;
-
     border-#{opposite-position($direction)}: $size * 1.5 solid $color;
 
     @if $direction == top or $direction == bottom {
@@ -30,4 +29,11 @@
       border-top: $perpendicular-borders;
     }
   }
+}
+
+@mixin alchemy-circle($width, $color) {
+  width: $width;
+  height: $width;
+  background: $color;
+  border-radius: $width/2;
 }

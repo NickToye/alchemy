@@ -199,9 +199,88 @@
 // Lifecycle
 .a-lifecycle {
   opacity: 0.3;
+  transition: $alchemy-global-transition;
 
   &.active {
-    color: alchemy-color('positive');
     opacity: 1;
+  }
+}
+
+// Indicator
+.a-indicator {
+  @include alchemy-circle(20px, alchemy-color('grey'));
+  display: inline-block;
+  position: relative;
+  transition: $alchemy-global-transition;
+
+  &.active {
+    background-color: alchemy-color('positive');
+  }
+
+  &:after {
+    @include alchemy-circle(10px, rgba(255, 255, 255, 0.7));
+    @include absolute(top 4px left 5px);
+    content: '';
+    display: block;
+    filter: blur(4px);
+  }
+}
+
+// Redux Colour Code
+
+.a-redux {
+  &__component {
+    color: #ffb12f;
+  }
+
+  &__container {
+    color: #de5e35;
+  }
+
+  &__action {
+    color: #6ac3f3;
+  }
+
+  &__reducer {
+    color: #88aa4f;
+  }
+
+  strong {
+    font-size: 12px;
+  }
+
+  &__keys {
+    width: 60%;
+  }
+
+  &__key {
+    min-height: 60px;
+    color: #fff;
+
+    &__component {
+      background: #ffb12f;
+
+      &:after {
+        content: 'Component';
+      }
+    }
+    &__container {
+      background: #de5e35;
+      &:after {
+        content: 'Container';
+      }
+    }
+    &__action {
+      background: #6ac3f3;
+      &:after {
+        content: 'Action';
+      }
+    }
+    &__reducer {
+      background: #88aa4f;
+      &:after {
+        content: 'Reducer';
+      }
+    }
   }
 }

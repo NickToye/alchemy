@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
 
 class LifeCycle extends React.Component {
   constructor() {
@@ -18,13 +19,13 @@ class LifeCycle extends React.Component {
   }
 
   componentWillMount() {
-    console.log('componentWillMount...');
+    // console.log('componentWillMount...');
     this.setState({ m: 2 });
   }
 
   render() {
-    const didMount = this.props.didMount;
-    console.log('render...');
+    // const didMount = this.props.didMount;
+    // console.log('render...');
     return (
       <div id="lifeforce">
         <h3>LifeCycle Component</h3>
@@ -36,15 +37,19 @@ class LifeCycle extends React.Component {
   }
 
   componentDidMount() {
-    console.log('componentDidMount...');
-    this.inc = setInterval(this.update, 500);
+    // console.log('componentDidMount...');
+    // this.inc = setInterval(this.update, 500);
   }
 
   componentWillUnmount() {
-    console.log('componentWillUnmount...');
+    // console.log('componentWillUnmount...');
     clearInterval(this.inc);
   }
 }
+
+LifeCycle.propTypes = {
+  didMount: PropTypes.string,
+};
 
 class LifeForce extends React.Component {
   constructor() {
@@ -72,14 +77,29 @@ class LifeForce extends React.Component {
   }
   render() {
     return (
-      <div>
-        <div className="o-grid">
-          <small className={`a-lifecycle ` + (this.state.willMount ? 'active' : '')}>
-            componentWillMount
+      <div className="u-margin-bottom-huge">
+        <div className="o-flex  o-flex--row u-alchemy-dark-grey-bg u-border-radius u-margin-bottom">
+          <small className={`o-flex__item  o-flex  o-flex--row u-padding`}>
+            <div className={`a-indicator u-margin-right-small ` + (this.state.willMount ? 'active' : '')} />
+            <span className={'a-lifecycle ' + (this.state.willMount ? 'active' : '')}>
+              componentWillMount
+            </span>
           </small>
-          <small className={`a-lifecycle ` + (this.state.didMount ? 'active' : '')}>componentDidMount</small>
-          <small className={`a-lifecycle ` + (this.state.willUnmount ? 'active' : '')}>
-            componentWillUnmount
+          <small
+            className={`o-flex__item o-flex o-flex--row u-padding  ` + (this.state.didMount ? 'active' : '')}
+          >
+            <div className={`a-indicator u-margin-right-small ` + (this.state.didMount ? 'active' : '')} />
+            <span className={'a-lifecycle ' + (this.state.didMount ? 'active' : '')}>componentDidMount</span>
+          </small>
+          <small
+            className={
+              `o-flex__item o-flex o-flex--row u-padding  ` + (this.state.willUnmount ? 'active' : '')
+            }
+          >
+            <div className={`a-indicator u-margin-right-small ` + (this.state.willUnmount ? 'active' : '')} />
+            <span className={'a-lifecycle ' + (this.state.willUnmount ? 'active' : '')}>
+              componentWillUnmount
+            </span>
           </small>
         </div>
         <div className="o-grid o-grid--start">
