@@ -5,6 +5,10 @@
   grid-gap: $inuit-global-spacing-unit;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
+  &--auto2 {
+    grid-template-columns: repeat(2, auto);
+  }
+
   &__el {
     @include border-radius($alchemy-global-radius);
     display: flex;

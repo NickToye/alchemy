@@ -8,7 +8,7 @@ class ReduxIndex extends React.Component {
   render() {
     return (
       <div>
-        <h1>ReduxExample</h1>
+        <h1>Redux Examples</h1>
 
         <div>
           <Provider store={store}>

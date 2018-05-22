@@ -17,13 +17,17 @@ let AddTodo = ({ dispatch }) => {
           dispatch(addTodo(input.value));
           input.value = '';
         }}
+        className="o-flex o-flex--row u-margin-bottom"
+
       >
         <input
           ref={node => {
             input = node;
           }}
+          className="o-form__input o-flex__item-auto"
+          placeholder="Create a todo item..."
         />
-        <button typr="submit">Add Todo</button>
+      <button type="submit" className="c-btn c-btn--secondary1">Create</button>
       </form>
     </div>
   );

@@ -3,7 +3,7 @@ import FilterLink from '../containers/FilterLink';
 import { VisibilityFilters } from '../actions';
 
 const Footer = () => (
-  <p>
+  <p className="u-alchemy-white-colour u-margin-none">
     Show: <FilterLink filter={VisibilityFilters.SHOW_ALL}>All</FilterLink>
     {', '}
     <FilterLink filter={VisibilityFilters.SHOW_ACTIVE}>Active</FilterLink>

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Link = ({ active, children, onClick }) => {
   if (active) {
-    return <span>{children}</span>;
+    return <span className="u-alchemy-white-colour">{children}</span>;
   }
 
   return (

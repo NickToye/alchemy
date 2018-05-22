@@ -7,6 +7,7 @@ const Todo = ({ onClick, completed, text }) => (
     style={{
       textDecoration: completed ? 'line-through' : 'none',
     }}
+    className={`a-alchemy-handwriting ` + (completed ? 'a-redux-todo__completed' : '')}
   >
     {text}
   </li>

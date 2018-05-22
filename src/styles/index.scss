@@ -41,10 +41,13 @@ OBJECTS
 - Flex
 - Forms
 - Grid
+- Images
 - Layout
 - List Bare
 - List Inline
+- List Ordered
 - Media
+- Ratio
 - Surface
 - Table
 - Wrapper
@@ -115,10 +118,13 @@ DEVELOPMENT
 @import 'objects/objects.flex';
 @import 'objects/objects.forms';
 @import 'objects/objects.grid';
+@import 'objects/objects.images';
 @import 'objects/objects.layout';
 @import 'objects/objects.list-bare';
 @import 'objects/objects.list-inline';
+@import 'objects/objects.list-ordered';
 @import 'objects/objects.media';
+@import 'objects/objects.ratio';
 @import 'objects/objects.surface';
 @import 'objects/objects.table';
 @import 'objects/objects.wrapper';

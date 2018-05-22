@@ -11,7 +11,9 @@ class TextInputsCard extends React.Component {
             <h2 className="u-alchemy-white-colour u-margin-none">Text Inputs</h2>
           </div>
 
-          <div className="u-margin-bottom u-padding a-alchemy-bg-dark">Content here</div>
+          <div className="u-margin-bottom u-padding a-alchemy-bg-dark">
+            <input className="o-form__input" type="text" placeholder="Input some text..." />
+          </div>
         </section>
       </ScrollableAnchor>
     );

@@ -1,5 +1,11 @@
 // Alchemy :: Development
 
+@import url('https://fonts.googleapis.com/css?family=Courgette');
+
+.a-alchemy-handwriting {
+  font-family: Courgette, cursive;
+}
+
 // Utility Colours
 
 @each $alchemy-key, $alchemy-val in $alchemy-dev-colours {
@@ -283,4 +289,10 @@
       }
     }
   }
+}
+
+// Redux Todo App
+
+.a-redux-todo__completed {
+  opacity: 0.5;
 }
