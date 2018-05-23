@@ -21,8 +21,7 @@
     "test": "jest",
     "test:CI": "babel-node tools/testCi.js",
     "test:cover": "npm run test -- --coverage ",
-    "test:cover:CI":
-      "npm run test:CI -- --coverage && cat ./coverage/lcov.info | node_modules/coveralls/bin/coveralls.js",
+    "test:cover:CI": "npm run test:CI -- --coverage && cat ./coverage/lcov.info | node_modules/coveralls/bin/coveralls.js",
     "test:watch": "jest --watch",
     "open:cover": "npm run test:cover && opn ./coverage/lcov-report/index.html",
     "analyze-bundle": "babel-node ./tools/analyzeBundle.js",
@@ -43,6 +42,7 @@
     "object-assign": "4.1.0",
     "react": "16.2.0",
     "react-dom": "16.2.0",
+    "react-prism": "4.3.2",
     "react-rangeslider": "2.2.0",
     "react-redux": "5.0.5",
     "react-router": "3.2.0",
@@ -94,6 +94,7 @@
     "node-sass": "4.5.3",
     "opn-cli": "3.1.0",
     "postcss-loader": "2.0.6",
+    "prismjs": "^1.7.0",
     "prompt": "1.0.0",
     "prop-types": "15.5.10",
     "raf": "3.3.2",
@@ -127,16 +128,23 @@
   },
   "jest": {
     "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
-        "<rootDir>/tools/assetsTransformer.js",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tools/assetsTransformer.js",
       "\\.(css)$": "<rootDir>/tools/assetsTransformer.js"
     },
-    "setupFiles": ["raf/polyfill", "./tools/enzymeTestAdapterSetup.js"]
+    "setupFiles": [
+      "raf/polyfill",
+      "./tools/enzymeTestAdapterSetup.js"
+    ]
   },
   "babel": {
     "env": {
       "development": {
-        "presets": ["env", "react", "react-hmre", "stage-1"]
+        "presets": [
+          "env",
+          "react",
+          "react-hmre",
+          "stage-1"
+        ]
       },
       "production": {
         "presets": [
@@ -155,10 +163,17 @@
           "react",
           "stage-1"
         ],
-        "plugins": ["transform-react-constant-elements", "transform-react-remove-prop-types"]
+        "plugins": [
+          "transform-react-constant-elements",
+          "transform-react-remove-prop-types"
+        ]
       },
       "test": {
-        "presets": ["env", "react", "stage-1"]
+        "presets": [
+          "env",
+          "react",
+          "stage-1"
+        ]
       }
     }
   },
@@ -170,7 +185,9 @@
       "plugin:import/warnings",
       "plugin:react/recommended"
     ],
-    "plugins": ["react"],
+    "plugins": [
+      "react"
+    ],
     "rules": {
       "react/jsx-uses-vars": 2,
       "import/no-named-as-default-member": 2

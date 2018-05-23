@@ -8,15 +8,16 @@
 
 // Utility Colours
 
-@each $alchemy-key, $alchemy-val in $alchemy-dev-colours {
+@each $alchemy-key, $alchemy-value in $alchemy-dev-colours {
   .a-alchemy-#{$alchemy-key}-colour {
-    color: $alchemy-val;
+    color: $alchemy-value;
   }
 }
 
-@each $alchemy-key, $alchemy-val in $alchemy-dev-colours {
+@each $alchemy-key, $alchemy-value in $alchemy-dev-colours {
   .a-alchemy-#{$alchemy-key}-bg {
-    background-color: $alchemy-val;
+    background-color: $alchemy-value;
+    color: alchemy-color-contrast($alchemy-value);
   }
 }
 
@@ -136,7 +137,7 @@
 }
 
 .a-layout-item {
-  background: alchemy-color('primary');
+  background: alchemy-color('secondary2');
   height: 300px;
   position: relative;
 }
@@ -295,4 +296,17 @@
 
 .a-redux-todo__completed {
   opacity: 0.5;
+}
+
+// Prism
+
+.code-toolbar {
+  margin-bottom: $inuit-global-spacing-unit-large;
+}
+
+.toolbar-item {
+  @include alchemy-font-size(10px);
+  color: alchemy-color('primary');
+  opacity: 0.5;
+  text-transform: uppercase;
 }

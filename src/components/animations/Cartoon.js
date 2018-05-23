@@ -36,7 +36,7 @@ class Cartoon extends React.Component {
         <div className={`a-animations_wrapper  u-padding  u-alchemy-black-bg  u-margin-bottom`}>
           <div
             className={
-              `a-animations  u-padding  u-alchemy-primary-bg  o-flex  ` +
+              `a-animations  u-padding  u-alchemy-secondary2-bg  o-flex  ` +
               (this.state.activateAnimation ? ` ${animation.animateClass} animated ` : `${initialState}`)
             }
           >
@@ -44,7 +44,7 @@ class Cartoon extends React.Component {
           </div>
         </div>
         <button
-          className="c-btn  c-btn--rounded  c-btn--secondary2  c-btn--block"
+          className="c-btn  c-btn--rounded  c-btn--secondary1  c-btn--block"
           key={animation.key}
           value={animation.animateClass}
           onClick={this.animateAction}

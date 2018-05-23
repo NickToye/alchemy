@@ -3,4 +3,7 @@
 .o-list-ordered {
   list-style-position: inside;
   margin: 0;
+  > li {
+    margin: inherit;
+  }
 }

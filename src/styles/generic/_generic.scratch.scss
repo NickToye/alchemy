@@ -57,7 +57,7 @@
 }
 
 .alchemy-layout-example-xray-margin {
-  @include alchemy-stripes(45deg, $color1: #cb9d71, $color2: darken(#cb9d71, 15%));
+  @include alchemy-stripes(45deg, $color1: alchemy-colour(primary), $color2: alchemy-colour-level(primary, -5));
 }
 
 .alchemy-layout-example-xray-padding {
@@ -77,7 +77,7 @@
   img {
     margin: 0 auto;
     max-height: 80%;
-    opacity: 0.5;
+    // opacity: 0.5;
   }
 }
 
@@ -92,7 +92,7 @@
   img {
     margin: 0 auto;
     max-height: 80%;
-    opacity: 0.5;
+    // opacity: 0.5;
   }
 }
 
