@@ -18,12 +18,12 @@ class Palette extends React.Component {
       <ScrollableAnchor id={palette.identifier}>
         <section
           key={palette.key}
-          className="o-section  u-margin-bottom-huge  o-surface--l2 a-alchemy-bg-dark"
+          className="o-section  u-margin-bottom-huge"
         >
-          <div className="a-toolbar  o-flex  o-flex--justify-between  o-flex--align-center  o-flex--row u-padding">
-            <h2 className="u-alchemy-white-colour u-margin-none">{palette.section} palette</h2>
-          </div>
-          <div className="o-grid  o-grid--centre  o-grid--start u-padding">
+          <header>
+            <h2>{palette.section} palette</h2>
+          </header>
+          <div className="o-grid  o-grid--centre  o-grid--start">
             {Object.keys(this.state.colours)
               .filter(function(filteredSwatches) {
                 return colours[filteredSwatches].colourType === palette.identifier;

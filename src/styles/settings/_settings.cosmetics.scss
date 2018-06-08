@@ -20,9 +20,14 @@ $alchemy-colors: (
   'info': #357aba
 );
 
+
+
 $alchemy-color-interval: 10% !global;
 $alchemy-mix-levels: 5;
 
+$alchemy-tones: (
+  10, 20, 30, 40, 50
+);
 
 // Sizes
 $inuit-font-size-h1: 36px !default;
@@ -69,7 +74,7 @@ $types: (
   h1: (36px, $alchemy-face-light),
   h2: (28px, $alchemy-face-light),
   h3: (24px, $alchemy-face-light),
-  h4: (16px, $alchemy-face-medium),
+  h4: (18px, $alchemy-face-light),
   p: (16px, $alchemy-face-regular),
   li: (16px, $alchemy-face-regular),
   small: (13px, $alchemy-face-core),

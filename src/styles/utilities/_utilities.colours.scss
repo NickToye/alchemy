@@ -2,66 +2,93 @@
 
 @each $alchemy-key, $alchemy-value in $alchemy-colors {
   .u-alchemy-#{$alchemy-key}-bg {
+    // @include alchemy-contrast($alchemy-value);
     background-color: $alchemy-value;
-    color: alchemy-color-contrast($alchemy-value);
+    color: alchemy-choose-contrast-color($alchemy-value);
 
     &.c-swatch {
-      &:before,
-      &:after {
-        @include border-radius($alchemy-global-radius bottom);
-        color: alchemy-color(dark-grey);
-      }
 
       &:before {
-        content: str-replace($alchemy-key, '-', ' ');
+        content: '#{$alchemy-key}';
+        text-transform: capitalize;
       }
-
       &:after {
-        color: alchemy-color('grey');
         content: '#{$alchemy-value}';
       }
     }
 
-    // > * {
+    @each $tone-key in $alchemy-tones {
+      $tint: alchemy-get-tint($alchemy-value, $tone-key);
+      $shade: alchemy-get-shade($alchemy-value, $tone-key);
+
+      &--tint-#{$tone-key} {
+        background-color: $tint;
+        color: alchemy-choose-contrast-color($tint);
+        &.c-swatch__tone {
+          &:before {
+            content: 'Lighten #{$tone-key}%';
+            color: alchemy-choose-contrast-color($tint);
+          }
+          &:after {
+            content: '#{$tint}';
+            color: alchemy-choose-contrast-color($tint);
+          }
+        }
+      }
+      &--shade-#{$tone-key} {
+        background-color: $shade;
+        color: alchemy-choose-contrast-color($shade);
+        &.c-swatch__tone {
+          &:before {
+            content: 'Darken #{$tone-key}%';
+          }
+          &:after {
+            content: '#{$shade}';
+          }
+        }
+      }
+    }
+
+
+    // .c-btn--ghost {
     //   color: alchemy-color-contrast($alchemy-value);
     // }
-
-    .c-btn--ghost {
-      color: alchemy-color-contrast($alchemy-value);
-    }
   }
 
-  .u-alchemy-#{$alchemy-key}-colour {
-    color: $alchemy-value !important;
-  }
+  // .u-alchemy-#{$alchemy-key}-colour {
+  //   color: $alchemy-value !important;
+  // }
 
-  @for $i from 1 through $alchemy-mix-levels {
-    $name: alchemy-color-level('#{$alchemy-key}', $i);
-
-    .u-alchemy-#{$alchemy-key}-l#{$i}-bg {
-      background: alchemy-color-level('#{$alchemy-key}', $i);
-      color: alchemy-color-contrast($alchemy-value);
-
-      &:before {
-        content: 'Light #{$i}';
-      }
-
-      &:after {
-        content: '#{$name}';
-      }
-    }
-
-    .u-alchemy-#{$alchemy-key}-d#{$i}-bg {
-      background: alchemy-color-level('#{$alchemy-key}', -$i);
-      color: alchemy-color-contrast($alchemy-value, 60);
-
-      &:before {
-        content: 'Dark #{$i}';
-      }
-
-      &:after {
-        content: '#{$name}';
-      }
-    }
-  }
+  // @for $i from 1 through $alchemy-mix-levels {
+  //   $name: alchemy-color-level('#{$alchemy-key}', $i);
+  //
+  //
+  //   .u-alchemy-#{$alchemy-key}-l#{$i}-bg {
+  //     background: alchemy-color-level('#{$alchemy-key}', $i);
+  //     color: alchemy-color-contrast($alchemy-value);
+  //     border: $name;
+  //
+  //     &:before {
+  //       content: 'Light #{$i}';
+  //     }
+  //
+  //     &:after {
+  //       content: '#{$name}';
+  //     }
+  //   }
+  //
+  //   .u-alchemy-#{$alchemy-key}-d#{$i}-bg {
+  //     background: alchemy-color-level('#{$alchemy-key}', -$i);
+  //     color: alchemy-color-contrast($alchemy-value, 40);
+  //     // @include alchemy-contrast($alchemy-value);
+  //
+  //     &:before {
+  //       content: 'Dark #{$i}';
+  //     }
+  //
+  //     &:after {
+  //       content: '#{$name}';
+  //     }
+  //   }
+  // }
 }

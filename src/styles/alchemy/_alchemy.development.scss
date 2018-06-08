@@ -55,12 +55,6 @@
   padding: $inuit-global-spacing-unit;
 }
 
-// Code Label
-.a-code-label {
-  color: alchemy-color(info);
-  font-style: italic;
-}
-
 // Contents Box
 .a-contents-box {
   a {
@@ -108,7 +102,7 @@
     max-height: 150px;
   }
 
-  &--alchemy {
+  &--logo {
     opacity: 1;
     max-height: 112px;
     display: flex;
@@ -118,12 +112,18 @@
       opacity: 1;
     }
   }
-}
 
-.a-logo {
-  @include alchemy-flexbox();
-  align-self: stretch;
-  background: darken($alchemy-colour1, 5%);
+  &--alchemy {
+    opacity: 1;
+    max-height: 112px;
+    display: flex;
+    width: 32px;
+    align-self: center;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
 }
 
 .Sticky {
@@ -178,12 +178,12 @@
 
 // Navigation
 .a-navigation {
-  @include alchemy-flexbox($align-items: center, $justify: space-around);
+  // @include alchemy-flexbox($align-items: center, $justify: space-around);
 
   a {
-    @include alchemy-flexbox($direction: column, $wrap: nowrap, $align-items: center);
+    // @include alchemy-flexbox($direction: column, $wrap: nowrap, $align-items: center);
+    border-bottom: 1px solid rgba(alchemy-color('white'), 0.1);
     text-decoration: none;
-    padding: 0 24px !important;
 
     &:link,
     &:visited {
@@ -200,6 +200,19 @@
       color: #f0a62e;
       opacity: 1;
     }
+  }
+}
+
+.a-navigation__sub {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+
+  a {
+    display: block;
+    padding-left: 32px;
   }
 }
 
@@ -309,4 +322,10 @@
   color: alchemy-color('primary');
   opacity: 0.5;
   text-transform: uppercase;
+}
+
+.a-code-label {
+  @include alchemy-font-size(12px);
+  color: alchemy-color('secondary1');
+  font-style: italic;
 }

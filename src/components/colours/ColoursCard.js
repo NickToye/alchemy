@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import colours from '../data/colours';
 import colourTypes from '../data/colourTypes';
-import ContentsCard from '../common/ContentsCard';
-import Sticky from '../common/Sticky';
+// import ContentsCard from '../common/ContentsCard';
+// import Sticky from '../common/Sticky';
 import Palette from './Palette';
 
 class ColoursCard extends React.Component {
@@ -42,27 +42,12 @@ class ColoursCard extends React.Component {
           <p>A tool that will display the correct colours.</p>
         </header>
 
-        <div className="o-flex  o-flex--row">
-          <aside className="u-1/5 u-margin-right-large">
-            <Sticky className="sticky-one a-alchemy-bg o-surface--l1" enter="370">
-              <ul className="o-list-bare  u-margin-bottom-none a-contents-box">
-                {Object.keys(this.state.contents).map(key => (
-                  <ContentsCard
-                    key={key}
-                    details={this.state.contents[key]}
-                    activeLink={this.state.activeLink}
-                    action={this.setActiveLink}
-                  />
-                ))}
-              </ul>
-            </Sticky>
-          </aside>
-          <main className="u-4/5">
+
+          <main>
             {Object.keys(this.state.contents).map(key => (
               <Palette key={key} palette={this.state.contents[key]} />
             ))}
           </main>
-        </div>
       </section>
     );
   }

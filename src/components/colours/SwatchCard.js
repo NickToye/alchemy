@@ -4,15 +4,15 @@ import ToneCard from './ToneCard';
 
 class SwatchCard extends React.Component {
   render() {
-    const tones = ['l1', 'l2', 'l3', 'l4', 'l5', 'd1', 'd2', 'd3', 'd4', 'd5'];
+    const tones = ['tint-10', 'tint-20', 'tint-30', 'tint-40', 'tint-50', 'shade-10', 'shade-20', 'shade-30', 'shade-40', 'shade-50'];
     const colour = this.props.colour;
     return (
       <div>
         <div
-          className={`u-alchemy-${colour.colourClass}-bg  c-swatch  o-grid__el  u-padding o-surface--l2`}
+          className={`u-alchemy-${colour.colourClass}-bg  c-swatch  o-grid__el  u-padding  o-surface--l1`}
           key={colour.id}
         />
-      <div className="o-flex  o-flex--row  o-flex--wrap  c-swatch__tones o-surface--l1">
+      <div className="o-flex  o-flex--row  o-flex--wrap  c-swatch__tones ">
           {Object.keys(tones).map(key => (
             <ToneCard key={key} toneDetails={tones[key]} colourClass={colour.colourClass} />
           ))}

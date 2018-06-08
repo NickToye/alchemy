@@ -3,6 +3,7 @@
 @mixin alchemy-link($link, $hover: $link, $visited: $link, $active: $hover) {
   a {
     color: $link;
+    text-decoration: none;
     transition: $alchemy-global-transition;
     &:visited {
       color: $visited;

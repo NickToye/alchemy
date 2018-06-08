@@ -1,19 +1,62 @@
 // Tools :: Colours
 
-@function alchemy-color-level($color-name: 'primary', $level: 0) {
-  $color: alchemy-color($color-name);
-  $color-base: if($level < 0, alchemy-color('black'), alchemy-color('white'));
-
-  @return mix($color-base, $color, abs($level) * $alchemy-color-interval);
-}
-
-@function alchemy-color-contrast($bgcolor, $threshold: 50) {
-  @return if(lightness($bgcolor) >= $threshold, $alchemy-color-dark, $alchemy-color-light);
-}
-
 @function alchemy-color($key: 'primary') {
   @return map-get($alchemy-colors, $key);
 }
 
 $alchemy-color-dark: alchemy-color(dark-grey);
 $alchemy-color-light: alchemy-color('white');
+
+@mixin alchemy-contrast($n) {
+  $color-brightness: round((red($n) * 299) + (green($n) * 587) + (blue($n) * 114) / 1000);
+  $light-color: round((red(#ffffff) * 299) + (green(#ffffff) * 587) + (blue(#ffffff) * 114) / 1000);
+
+  @if abs($color-brightness) < ($light-color/2) {
+    color: $alchemy-color-light;
+  }
+  @else {
+    color: $alchemy-color-dark;
+  }
+}
+
+@function alchemy-get-tint($alchemy-value, $tone-key) {
+  @return alchemy-tint($alchemy-value, $tone-key);
+}
+@function alchemy-get-shade($alchemy-value, $tone-key) {
+  @return alchemy-shade($alchemy-value, $tone-key);
+}
+
+@function alchemy-tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+@function alchemy-shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+@function alchemy-luminance($color) {
+  $red: nth($alchemy-linear-channel-values, red($color) + 1);
+  $green: nth($alchemy-linear-channel-values, green($color) + 1);
+  $blue: nth($alchemy-linear-channel-values, blue($color) + 1);
+
+  @return 0.2126 * $red + 0.7152 * $green + 0.0722 * $blue;
+}
+
+@function alchemy-contrast($back, $front) {
+  $backLum: alchemy-luminance($back) + 0.05;
+  $foreLum: alchemy-luminance($front) + 0.05;
+
+  @return max($backLum, $foreLum) / min($backLum, $foreLum);
+}
+
+@function alchemy-choose-contrast-color($color) {
+  $lightContrast: alchemy-contrast($color, alchemy-color('white'));
+  $darkContrast: alchemy-contrast($color, alchemy-color('black'));
+
+  @if ($lightContrast > $darkContrast) {
+    @return alchemy-color('white');
+  }
+  @else {
+    @return alchemy-color('dark-grey');
+  }
+}

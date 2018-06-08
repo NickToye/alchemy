@@ -2,14 +2,14 @@
 
 .c-swatch {
   align-content: flex-start;
-  height: 250px;
+  height: 150px;
   position: relative;
   z-index: 1;
 
   &:before,
   &:after {
     align-items: center;
-    bottom: 0;
+    top: 0;
     display: flex;
     height: 64px;
     padding: 12px 24px;
@@ -21,8 +21,7 @@
   &:before {
     @include alchemy-font-size(14px);
     align-items: flex-start;
-    background: alchemy-color('white');
-    font-weight: bold;
+
   }
 
   &:after {
@@ -46,6 +45,7 @@
   &:after {
     position: absolute;
     right: 24px;
+    text-transform: uppercase;
   }
 
   &:last-child {

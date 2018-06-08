@@ -1,3 +1,9 @@
+// Reducers :: Todos
+
+const dateCreated = x => ({
+  x,
+});
+
 const todos = (state = [], action) => {
   switch (action.type) {
     case 'ADD_TODO':
@@ -7,6 +13,7 @@ const todos = (state = [], action) => {
           id: action.id,
           text: action.text,
           completed: false,
+          dateCreated: dateCreated('fizz'),
         },
       ];
     case 'TOGGLE_TODO':

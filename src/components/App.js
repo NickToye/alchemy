@@ -14,9 +14,19 @@ import {
   faLaptop,
 } from '@fortawesome/free-solid-svg-icons';
 
-import Header from './common/Header';
+import Aside from './common/Aside';
 
-library.add(faCheck, faTimes, faExclamationTriangle, faInfoCircle, faCog, faDesktop, faMobileAlt, faTabletAlt, faLaptop);
+library.add(
+  faCheck,
+  faTimes,
+  faExclamationTriangle,
+  faInfoCircle,
+  faCog,
+  faDesktop,
+  faMobileAlt,
+  faTabletAlt,
+  faLaptop,
+);
 
 class App extends React.Component {
   constructor(props) {
@@ -25,7 +35,7 @@ class App extends React.Component {
       width: 0,
       mq: 'room',
       mqIcon: 'mobile-alt',
-      mqIconRotate: null
+      mqIconRotate: null,
     };
 
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
@@ -53,22 +63,21 @@ class App extends React.Component {
 
     this.setState({ width: window.innerWidth, height: window.innerHeight });
 
-
     if (window.innerWidth < breakpoints.town) {
       this.setState({ mq: 'village' });
-      this.setState({ mqIcon: 'mobile-alt'});
+      this.setState({ mqIcon: 'mobile-alt' });
       this.setState({ mqIconRotate: null });
     } else if (window.innerWidth < breakpoints.city) {
       this.setState({ mq: 'town' });
-      this.setState({ mqIcon: 'tablet-alt'});
+      this.setState({ mqIcon: 'tablet-alt' });
       this.setState({ mqIconRotate: null });
     } else if (window.innerWidth < breakpoints.country) {
-      this.setState({ mq: 'city '});
-      this.setState({ mqIcon: 'tablet-alt'});
+      this.setState({ mq: 'city ' });
+      this.setState({ mqIcon: 'tablet-alt' });
       this.setState({ mqIconRotate: null });
     } else if (window.innerWidth < breakpoints.continent) {
       this.setState({ mq: 'country' });
-      this.setState({ mqIcon: 'tablet-alt'});
+      this.setState({ mqIcon: 'tablet-alt' });
       this.setState({ mqIconRotate: 90 });
     } else if (window.innerWidth < breakpoints.world) {
       this.setState({ mq: 'continent' });
@@ -81,11 +90,16 @@ class App extends React.Component {
     }
   }
 
+
+
   render() {
     return (
       <div className="o-wrapper  o-wrapper--full  u-padding-none">
-        <Header mq={this.state.mqIcon} mqRotate={this.state.mqIconRotate} />
-        {this.props.children}
+        <div className="o-flex o-flex--row">
+          <Aside mq={this.state.mqIcon} mqRotate={this.state.mqIconRotate} />
+
+          <main className="u-6/8  u-alchemy-white-bg">{this.props.children}</main>
+        </div>
       </div>
     );
   }

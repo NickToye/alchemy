@@ -6,7 +6,7 @@ class ToneCard extends React.Component {
     const details = this.props.toneDetails;
     const colourClass = this.props.colourClass;
 
-    return <div className={`c-swatch__tone  u-alchemy-${colourClass}-${details}-bg`} key={details.key} />;
+    return <div className={`c-swatch__tone  o-surface--l1 u-alchemy-${colourClass}-bg--${details}`} key={details.key} />;
   }
 }
 
