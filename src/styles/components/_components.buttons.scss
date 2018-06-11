@@ -20,18 +20,20 @@
 @each $alchemy-key, $alchemy-value in $alchemy-colors {
   .c-btn--#{$alchemy-key} {
     background-color: $alchemy-value;
+    color: alchemy-choose-contrast-color($alchemy-value);
+    transition: $alchemy-global-transition;
 
     &,
     &:hover,
     &:active,
     &:focus {
-      color: alchemy-color-contrast($alchemy-value);
-      text-decoration: none; /* [4] */
+      color: alchemy-choose-contrast-color($alchemy-value);
+      text-decoration: none;
     }
 
     &:hover,
     &:focus {
-      background-color: alchemy-color-level('#{$alchemy-key}', -2);
+      background-color: darken($alchemy-value, 10%);
     }
   }
 }

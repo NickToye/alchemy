@@ -10,7 +10,13 @@ import FormsCard from './components/forms/FormsCard';
 import AnimationsCard from './components/animations/AnimationsCard';
 import SurfacesCard from './components/surfaces/SurfacesCard';
 import ComponentsCard from './components/components/ComponentsCard';
+import BannerComponent from './components/components/banners/BannerComponent';
+import CardComponent from './components/components/cards/CardComponent';
+import NavigationComponent from './components/components/navigation/NavigationComponent';
 import CodeCard from './components/code/CodeCard';
+import Styles from './components/code/Styles';
+import Html from './components/code/Html';
+import JavaScript from './components/code/JavaScript';
 
 export default (
   <Route path="/" component={App}>
@@ -23,6 +29,12 @@ export default (
     <Route path="animations" component={AnimationsCard} />
     <Route path="surfaces" component={SurfacesCard} />
     <Route path="components" component={ComponentsCard} />
+    <Route path="banners" component={BannerComponent} />
+    <Route path="cards" component={CardComponent} />
+    <Route path="navigation" component={NavigationComponent} />
     <Route path="code" component={CodeCard} />
+    <Route path="styles" component={Styles} />
+    <Route path="scripts" component={JavaScript} />
+    <Route path="markup" component={Html} />
   </Route>
 );

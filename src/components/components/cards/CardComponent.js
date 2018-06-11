@@ -1,16 +1,14 @@
 import React from 'react';
-import ScrollableAnchor from 'react-scrollable-anchor';
 
 class CardComponent extends React.Component {
   render() {
     return (
-      <ScrollableAnchor id={'cards'}>
-        <section className="u-margin-bottom u-relative">
-          <div className="a-toolbar  o-flex  o-flex--justify-between  o-flex--align-center  o-flex--row u-padding">
-            <h2 className="u-alchemy-white-colour u-margin-none">Cards</h2>
-          </div>
-        </section>
-      </ScrollableAnchor>
+      <div className="u-relative">
+        <header className="u-padding">
+          <h2 className="u-alchemy-primary-colour u-margin-none">Cards</h2>
+        </header>
+        <section className="u-padding u-alchemy-pale-grey-bg--tint-50">Cards content...</section>
+      </div>
     );
   }
 }

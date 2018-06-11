@@ -75,7 +75,7 @@ class TypeSizes extends React.Component {
             <h2 className="u-alchemy-primary-colour u-margin-none">Type Sizes</h2>
 
           </header>
-          <div className="a-toolbar--float  u-alchemy-black-bg o-flex o-flex--row u-margin-bottom">
+          <div className="a-toolbar--float  o-flex o-flex--row u-margin-bottom">
             <div className="a-toolbar__wrapper">
               <button
                 className={'a-toolbar__btn ' + (this.state.showBaseline ? 'active' : ' ')}
@@ -146,7 +146,7 @@ class TypeSizes extends React.Component {
           <div key={this.key} className="u-alchemy-white-bg">
             <div
               className={
-                `u-alchemy-${canvasPick}-bg o-pod  u-margin-bottom-huge ` +
+                `u-alchemy-${canvasPick}-bg a-pod  u-padding  u-margin-bottom-huge ` +
                 (this.state.showBaseline ? 'u-baseline-wrapper' : '')
               }
             >

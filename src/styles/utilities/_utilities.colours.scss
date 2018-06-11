@@ -5,7 +5,6 @@
   $gradient-dark: darken($alchemy-value, 15%);
 
   .u-alchemy-#{$alchemy-key}-bg {
-    // @include alchemy-contrast($alchemy-value);
     background-color: $alchemy-value;
     color: alchemy-choose-contrast-color($alchemy-value);
 

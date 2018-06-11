@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 
-class ContentsCard extends React.Component {
+class LinksCard extends React.Component {
   render() {
     const details = this.props.details;
 
@@ -19,8 +19,8 @@ class ContentsCard extends React.Component {
   }
 }
 
-ContentsCard.propTypes = {
+LinksCard.propTypes = {
   details: PropTypes.object,
 };
 
-export default ContentsCard;
+export default LinksCard;

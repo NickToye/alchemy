@@ -53,7 +53,7 @@ class TypeFaces extends React.Component {
           </div>
         </div>
         <div key={this.key} className="u-alchemy-white-bg">
-          <div className="o-pod  u-margin-bottom  u-alchemy-white-bg">
+          <div className="a-pod  u-padding  u-margin-bottom  u-alchemy-white-bg">
             {Object.keys(this.state.face).map(key => (
               <Face
                 key={key}

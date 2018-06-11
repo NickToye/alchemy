@@ -33,7 +33,7 @@ class Cartoon extends React.Component {
 
     return (
       <div>
-        <div className={`a-animations_wrapper  u-padding  u-alchemy-black-bg  u-margin-bottom`}>
+        <div className={`a-animations_wrapper   u-margin-bottom`}>
           <div
             className={
               `a-animations  u-padding  u-alchemy-secondary2-bg  o-flex  ` +

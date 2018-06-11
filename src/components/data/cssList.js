@@ -1,4 +1,4 @@
-const StyleGuidelines = {
+const cssList = {
   section1: {
     section: 'Introduction',
     identifier: 'introduction',
@@ -25,4 +25,4 @@ const StyleGuidelines = {
   },
 };
 
-export default StyleGuidelines;
+export default cssList;

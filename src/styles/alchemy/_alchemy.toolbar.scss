@@ -168,7 +168,7 @@
 }
 
 .a-toolbar__range__input {
-  @include alchemy-linear-gradient(to left, darken($alchemy-colour3, 15%), $alchemy-colour3);
+  background: alchemy-color('white');
   height: 6px;
   width: 200px;
   border-radius: 5px;

@@ -30,26 +30,26 @@ class LayoutGrid extends React.Component {
   render() {
     return (
         <section className="o-section u-relative u-margin-bottom">
-          <div className="a-toolbar__inner o-flex o-flex--justify-between o-flex--align-center o-flex--row u-margin-bottom">
+          <header className="o-flex o-flex--justify-between o-flex--align-center o-flex--row u-margin-bottom">
             <h2 className="u-alchemy-primary-colour u-margin-none">Layout Grid</h2>
-            <div className="a-toolbar__wrapper">
-              {Object.keys(this.state.sizes).map(key => (
-                <ToolbarButton
-                  key={key}
-                  details={this.state.sizes[key]}
-                  activeSize={this.state.activeSize}
-                  action={this.updateSize}
-                />
-              ))}
-              <button
-                className={`a-toolbar__btn ` + (this.state.showGutters ? 'active' : '')}
-                onClick={this.showGutters}
-              >
-                Show Gutters Info
-              </button>
-            </div>
-          </div>
 
+          </header>
+          <div className="a-toolbar--float u-margin-bottom">
+            {Object.keys(this.state.sizes).map(key => (
+              <ToolbarButton
+                key={key}
+                details={this.state.sizes[key]}
+                activeSize={this.state.activeSize}
+                action={this.updateSize}
+              />
+            ))}
+            <button
+              className={`a-toolbar__btn ` + (this.state.showGutters ? 'active' : '')}
+              onClick={this.showGutters}
+            >
+              Show Gutters Info
+            </button>
+          </div>
           <div className="u-margin-bottom">
             {Object.keys(this.state.grids).map(key => (
               <Grid

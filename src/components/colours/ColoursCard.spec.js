@@ -15,7 +15,7 @@ describe('<ColoursCard />', () => {
   it("should have a header with a 'testing' class", () => {
     const wrapper = shallow(<ColoursCard />);
     const actual = wrapper.find('h1').prop('className');
-    const expected = 'testing u-margin-bottom-none';
+    const expected = 'testing';
 
     expect(actual).toEqual(expected);
   });
