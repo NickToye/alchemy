@@ -1,18 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import { Link, IndexLink } from 'react-router';
 import DesignList from '../data/designList';
 import LinksCard from '../common/LinksCard';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 class Aside extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       designMenu: false,
-        contents: DesignList,
-        activeLink: '',
+      designContents: DesignList,
+      activeLink: '',
     };
     this.designMenuToggle = this.designMenuToggle.bind(this);
   }
@@ -24,8 +23,7 @@ class Aside extends React.Component {
   }
 
   render() {
-    const mqIcon = this.props.mq;
-    const mqIconRotate = this.props.mqRotate;
+
     return (
       <aside className="u-2/8 a-alchemy-alchemy1-bg u-padding-horizontal-large">
         <IndexLink to="/" className="u-padding-small o-flex  o-flex--align-center  u-margin-bottom-large" activeClassName="active">
@@ -47,10 +45,10 @@ class Aside extends React.Component {
               </div>
             </Link>
               <div className={`a-navigation__sub ` + (this.state.designMenu ? 'active' : '')}>
-                {Object.keys(this.state.contents).map(key => (
+                {Object.keys(this.state.designContents).map(key => (
                   <LinksCard
                     key={key}
-                    details={this.state.contents[key]}
+                    details={this.state.designContents[key]}
                     activeLink={this.state.activeLink}
                   />
                 ))}
@@ -74,20 +72,12 @@ class Aside extends React.Component {
             <span className="u-h3 u-margin-none u-margin-left-tiny">Code</span>
           </Link>
         </nav>
-        <div className="a-toolbar__mq u-padding-tiny">
-          <small className="a-alchemy-secondary-colour">MQ</small>
-          <div className="a-devices o-flex  o-flex--center u-padding-vertical-tiny a-alchemy-tertiary-colour">
-            <FontAwesomeIcon icon={mqIcon} rotation={mqIconRotate} />
-          </div>
-        </div>
+
       </aside>
     );
   }
 }
 
-Aside.propTypes = {
-  mq: PropTypes.string,
-  mqRotate: PropTypes.number,
-};
+
 
 export default Aside;

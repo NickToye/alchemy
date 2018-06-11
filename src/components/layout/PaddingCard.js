@@ -2,7 +2,6 @@ import React from 'react';
 
 import sizes from '../data/sizes';
 import Box from './Box';
-import ScrollableAnchor from 'react-scrollable-anchor';
 
 class PaddingCard extends React.Component {
   constructor(props) {
@@ -13,13 +12,12 @@ class PaddingCard extends React.Component {
   }
   render() {
     return (
-      <ScrollableAnchor id="padding">
-        <section className="o-section u-relative o-surface--l2">
-          <div className="a-toolbar o-flex o-flex--justify--between o-flex--align-center o-flex--row u-padding">
-            <h2 className="u-alchemy-white-colour u-margin-none">Padding</h2>
+        <section className="o-section u-relative u-margin-bottom-large">
+          <div className="a-toolbar__inner o-flex o-flex--justify--between o-flex--align-center o-flex--row u-margin-bottom">
+            <h2 className="u-alchemy-primary-colour u-margin-none">Padding</h2>
           </div>
 
-          <div className="u-margin-bottom u-padding a-alchemy-bg-dark">
+          <div className="u-margin-bottom a-alchemy-bg-dark">
             {Object.keys(this.state.sizes).map(key => (
               <div key={key} className="u-margin-bottom">
                 <Box key={key} property={'padding'} details={this.state.sizes[key]} />
@@ -27,7 +25,6 @@ class PaddingCard extends React.Component {
             ))}
           </div>
         </section>
-      </ScrollableAnchor>
     );
   }
 }

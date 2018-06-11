@@ -29,7 +29,7 @@
       &:before,
       &:after {
         @include alchemy-font-size($inuit-font-size-tiny);
-        color: alchemy-color(primary);
+        color: alchemy-color(secondary2);
         content: '#{$alchemy-value}px';
       }
 

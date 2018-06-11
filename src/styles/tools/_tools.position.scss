@@ -30,7 +30,7 @@
 }
 
 @mixin fixed($args) {
-  @include position(fixed, $args);
+  @include _position(fixed, $args);
 }
 
 @mixin relative($args) {

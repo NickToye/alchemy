@@ -1,44 +1,49 @@
 // Alchemy :: Toolbar
 
 .a-toolbar {
-  @include border-radius($alchemy-global-radius top);
+  @include fixed(bottom 0 left 0);
+  @include alchemy-flexbox();
   background: $alchemy-colour1;
   box-shadow: $alchemy-global-shadow;
+  width: 100%;
+  z-index: 2;
 }
 
 .a-toolbar--float {
-  @include absolute(right 0);
+  @include alchemy-linear-gradient(to bottom, $alchemy-colour2, 90%, $alchemy-colour1);
+  @include border-radius($alchemy-global-radius-small);
+  border: 1px solid $alchemy-colour2;
+  box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.3);
 }
 
 .a-toolbar__wrapper {
-  @include alchemy-linear-gradient(to bottom, $alchemy-colour8, 90%, darken($alchemy-colour7, 15%));
   position: relative;
 
   &:first-of-type {
-    @include border-radius($alchemy-global-radius-small left);
+    // @include border-radius($alchemy-global-radius-small left);
 
     .a-toolbar__btn:first-child {
-      @include border-radius($alchemy-global-radius-small left);
+      // @include border-radius($alchemy-global-radius-small left);
     }
   }
 
   &:last-of-type {
-    @include border-radius($alchemy-global-radius-small right);
+    // @include border-radius($alchemy-global-radius-small right);
 
     .a-toolbar__btn:last-child {
-      @include border-radius($alchemy-global-radius-small right);
+      // @include border-radius($alchemy-global-radius-small right);
     }
   }
 }
 
 .a-toolbar__popover {
   @include absolute(bottom 50px right 0);
+  @include alchemy-linear-gradient(to bottom, $alchemy-colour2, 90%, $alchemy-colour1);
   @include border-radius($alchemy-global-radius-small);
-  @include alchemy-linear-gradient(to bottom, $alchemy-colour7, 90%, darken($alchemy-colour7, 15%));
   display: flex;
 
   &:before {
-    @include triangle($direction: bottom, $position: top 100% right 0.75em, $size: 6px, $color: $alchemy-colour6);
+    @include triangle($direction: bottom, $position: top 100% right 0.75em, $size: 6px, $color: #1b3a4e);
   }
 
   .a-toolbar__btn:first-child {
@@ -80,7 +85,7 @@
   }
 
   &:hover {
-    @include alchemy-linear-gradient(to bottom, $alchemy-colour5, 90%, darken($alchemy-colour4, 20%));
+    // @include alchemy-linear-gradient(to bottom, $alchemy-colour5, 90%, darken($alchemy-colour4, 20%));
     color: alchemy-color('white');
 
     i {
@@ -89,7 +94,7 @@
   }
 
   &.active {
-    @include alchemy-linear-gradient(to bottom, $alchemy-colour5, 90%, darken($alchemy-colour4, 20%));
+    // @include alchemy-linear-gradient(to bottom, $alchemy-colour5, 90%, darken($alchemy-colour4, 20%));
     color: alchemy-color('white');
 
     i {
@@ -113,6 +118,7 @@
 .a-toolbar__input {
   @include alchemy-font-size(14px);
   @include border-radius($alchemy-global-radius left);
+  background: transparent;
   border: 0;
   margin: 0;
   padding-top: 6px;
@@ -137,11 +143,10 @@
 }
 
 .a-toolbar__mq {
-  @include alchemy-flexbox($direction: column, $justify: center, $wrap: nowrap);
-  align-self: stretch;
+  @include alchemy-flexbox($direction: row, $justify: center, $wrap: nowrap);
   // @include alchemy-linear-gradient(to bottom, $alchemy-colour8, 90%, darken($alchemy-colour7, 15%));
   // @include absolute(top $inuit-global-spacing-unit right $inuit-global-spacing-unit);
-  background: darken($alchemy-colour1, 5%);
+  // background: darken($alchemy-colour1, 5%);
   text-align: center;
   // @include border-radius($alchemy-global-radius-small);
 

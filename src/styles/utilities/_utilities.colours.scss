@@ -1,6 +1,9 @@
 // Utilities :: Colours
 
 @each $alchemy-key, $alchemy-value in $alchemy-colors {
+
+  $gradient-dark: darken($alchemy-value, 15%);
+
   .u-alchemy-#{$alchemy-key}-bg {
     // @include alchemy-contrast($alchemy-value);
     background-color: $alchemy-value;
@@ -55,9 +58,27 @@
     // }
   }
 
-  // .u-alchemy-#{$alchemy-key}-colour {
-  //   color: $alchemy-value !important;
-  // }
+
+  .u-alchemy-#{$alchemy-key}-gradient {
+    @include alchemy-linear-gradient(to right, $alchemy-value, $gradient-dark);
+    color: alchemy-choose-contrast-color($alchemy-value);
+
+    &.c-swatch {
+
+      &:before {
+        content: '#{$alchemy-key} linear gradient';
+        text-transform: capitalize;
+      }
+      &:after {
+        content: '#{$alchemy-value} to #{$gradient-dark}';
+        bottom: 0;
+        top: auto;
+      }
+    }
+  }
+  .u-alchemy-#{$alchemy-key}-colour {
+    color: $alchemy-value !important;
+  }
 
   // @for $i from 1 through $alchemy-mix-levels {
   //   $name: alchemy-color-level('#{$alchemy-key}', $i);

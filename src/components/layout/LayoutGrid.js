@@ -3,7 +3,6 @@ import React from 'react';
 import Grid from './Grid';
 import sizes from '../data/sizes';
 import GridType from '../data/GridType';
-import ScrollableAnchor from 'react-scrollable-anchor';
 import ToolbarButton from './ToolbarButton';
 
 class LayoutGrid extends React.Component {
@@ -30,10 +29,9 @@ class LayoutGrid extends React.Component {
 
   render() {
     return (
-      <ScrollableAnchor id="layout-grid">
-        <section className="o-section u-relative o-surface--l2">
-          <div className="a-toolbar o-flex o-flex--justify-between o-flex--align-center o-flex--row u-padding">
-            <h2 className="u-alchemy-white-colour u-margin-none">Layout Grid</h2>
+        <section className="o-section u-relative u-margin-bottom">
+          <div className="a-toolbar__inner o-flex o-flex--justify-between o-flex--align-center o-flex--row u-margin-bottom">
+            <h2 className="u-alchemy-primary-colour u-margin-none">Layout Grid</h2>
             <div className="a-toolbar__wrapper">
               {Object.keys(this.state.sizes).map(key => (
                 <ToolbarButton
@@ -52,7 +50,7 @@ class LayoutGrid extends React.Component {
             </div>
           </div>
 
-          <div className="u-margin-bottom u-padding a-alchemy-bg-dark">
+          <div className="u-margin-bottom">
             {Object.keys(this.state.grids).map(key => (
               <Grid
                 key={key}
@@ -64,7 +62,6 @@ class LayoutGrid extends React.Component {
             ))}
           </div>
         </section>
-      </ScrollableAnchor>
     );
   }
 }

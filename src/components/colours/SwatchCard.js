@@ -12,12 +12,14 @@ class SwatchCard extends React.Component {
           className={`u-alchemy-${colour.colourClass}-bg  c-swatch  o-grid__el  u-padding  o-surface--l1`}
           key={colour.id}
         />
-      <div className="o-flex  o-flex--row  o-flex--wrap  c-swatch__tones ">
+      <div className="o-flex  o-flex--row  o-flex--wrap  c-swatch__tones  u-margin-bottom-small">
           {Object.keys(tones).map(key => (
             <ToneCard key={key} toneDetails={tones[key]} colourClass={colour.colourClass} />
           ))}
         </div>
+        <div className={`u-alchemy-${colour.colourClass}-gradient  c-swatch  o-grid__el u-padding  u-border-radius  o-surface--l1`} />
       </div>
+
     );
   }
 }

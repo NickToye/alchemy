@@ -6,7 +6,6 @@ import Type from './Type';
 import typography from '../data/typography';
 import Droplet from '../colours/Droplet';
 import Canvas from '../colours/Canvas';
-import ScrollableAnchor from 'react-scrollable-anchor';
 
 class TypeSizes extends React.Component {
   constructor(props) {
@@ -71,83 +70,83 @@ class TypeSizes extends React.Component {
     const canvasPick = this.state.canvasPick;
 
     return (
-      <ScrollableAnchor id="type-sizes">
-        <section className="u-margin-bottom u-relative">
-          <div className="a-toolbar  o-flex  o-flex--justify-between  o-flex--align-center  o-flex--row u-padding">
-            <h2 className="u-alchemy-white-colour u-margin-none">Type Sizes</h2>
-            <div className="o-surface--l1 o-flex o-flex--row">
-              <div className="a-toolbar__wrapper">
-                <button
-                  className={'a-toolbar__btn ' + (this.state.showBaseline ? 'active' : ' ')}
-                  onClick={this.showBaselineAction}
-                >
-                  <i className="fas fa-th fa-lg" />
-                </button>
-                <button
-                  className={'a-toolbar__btn ' + (this.state.showMargin ? 'active' : ' ')}
-                  onClick={this.showMarginAction}
-                >
-                  <i className="fas fa-expand fa-lg" />
-                </button>
-              </div>
+      <section className="u-margin-bottom u-relative">
+          <header className="o-flex  o-flex--justify-between  o-flex--align-center  o-flex--row u-margin-bottom">
+            <h2 className="u-alchemy-primary-colour u-margin-none">Type Sizes</h2>
 
-              <div className="a-toolbar__wrapper">
-                <button
-                  className={
-                    'a-toolbar__btn ' +
-                    (this.state.showDropletsPopover ? 'active ' : '') +
-                    `u-alchemy-${this.state.dropPick}-colour`
-                  }
-                  onClick={this.showDropletsPopoverAction}
-                >
-                  <i className="fas fa-tint fa-lg" />
-                </button>
-                {this.state.showDropletsPopover ? (
-                  <div className="a-toolbar__popover  animated fadeInUp">
-                    {Object.keys(this.state.colours).map(key => (
-                      <Droplet key={key} details={this.state.colours[key]} action={this.showDropPick} />
-                    ))}
-                  </div>
-                ) : (
-                  ''
-                )}
-              </div>
+          </header>
+          <div className="a-toolbar--float  u-alchemy-black-bg o-flex o-flex--row u-margin-bottom">
+            <div className="a-toolbar__wrapper">
+              <button
+                className={'a-toolbar__btn ' + (this.state.showBaseline ? 'active' : ' ')}
+                onClick={this.showBaselineAction}
+              >
+                <i className="fas fa-th fa-lg" />
+              </button>
+              <button
+                className={'a-toolbar__btn ' + (this.state.showMargin ? 'active' : ' ')}
+                onClick={this.showMarginAction}
+              >
+                <i className="fas fa-expand fa-lg" />
+              </button>
+            </div>
 
-              <div className="a-toolbar__wrapper">
-                <button
-                  className={
-                    'a-toolbar__btn ' +
-                    (this.state.showCanvasPopover ? 'active ' : '') +
-                    `u-alchemy-${this.state.canvasPick}-colour`
-                  }
-                  onClick={this.showCanvasPopoverAction}
-                >
-                  <i className="fas fa-paint-brush fa-lg" />
-                </button>
-                {this.state.showCanvasPopover ? (
-                  <div className="a-toolbar__popover  animated fadeInUp">
-                    {Object.keys(this.state.colours).map(key => (
-                      <Canvas key={key} details={this.state.colours[key]} action={this.showCanvasPick} />
-                    ))}
-                  </div>
-                ) : (
-                  ''
-                )}
-              </div>
-              <div className="a-toolbar__wrapper">
-                <button
-                  className={'a-toolbar__btn ' + (this.state.showContraster ? 'active' : '')}
-                  onClick={this.showContrasterAction}
-                >
-                  <i className="fas fa-adjust fa-lg" />
-                </button>
-              </div>
+            <div className="a-toolbar__wrapper">
+              <button
+                className={
+                  'a-toolbar__btn ' +
+                  (this.state.showDropletsPopover ? 'active ' : '') +
+                  `u-alchemy-${this.state.dropPick}-colour`
+                }
+                onClick={this.showDropletsPopoverAction}
+              >
+                <i className="fas fa-tint fa-lg" />
+              </button>
+              {this.state.showDropletsPopover ? (
+                <div className="a-toolbar__popover  animated fadeInUp">
+                  {Object.keys(this.state.colours).map(key => (
+                    <Droplet key={key} details={this.state.colours[key]} action={this.showDropPick} />
+                  ))}
+                </div>
+              ) : (
+                ''
+              )}
+            </div>
+
+            <div className="a-toolbar__wrapper">
+              <button
+                className={
+                  'a-toolbar__btn ' +
+                  (this.state.showCanvasPopover ? 'active ' : '') +
+                  `u-alchemy-${this.state.canvasPick}-colour`
+                }
+                onClick={this.showCanvasPopoverAction}
+              >
+                <i className="fas fa-paint-brush fa-lg" />
+              </button>
+              {this.state.showCanvasPopover ? (
+                <div className="a-toolbar__popover  animated fadeInUp">
+                  {Object.keys(this.state.colours).map(key => (
+                    <Canvas key={key} details={this.state.colours[key]} action={this.showCanvasPick} />
+                  ))}
+                </div>
+              ) : (
+                ''
+              )}
+            </div>
+            <div className="a-toolbar__wrapper">
+              <button
+                className={'a-toolbar__btn ' + (this.state.showContraster ? 'active' : '')}
+                onClick={this.showContrasterAction}
+              >
+                <i className="fas fa-adjust fa-lg" />
+              </button>
             </div>
           </div>
           <div key={this.key} className="u-alchemy-white-bg">
             <div
               className={
-                `u-alchemy-${canvasPick}-bg o-pod  u-padding  u-margin-bottom-huge ` +
+                `u-alchemy-${canvasPick}-bg o-pod  u-margin-bottom-huge ` +
                 (this.state.showBaseline ? 'u-baseline-wrapper' : '')
               }
             >
@@ -161,7 +160,6 @@ class TypeSizes extends React.Component {
             </div>
           </div>
         </section>
-      </ScrollableAnchor>
     );
   }
 }

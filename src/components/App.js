@@ -15,6 +15,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import Aside from './common/Aside';
+import ToolBar from './common/ToolBar';
+
 
 library.add(
   faCheck,
@@ -96,10 +98,11 @@ class App extends React.Component {
     return (
       <div className="o-wrapper  o-wrapper--full  u-padding-none">
         <div className="o-flex o-flex--row">
-          <Aside mq={this.state.mqIcon} mqRotate={this.state.mqIconRotate} />
+          <Aside />
 
           <main className="u-6/8  u-alchemy-white-bg">{this.props.children}</main>
         </div>
+        <ToolBar mq={this.state.mqIcon} mqRotate={this.state.mqIconRotate} />
       </div>
     );
   }

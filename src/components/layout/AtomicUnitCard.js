@@ -2,7 +2,6 @@ import React from 'react';
 
 import sizes from '../data/sizes';
 import AtomicElement from './AtomicElement';
-import ScrollableAnchor from 'react-scrollable-anchor';
 
 class AtomicUnitCard extends React.Component {
   constructor(props) {
@@ -13,13 +12,12 @@ class AtomicUnitCard extends React.Component {
   }
   render() {
     return (
-      <ScrollableAnchor id="atomic-unit">
-        <section className="o-section u-relative o-surface--l2">
-          <div className="a-toolbar o-flex o-flex--justify--between o-flex--align-center o-flex--row u-padding">
-            <h2 className="u-alchemy-white-colour u-margin-none">Atomic Unit</h2>
+        <section className="o-section u-margin-bottom-large u-relative">
+          <div className="a-toolbar__inner o-flex o-flex--justify--between o-flex--align-center o-flex--row u-margin-bottom">
+            <h2 className="u-alchemy-primary-colour u-margin-none">Atomic Unit</h2>
           </div>
 
-          <div className="u-margin-bottom u-padding a-alchemy-bg-dark">
+          <div className="u-margin-bottom  a-alchemy-bg-dark">
             <div className="o-media u-margin-bottom">
               <div className="o-media__img  nucleus u-margin-right-small" />
               <p className="o-media__body  u-margin-none">
@@ -36,7 +34,6 @@ class AtomicUnitCard extends React.Component {
             </div>
           </div>
         </section>
-      </ScrollableAnchor>
     );
   }
 }

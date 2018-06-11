@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import colours from '../data/colours';
 import colourTypes from '../data/colourTypes';
-// import ContentsCard from '../common/ContentsCard';
-// import Sticky from '../common/Sticky';
 import Palette from './Palette';
 
 class ColoursCard extends React.Component {

@@ -145,11 +145,11 @@
 .a-alchemy-gutter {
   @include absolute(right -24px);
   @include alchemy-font-size(12px);
-  background: alchemy-color('white');
+  background: alchemy-color('primary');
   color: alchemy-color('black');
   text-align: center;
   width: 24px;
-  z-index: -1;
+  // z-index: -1;
 
   .o-layout--tiny & {
     @include absolute(right -6px);
