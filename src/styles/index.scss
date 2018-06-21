@@ -69,6 +69,7 @@ UTILITIES
 - Hide
 - Opacity
 - Spacings
+- Speed
 - Typography
 - Widths
 
@@ -158,6 +159,7 @@ $inuit-offsets: true;
 // @import "utilities/utilities.responsive-spacings";
 @import 'utilities/utilities.opacity';
 @import 'utilities/utilities.spacings';
+@import 'utilities/utilities.speed';
 @import 'utilities/utilities.typography';
 @import 'utilities/utilities.widths';
 

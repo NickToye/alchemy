@@ -1,6 +1,7 @@
 // This component handles the App template used on every page
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faCheck,
@@ -16,7 +17,6 @@ import {
 
 import Aside from './common/Aside';
 import ToolBar from './common/ToolBar';
-
 
 library.add(
   faCheck,
@@ -38,9 +38,11 @@ class App extends React.Component {
       mq: 'room',
       mqIcon: 'mobile-alt',
       mqIconRotate: null,
+      animationSpeed: 'base',
     };
 
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+    this.updateSpeedPick = this.updateSpeedPick.bind(this);
   }
 
   componentDidMount() {
@@ -92,17 +94,25 @@ class App extends React.Component {
     }
   }
 
-
+  updateSpeedPick(e) {
+    this.setState({ animationSpeed: e.target.value });
+  }
 
   render() {
     return (
       <div className="o-wrapper  o-wrapper--full  u-padding-none">
+
         <div className="o-flex o-flex--row">
           <Aside />
 
           <main className="u-6/8  u-alchemy-white-bg">{this.props.children}</main>
         </div>
-        <ToolBar mq={this.state.mqIcon} mqRotate={this.state.mqIconRotate} />
+        <ToolBar
+          action={this.updateSpeedPick}
+          animationSpeed={this.state.animationSpeed}
+          mq={this.state.mqIcon}
+          mqRotate={this.state.mqIconRotate}
+        />
       </div>
     );
   }
@@ -112,4 +122,8 @@ App.propTypes = {
   children: PropTypes.object.isRequired,
 };
 
-export default App;
+function mapStateToProps(state) {
+  return state;
+}
+
+export default connect(mapStateToProps)(App);

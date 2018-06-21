@@ -1,0 +1,17 @@
+// Utilities :: Speed
+
+.u-speed-base {
+  animation-duration: $alchemy-global-speed !important;
+}
+
+.u-speed-rapid {
+  animation-duration: $alchemy-global-speed-rapid !important;
+}
+
+.u-speed-lightening {
+  animation-duration: $alchemy-global-speed-lightening !important;
+}
+
+.u-speed-tortoise {
+  animation-duration: $alchemy-global-speed-tortoise !important;
+}

@@ -10,32 +10,34 @@ class Animation extends React.Component {
     super(props);
     this.state = {
       activeAnimation: '',
-
       animations: animations,
+      animationSpeed: 'base',
     };
   }
 
   render() {
-    // debugger;
     const animation = this.props.animation;
 
     return (
-        <section
-          key={animation.key}
-          className="o-section u-margin-bottom-large"
-        >
-          <header className="o-flex  o-flex--justify-between  o-flex--align-center  o-flex--row u-margin-bottom">
-            <h2 className="u-alchemy-primary-colour u-margin-none">{animation.section} palette</h2>
-          </header>
+      <section key={animation.key} className="o-section u-margin-bottom-large">
+        <header className="o-flex  o-flex--justify-between  o-flex--align-center  o-flex--row u-margin-bottom">
+          <h2 className="u-alchemy-primary-colour u-margin-none">{animation.section} palette</h2>
+        </header>
 
-          <div className="o-grid o-grid--centre o-grid--start o-grid--auto">
-            {Object.keys(this.state.animations)
-              .filter(function(filteredAnimations) {
-                return animations[filteredAnimations].animationType === animation.section;
-              })
-              .map(key => <Cartoon key={key} animation={this.state.animations[key]} />)}
-          </div>
-        </section>
+        <div className="o-grid o-grid--centre o-grid--start o-grid--auto">
+          {Object.keys(this.state.animations)
+            .filter(function(filteredAnimations) {
+              return animations[filteredAnimations].animationType === animation.section;
+            })
+            .map(key => (
+              <Cartoon
+                key={key}
+                animation={this.state.animations[key]}
+                animationSpeed={this.state.animationSpeed}
+              />
+            ))}
+        </div>
+      </section>
     );
   }
 }

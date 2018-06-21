@@ -1,38 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import colours from '../data/colours';
-import colourTypes from '../data/colourTypes';
-import Palette from './Palette';
 
-class ColoursCard extends React.Component {
-  constructor(props) {
-    super(props);
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as colourActions from '../../actions/colourActions';
+import ColourList from './ColourList';
+
+class ColoursPage extends React.Component {
+  constructor(props, context) {
+    super(props, context);
     this.state = {
-      colours: colours,
-      contents: colourTypes,
-      colourTypePick: 'brand',
-      activeLinks: '',
-    };
-
-    this.showColourTypePick = this.showColourTypePick.bind(this);
-    this.setActiveLink = this.setActiveLink.bind(this);
+      palette: ['brand','neutral','utility'],
+    }
   }
 
-  componentDidMount() {
-    this.setState({
-      activeLink: this.state.contents.section1.identifier,
-    });
-  }
-
-  setActiveLink(e) {
-    this.setState({ activeLink: e.target.dataset.value });
-  }
-
-  showColourTypePick(e) {
-    this.setState({ colourTypePick: e.target.value });
-  }
 
   render() {
+    const { colours } = this.props;
     return (
       <div className="u-relative">
         <header className="u-padding">
@@ -41,17 +25,34 @@ class ColoursCard extends React.Component {
         </header>
 
         <section className="u-padding u-alchemy-pale-grey-bg--tint-50">
-          {Object.keys(this.state.contents).map(key => (
-            <Palette key={key} palette={this.state.contents[key]} />
-          ))}
+          <ColourList colours={colours} palette={this.state.palette[0]} />
+          <ColourList colours={colours} palette={this.state.palette[1]} />
+          <ColourList colours={colours} palette={this.state.palette[2]} />
+
         </section>
       </div>
     );
   }
 }
 
-ColoursCard.propTypes = {
-  colourClassName: PropTypes.string,
+ColoursPage.propTypes = {
+  colours: PropTypes.array.isRequired,
+  actions: PropTypes.object.isRequired
 };
 
-export default ColoursCard;
+function mapStateToProps(state) {
+  return {
+    colours: state.colours
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(colourActions, dispatch)
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ColoursPage);

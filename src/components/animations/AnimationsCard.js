@@ -25,6 +25,8 @@ class AnimationsCard extends React.Component {
   }
 
   render() {
+    // const buzz = this.route.animationSpeed;
+    // console.log(buzz);
     return (
       <div className="u-relative">
         <header className="u-padding">

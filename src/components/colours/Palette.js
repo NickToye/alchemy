@@ -1,40 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import colours from '../data/colours';
-import SwatchCard from './SwatchCard';
+// import { Link } from 'react-router';
 
-class Palette extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      colours: colours,
-    };
-  }
-  render() {
-    // debugger;
-    const palette = this.props.palette;
-    return (
-        <section
-          key={palette.key}
-          className="o-section  u-margin-bottom-huge"
-        >
-          <header>
-            <h2 className="u-alchemy-primary-colour">{palette.section} palette</h2>
-          </header>
-          <div className="o-grid  o-grid--centre  o-grid--start">
-            {Object.keys(this.state.colours)
-              .filter(function(filteredSwatches) {
-                return colours[filteredSwatches].colourType === palette.identifier;
-              })
-              .map(key => <SwatchCard key={key} colour={this.state.colours[key]} />)}
-          </div>
-        </section>
-    );
-  }
-}
+const Palette = ({ colour }) => {
+
+  return (
+
+    <div className={`u-alchemy-${colour.title.replace(/\s+/g, '-').toLowerCase()}-bg  c-swatch  o-grid__el  u-padding  o-surface--l1`} />
+  );
+};
 
 Palette.propTypes = {
-  palette: PropTypes.object,
+  colour: PropTypes.object.isRequired,
 };
 
 export default Palette;

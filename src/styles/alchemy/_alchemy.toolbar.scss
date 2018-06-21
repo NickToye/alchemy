@@ -115,6 +115,8 @@
   }
 }
 
+
+
 .a-toolbar__input {
   @include alchemy-font-size(14px);
   @include border-radius($alchemy-global-radius left);
@@ -143,7 +145,7 @@
 }
 
 .a-toolbar__mq {
-  @include alchemy-flexbox($direction: row, $justify: center, $wrap: nowrap);
+  @include alchemy-flexbox($direction: row, $align-items: center, $justify: center, $wrap: nowrap);
   // @include alchemy-linear-gradient(to bottom, $alchemy-colour8, 90%, darken($alchemy-colour7, 15%));
   // @include absolute(top $inuit-global-spacing-unit right $inuit-global-spacing-unit);
   // background: darken($alchemy-colour1, 5%);

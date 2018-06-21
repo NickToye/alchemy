@@ -92,6 +92,7 @@ class Aside extends React.Component {
                   key={key}
                   details={this.state.designContents[key]}
                   activeLink={this.state.activeLink}
+
                 />
               ))}
             </div>

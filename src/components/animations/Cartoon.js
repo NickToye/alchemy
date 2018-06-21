@@ -23,6 +23,8 @@ class Cartoon extends React.Component {
   render() {
     const initialState = this.props.initialState;
     const animation = this.props.animation;
+    const animationSpeed = this.props.animationSpeed;
+
 
     let animationStatus;
     if (this.state.activateAnimation) {
@@ -36,7 +38,7 @@ class Cartoon extends React.Component {
         <div className={`a-animations_wrapper   u-margin-bottom`}>
           <div
             className={
-              `a-animations  u-padding  u-alchemy-secondary2-bg  o-flex  ` +
+              `a-animations  u-padding  u-alchemy-secondary2-bg  o-flex  u-speed-${animationSpeed} ` +
               (this.state.activateAnimation ? ` ${animation.animateClass} animated ` : `${initialState}`)
             }
           >
@@ -62,6 +64,7 @@ Cartoon.propTypes = {
   initialState: PropTypes.string,
   activateAnimation: PropTypes.bool,
   action: PropTypes.func,
+  animationSpeed: PropTypes.string,
 };
 
 export default Cartoon;

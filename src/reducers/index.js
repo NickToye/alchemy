@@ -1,11 +1,12 @@
-// Reducers :: Index
-
 import { combineReducers } from 'redux';
+import colours from './colourReducer';
+// import authors from './authorReducer';
+// import ajaxCallsInProgress from './ajaxStatusReducer';
 
-import todos from './todos';
-import visibilityFilter from './visibilityFilter';
-
-export default combineReducers({
-  todos,
-  visibilityFilter,
+const rootReducer = combineReducers({
+  colours,
+  // authors,
+  // ajaxCallsInProgress
 });
+
+export default rootReducer;
