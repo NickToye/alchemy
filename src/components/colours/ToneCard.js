@@ -1,18 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class ToneCard extends React.Component {
-  render() {
-    const details = this.props.toneDetails;
-    const colourClass = this.props.colourClass;
-
-    return <div className={`c-swatch__tone  o-surface--l1 u-alchemy-${colourClass}-bg--${details}`} key={details.key} />;
-  }
-}
-
-ToneCard.propTypes = {
-  toneDetails: PropTypes.string,
-  colourClass: PropTypes.string,
+const Tone = ({ tone, colour }) => {
+  return (
+    <div className={`c-swatch__tone  o-surface--l1 u-alchemy-${colour}-bg--${tone.title}`} key={tone.key} />
+  );
 };
 
-export default ToneCard;
+Tone.propTypes = {
+  tone: PropTypes.object,
+  colour: PropTypes.string,
+};
+
+export default Tone;

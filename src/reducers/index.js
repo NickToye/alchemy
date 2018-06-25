@@ -1,12 +1,14 @@
 import { combineReducers } from 'redux';
 import colours from './colourReducer';
-// import authors from './authorReducer';
-// import ajaxCallsInProgress from './ajaxStatusReducer';
+import tones from './toneReducer';
+import typography from './typographyReducer';
+import typefaces from './typefaceReducer';
 
 const rootReducer = combineReducers({
   colours,
-  // authors,
-  // ajaxCallsInProgress
+  tones,
+  typography,
+  typefaces,
 });
 
 export default rootReducer;

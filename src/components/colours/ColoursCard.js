@@ -1,19 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as colourActions from '../../actions/colourActions';
 import ColourList from './ColourList';
 
-class ColoursPage extends React.Component {
+class ColoursCard extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      palette: ['brand','neutral','utility'],
-    }
+      palette: ['brand', 'neutral', 'utility'],
+    };
   }
-
 
   render() {
     const { colours } = this.props;
@@ -28,31 +26,30 @@ class ColoursPage extends React.Component {
           <ColourList colours={colours} palette={this.state.palette[0]} />
           <ColourList colours={colours} palette={this.state.palette[1]} />
           <ColourList colours={colours} palette={this.state.palette[2]} />
-
         </section>
       </div>
     );
   }
 }
 
-ColoursPage.propTypes = {
+ColoursCard.propTypes = {
   colours: PropTypes.array.isRequired,
-  actions: PropTypes.object.isRequired
+  actions: PropTypes.object.isRequired,
 };
 
 function mapStateToProps(state) {
   return {
-    colours: state.colours
+    colours: state.colours,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(colourActions, dispatch)
+    actions: bindActionCreators(colourActions, dispatch),
   };
 }
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
-)(ColoursPage);
+  mapDispatchToProps,
+)(ColoursCard);

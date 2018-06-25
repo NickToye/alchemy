@@ -6,14 +6,16 @@ import { Provider } from 'react-redux';
 import { Router, browserHistory } from 'react-router';
 import routes from './routes';
 
-import { loadColours } from './actions/colourActions';
-import { loadAuthors } from './actions/authorActions';
+import { loadColours, loadTones } from './actions/colourActions';
+import { loadTypography, loadTypefaces } from './actions/typographyActions';
 
 import './styles/index.scss';
 
 const store = configureStore();
 store.dispatch(loadColours());
-store.dispatch(loadAuthors());
+store.dispatch(loadTones());
+store.dispatch(loadTypography());
+store.dispatch(loadTypefaces());
 
 render(
   <Provider store={store}>

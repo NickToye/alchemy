@@ -1,24 +1,17 @@
 import * as types from './actionTypes';
-import courseApi from '../api/coloursApi';
-// import { beginAjaxCall, ajaxCallError } from './ajaxStatusActions';
+import coloursApi from '../api/coloursApi';
 
 export function loadColoursSuccess(colours) {
   return { type: types.LOAD_COLOURS_SUCCESS, colours };
 }
 
-// export function createCourseSuccess(course) {
-//   return { type: types.CREATE_COURSE_SUCCESS, course };
-// }
-//
-// export function updateCourseSuccess(course) {
-//   return { type: types.UPDATE_COURSE_SUCCESS, course };
-// }
+export function loadTonesSuccess(tones) {
+  return { type: types.LOAD_TONES_SUCCESS, tones };
+}
 
 export function loadColours() {
   return function(dispatch) {
-    // dispatch(beginAjaxCall());
-
-    return courseApi
+    return coloursApi
       .getAllColours()
       .then(colours => {
         dispatch(loadColoursSuccess(colours));
@@ -29,17 +22,15 @@ export function loadColours() {
   };
 }
 
-// export function saveCourse(course) {
-//   return function(dispatch) {
-//     dispatch(beginAjaxCall());
-//     return courseApi
-//       .saveCourse(course)
-//       .then(course => {
-//         course.id ? dispatch(updateCourseSuccess(course)) : dispatch(createCourseSuccess(course));
-//       })
-//       .catch(error => {
-//         dispatch(ajaxCallError(error));
-//         throw error;
-//       });
-//   };
-// }
+export function loadTones() {
+  return function(dispatch) {
+    return coloursApi
+      .getAllTones()
+      .then(tones => {
+        dispatch(loadTonesSuccess(tones));
+      })
+      .catch(error => {
+        throw error;
+      });
+  };
+}

@@ -1,24 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class Type extends React.Component {
-  render() {
-    const details = this.props.details;
-    const margin = this.props.margin;
-    return (
-      <div
-        className={`u-${details.element} ` + (margin ? 'u-margin-bottom' : 'u-margin-bottom-none')}
-        key={details.key}
-      >
-        {details.label} - {details.fontSize}px
-      </div>
-    );
-  }
-}
+const Type = ({ typography }) => {
+  return (
+    <div className={`u-${typography.element} `}>
+      {typography.label} - {typography.fontSize}px
+    </div>
+  );
+};
 
 Type.propTypes = {
-  details: PropTypes.object,
-  margin: PropTypes.bool,
+  typography: PropTypes.object.isRequired,
 };
 
 export default Type;

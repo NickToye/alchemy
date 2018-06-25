@@ -101,7 +101,6 @@ class App extends React.Component {
   render() {
     return (
       <div className="o-wrapper  o-wrapper--full  u-padding-none">
-
         <div className="o-flex o-flex--row">
           <Aside />
 

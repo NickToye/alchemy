@@ -18,7 +18,6 @@ import Styles from './components/code/Styles';
 import Html from './components/code/Html';
 import JavaScript from './components/code/JavaScript';
 
-
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={HomeCard} />

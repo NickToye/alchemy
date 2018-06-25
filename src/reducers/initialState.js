@@ -1,5 +1,6 @@
 export default {
-  authors: [],
   colours: [],
-  ajaxCallsInProgress: 0
+  tones: [],
+  typography: [],
+  typefaces: [],
 };
