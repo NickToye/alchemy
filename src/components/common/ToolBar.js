@@ -19,7 +19,7 @@ class ToolBar extends React.Component {
             <FontAwesomeIcon icon={mqIcon} rotation={mqIconRotate} />
           </div>
         </div>
-        <i className="fa fa-cog" />
+        <i className="fa fa-cog u-cursor" onClick={this.props.settings} />
       </div>
     );
   }
@@ -29,6 +29,7 @@ ToolBar.propTypes = {
   mq: PropTypes.string,
   mqRotate: PropTypes.number,
   action: PropTypes.func,
+  settings: PropTypes.func,
 };
 
 export default ToolBar;

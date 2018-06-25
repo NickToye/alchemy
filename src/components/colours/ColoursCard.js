@@ -49,7 +49,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(ColoursCard);
+export default connect(mapStateToProps, mapDispatchToProps)(ColoursCard);

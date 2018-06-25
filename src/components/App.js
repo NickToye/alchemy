@@ -1,5 +1,6 @@
 // This component handles the App template used on every page
 import React from 'react';
+import Modal from 'react-modal';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -39,10 +40,25 @@ class App extends React.Component {
       mqIcon: 'mobile-alt',
       mqIconRotate: null,
       animationSpeed: 'base',
+      showModal: false,
     };
 
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     this.updateSpeedPick = this.updateSpeedPick.bind(this);
+    this.handleOpenModal = this.handleOpenModal.bind(this);
+    this.handleCloseModal = this.handleCloseModal.bind(this);
+  }
+
+  handleOpenModal() {
+    this.setState({ showModal: true });
+  }
+
+  handleCloseModal() {
+    this.setState({ showModal: false });
+  }
+
+  componentWillMount() {
+    Modal.setAppElement('body');
   }
 
   componentDidMount() {
@@ -107,11 +123,23 @@ class App extends React.Component {
           <main className="u-6/8  u-alchemy-white-bg">{this.props.children}</main>
         </div>
         <ToolBar
-          action={this.updateSpeedPick}
+          settings={this.handleOpenModal}
           animationSpeed={this.state.animationSpeed}
           mq={this.state.mqIcon}
           mqRotate={this.state.mqIconRotate}
         />
+        <Modal
+          isOpen={this.state.showModal}
+          className="Modal u-alchemy-white-bg u-padding"
+          overlayClassName="Overlay"
+          contentLabel="Minimal Modal Example"
+          onRequestClose={this.handleCloseModal}
+          closeTimeoutMS={1000}
+        >
+          <i className="fa fa-times modal--close" onClick={this.handleCloseModal} />
+          <h2>Settings...</h2>
+          {this.props.children}
+        </Modal>
       </div>
     );
   }
