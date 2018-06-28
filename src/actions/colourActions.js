@@ -5,6 +5,10 @@ export function loadColoursSuccess(colours) {
   return { type: types.LOAD_COLOURS_SUCCESS, colours };
 }
 
+export function createColoursSuccess(colour) {
+  return { type: types.CREATE_COLOURS_SUCCESS, colour };
+}
+
 export function loadTonesSuccess(tones) {
   return { type: types.LOAD_TONES_SUCCESS, tones };
 }

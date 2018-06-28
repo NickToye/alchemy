@@ -4,13 +4,20 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as colourActions from '../../actions/colourActions';
 import ColourList from './ColourList';
+import { browserHistory } from 'react-router';
 
-class ColoursCard extends React.Component {
+export class ColoursCard extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
       palette: ['brand', 'neutral', 'utility'],
     };
+
+    this.redirectToAddColoursPage = this.redirectToAddColoursPage.bind(this);
+  }
+
+  redirectToAddColoursPage() {
+    browserHistory.push('/colour');
   }
 
   render() {
@@ -34,7 +41,7 @@ class ColoursCard extends React.Component {
 
 ColoursCard.propTypes = {
   colours: PropTypes.array.isRequired,
-  actions: PropTypes.object.isRequired,
+  // actions: PropTypes.object.isRequired,
 };
 
 function mapStateToProps(state) {
@@ -49,4 +56,7 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ColoursCard);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(ColoursCard);

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<a
+  onClick={[Function]}
+  page="http://www.facebook.com"
+  style={Object {}}
+>
+  Facebook
+</a>
+`;

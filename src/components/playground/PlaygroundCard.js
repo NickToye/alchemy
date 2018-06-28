@@ -1,6 +1,5 @@
 import React from 'react';
 import LifeForce from './LifeCycle';
-import ReduxIndex from '../../reduxIndex';
 
 class PlaygroundCard extends React.Component {
   render() {
@@ -12,9 +11,8 @@ class PlaygroundCard extends React.Component {
         </header>
         <div>
           <div className="u-padding u-alchemy-white-bg">
-            <h2>Component Lifecycle</h2>
+            <h3>Component Lifecycle</h3>
             <LifeForce />
-            <ReduxIndex />
           </div>
         </div>
       </section>
